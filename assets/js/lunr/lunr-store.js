@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/",
         "teaser": null
+      },{
+        "title": "Lecture 0403 Text Mining with R",
+        "excerpt":"텍스트 마이닝 Text Mining Text-mining 개요 분석절차 형태소분석 Morphology Analsys 명사, 동사, 형용사 등 의미 지닌 품사 단어 추출 빈도표 시각화 힙합 가사 분석 import libraries and data files library(KoNLP) ## Checking user defined dictionary! library(memoise) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats':...","categories": ["Study"],
+        "tags": ["R","bigdata","LectureNotes","text-mining"],
+        "url": "http://localhost:4000/study/LN-0403-Text-mining-with-R/",
+        "teaser": null
       }]
