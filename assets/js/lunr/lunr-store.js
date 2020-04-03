@@ -16,4 +16,10 @@ var store = [{
         "tags": ["R","bigdata","LectureNotes","text-mining","wordcloud"],
         "url": "http://localhost:4000/study/r/LN-0403-Text-mining-with-R/",
         "teaser": null
+      },{
+        "title": "Lecture 0403-2 Visualization Maps & Graphs with R",
+        "excerpt":"Visualization Maps Choropleth Map 지역별 통계치를 색깔 차이로 표현 인구나 소득 같은 특성 미국 주별 강력 범죄율 단계 구분도 import libraries library(devtools) ## Loading required package: usethis # library(htmlwidgets) # library(htmltools) library(jsonlite) library(yaml) library(base64enc) library(tm) ## Loading required package: NLP # library(wordcloud2) # library(ggplot2) library(tibble) # maps library(ggmap) ## Loading...","categories": ["Study","R"],
+        "tags": ["R","bigdata","LectureNotes","visualizion","graph","basic statistics"],
+        "url": "http://localhost:4000/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/",
+        "teaser": null
       }]
