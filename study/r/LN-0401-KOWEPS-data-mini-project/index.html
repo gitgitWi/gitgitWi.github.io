@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Ln 0401 koweps data mini project - gitgitWi&#8217;s gitgit pages</title>
-<meta name="description" content="Lecture 0401~0402 - mini project ">
+<!-- begin _includes/seo.html --><title>Lecture 0401 analyze KOWEPS data using ggplot - gitgitWi’s gitgit pages</title>
+<meta name="description" content="한국 복지패널데이터 분석 ">
 
 
   <meta name="author" content="gitgitWi">
@@ -19,11 +19,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
-<meta property="og:title" content="Ln 0401 koweps data mini project">
-<meta property="og:url" content="http://localhost:4000/LN-0401-KOWEPS-data-mini-project/">
+<meta property="og:title" content="Lecture 0401 analyze KOWEPS data using ggplot">
+<meta property="og:url" content="http://localhost:4000/study/r/LN-0401-KOWEPS-data-mini-project/">
 
 
-  <meta property="og:description" content="Lecture 0401~0402 - mini project ">
+  <meta property="og:description" content="한국 복지패널데이터 분석 ">
 
 
 
@@ -42,7 +42,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/LN-0401-KOWEPS-data-mini-project/">
+<link rel="canonical" href="http://localhost:4000/study/r/LN-0401-KOWEPS-data-mini-project/">
 
 
 
@@ -260,15 +260,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Ln 0401 koweps data mini project">
-    <meta itemprop="description" content="Lecture 0401~0402 - mini project">
+    <meta itemprop="headline" content="Lecture 0401 analyze KOWEPS data using ggplot">
+    <meta itemprop="description" content="한국 복지패널데이터 분석">
     <meta itemprop="datePublished" content="2020-04-01T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Ln 0401 koweps data mini project
+          <h1 id="page-title" class="page__title" itemprop="headline">Lecture 0401 analyze KOWEPS data using ggplot
 </h1>
           <!-- 
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -288,11 +288,81 @@
 
       <section class="page__content" itemprop="text">
         
-        <h1 id="lecture-04010402---mini-project">Lecture 0401~0402 - mini project</h1>
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Google Maps Api</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#한국-복지패널데이터-분석">한국 복지패널데이터 분석</a></li>
+  <li><a href="#데이터-검토">데이터 검토</a></li>
+  <li><a href="#데이터-탐색">데이터 탐색</a>
+    <ul>
+      <li><a href="#성별에-따른-월급-차이">성별에 따른 월급 차이</a>
+        <ul>
+          <li><a href="#변수-검토-및-preprocessing">변수 검토 및 preprocessing</a></li>
+          <li><a href="#시각화--ggplot">시각화 : ggplot</a></li>
+        </ul>
+      </li>
+      <li><a href="#나이와-월급의-관계--몇살때-월급을-가장-많이-받을까">나이와 월급의 관계 : 몇살때 월급을 가장 많이 받을까?</a>
+        <ul>
+          <li><a href="#파생변수-만들기--나이">파생변수 만들기 : 나이</a></li>
+        </ul>
+      </li>
+      <li><a href="#나이와-월급의-관계-분석">나이와 월급의 관계 분석</a>
+        <ul>
+          <li><a href="#나이별-월급-평균-산출">나이별 월급 평균 산출</a></li>
+          <li><a href="#시각화">시각화</a></li>
+        </ul>
+      </li>
+      <li><a href="#연령대에-따른-월급-차이">연령대에 따른 월급 차이</a>
+        <ul>
+          <li><a href="#파생변수-생성">파생변수 생성</a></li>
+          <li><a href="#시각화-1">시각화</a></li>
+        </ul>
+      </li>
+      <li><a href="#성별-연령별-급여-차이">성별, 연령별 급여 차이</a>
+        <ul>
+          <li><a href="#stack-chart">stack chart</a></li>
+        </ul>
+      </li>
+      <li><a href="#직업별-월급-차이">직업별 월급 차이</a>
+        <ul>
+          <li><a href="#codebook에서-import-job-name---left_join">CodeBook에서 import job name -&gt; left_join</a></li>
+        </ul>
+      </li>
+      <li><a href="#직업별-월급-차이-분석">직업별 월급 차이 분석</a></li>
+      <li><a href="#시각화-2">시각화</a></li>
+      <li><a href="#성별-직업-빈도">성별 직업 빈도</a>
+        <ul>
+          <li><a href="#남성-직업-순위">남성 직업 순위</a></li>
+          <li><a href="#female-numbers-by-job">female numbers by job</a></li>
+        </ul>
+      </li>
+      <li><a href="#종교-유무에-따른-이혼율">종교 유무에 따른 이혼율</a>
+        <ul>
+          <li><a href="#about-religion">about religion</a></li>
+          <li><a href="#about-marriage">about marriage</a></li>
+          <li><a href="#create-a-new-variable-about-divorce">create a new variable about divorce</a></li>
+          <li><a href="#create-table-about-divorce-ratio-by-religion">create table about divorce ratio by religion</a></li>
+          <li><a href="#count-활용">count() 활용</a></li>
+        </ul>
+      </li>
+      <li><a href="#create-table-about-divorce-ratio">create table about divorce ratio</a>
+        <ul>
+          <li><a href="#create-col-plot">create col plot</a></li>
+          <li><a href="#create-a-new-variabe-ageg_divo-only-about-divorce-rate-except-young-from-agegmarr">create a new variabe ageg_divo only about divorce rate except “young” from agegmarr</a></li>
+          <li><a href="#create-a-new-variable--about-divorce-ratio-by-age-group">Create a new variable `` about divorce ratio by age group,</a></li>
+          <li><a href="#apply-count">apply count()</a></li>
+        </ul>
+      </li>
+      <li><a href="#age-group-ratio-by-region">age group ratio by region</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p>lecture 0401~0402</p>
-
-<h1 id="한국-복지패널데이터-분석">한국 복지패널데이터 분석</h1>
+            </nav>
+          </aside>
+        
+        <h1 id="한국-복지패널데이터-분석">한국 복지패널데이터 분석</h1>
 
 <ul>
   <li>경제활동, 생활실태, 복지욕구 등 수천 개 변수 정보로 구성</li>
@@ -2347,8 +2417,9 @@
 ## 16664                0               NA
 </code></pre></div></div>
 
-<p>대규모 데이터는 변수가 많고 변수명이 코드로 되어 있어 전체 데이터 구조를 한눈에 파악 어려움 변수명을 쉬운 단어로 바꿔 분석에
-사용할 변수 파악</p>
+<p>대규모 데이터는 변수가 많고 변수명이 코드로 되어 있어 전체 데이터 구조를 한눈에 파악 어려움</p>
+
+<p>변수명을 쉬운 단어로 바꿔 분석에 사용할 변수 파악</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rename</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> 
                </span><span class="n">sex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h10_g3</span><span class="p">,</span><span class="w"> 
@@ -2961,8 +3032,7 @@ summarise</p>
     <p>연령대별 월급 평균표</p>
   </li>
   <li>
-    <p>나이를 연령대로
-categorize</p>
+    <p>나이를 연령대로 categorize</p>
   </li>
 </ul>
 
@@ -2982,8 +3052,7 @@ categorize</p>
 
 <h3 id="파생변수-생성">파생변수 생성</h3>
 
-<p>연령대별
-급여</p>
+<p>연령대별 급여</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agegincome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">income</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">group_by</span><span class="p">(</span><span class="n">ageg</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">summarise</span><span class="p">(</span><span class="n">mean_income</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">income</span><span class="p">))</span><span class="w">
 </span><span class="n">agegincome</span><span class="w">
@@ -2999,16 +3068,14 @@ categorize</p>
 
 <h3 id="시각화-1">시각화</h3>
 
-<p>연령대별 급여를 ggplot으로 ordered by ageg,
-mean_income</p>
+<p>연령대별 급여를 ggplot으로 ordered by ageg, mean_income</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agegincome</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reorder</span><span class="p">(</span><span class="n">ageg</span><span class="p">,</span><span class="w"> </span><span class="n">mean_income</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">mean_income</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_col</span><span class="p">()</span><span class="w">
 </span></code></pre></div></div>
 
 <p><img src="lecture0401-minipro_files/figure-gfm/unnamed-chunk-37-1.png" alt="" /><!-- --></p>
 
-<p><code class="highlighter-rouge">scale_x_discrete(limits = "")</code> ggplot x scale 순서
-지정</p>
+<p><code class="highlighter-rouge">scale_x_discrete(limits = "")</code> ggplot x scale 순서 지정</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">agegincome</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ageg</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">mean_income</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_col</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_x_discrete</span><span class="p">(</span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"young"</span><span class="p">,</span><span class="w"> </span><span class="s2">"middle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"old"</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
@@ -3039,8 +3106,7 @@ mean_income</p>
 
 <ul>
   <li>연령대 및 성별 월급 평균표</li>
-  <li>그래프로
-시각화</li>
+  <li>그래프로 시각화</li>
 </ul>
 
 <!-- end list -->
@@ -3467,8 +3533,7 @@ mean_income</p>
 ## 6 young  marriage          58        60  96.7
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">count()</code>
-활용</p>
+<p><code class="highlighter-rouge">count()</code> 활용</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agegmarr2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">group_marriage</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">count</span><span class="p">(</span><span class="n">ageg</span><span class="p">,</span><span class="w"> </span><span class="n">group_marriage</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">group_by</span><span class="p">(</span><span class="n">ageg</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">mutate</span><span class="p">(</span><span class="n">pct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">
 </span><span class="n">agegmarr2</span><span class="w">
@@ -3717,8 +3782,7 @@ mean_income</p>
 
 <p><img src="lecture0401-minipro_files/figure-gfm/unnamed-chunk-88-1.png" alt="" /><!-- --></p>
 
-<p>order by elders
-ratio</p>
+<p>order by elders ratio</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list_order_old</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ageg_reg</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">ageg</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"old"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">  </span><span class="n">arrange</span><span class="p">(</span><span class="n">arrate</span><span class="p">)</span><span class="w">
 </span><span class="n">list_order_old</span><span class="w">
@@ -3757,6 +3821,60 @@ ratio</p>
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#bigdata" class="page__taxonomy-item" rel="tag">bigdata</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#ggplot" class="page__taxonomy-item" rel="tag">ggplot</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#lecturenotes" class="page__taxonomy-item" rel="tag">LectureNotes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#r" class="page__taxonomy-item" rel="tag">R</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#r" class="page__taxonomy-item" rel="tag">R</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">Study</a>
+    
+    </span>
+  </p>
 
 
         
@@ -3769,11 +3887,11 @@ ratio</p>
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Ln+0401+koweps+data+mini+project%20http%3A%2F%2Flocalhost%3A4000%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Lecture+0401+analyze+KOWEPS+data+using+ggplot%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0401-KOWEPS-data-mini-project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -3783,7 +3901,7 @@ ratio</p>
       <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" class="pagination--pager" title="Ln 0402 홍대입구역 apt 시세 조회 by using google maps api
+      <a href="/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" class="pagination--pager" title="Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API
 ">Next</a>
     
   </nav>
@@ -3831,7 +3949,7 @@ ratio</p>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" rel="permalink">Ln 0402 홍대입구역 apt 시세 조회 by using google maps api
+        <a href="/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" rel="permalink">Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API
 </a>
       
     </h2>
@@ -3839,7 +3957,7 @@ ratio</p>
     
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 02 2020</p>
     
-    <p class="archive__item-excerpt" itemprop="description">Lecture0402_analyse APTs values around 홍대입구역 using Google Map Api
+    <p class="archive__item-excerpt" itemprop="description">Using Google Maps API
 </p>
   </article>
 </div>
@@ -3896,8 +4014,8 @@ ratio</p>
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/LN-0401-KOWEPS-data-mini-project/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/LN 0401 KOWEPS data mini project"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/r/LN-0401-KOWEPS-data-mini-project/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/r/LN 0401 KOWEPS data mini project"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
