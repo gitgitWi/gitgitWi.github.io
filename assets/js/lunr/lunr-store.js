@@ -23,9 +23,21 @@ var store = [{
         "url": "http://localhost:4000/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/",
         "teaser": null
       },{
+        "title": "LN-Docker-동빈나's Docker 활용 1강~",
+        "excerpt":"- [AWS 서버 인스턴스 생성](#aws-) - [서버 인스턴스](#-) - [AMI 선택](#ami-) - [인스턴스 유형 선택](#-) - [Key pair](#key-pair) - [Error 같은 Normal Message](#error-normal-message) - [보다 편한 EC2 활용을 위한 `Jupyter Notebook` 설치](#-ec2-jupyter-notebook-) - [1. check python3 version](#1-check-python3-version) - [2. python3 개발환경 설치위한 pip install](#2-python3-pip-install) - [3. pip를 통해 notebook install](#3-pip-notebook-install)...","categories": ["Study","Docker"],
+        "tags": ["Docker","LectureNotes","AWS","동빈나"],
+        "url": "http://localhost:4000/study/docker/",
+        "teaser": null
+      },{
         "title": "왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube",
         "excerpt":"Docker basic by 재즐보프’s Youtube 왕초보도 따라하는 도커 기초 강의 lecture notes Install Apps in Docker in Terminal (base) JnWui-MacBook-Pro:~ WnJ$ sudo -i JnWui-MacBook-Pro:~ root# docker search tomcat9 # 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아 # docker에서 8080 포트로 바로 실행 JnWui-MacBook-Pro:~ root# docker run -d...","categories": ["Study","Docker"],
         "tags": ["Docker","LectureNotes","Oracle","MySQL"],
         "url": "http://localhost:4000/study/docker/docker-basic-01/",
+        "teaser": null
+      },{
+        "title": "LN-Docker-동빈나's Docker 활용 1강~2강",
+        "excerpt":"AWS 서버 인스턴스 생성 서버 인스턴스 AMI 선택 인스턴스 유형 선택 Key pair Error 같은 Normal Message 보다 편한 EC2 활용을 위한 Jupyter Notebook 설치 1. check python3 version 2. python3 개발환경 설치위한 pip install 3. pip를 통해 notebook install 4. notebook에서 사용할 p/w 설정 5. System terminal이 아닌 WebBrowser...","categories": ["Study","AWS"],
+        "tags": ["Docker","LectureNotes","AWS","동빈나"],
+        "url": "http://localhost:4000/study/aws/ln-aws-0102/",
         "teaser": null
       }]
