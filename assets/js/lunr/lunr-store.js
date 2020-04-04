@@ -22,4 +22,10 @@ var store = [{
         "tags": ["R","bigdata","LectureNotes","visualizion","graph","basic statistics"],
         "url": "http://localhost:4000/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/",
         "teaser": null
+      },{
+        "title": "왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube",
+        "excerpt":"Docker basic by 재즐보프’s Youtube 왕초보도 따라하는 도커 기초 강의 lecture notes Install Apps in Docker in Terminal (base) JnWui-MacBook-Pro:~ WnJ$ sudo -i JnWui-MacBook-Pro:~ root# docker search tomcat9 # 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아 # docker에서 8080 포트로 바로 실행 JnWui-MacBook-Pro:~ root# docker run -d...","categories": ["Study","Docker"],
+        "tags": ["Docker","LectureNotes","Oracle","MySQL"],
+        "url": "http://localhost:4000/study/docker/docker-basic-01/",
+        "teaser": null
       }]
