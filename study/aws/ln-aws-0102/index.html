@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>LN-Docker-동빈나’s Docker 활용 1강~2강 - gitgitWi’s gitgit pages</title>
-<meta name="description" content=" ">
+<meta name="description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속 ">
 
 
   <meta name="author" content="gitgitWi">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/study/aws/ln-aws-0102/">
 
 
-  <meta property="og:description" content=" ">
+  <meta property="og:description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속 ">
 
 
 
@@ -133,13 +133,13 @@
             </li><li class="masthead__menu-item">
               <a href="/categories/r/">R</a>
             </li><li class="masthead__menu-item">
+              <a href="/categories/AWS/">AWS</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/docker/">Docker</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/">Category</a>
             </li><li class="masthead__menu-item">
               <a href="/search/">Search</a>
-            </li><li class="masthead__menu-item">
-              <a href="/sitemap/">Sitemap</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -267,7 +267,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="LN-Docker-동빈나’s Docker 활용 1강~2강">
-    <meta itemprop="description" content="">
+    <meta itemprop="description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속">
     <meta itemprop="datePublished" content="2020-04-04T00:00:00+09:00">
     
 
@@ -327,44 +327,7 @@
             </nav>
           </aside>
         
-        <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-<ul>
-  <li><a href="#aws-">AWS 서버 인스턴스 생성</a>
-    <ul>
-      <li><a href="#-">서버 인스턴스</a></li>
-      <li><a href="#ami-">AMI 선택</a></li>
-      <li><a href="#-">인스턴스 유형 선택</a></li>
-      <li><a href="#key-pair">Key pair</a>
-        <ul>
-          <li><a href="#error-normal-message">Error 같은 Normal Message</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#-ec2-jupyter-notebook-">보다 편한 EC2 활용을 위한 <code class="highlighter-rouge">Jupyter Notebook</code> 설치</a>
-    <ul>
-      <li><a href="#1-check-python3-version">1. check python3 version</a></li>
-      <li><a href="#2-python3-pip-install">2. python3 개발환경 설치위한 pip install</a></li>
-      <li><a href="#3-pip-notebook-install">3. pip를 통해 notebook install</a></li>
-      <li><a href="#4-notebook-pw-">4. notebook에서 사용할 p/w 설정</a></li>
-      <li><a href="#5-system-terminal-webbrowser-jupyter-terminal-">5. System terminal이 아닌 WebBrowser jupyter terminal을 사용하기 위한 설정</a></li>
-      <li><a href="#6-jupyter-background-">6. jupyter가 background에서 실행되도록 설정</a></li>
-      <li><a href="#7-ssl-ssl-keypair-">7. SSL 접속을 위한 SSL KeyPair 생성</a></li>
-      <li><a href="#8-ssh-jupyternotebookconfigpy-">8. SSH 접속 가능하도록 <code class="highlighter-rouge">jupyter_notebook_config.py</code> 환경설정 수정</a></li>
-      <li><a href="#9-system-jupyter-">9. System 기본 프로그램으로 jupyter가 실행되도록 설정</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- /TOC -->
-
-<ul>
-  <li>lecture playlist  : <a href="https://www.youtube.com/playlist?list=PLRx0vPvlEmdChjc6N3JnLaX-Gihh5pHcx">Docker 활용 및 배포 자동화 실전 초급</a></li>
-  <li>lecturer  : 동빈나</li>
-</ul>
-
-<h1 id="01-실습용-aws-ec2-인스턴스-생성-및-접속">01 실습용 AWS EC2 인스턴스 생성 및 접속</h1>
+        <h1 id="01-실습용-aws-ec2-인스턴스-생성-및-접속">01 실습용 AWS EC2 인스턴스 생성 및 접속</h1>
 
 <h2 id="aws-서버-인스턴스-생성">AWS 서버 인스턴스 생성</h2>
 
@@ -409,20 +372,10 @@
 <p>ex.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-i</span> /<span class="o">{</span>path<span class="o">}</span>/<span class="o">{</span>keypair.pem<span class="o">}</span> ubuntu@<span class="o">{</span>public DNS<span class="o">}</span>
 </code></pre></div></div>
-<!--
-
-chmod 400 /Users/WnJ/Desktop/AWS/docking.pem
-ssh -i /Users/WnJ/Desktop/AWS/docking.pem ubuntu@ec2-13-209-21-25.ap-northeast-2.compute.amazonaws.com
-ssh -i /Users/WnJ/Desktop/AWS/docking.pem ubuntu@ec2-54-180-30-186.ap-northeast-2.compute.amazonaws.com
-
-ssh -i /Users/WnJ/Desktop/AWS/docking.pem ec2-user@ec2-13-209-21-25.ap-northeast-2.compute.amazonaws.com
-
-
--->
 
 <p><em>aws instance connect 눌렀을 때 나오는 안내 화면에서 <code class="highlighter-rouge">예:</code>에 있는 거 그대로 가져와서 경로만 써주면 됨</em></p>
 
-<p><img src="/assets/images/aws/ss%20aws%20connect%20instance.png" alt="ss aws connect instance" /></p>
+<p><img src="assets/ss%20aws%20connect%20instance.png" alt="ss aws connect instance" /></p>
 
 <h5 id="error-같은-normal-message">Error 같은 Normal Message</h5>
 <p>ssh 방식으로 연결 시도하고 나니, 아래처럼 메시지가 떴음</p>
@@ -679,7 +632,8 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/study/aws/docker/ln-aws-0304/" class="pagination--pager" title="LN-Docker-동빈나’s Docker 활용 3강~4강
+">Next</a>
     
   </nav>
 
@@ -703,7 +657,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/docker/docker-basic-01/" rel="permalink">왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube
+        <a href="/study/aws/docker/ln-aws-10~11/" rel="permalink">LN-Docker-동빈나’s Docker 활용 10강~11강
 </a>
       
     </h2>
@@ -711,7 +665,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
     
-    <p class="archive__item-excerpt" itemprop="description">Docker basic by 재즐보프’s Youtube
+    <p class="archive__item-excerpt" itemprop="description">10 Jenkins를 이용해 Docker 프로젝트 빌드해보기
 </p>
   </article>
 </div>
@@ -726,7 +680,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/docker/" rel="permalink">LN-Docker-동빈나’s Docker 활용 1강~
+        <a href="/study/aws/docker/ln-aws-0709/" rel="permalink">LN-Docker-동빈나’s Docker 활용 7강~9강
 </a>
       
     </h2>
@@ -734,7 +688,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
     
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt" itemprop="description">07 AWS RDS를 이용한 데이터베이스 구축
 </p>
   </article>
 </div>
@@ -749,15 +703,15 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/" rel="permalink">Lecture 0403-2 Visualization Maps &amp; Graphs with R
+        <a href="/study/aws/docker/ln-aws-0506/" rel="permalink">LN-Docker-동빈나’s Docker 활용 5강~6강
 </a>
       
     </h2>
     
     
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 03 2020</p>
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
     
-    <p class="archive__item-excerpt" itemprop="description">Visualization Maps
+    <p class="archive__item-excerpt" itemprop="description">05 Docker로 MySQL 컨테이너 만들어 보기
 </p>
   </article>
 </div>
@@ -772,15 +726,15 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/r/LN-0403-Text-mining-with-R/" rel="permalink">Lecture 0403 Text Mining with R
+        <a href="/study/aws/docker/ln-aws-0304/" rel="permalink">LN-Docker-동빈나’s Docker 활용 3강~4강
 </a>
       
     </h2>
     
     
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 03 2020</p>
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
     
-    <p class="archive__item-excerpt" itemprop="description">텍스트 마이닝 Text Mining
+    <p class="archive__item-excerpt" itemprop="description">03 AWS EC2에 도커(Docker) 설치 및 Dockerfile로 웹 서버 구동시키기
 </p>
   </article>
 </div>

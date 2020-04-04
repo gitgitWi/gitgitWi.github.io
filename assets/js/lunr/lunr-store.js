@@ -36,8 +36,32 @@ var store = [{
         "teaser": null
       },{
         "title": "LN-Docker-동빈나's Docker 활용 1강~2강",
-        "excerpt":"AWS 서버 인스턴스 생성 서버 인스턴스 AMI 선택 인스턴스 유형 선택 Key pair Error 같은 Normal Message 보다 편한 EC2 활용을 위한 Jupyter Notebook 설치 1. check python3 version 2. python3 개발환경 설치위한 pip install 3. pip를 통해 notebook install 4. notebook에서 사용할 p/w 설정 5. System terminal이 아닌 WebBrowser...","categories": ["Study","AWS"],
+        "excerpt":"01 실습용 AWS EC2 인스턴스 생성 및 접속 AWS 서버 인스턴스 생성 Docker Machine 설치를 위한 객체 생성 서버 인스턴스 EC2 강의일 현재까지 AWS에서 가장 많이 쓰이고 있는 서버 AMI 선택 Amazon Machine Image Ubuntu Server 18.04 (LTS) 선택 인스턴스 유형 선택 t2 micro free-tier 에서 사용 가능한 유일한 type...","categories": ["Study","AWS"],
         "tags": ["Docker","LectureNotes","AWS","동빈나"],
         "url": "http://localhost:4000/study/aws/ln-aws-0102/",
+        "teaser": null
+      },{
+        "title": "LN-Docker-동빈나's Docker 활용 3강~4강",
+        "excerpt":"03 AWS EC2에 도커(Docker) 설치 및 Dockerfile로 웹 서버 구동시키기 Docker 설치를 위한 준비 AWS에서 생성한 jupyter-notebook 접속 현재 메모리 상황 확인 /# df -h Filesystem Size Used Avail Use% Mounted on udev 481M 0 481M 0% /dev tmpfs 99M 752K 98M 1% /run /dev/xvda1 7.7G 1.7G 6.1G 22% /...","categories": ["Study","AWS","Docker"],
+        "tags": ["Docker","LectureNotes","AWS","동빈나","Apache Server"],
+        "url": "http://localhost:4000/study/aws/docker/ln-aws-0304/",
+        "teaser": null
+      },{
+        "title": "LN-Docker-동빈나's Docker 활용 5강~6강",
+        "excerpt":"05 Docker로 MySQL 컨테이너 만들어 보기 작업 전 모든 container 제거 root@ip-172-31-45-116:/# docker rm -f `docker ps -a -q` 0037b1e5d4eb root@ip-172-31-45-116:/# docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES MySQL5.6 설치 host 9876 port와 MySQL 3306 port 연결 root@ip-172-31-45-116:/# docker run -d -p 9876:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql:5.6...","categories": ["Study","AWS","Docker"],
+        "tags": ["Docker","LectureNotes","AWS","동빈나","Apache Server","MySQL"],
+        "url": "http://localhost:4000/study/aws/docker/ln-aws-0506/",
+        "teaser": null
+      },{
+        "title": "LN-Docker-동빈나's Docker 활용 7강~9강",
+        "excerpt":"07 AWS RDS를 이용한 데이터베이스 구축 Amazon RDS를 통한 DB 생성 한글 parameter 설정 parameter 생성 parameter 수정 ‘char’, ‘collation’ 검색 가능한 모든 encoding을 UTF8, UTF8_general_ci로 설정 DB 생성 MySQL 5.6 template &gt; Free-Tier ; 반드시 확인! Master User Name / PW ; 외부접속 위한 ID/PW 보안 그룹 일반적으로 가장...","categories": ["Study","AWS","Docker"],
+        "tags": ["Docker","동빈나","LectureNotes","AWS","AWS RDS","MySQL","GitHub","DockerHub"],
+        "url": "http://localhost:4000/study/aws/docker/ln-aws-0709/",
+        "teaser": null
+      },{
+        "title": "LN-Docker-동빈나's Docker 활용 10강~11강",
+        "excerpt":"10 Jenkins를 이용해 Docker 프로젝트 빌드해보기 Jenkins를 활용한 Build 자동화 Docker in Docker 방식 Jenkins 설치 및 실행 Jenkins도 기본포트 == 8080 Jenkins 안에서 php가 구동되도록 root@ip-172-31-45-116:~/# docker pull jenkins/jenkins:lts LTS tag 붙이지 않고 설치할 경우 plugins 설치 시 ERROR jenkins의 repository가 변경되어서 그렇다고 함.. docker run -d -p 8080:8080...","categories": ["Study","AWS","Docker"],
+        "tags": ["Docker","동빈나","LectureNotes","AWS","Jenkins"],
+        "url": "http://localhost:4000/study/aws/docker/ln-aws-10~11/",
         "teaser": null
       }]
