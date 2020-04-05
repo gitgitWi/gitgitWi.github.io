@@ -1,26 +1,26 @@
 var store = [{
         "title": "Lecture 0401 analyze KOWEPS data using ggplot",
-        "excerpt":"한국 복지패널데이터 분석 경제활동, 생활실태, 복지욕구 등 수천 개 변수 정보로 구성 foreign : 통계 파일 SPSS 로드할 수 있는 package # install.packages(\"foreign\") library(foreign) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats': ## ## filter, lag ## The following objects are masked from 'package:base':...","categories": ["Study","R"],
+        "excerpt":"한국 복지패널데이터 분석 경제활동, 생활실태, 복지욕구 등 수천 개 변수 정보로 구성 foreign : 통계 파일 SPSS 로드할 수 있는 package # install.packages(\"foreign\") library(foreign) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats': ## ## filter, lag ## The following objects are masked from 'package:base':...","categories": ["Study","R","MachineLearning"],
         "tags": ["R","ggplot","bigdata","LectureNotes"],
-        "url": "http://localhost:4000/study/r/LN-0401-KOWEPS-data-mini-project/",
+        "url": "http://localhost:4000/study/r/machinelearning/LN-0401-KOWEPS-data-mini-project/",
         "teaser": null
       },{
         "title": "Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API",
-        "excerpt":"Using Google Maps API install ggmap &amp; import libraries library(ggplot2) theme_update(text=element_text(family=\"NanumBarunGothic\")) import csv files station &lt;- read.csv(\"~/Desktop/johnwi_KNOU/Programming/1. R/handouts/0402/역주소.csv\") head(station) ## 역명 구주소 ## 1 시청 서울 중구 서소문동 27 ## 2 을지로입구 서울 중구 을지로1가 89-1 ## 3 을지로3가 서울 중구 을지로3가 70-1 ## 4 을지로4가 서울 중구 을지로4가 261-1...","categories": ["Study","R"],
+        "excerpt":"Using Google Maps API install ggmap &amp; import libraries library(ggplot2) theme_update(text=element_text(family=\"NanumBarunGothic\")) import csv files station &lt;- read.csv(\"~/Desktop/johnwi_KNOU/Programming/1. R/handouts/0402/역주소.csv\") head(station) ## 역명 구주소 ## 1 시청 서울 중구 서소문동 27 ## 2 을지로입구 서울 중구 을지로1가 89-1 ## 3 을지로3가 서울 중구 을지로3가 70-1 ## 4 을지로4가 서울 중구 을지로4가 261-1...","categories": ["Study","R","MachineLearning"],
         "tags": ["R","bigdata","LectureNotes","Google API"],
-        "url": "http://localhost:4000/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/",
+        "url": "http://localhost:4000/study/r/machinelearning/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/",
         "teaser": null
       },{
         "title": "Lecture 0403 Text Mining with R",
-        "excerpt":"텍스트 마이닝 Text Mining Text-mining 개요 분석절차 형태소분석 Morphology Analsys 명사, 동사, 형용사 등 의미 지닌 품사 단어 추출 빈도표 시각화 ex1. 힙합 가사 분석 import libraries and data files library(KoNLP) ## Checking user defined dictionary! library(memoise) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from...","categories": ["Study","R"],
+        "excerpt":"텍스트 마이닝 Text Mining Text-mining 개요 분석절차 형태소분석 Morphology Analsys 명사, 동사, 형용사 등 의미 지닌 품사 단어 추출 빈도표 시각화 ex1. 힙합 가사 분석 import libraries and data files library(KoNLP) ## Checking user defined dictionary! library(memoise) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from...","categories": ["Study","R","MachineLearning"],
         "tags": ["R","bigdata","LectureNotes","text-mining","wordcloud"],
-        "url": "http://localhost:4000/study/r/LN-0403-Text-mining-with-R/",
+        "url": "http://localhost:4000/study/r/machinelearning/LN-0403-Text-mining-with-R/",
         "teaser": null
       },{
         "title": "Lecture 0403-2 Visualization Maps & Graphs with R",
-        "excerpt":"Visualization Maps Choropleth Map 지역별 통계치를 색깔 차이로 표현 인구나 소득 같은 특성 미국 주별 강력 범죄율 단계 구분도 import libraries library(devtools) ## Loading required package: usethis # library(htmlwidgets) # library(htmltools) library(jsonlite) library(yaml) library(base64enc) library(tm) ## Loading required package: NLP # library(wordcloud2) # library(ggplot2) library(tibble) # maps library(ggmap) ## Loading...","categories": ["Study","R"],
+        "excerpt":"Visualization Maps Choropleth Map 지역별 통계치를 색깔 차이로 표현 인구나 소득 같은 특성 미국 주별 강력 범죄율 단계 구분도 import libraries library(devtools) ## Loading required package: usethis # library(htmlwidgets) # library(htmltools) library(jsonlite) library(yaml) library(base64enc) library(tm) ## Loading required package: NLP # library(wordcloud2) # library(ggplot2) library(tibble) # maps library(ggmap) ## Loading...","categories": ["Study","R","MachineLearning"],
         "tags": ["R","bigdata","LectureNotes","visualizion","graph","basic statistics"],
-        "url": "http://localhost:4000/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/",
+        "url": "http://localhost:4000/study/r/machinelearning/Lecture-0403-2-Visualization-Maps-&-Graphs/",
         "teaser": null
       },{
         "title": "LN-Docker-동빈나's Docker 활용 1강~",
@@ -69,5 +69,11 @@ var store = [{
         "excerpt":"2020 상반기 LINE online coding test 후기.. 정말 말그대로, 참가하는데 의의를 뒀다 개발 배운지 아직 반년도 안됐고, 말로만 듣던 코딩 테스트는 이번이 첫 경험이기 때문에 뭔가 될 거란 생각하는게 이상하지..ㅋㅋ AWS-Docker에 빠져서 밤새 유튜브 보고 따라해보느라, 6시반에 잠깐 잤다가 일어나서 샤워하고 시간 맞춰서 프로그래머스 들어간거라 정신도 없었다 6문제 중 홀수번...","categories": ["Career","Python"],
         "tags": ["LINE","취준기","Python"],
         "url": "http://localhost:4000/career/python/2020_%EC%83%81%EB%B0%98%EA%B8%B0_LINE-_online_coding_test_%ED%9B%84%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "Frequent Git Error Messages",
+        "excerpt":"non-fast-forward 특별한 문제를 일으키지 않았는데도, non-fast-forward 메시지와 함께 push가 rejected되는 경우가 있다 이 에러가 발생하는 원인은 여러가지인 듯 $ git push -u origin master ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'https://github.com/gitgitWi/ezerwi' 해결방법 원인 01 GitHub에 저장한 내용 - Local에서 commit한 내용 중 겹치는...","categories": ["Git","Errors"],
+        "tags": ["Git","Github","Error Messages"],
+        "url": "http://localhost:4000/git/errors/Git-Error/",
         "teaser": null
       }]

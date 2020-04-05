@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
 <meta property="og:title" content="Lecture 0403 Text Mining with R">
-<meta property="og:url" content="http://localhost:4000/study/r/LN-0403-Text-mining-with-R/">
+<meta property="og:url" content="http://localhost:4000/study/r/machinelearning/LN-0403-Text-mining-with-R/">
 
 
   <meta property="og:description" content="텍스트 마이닝 Text Mining ">
@@ -42,7 +42,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/study/r/LN-0403-Text-mining-with-R/">
+<link rel="canonical" href="http://localhost:4000/study/r/machinelearning/LN-0403-Text-mining-with-R/">
 
 
 
@@ -129,13 +129,13 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/categories/Python/">Python</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/r/">R</a>
+              <a href="/categories/ML/">MachineLearning</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/AWS/">AWS</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/docker/">Docker</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/error/">Errors</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/Career/">취준기</a>
             </li><li class="masthead__menu-item">
@@ -364,15 +364,15 @@
 </span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
 ## Attaching package: 'dplyr'
 
 ## The following objects are masked from 'package:stats':
-## 
+##
 ##     filter, lag
 
 ## The following objects are masked from 'package:base':
-## 
+##
 ##     intersect, setdiff, setequal, union
 </code></pre></div></div>
 
@@ -478,16 +478,16 @@
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="w"> </span><span class="p">(</span><span class="n">countw</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 
-##           1 100 168  17 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
+##           1 100 168  17
 ##  12   2   9   3   1   1
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tail</span><span class="w"> </span><span class="p">(</span><span class="n">countw</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 
-##  zer zino  zon  zoo zoom   ZZ 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
+##  zer zino  zon  zoo zoom   ZZ
 ##    1    1    6    1    1    1
 </code></pre></div></div>
 
@@ -597,10 +597,10 @@
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span><span class="w">
 
-</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfwords</span><span class="o">$</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfwords</span><span class="o">$</span><span class="n">freq</span><span class="p">,</span><span class="w"> 
+</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfwords</span><span class="o">$</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfwords</span><span class="o">$</span><span class="n">freq</span><span class="p">,</span><span class="w">
           </span><span class="n">min.freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w">                    </span><span class="c1"># 최소 단어 빈도</span><span class="w">
           </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w">                 </span><span class="c1"># 표현 단어 수</span><span class="w">
-          </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">,</span><span class="w">                </span><span class="c1"># 고빈도 단어 중앙 배치 </span><span class="w">
+          </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">,</span><span class="w">                </span><span class="c1"># 고빈도 단어 중앙 배치</span><span class="w">
           </span><span class="n">rot.per</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.1</span><span class="p">,</span><span class="w">                    </span><span class="c1"># 회전 단어 비율</span><span class="w">
           </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">),</span><span class="w">               </span><span class="c1"># 단어 크기 범위</span><span class="w">
           </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pal</span><span class="p">,</span><span class="w">                    </span><span class="c1"># 색깔 목록</span><span class="w">
@@ -717,7 +717,7 @@
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">brewer.pal</span><span class="p">(</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="s2">"Dark2"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfqq</span><span class="o">$</span><span class="n">Var1</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfqq</span><span class="o">$</span><span class="n">Freq</span><span class="p">,</span><span class="w"> 
+</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfqq</span><span class="o">$</span><span class="n">Var1</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfqq</span><span class="o">$</span><span class="n">Freq</span><span class="p">,</span><span class="w">
           </span><span class="n">min.freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">,</span><span class="w"> </span><span class="n">rot.per</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">),</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pal</span><span class="p">,</span><span class="w">
           </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NanumBarunGothic"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -784,7 +784,7 @@
 ##  [1] "민주"   "당의"   "ISD"    "관련"   "주장"   "거짓"   "미국"   "ISD"   
 ##  [9] "장악하" "주장"   "하지"   "중재인" "123"    "명"     "가운데" "미국인"
 ## [17] "10"     "명"     "한"    
-## 
+##
 ## [[2]]
 ##  [1] "말"             "미제"           "타도"           "사실"          
 ##  [5] "미제"           "환장"           "김정일"         "운구차"        
@@ -793,7 +793,7 @@
 ## [17] "서민"           "대변"           "고급"           "외제차"        
 ## [21] "아이팟"         "자식"           "들"             "미국"          
 ## [25] "유학"           "환장"           "하"             "위선자들인거"  
-## 
+##
 ## [[3]]
 ## [1] "한나라"                                                                                            
 ## [2] "당"                                                                                                
@@ -801,18 +801,18 @@
 ## [4] "뭔가착각하는모냥인에"                                                                              
 ## [5] "국민들이보수를싫어하는게"                                                                          
 ## [6] "아니라뻘짓거리하는분들을싫어하는겁니다야당이진보어쩌고저쩌고한다고해서그들을조아한다고생각하면대착"
-## 
+##
 ## [[4]]
 ##  [1] "FTA"    "현명"   "한"     "자세"   "사실"   "자유"   "주의"   "경제"  
 ##  [9] "수해"   "자"     "한국"   "농어업" "분야"   "피해"   "줄"     "정부"  
 ## [17] "대안"   "보완"   "일자리" "창출"   "등"     "실익"   "최대"   "화해"  
 ## [25] "현실"   "적"     "대처"   "자세"   "듯"    
-## 
+##
 ## [[5]]
 ##  [1] "곽노현"         "씨"             "가관"           "뇌물"          
 ##  [5] "질"             "아들"           "병역"           "의혹"          
 ##  [9] "아이들"         "뮐"             "자리"           "연연하시겠습니"
-## 
+##
 ## [[6]]
 ##  [1] "과거"      "집권"      "시"        "한미FTA를" "적극"      "추진"     
 ##  [7] "세력"      "집권"      "하면"      "폐기"      "주장"      "말"       
@@ -884,7 +884,7 @@
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">brewer.pal</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="s2">"Paired"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_twt</span><span class="o">$</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_twt</span><span class="o">$</span><span class="n">freq</span><span class="p">,</span><span class="w"> 
+</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_twt</span><span class="o">$</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df_twt</span><span class="o">$</span><span class="n">freq</span><span class="p">,</span><span class="w">
           </span><span class="n">min.freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">,</span><span class="w"> </span><span class="n">rot.per</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.1</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">),</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pal</span><span class="p">,</span><span class="w">
           </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NanumBarunGothic"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -912,11 +912,11 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Loading required package: NLP
 
-## 
+##
 ## Attaching package: 'NLP'
 
 ## The following object is masked from 'package:ggplot2':
-## 
+##
 ##     annotate
 </code></pre></div></div>
 
@@ -1055,6 +1055,10 @@
     
       
       
+      <a href="/categories/#machinelearning" class="page__taxonomy-item" rel="tag">MachineLearning</a><span class="sep">, </span>
+    
+      
+      
       <a href="/categories/#r" class="page__taxonomy-item" rel="tag">R</a><span class="sep">, </span>
     
       
@@ -1075,22 +1079,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Lecture+0403+Text+Mining+with+R%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0403-Text-mining-with-R%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Lecture+0403+Text+Mining+with+R%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0403-Text-mining-with-R%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0403-Text-mining-with-R%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0403-Text-mining-with-R%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0403-Text-mining-with-R%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0403-Text-mining-with-R%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" class="pagination--pager" title="Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API
+      <a href="/study/r/machinelearning/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/" class="pagination--pager" title="Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API
 ">Previous</a>
     
     
-      <a href="/study/r/Lecture-0403-2-Visualization-Maps-&-Graphs/" class="pagination--pager" title="Lecture 0403-2 Visualization Maps &amp; Graphs with R
+      <a href="/study/r/machinelearning/Lecture-0403-2-Visualization-Maps-&-Graphs/" class="pagination--pager" title="Lecture 0403-2 Visualization Maps &amp; Graphs with R
 ">Next</a>
     
   </nav>
@@ -1105,6 +1109,29 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">non-fast-forward
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1175,29 +1202,6 @@
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/study/aws/docker/ln-aws-0506/" rel="permalink">LN-Docker-동빈나’s Docker 활용 5강~6강
-</a>
-      
-    </h2>
-    
-    
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">05 Docker로 MySQL 컨테이너 만들어 보기
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -1249,8 +1253,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/study/r/LN-0403-Text-mining-with-R/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/r/LN 0403 Text mining with R"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/r/machinelearning/LN-0403-Text-mining-with-R/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/r/machinelearning/LN 0403 Text mining with R"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

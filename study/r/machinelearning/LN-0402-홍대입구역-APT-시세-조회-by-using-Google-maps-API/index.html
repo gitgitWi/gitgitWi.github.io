@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
 <meta property="og:title" content="Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API">
-<meta property="og:url" content="http://localhost:4000/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/">
+<meta property="og:url" content="http://localhost:4000/study/r/machinelearning/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/">
 
 
   <meta property="og:description" content="Using Google Maps API ">
@@ -42,7 +42,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/">
+<link rel="canonical" href="http://localhost:4000/study/r/machinelearning/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/">
 
 
 
@@ -129,13 +129,13 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/categories/Python/">Python</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/r/">R</a>
+              <a href="/categories/ML/">MachineLearning</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/AWS/">AWS</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/docker/">Docker</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/error/">Errors</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/Career/">취준기</a>
             </li><li class="masthead__menu-item">
@@ -377,7 +377,7 @@
 </span><span class="n">head</span><span class="p">(</span><span class="n">station_code</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## [1] "서울 중구 서소문동 27"     "서울 중구 을지로1가 89-1" 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## [1] "서울 중구 서소문동 27"     "서울 중구 을지로1가 89-1"
 ## [3] "서울 중구 을지로3가 70-1"  "서울 중구 을지로4가 261-1"
 ## [5] "서울 중구 을지로7가 1"     "서울 중구 신당5동 106-1"
 </code></pre></div></div>
@@ -405,8 +405,8 @@
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">table</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">station_code</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 
-## FALSE 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
+## FALSE
 ##   102
 </code></pre></div></div>
 
@@ -658,7 +658,7 @@ columns</p>
 <p>지도생성 - 위치 point 표시 - 정보 text 표시</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggmap</span><span class="p">(</span><span class="n">mapomap</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
-    </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">),</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+    </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">),</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
     </span><span class="n">geom_text</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">역명</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-1</span><span class="p">),</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NanumBarunGothic"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
@@ -668,7 +668,7 @@ columns</p>
 </span></code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggmap</span><span class="p">(</span><span class="n">hongdae_map</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
-    </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">),</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+    </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">),</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
     </span><span class="n">geom_text</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">station_code_final</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">역명</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-1</span><span class="p">),</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NanumBarunGothic"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
@@ -738,6 +738,10 @@ columns</p>
     
       
       
+      <a href="/categories/#machinelearning" class="page__taxonomy-item" rel="tag">MachineLearning</a><span class="sep">, </span>
+    
+      
+      
       <a href="/categories/#r" class="page__taxonomy-item" rel="tag">R</a><span class="sep">, </span>
     
       
@@ -758,22 +762,22 @@ columns</p>
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Lecture+0402+analyze+APTs+values+around+%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD+using+Google+Maps+API%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Lecture+0402+analyze+APTs+values+around+%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD+using+Google+Maps+API%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fr%2Fmachinelearning%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/r/LN-0401-KOWEPS-data-mini-project/" class="pagination--pager" title="Lecture 0401 analyze KOWEPS data using ggplot
+      <a href="/study/r/machinelearning/LN-0401-KOWEPS-data-mini-project/" class="pagination--pager" title="Lecture 0401 analyze KOWEPS data using ggplot
 ">Previous</a>
     
     
-      <a href="/study/r/LN-0403-Text-mining-with-R/" class="pagination--pager" title="Lecture 0403 Text Mining with R
+      <a href="/study/r/machinelearning/LN-0403-Text-mining-with-R/" class="pagination--pager" title="Lecture 0403 Text Mining with R
 ">Next</a>
     
   </nav>
@@ -788,6 +792,29 @@ columns</p>
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">non-fast-forward
+</p>
+  </article>
+</div>
+
         
           
 
@@ -858,29 +885,6 @@ columns</p>
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/study/aws/docker/ln-aws-0506/" rel="permalink">LN-Docker-동빈나’s Docker 활용 5강~6강
-</a>
-      
-    </h2>
-    
-    
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">05 Docker로 MySQL 컨테이너 만들어 보기
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -932,8 +936,8 @@ columns</p>
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/study/r/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/r/LN 0402 홍대입구역 APT 시세 조회 by using Google maps API"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/r/machinelearning/LN-0402-%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD-APT-%EC%8B%9C%EC%84%B8-%EC%A1%B0%ED%9A%8C-by-using-Google-maps-API/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/r/machinelearning/LN 0402 홍대입구역 APT 시세 조회 by using Google maps API"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
