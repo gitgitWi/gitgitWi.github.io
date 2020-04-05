@@ -64,4 +64,10 @@ var store = [{
         "tags": ["Docker","동빈나","LectureNotes","AWS","Jenkins"],
         "url": "http://localhost:4000/study/aws/docker/ln-aws-10~11/",
         "teaser": null
+      },{
+        "title": "2020 상반기 LINE online coding test 후기..",
+        "excerpt":"2020 상반기 LINE online coding test 후기.. 정말 말그대로, 참가하는데 의의를 뒀다 개발 배운지 아직 반년도 안됐고, 말로만 듣던 코딩 테스트는 이번이 첫 경험이기 때문에 뭔가 될 거란 생각하는게 이상하지..ㅋㅋ AWS-Docker에 빠져서 밤새 유튜브 보고 따라해보느라, 6시반에 잠깐 잤다가 일어나서 샤워하고 시간 맞춰서 프로그래머스 들어간거라 정신도 없었다 6문제 중 홀수번...","categories": ["Career","Python"],
+        "tags": ["LINE","취준기","Python"],
+        "url": "http://localhost:4000/career/python/2020_%EC%83%81%EB%B0%98%EA%B8%B0_LINE-_online_coding_test_%ED%9B%84%EA%B8%B0/",
+        "teaser": null
       }]
