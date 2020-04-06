@@ -76,4 +76,10 @@ var store = [{
         "tags": ["Git","Github","Error Messages"],
         "url": "http://localhost:4000/git/errors/Git-Error/",
         "teaser": null
+      },{
+        "title": "Blogdown으로 블로그 만들기",
+        "excerpt":"","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/Blogdown_pages/",
+        "teaser": null
       }]
