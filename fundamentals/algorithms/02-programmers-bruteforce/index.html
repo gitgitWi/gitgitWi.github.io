@@ -1,0 +1,854 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Programmers/BF] 모의고사 - gitgitWi’s gitgit pages</title>
+<meta name="description" content="  Created: Mar 04, 2020 9:33 PM Status: Solved language: Python level: Basic 출처: Programmers ">
+
+
+  <meta name="author" content="gitgitWi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="gitgitWi's gitgit pages">
+<meta property="og:title" content="[Programmers/BF] 모의고사">
+<meta property="og:url" content="http://localhost:4000/fundamentals/algorithms/02-programmers-bruteforce/">
+
+
+  <meta property="og:description" content="  Created: Mar 04, 2020 9:33 PM Status: Solved language: Python level: Basic 출처: Programmers ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-03-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/fundamentals/algorithms/02-programmers-bruteforce/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "gitgitWi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="gitgitWi's gitgit pages Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          gitgitWi
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Aidata/">AI+BigData</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Cloud/">Docker+Cloud</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/fundamentals/">Fundamentals</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Career/">취준기</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Scrabs/">Scrabs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">gitgitWi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>코딩 보다 어려운 인스톨</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul/S.Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://gitgitwi.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">HOME</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/gitgitWi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="mailto:gitgitwi@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Programmers/BF] 모의고사">
+    <meta itemprop="description" content="Created: Mar 04, 2020 9:33 PMStatus: Solvedlanguage: Pythonlevel: Basic출처: Programmers">
+    <meta itemprop="datePublished" content="2020-03-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Programmers/BF] 모의고사
+</h1>
+          <!-- 
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+
+</p> -->
+          
+          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated: <time datetime="2020-03-04T00:00:00+09:00">March 04, 2020</time></p>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Prog. 모의고사</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#tries">Tries</a></li>
+  <li><a href="#solution">Solution</a></li>
+  <li><a href="#other-solutions">Other Solutions</a>
+    <ul>
+      <li><a href="#enumerate-를-활용한-풀이들">enumerate 를 활용한 풀이들</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <hr />
+<p>Created: Mar 04, 2020 9:33 PM<br />
+Status: Solved<br />
+language: Python<br />
+level: Basic<br />
+출처: Programmers</p>
+
+<hr />
+
+<h1 id="tries">Tries</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">person1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person1</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">]</span> <span class="p">:</span> <span class="n">c1</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person2</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">c2</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person3</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span><span class="p">]</span> <span class="p">:</span> <span class="n">c3</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">]</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="n">temp</span><span class="p">[</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">temp</span><span class="p">[</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c2</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">temp</span><span class="p">[</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c3</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">:</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">c1</span><span class="o">==</span><span class="n">c2</span><span class="o">==</span><span class="n">c3</span><span class="p">)</span> <span class="p">:</span> 
+        <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-03-04-02/Untitled.png" alt="Untitled/Untitled.png" /></p>
+
+<p>정답 개수 산출은 금방인데 이거를 다시 사람 번호로 바꾸는게 어려운 듯..</p>
+
+<p>저기에서 먼저 c1-c2-c3를 비교하고 key에 해당하는 a1 - a2- a3를 집어넣어야 했는데,</p>
+
+<p>순서가 잘못되었다..</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">person1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person1</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person2</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person3</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">:</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span> 
+        <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-03-04-02/Untitled%201.png" alt="Untitled/Untitled%201.png" /></p>
+
+<p>temp list의 index를 가지고 접근..나름 좀더 깔끔한 방법이라 생각했는데 더 틀리네..???</p>
+
+<p>아 temp list는 정렬이 된 상태가 아니기 때문에 이전처럼 비교를 하면 안된다는 거를 놓쳤다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">person1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person1</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person2</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person3</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">temp2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="n">temp2</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span> 
+        <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-03-04-02/Untitled%202.png" alt="Untitled/Untitled%202.png" /></p>
+
+<p>다시 첫번째 풀이 때와 동일한 점수..</p>
+
+<p>뭔가 놓친 조건이 있는건가..</p>
+
+<p>test case로 [5, 4, 3, 2, 1, 5, 4, 3, 2, 1] 을 넣어 보니 왜 틀렸는지 알 수 있었다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">person1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">person3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span> <span class="p">:</span>
+	<span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person1</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+	<span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person2</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+	<span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person3</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"temp : "</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
+
+<span class="n">temp2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">temp2</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"temp2 : "</span><span class="p">,</span> <span class="n">temp2</span><span class="p">)</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span>
+	<span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span> 
+	<span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"answer : "</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+
+<span class="n">temp</span> <span class="p">:</span>  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">temp2</span> <span class="p">:</span>  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">answer</span> <span class="p">:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>temp.index(temp2[1]+1)처럼 단순히 index를 호출하게 되면</p>
+
+<p>앞에서부터 차례로 해당 value를 갖는 index를 찾기 때문에,</p>
+
+<p>중복값에 대해 동일한 index를 계속 호출하게 되는 것..
+<br /><br /></p>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">person1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">person3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person1</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person2</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">person3</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span><span class="p">]</span> <span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">temp2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="n">temp2</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">if</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">answer</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span>
+                <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">answer</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">:</span> 
+        <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-03-04-02/Untitled%203.png" alt="Untitled/Untitled%203.png" /></p>
+
+<p>indent가 무려 4번이나 들어가는 아주 지저분한 if 문을 통해서 해결..</p>
+
+<p>max() 함수를 알았다면 이 방법으로도 훨씬 깔끔하게 해결할 수 있었을 거 같다
+<br /><br /></p>
+
+<hr />
+
+<h1 id="other-solutions">Other Solutions</h1>
+
+<h2 id="enumerate-를-활용한-풀이들">enumerate 를 활용한 풀이들</h2>
+
+<p><em>아직 모르는 게 너무 많네..</em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">pattern1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">pattern2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">pattern3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">pattern1</span><span class="p">[</span><span class="n">idx</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">pattern1</span><span class="p">)]:</span>
+            <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">pattern2</span><span class="p">[</span><span class="n">idx</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">pattern2</span><span class="p">)]:</span>
+            <span class="n">score</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">pattern3</span><span class="p">[</span><span class="n">idx</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">pattern3</span><span class="p">)]:</span>
+            <span class="n">score</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="n">q</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)]:</span>
+                <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#programmers" class="page__taxonomy-item" rel="tag">Programmers</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#fundamentals" class="page__taxonomy-item" rel="tag">fundamentals</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-03-04T00:00:00+09:00">March 4, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BProgrammers%2FBF%5D+%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC%20http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2F02-programmers-bruteforce%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2F02-programmers-bruteforce%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2F02-programmers-bruteforce%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+    </div>
+
+    
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+        this.page.url = "https://gitgitwi.github.io/fundamentals/algorithms/02-programmers-bruteforce/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/fundamentals/algorithms/02-programmers-bruteforce-"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://gitgitwi.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    
+  <nav class="pagination">
+    
+      <a href="/fundamentals/algorithms/01-programmers-hash-42576/" class="pagination--pager" title="[Programmers/Hash] 완주하지 못한 선수
+">Previous</a>
+    
+    
+      <a href="/study/r/aidata/LN-0401-KOWEPS-data-mini-project/" class="pagination--pager" title="Lecture 0401 analyze KOWEPS data using ggplot
+">Next</a>
+    
+  </nav>
+
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="permalink">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 24 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">date: Apr 24, 2020 6 ~ 9 PM
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">non-fast-forward
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/career/python/2020_%EC%83%81%EB%B0%98%EA%B8%B0_LINE-_online_coding_test_%ED%9B%84%EA%B8%B0/" rel="permalink">2020 상반기 LINE online coding test 후기..
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">2020 상반기 LINE online coding test 후기..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/study/cloud/aws/docker/ln-aws-10~11/" rel="permalink">LN-Docker-동빈나’s Docker 활용 10강~11강
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">10 Jenkins를 이용해 Docker 프로젝트 빌드해보기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://gitgitWi.github.io" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 gitgitWi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+    
+  
+
+
+<div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+    this.page.url = "https://gitgitwi.github.io/fundamentals/algorithms/02-programmers-bruteforce/";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = "/fundamentals/algorithms/02-programmers-bruteforce-"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://gitgitwi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+  
+
+
+
+
+
+  </body>
+</html>

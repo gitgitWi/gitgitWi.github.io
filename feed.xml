@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-26T23:34:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T00:30:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -292,7 +292,334 @@ error: failed to push some refs to &lt;span class=&quot;s1&quot;&gt;'https://git
       &lt;li&gt;GitHub Desktop 을 사용하는 경우 문제가 있는 파일을 수정하도록 파일을 열어줌, 파일을 수정하여 저장한 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/dd&gt;
-&lt;/dl&gt;</content><author><name>gitgitWi</name></author><category term="Git" /><category term="Github" /><category term="Error Messages" /><summary type="html">non-fast-forward</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~</title><link href="http://localhost:4000/study/cloud/aws/docker/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/">&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 --&gt;
+&lt;/dl&gt;</content><author><name>gitgitWi</name></author><category term="Git" /><category term="Github" /><category term="Error Messages" /><summary type="html">non-fast-forward</summary></entry><entry><title type="html">왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube</title><link href="http://localhost:4000/study/cloud/docker/docker-basic-01/" rel="alternate" type="text/html" title="왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/docker/docker-basic-01</id><content type="html" xml:base="http://localhost:4000/study/cloud/docker/docker-basic-01/">&lt;h1 id=&quot;docker-basic-by-재즐보프s-youtube&quot;&gt;Docker basic by 재즐보프’s Youtube&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/b67ed727aea4467cbc3226bb0c8e8336&quot;&gt;왕초보도 따라하는 도커 기초 강의 lecture notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;install-apps-in-docker&quot;&gt;Install Apps in Docker&lt;/h2&gt;
+
+&lt;p&gt;in Terminal&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;base&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; JnWui-MacBook-Pro:~ WnJ&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
+
+JnWui-MacBook-Pro:~ root# docker search tomcat9
+
+&lt;span class=&quot;c&quot;&gt;# 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# docker에서 8080 포트로 바로 실행&lt;/span&gt;
+
+JnWui-MacBook-Pro:~ root# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8080:8080 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tc ykaj9758/tomcat9
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; : 처음 설치시에만 run 명령어 사용, 이후부터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;start &lt;/code&gt; 명령어로 tomcat 사용 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; : background 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;127.0.0.1:8080d 에서 tomcat 9 실행 확인&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
+&lt;span class=&quot;go&quot;&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;38ca9cccee3e        ykaj9758/tomcat9    &quot;/opt/tomcat/apache-…&quot;   8 minutes ago       Up 8 minutes        0.0.0.0:8080-&amp;gt;&lt;/span&gt;8080/tcp   tc
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;현재 실행 중인 컨테이너 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker stop tc
+&lt;span class=&quot;go&quot;&gt;
+tc
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
+&lt;span class=&quot;go&quot;&gt;CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실행중인 프로그램 stop&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-registry&quot;&gt;Docker Registry&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hub.docker.com&quot;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이미지만 다운받고 싶은 경우&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+docker pull [ image name ]
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치한 이미지 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker images
+&lt;span class=&quot;go&quot;&gt;
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ykaj9758/tomcat9    latest              4fe6b09b4e59        23 months ago       1.16GB
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;docker-lifecycle&quot;&gt;Docker Lifecycle&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;# nginx 이미지 가져오기&lt;/span&gt;
+
+bash-3.2# docker pull nginx
+
+Using default tag: latest
+latest: Pulling from library/nginx
+c499e6d256d6: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;74cda408e262: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;ffadbd415ab7: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;Digest: sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
+Status: Downloaded newer image &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nginx:latest
+docker.io/library/nginx:latest
+
+&lt;span class=&quot;c&quot;&gt;# nginx를 nx라는 이름 지정하여 port 80번에 할당, 컨테이너 생성&lt;/span&gt;
+
+bash-3.2# docker create &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx nginx
+
+&lt;span class=&quot;c&quot;&gt;# 현재 실행중인 모든 컨테이너 조회&lt;/span&gt;
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+
+bash-3.2# docker start 3b46b4a158d7
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 내용은 아래 한줄로도 가능&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx2 nginx
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx2
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
+a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   About a minute ago   Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 13 seconds ago                           nx2
+3b46b4a158d7        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   6 minutes ago        Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; About a minute ago                       nx
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   57 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 47 minutes ago                         tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;3b46b4a158d7
+
+3b46b4a158d7
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
+a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   2 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 57 seconds ago                         nx2
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   58 minutes ago      Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 48 minutes ago                       tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx
+
+nx
+
+bash-3.2# docker start nx
+
+nx
+
+bash-3.2# docker restart nx
+
+nx
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx
+
+nx
+
+bash-3.2# docker rmi nx
+
+bash-3.2# docker rmi nginx
+
+Untagged: nginx:latest
+Untagged: nginx@sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
+Deleted: sha256:ed21b7a8aee9cc677df6d7f38a641fa0e3c05f65592c592c9f28c42b3dd89291
+Deleted: sha256:8a305f371a6c3c445a1dfc500c1364743868a269ab8cdaf95902692e82168352
+Deleted: sha256:d079ef06ec1f10a8050887365f9a940b39547ba6bcc46b16a463e740984f3223
+Deleted: sha256:c3a984abe8a88059915bb6c7a1d249fd1ccc16d931334ac8816540b0eb686b45
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;layers&quot;&gt;Layers&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;containers -&amp;gt; image -&amp;gt; overlay2&lt;/li&gt;
+  &lt;li&gt;overlay2 로 갈수록 용량이 급격히 커짐, 컨테이너 대부분의 정보를 overlay2가 갖고 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;useful-commands&quot;&gt;Useful Commands&lt;/h2&gt;
+
+&lt;p&gt;execute inner container terminal&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; : input &amp;amp; terminal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; tc /bin/bash
+
+&lt;span class=&quot;c&quot;&gt;# terminal이 tomcat의 hostname/containerID 로 열림&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit
+exit
+
+&lt;/span&gt;bash-3.2#
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs {container name}&lt;/code&gt; print console output log&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker logs tc
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp {path1} {path2}&lt;/code&gt; : copy a file from path1 to path2&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+bash-3.2# &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-q&lt;/code&gt; : 현재 containers id 값만 조회&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;`  `&lt;/code&gt; : ` ` 안의 명령에 대한 결과값을 return&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;
+38ca9cccee3e
+
+&lt;span class=&quot;c&quot;&gt;# containers id 값을 모두 가져와서 stop&lt;/span&gt;
+bash-3.2# docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+38ca9cccee3e
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ways to stop &amp;amp; remove all of containers &amp;amp; images&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker rmi &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker images &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;temporary-container&quot;&gt;temporary container&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;과 함께 &lt;code class=&quot;highlighter-rouge&quot;&gt;--rm&lt;/code&gt; 명령, container stop 과 함께 자동으로 삭제됨&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tctemp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8090:8090 &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; ykaj9758/tomcat9
+2a45b3053e169292aefb0a050283b0fe8589b6b275e18f326dc3f87de4ffe6f0
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                       PORTS                              NAMES
+2a45b3053e16        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   About a minute ago   Up 59 seconds                8080/tcp, 0.0.0.0:8090-&amp;gt;8090/tcp   tctemp
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago          Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 7 minutes ago                                      tc
+
+bash-3.2# docker stop tctemp
+tctemp
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago         Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 8 minutes ago                       tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mysql-설치--실행&quot;&gt;MySQL 설치 &amp;amp; 실행&lt;/h2&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e &lt;/code&gt; : 환경변수설정
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MYSQL_ROOT_PASSWORD=&lt;/code&gt; : 반드시 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; : 최신버전 설치
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql:5&lt;/code&gt; : mysql5 설치&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mymysql &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql
+
+&lt;span class=&quot;c&quot;&gt;# bash-3.2# docker run --name mymysql5 -e MYSQL_ROOT_PASSWORD=1234 -d mysql:5.7&lt;/span&gt;
+
+Unable to find image &lt;span class=&quot;s1&quot;&gt;'mysql:latest'&lt;/span&gt; locally
+latest: Pulling from library/mysql
+
+&lt;span class=&quot;c&quot;&gt;# ps 명령으로 설치 됐는지 확인, name / port 확인&lt;/span&gt;
+bash-3.2# docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
+7001e556ecd4        mysql               &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   3 minutes ago       Up 3 minutes        3306/tcp, 33060/tcp   mymysql
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;exectute&quot;&gt;Exectute&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mymysql mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# MySQL 접속 화면&lt;/span&gt;
+Enter password:
+
+Welcome to the MySQL monitor.  Commands end with &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; or &lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Your MySQL connection &lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &lt;span class=&quot;s1&quot;&gt;'help;'&lt;/span&gt; or &lt;span class=&quot;s1&quot;&gt;'\h'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;help. Type &lt;span class=&quot;s1&quot;&gt;'\c'&lt;/span&gt; to clear the current input statement.
+
+mysql&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;oracle-xe-11g&quot;&gt;Oracle XE 11g&lt;/h2&gt;
+
+&lt;h3 id=&quot;installation-1&quot;&gt;Installation&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 49161:1521 oracleinanutshell/oracle-xe-11g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="Oracle" /><category term="MySQL" /><summary type="html">Docker basic by 재즐보프’s Youtube</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~</title><link href="http://localhost:4000/study/cloud/aws/docker/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/">&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 --&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [AWS 서버 인스턴스 생성](#aws-)
 		- [서버 인스턴스](#-)
@@ -1417,331 +1744,4 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 &lt;ul&gt;
   &lt;li&gt;사설인증서 SSL을 사용하기 때문&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;희한하게 내 Mac-Chrome에서는 무시하고 진행 메뉴가 안보이고 인증서 따로 저장하는 메뉴도 없음.. 그냥 꽉~막힘 ㅠ googling해도 깔끔한 해결방법은 찾기 힘들었는데, FireFox로 여니까 된다..내 금쪽 같은 토요일 2시간 뚝딱!&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html">01 실습용 AWS EC2 인스턴스 생성 및 접속</summary></entry><entry><title type="html">왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube</title><link href="http://localhost:4000/study/cloud/docker/docker-basic-01/" rel="alternate" type="text/html" title="왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/docker/docker-basic-01</id><content type="html" xml:base="http://localhost:4000/study/cloud/docker/docker-basic-01/">&lt;h1 id=&quot;docker-basic-by-재즐보프s-youtube&quot;&gt;Docker basic by 재즐보프’s Youtube&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.notion.so/b67ed727aea4467cbc3226bb0c8e8336&quot;&gt;왕초보도 따라하는 도커 기초 강의 lecture notes&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;install-apps-in-docker&quot;&gt;Install Apps in Docker&lt;/h2&gt;
-
-&lt;p&gt;in Terminal&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;base&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; JnWui-MacBook-Pro:~ WnJ&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-JnWui-MacBook-Pro:~ root# docker search tomcat9
-
-&lt;span class=&quot;c&quot;&gt;# 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# docker에서 8080 포트로 바로 실행&lt;/span&gt;
-
-JnWui-MacBook-Pro:~ root# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8080:8080 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tc ykaj9758/tomcat9
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; : 처음 설치시에만 run 명령어 사용, 이후부터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;start &lt;/code&gt; 명령어로 tomcat 사용 가능&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; : background 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;127.0.0.1:8080d 에서 tomcat 9 실행 확인&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
-&lt;span class=&quot;go&quot;&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;38ca9cccee3e        ykaj9758/tomcat9    &quot;/opt/tomcat/apache-…&quot;   8 minutes ago       Up 8 minutes        0.0.0.0:8080-&amp;gt;&lt;/span&gt;8080/tcp   tc
-&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;현재 실행 중인 컨테이너 확인&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker stop tc
-&lt;span class=&quot;go&quot;&gt;
-tc
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
-&lt;span class=&quot;go&quot;&gt;CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;실행중인 프로그램 stop&lt;/p&gt;
-
-&lt;h2 id=&quot;docker-registry&quot;&gt;Docker Registry&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://hub.docker.com&quot;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;이미지만 다운받고 싶은 경우&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-docker pull [ image name ]
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;설치한 이미지 확인&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker images
-&lt;span class=&quot;go&quot;&gt;
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-ykaj9758/tomcat9    latest              4fe6b09b4e59        23 months ago       1.16GB
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;docker-lifecycle&quot;&gt;Docker Lifecycle&lt;/h2&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c&quot;&gt;# nginx 이미지 가져오기&lt;/span&gt;
-
-bash-3.2# docker pull nginx
-
-Using default tag: latest
-latest: Pulling from library/nginx
-c499e6d256d6: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;74cda408e262: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;ffadbd415ab7: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;Digest: sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
-Status: Downloaded newer image &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nginx:latest
-docker.io/library/nginx:latest
-
-&lt;span class=&quot;c&quot;&gt;# nginx를 nx라는 이름 지정하여 port 80번에 할당, 컨테이너 생성&lt;/span&gt;
-
-bash-3.2# docker create &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx nginx
-
-&lt;span class=&quot;c&quot;&gt;# 현재 실행중인 모든 컨테이너 조회&lt;/span&gt;
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-
-bash-3.2# docker start 3b46b4a158d7
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 내용은 아래 한줄로도 가능&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx2 nginx
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx2
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
-a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   About a minute ago   Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 13 seconds ago                           nx2
-3b46b4a158d7        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   6 minutes ago        Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; About a minute ago                       nx
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   57 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 47 minutes ago                         tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;3b46b4a158d7
-
-3b46b4a158d7
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
-a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   2 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 57 seconds ago                         nx2
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   58 minutes ago      Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 48 minutes ago                       tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx
-
-nx
-
-bash-3.2# docker start nx
-
-nx
-
-bash-3.2# docker restart nx
-
-nx
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx
-
-nx
-
-bash-3.2# docker rmi nx
-
-bash-3.2# docker rmi nginx
-
-Untagged: nginx:latest
-Untagged: nginx@sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
-Deleted: sha256:ed21b7a8aee9cc677df6d7f38a641fa0e3c05f65592c592c9f28c42b3dd89291
-Deleted: sha256:8a305f371a6c3c445a1dfc500c1364743868a269ab8cdaf95902692e82168352
-Deleted: sha256:d079ef06ec1f10a8050887365f9a940b39547ba6bcc46b16a463e740984f3223
-Deleted: sha256:c3a984abe8a88059915bb6c7a1d249fd1ccc16d931334ac8816540b0eb686b45
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;layers&quot;&gt;Layers&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;containers -&amp;gt; image -&amp;gt; overlay2&lt;/li&gt;
-  &lt;li&gt;overlay2 로 갈수록 용량이 급격히 커짐, 컨테이너 대부분의 정보를 overlay2가 갖고 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;useful-commands&quot;&gt;Useful Commands&lt;/h2&gt;
-
-&lt;p&gt;execute inner container terminal&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; : input &amp;amp; terminal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; tc /bin/bash
-
-&lt;span class=&quot;c&quot;&gt;# terminal이 tomcat의 hostname/containerID 로 열림&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit
-exit
-
-&lt;/span&gt;bash-3.2#
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs {container name}&lt;/code&gt; print console output log&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker logs tc
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp {path1} {path2}&lt;/code&gt; : copy a file from path1 to path2&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-bash-3.2# &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-q&lt;/code&gt; : 현재 containers id 값만 조회&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;`  `&lt;/code&gt; : ` ` 안의 명령에 대한 결과값을 return&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;
-38ca9cccee3e
-
-&lt;span class=&quot;c&quot;&gt;# containers id 값을 모두 가져와서 stop&lt;/span&gt;
-bash-3.2# docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-38ca9cccee3e
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Ways to stop &amp;amp; remove all of containers &amp;amp; images&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker rmi &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker images &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;temporary-container&quot;&gt;temporary container&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;과 함께 &lt;code class=&quot;highlighter-rouge&quot;&gt;--rm&lt;/code&gt; 명령, container stop 과 함께 자동으로 삭제됨&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tctemp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8090:8090 &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; ykaj9758/tomcat9
-2a45b3053e169292aefb0a050283b0fe8589b6b275e18f326dc3f87de4ffe6f0
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                       PORTS                              NAMES
-2a45b3053e16        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   About a minute ago   Up 59 seconds                8080/tcp, 0.0.0.0:8090-&amp;gt;8090/tcp   tctemp
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago          Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 7 minutes ago                                      tc
-
-bash-3.2# docker stop tctemp
-tctemp
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago         Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 8 minutes ago                       tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;mysql-설치--실행&quot;&gt;MySQL 설치 &amp;amp; 실행&lt;/h2&gt;
-
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e &lt;/code&gt; : 환경변수설정
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MYSQL_ROOT_PASSWORD=&lt;/code&gt; : 반드시 설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; : 최신버전 설치
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql:5&lt;/code&gt; : mysql5 설치&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mymysql &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql
-
-&lt;span class=&quot;c&quot;&gt;# bash-3.2# docker run --name mymysql5 -e MYSQL_ROOT_PASSWORD=1234 -d mysql:5.7&lt;/span&gt;
-
-Unable to find image &lt;span class=&quot;s1&quot;&gt;'mysql:latest'&lt;/span&gt; locally
-latest: Pulling from library/mysql
-
-&lt;span class=&quot;c&quot;&gt;# ps 명령으로 설치 됐는지 확인, name / port 확인&lt;/span&gt;
-bash-3.2# docker ps
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
-7001e556ecd4        mysql               &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   3 minutes ago       Up 3 minutes        3306/tcp, 33060/tcp   mymysql
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;exectute&quot;&gt;Exectute&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mymysql mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# MySQL 접속 화면&lt;/span&gt;
-Enter password:
-
-Welcome to the MySQL monitor.  Commands end with &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; or &lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Your MySQL connection &lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;is 8
-Server version: 8.0.19 MySQL Community Server - GPL
-
-Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2000, 2020, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &lt;span class=&quot;s1&quot;&gt;'help;'&lt;/span&gt; or &lt;span class=&quot;s1&quot;&gt;'\h'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;help. Type &lt;span class=&quot;s1&quot;&gt;'\c'&lt;/span&gt; to clear the current input statement.
-
-mysql&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;oracle-xe-11g&quot;&gt;Oracle XE 11g&lt;/h2&gt;
-
-&lt;h3 id=&quot;installation-1&quot;&gt;Installation&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 49161:1521 oracleinanutshell/oracle-xe-11g
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="Oracle" /><category term="MySQL" /><summary type="html">Docker basic by 재즐보프’s Youtube</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html">01 실습용 AWS EC2 인스턴스 생성 및 접속</summary></entry></feed>

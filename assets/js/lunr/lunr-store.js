@@ -59,6 +59,18 @@ var store = [{
         "url": "http://localhost:4000/fundamentals/algorithms/algo7/",
         "teaser": null
       },{
+        "title": "[Programmers/Hash] 완주하지 못한 선수",
+        "excerpt":"Created: Mar 04, 2020 2:19 PM Status: Solved language: Python level: Basic 출처: Programmers 코딩테스트 연습 - 완주하지 못한 선수 | 프로그래머스 Tries 완주 못한 선수 찾다가 내가 완주 못할 듯..ㅋㅋ 1st solution : 기본 test case 는 통과하는데, 채점을 하면 RE + 시간초과.. def solution(participant, completion): for i in...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","Programmers","Python"],
+        "url": "http://localhost:4000/fundamentals/algorithms/01-programmers-hash-42576/",
+        "teaser": null
+      },{
+        "title": "[Programmers/BF] 모의고사",
+        "excerpt":"Created: Mar 04, 2020 9:33 PM Status: Solved language: Python level: Basic 출처: Programmers Tries def solution(answers): person1 = [1, 2, 3, 4, 5] person2 = [2, 1, 2, 3, 2, 4, 2, 5] person3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] c1, c2, c3 =...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","Programmers","Python"],
+        "url": "http://localhost:4000/fundamentals/algorithms/02-programmers-bruteforce/",
+        "teaser": null
+      },{
         "title": "Lecture 0401 analyze KOWEPS data using ggplot",
         "excerpt":"한국 복지패널데이터 분석 경제활동, 생활실태, 복지욕구 등 수천 개 변수 정보로 구성 foreign : 통계 파일 SPSS 로드할 수 있는 package # install.packages(\"foreign\") library(foreign) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats': ## ## filter, lag ## The following objects are masked from 'package:base':...","categories": ["Study","R","Aidata"],
         "tags": ["R","ggplot","bigdata","LectureNotes"],
