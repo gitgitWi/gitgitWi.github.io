@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[BOJ.10871/Java&C] lv3. X보다 작은 수",
-        "excerpt":"[BOJ.10871/Java&amp;C] lv3. X보다 작은 수 Java로는 바로 풀었는데 import java.io.*; public class Main { public static void main(String[] args) throws IOException { BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); String input1 = br.readLine(); String input2 = br.readLine(); String[] cons = input1.split(\" \"); String[] numbers =...","categories": ["fundamentals","algorithms"],
+        "excerpt":"Java로는 바로 풀었는데 import java.io.*; public class Main { public static void main(String[] args) throws IOException { BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); String input1 = br.readLine(); String input2 = br.readLine(); String[] cons = input1.split(\" \"); String[] numbers = input2.split(\" \"); for(int i=0; i&lt;Integer.parseInt(cons[0]);...","categories": ["fundamentals","algorithms"],
         "tags": ["algorithms","BOJ","Java","C"],
         "url": "http://localhost:4000/fundamentals/algorithms/boj10871/",
         "teaser": null
