@@ -37,6 +37,14 @@
  * @see {@link lunr.stemmer}
  * @namespace {function} lunr
  */
+
+var idx = new lunr.Index;
+idx.field('id');
+idx.field('title', { boost: 10 });
+idx.field('author');
+idx.field('category');
+idx.field('content');
+
 var lunr = function (config) {
   var builder = new lunr.Builder
 

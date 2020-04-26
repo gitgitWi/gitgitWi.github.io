@@ -26,7 +26,7 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_KR">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
 <meta property="og:title" content="LN-Docker-동빈나’s Docker 활용 7강~9강">
 <meta property="og:url" content="https://gitgitwi.github.io/study/cloud/aws/docker/ln-aws-0709/">
@@ -78,6 +78,9 @@
 
 
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="gitgitWi's gitgit pages Feed">
+
+
+<script data-ad-client="ca-pub-6707632410688562" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -604,8 +607,6 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
 
       <section class="page__share">
   
-    <h4 class="page__share-title">Share on</h4>
-  
 
   <a href="https://twitter.com/intent/tweet?text=LN-Docker-%EB%8F%99%EB%B9%88%EB%82%98%27s+Docker+%ED%99%9C%EC%9A%A9+7%EA%B0%95~9%EA%B0%95%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fcloud%2Faws%2Fdocker%2Fln-aws-0709%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
@@ -652,7 +653,7 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
+      <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
         
           
@@ -757,13 +758,20 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
-    <label class="sr-only" for="search">
+        <div class="search-content__inner-wrap">
+  
+  
+  <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
       Enter your search term...
     </label>
-    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
   </form>
-  <div id="results" class="results"></div></div>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div>
+  
+</div>
 
       </div>
     
@@ -775,8 +783,6 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
     
 
     
@@ -802,10 +808,40 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
 
 
 
+  
+  
+      <script>
+  (function () {
+    var cx = '012188663101936892718:4lpzgsvlle4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+    
+
 
 
 

@@ -26,7 +26,7 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_KR">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
 <meta property="og:title" content="Lecture 0402 analyze APTs values around 홍대입구역 using Google Maps API">
 <meta property="og:url" content="https://gitgitwi.github.io/study/aidata/r/LN-0402-%E1%84%92%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A2%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%80%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%A8-APT-%E1%84%89%E1%85%B5%E1%84%89%E1%85%A6-%E1%84%8C%E1%85%A9%E1%84%92%E1%85%AC-by-using-Google-maps-API/">
@@ -78,6 +78,9 @@
 
 
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="gitgitWi's gitgit pages Feed">
+
+
+<script data-ad-client="ca-pub-6707632410688562" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -781,8 +784,6 @@ columns</p>
 
       <section class="page__share">
   
-    <h4 class="page__share-title">Share on</h4>
-  
 
   <a href="https://twitter.com/intent/tweet?text=Lecture+0402+analyze+APTs+values+around+%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD+using+Google+Maps+API%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Faidata%2Fr%2FLN-0402-%25ED%2599%258D%25EB%258C%2580%25EC%259E%2585%25EA%25B5%25AC%25EC%2597%25AD-APT-%25EC%258B%259C%25EC%2584%25B8-%25EC%25A1%25B0%25ED%259A%258C-by-using-Google-maps-API%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
@@ -829,7 +830,7 @@ columns</p>
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
+      <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
         
           
@@ -934,13 +935,20 @@ columns</p>
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
-    <label class="sr-only" for="search">
+        <div class="search-content__inner-wrap">
+  
+  
+  <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
       Enter your search term...
     </label>
-    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
   </form>
-  <div id="results" class="results"></div></div>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div>
+  
+</div>
 
       </div>
     
@@ -952,8 +960,6 @@ columns</p>
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
     
 
     
@@ -979,10 +985,40 @@ columns</p>
 
 
 
+  
+  
+      <script>
+  (function () {
+    var cx = '012188663101936892718:4lpzgsvlle4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+    
+
 
 
 

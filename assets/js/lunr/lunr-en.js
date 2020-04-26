@@ -4,6 +4,7 @@ var idx = lunr(function () {
   this.field('categories')
   this.field('tags')
   this.ref('id')
+  // this.field('content')
 
   this.pipeline.remove(lunr.trimmer)
 
@@ -11,12 +12,20 @@ var idx = lunr(function () {
     this.add({
       title: store[item].title,
       excerpt: store[item].excerpt,
+      // content: store[item].content,
       categories: store[item].categories,
       tags: store[item].tags,
       id: item
     })
   }
 });
+
+// idx.field('id');
+// idx.field('title', { boost: 10 });
+// idx.field('content');
+// idx.field('excerpt');
+// idx.field('categories');
+// idx.field('tags');
 
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
