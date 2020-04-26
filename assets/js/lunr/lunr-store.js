@@ -1,4 +1,10 @@
 var store = [{
+        "title": "[BOJ.10871/Java&C] lv3. X보다 작은 수",
+        "excerpt":"[BOJ.10871/Java&amp;C] lv3. X보다 작은 수 Java로는 바로 풀었는데 import java.io.*; public class Main { public static void main(String[] args) throws IOException { BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); String input1 = br.readLine(); String input2 = br.readLine(); String[] cons = input1.split(\" \"); String[] numbers =...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","BOJ","Java","C"],
+        "url": "http://localhost:4000/fundamentals/algorithms/boj10871/",
+        "teaser": null
+      },{
         "title": "itdaa 현직자 멘토링 (삼성SDS)",
         "excerpt":"date: Feb 25, 2020 7:04 PM 멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다. 삼성SDS 멘토 면접관, 사내 멘토링 경험 보안 분야 / 아키텍처 개발, 인프라 운영 3년 정도 - SW개발과는 다른 분야 삼성SDS 소개 6~7년전부터 단순 SI 에서 탈피 노력 - 글로벌 솔루션 기업 지향 그러나 최근 매출 감소로 다시 SI...","categories": ["Career"],
         "tags": ["Mentoring","Samsung SDS"],
