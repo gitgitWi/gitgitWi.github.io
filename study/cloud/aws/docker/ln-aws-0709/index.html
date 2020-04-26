@@ -311,26 +311,38 @@
   <li><a href="#07-aws-rds를-이용한-데이터베이스-구축">07 AWS RDS를 이용한 데이터베이스 구축</a>
     <ul>
       <li><a href="#amazon-rds를-통한-db-생성">Amazon RDS를 통한 DB 생성</a>
-      - {:.} <a href="#한글-parameter-설정">한글 parameter 설정</a>
-      - {:.} <a href="#db-생성">DB 생성</a>
-      - {:.} <a href="#생성-이후-dashboard에서-end-point-확인--db-접속주소">생성 이후 dashboard에서 end-point 확인 : DB 접속주소</a>
-      - {:.} <a href="#ec2-root-terminal에서-mysql-접속">EC2 root terminal에서 MySQL 접속</a></li>
+        <ul>
+          <li><a href="#한글-parameter-설정">한글 parameter 설정</a></li>
+          <li><a href="#db-생성">DB 생성</a></li>
+          <li><a href="#생성-이후-dashboard에서-end-point-확인--db-접속주소">생성 이후 dashboard에서 end-point 확인 : DB 접속주소</a></li>
+          <li><a href="#ec2-root-terminal에서-mysql-접속">EC2 root terminal에서 MySQL 접속</a></li>
+        </ul>
+      </li>
       <li><a href="#php-mysql-연동-테스트">php-MySQL 연동 테스트</a>
-      - {:.} <a href="#php-파일-수정">php 파일 수정</a></li>
+        <ul>
+          <li><a href="#php-파일-수정">php 파일 수정</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#08-github에-docker-프로젝트-올리기">08 GitHub에 Docker 프로젝트 올리기</a>
-          - {:.} <a href="#create-new-repository">create new repository</a>
+      - {:.} <a href="#create-new-repository">create new repository</a>
     <ul>
       <li><a href="#aws-github-연동">AWS-GitHub 연동</a></li>
     </ul>
   </li>
   <li><a href="#09-dockerhub와-github-연동하기">09 DockerHub와 GitHub 연동하기</a>
-      - {:.} <a href="#dockerhub-github-연동-과정">DockerHub-GitHub 연동 과정</a>
-          - {:.} <a href="#new-dockerhub-repository">New DockerHub Repository</a>
     <ul>
+      <li><a href="#dockerhub-github-연동-과정">DockerHub-GitHub 연동 과정</a>
+        <ul>
+          <li><a href="#new-dockerhub-repository">New DockerHub Repository</a></li>
+        </ul>
+      </li>
       <li><a href="#dockerhub-통해">DockerHub 통해</a>
-      - {:.} <a href="#readmemd-작성">Readme.md 작성</a></li>
+        <ul>
+          <li><a href="#readmemd-작성">Readme.md 작성</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -342,7 +354,7 @@
 
 <h2 id="amazon-rds를-통한-db-생성">Amazon RDS를 통한 DB 생성</h2>
 
-<h4 id="한글-parameter-설정">한글 parameter 설정</h4>
+<h3 id="한글-parameter-설정">한글 parameter 설정</h3>
 
 <ul>
   <li>parameter 생성</li>
@@ -355,7 +367,7 @@
   </li>
 </ul>
 
-<h4 id="db-생성">DB 생성</h4>
+<h3 id="db-생성">DB 생성</h3>
 
 <ul>
   <li>MySQL 5.6</li>
@@ -373,9 +385,9 @@
 
 <p>생성 완료까지는 몇분 소요될 수 있음</p>
 
-<h4 id="생성-이후-dashboard에서-end-point-확인--db-접속주소">생성 이후 dashboard에서 end-point 확인 : DB 접속주소</h4>
+<h3 id="생성-이후-dashboard에서-end-point-확인--db-접속주소">생성 이후 dashboard에서 end-point 확인 : DB 접속주소</h3>
 
-<h4 id="ec2-root-terminal에서-mysql-접속">EC2 root terminal에서 MySQL 접속</h4>
+<h3 id="ec2-root-terminal에서-mysql-접속">EC2 root terminal에서 MySQL 접속</h3>
 
 <p>Syntax : <code class="highlighter-rouge">mysql -h {end-point-value} -P {port} -u {master-user-name} -p</code></p>
 
@@ -385,7 +397,7 @@
 </span><span class="gp">Welcome to the MySQL monitor.  Commands end with ;</span><span class="w"> </span>or <span class="se">\g</span><span class="nb">.</span>
 </code></pre></div></div>
 <h2 id="php-mysql-연동-테스트">php-MySQL 연동 테스트</h2>
-<h4 id="php-파일-수정">php 파일 수정</h4>
+<h3 id="php-파일-수정">php 파일 수정</h3>
 <p>DB 생성시 입력한 그대로</p>
 <ul>
   <li>접속 주소</li>
@@ -395,7 +407,7 @@
 
 <h1 id="08-github에-docker-프로젝트-올리기">08 GitHub에 Docker 프로젝트 올리기</h1>
 
-<h4 id="create-new-repository">create new repository</h4>
+<h3 id="create-new-repository">create new repository</h3>
 
 <p>port 보안을 위해 private repository로 만들어야 함</p>
 
@@ -433,7 +445,7 @@ Password for 'https://ezerwi@github.com':
 
 <h1 id="09-dockerhub와-github-연동하기">09 DockerHub와 GitHub 연동하기</h1>
 
-<h3 id="dockerhub-github-연동-과정">DockerHub-GitHub 연동 과정</h3>
+<h2 id="dockerhub-github-연동-과정">DockerHub-GitHub 연동 과정</h2>
 
 <ol>
   <li>Dockerfile Source Code 수정</li>
@@ -441,7 +453,7 @@ Password for 'https://ezerwi@github.com':
   <li>DockerHub에서 수정된 내용대로 알아서 re-build</li>
 </ol>
 
-<h4 id="new-dockerhub-repository">New DockerHub Repository</h4>
+<h3 id="new-dockerhub-repository">New DockerHub Repository</h3>
 
 <ul>
   <li>Build Setting : Github</li>
@@ -455,7 +467,7 @@ Password for 'https://ezerwi@github.com':
 <p><code class="highlighter-rouge">docker push gitgitwi/git-test:tagname</code>
 <img src="/assets/images/dockerhub-push_2um6jm262.png" alt="dockerhub-push_2um6jm262" /></p>
 
-<h4 id="readmemd-작성"><code class="highlighter-rouge">Readme.md</code> 작성</h4>
+<h3 id="readmemd-작성"><code class="highlighter-rouge">Readme.md</code> 작성</h3>
 
 <dl>
   <dt><code class="highlighter-rouge">Readme.md</code></dt>
@@ -661,7 +673,7 @@ docker run -p 80:80 -v /home/AWS-Docker-SQL-test/Project:/var/www/html gitgitwi/
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
+        <a href="/fundamentals/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
 </a>
       
     </h2>

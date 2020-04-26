@@ -1,6 +1,6 @@
 var store = [{
         "title": "[BOJ.2439/C] lv3. 별 찍기2",
-        "excerpt":"[BOJ.2439/C] lv3. 별 찍기2 #include &lt;stdio.h&gt; int main() { int n, i, j; scanf(\"%d\", &amp;n); for(i=1; i&lt;n+1; i++) { for(j=n-i; j&gt;0; j-- ) { printf(\" \"); } for(j=1; j&lt;=i; j++) { printf(\"*\"); } printf(\"\\n\"); } return 0; } 단순해 보이는데 방향 한번 바뀌었다고 생각하는데 시간이..ㅋㅋ 숏코딩 보다가 괜찮은 코드 발견...","categories": ["fundamentals","algorithms"],
+        "excerpt":"#include &lt;stdio.h&gt; int main() { int n, i, j; scanf(\"%d\", &amp;n); for(i=1; i&lt;n+1; i++) { for(j=n-i; j&gt;0; j-- ) { printf(\" \"); } for(j=1; j&lt;=i; j++) { printf(\"*\"); } printf(\"\\n\"); } return 0; } 단순해 보이는데 방향 한번 바뀌었다고 생각하는데 시간이..ㅋㅋ 숏코딩 보다가 괜찮은 코드 발견 #include &lt;stdio.h&gt; int main(void){...","categories": ["fundamentals","algorithms"],
         "tags": ["algorithms","BOJ","C"],
         "url": "http://localhost:4000/fundamentals/algorithms/boj2439/",
         "teaser": null
@@ -12,7 +12,7 @@ var store = [{
         "teaser": null
       },{
         "title": "itdaa 현직자 멘토링 (삼성SDS)",
-        "excerpt":"date: Feb 25, 2020 7:04 PM 멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다. 삼성SDS 멘토 면접관, 사내 멘토링 경험 보안 분야 / 아키텍처 개발, 인프라 운영 3년 정도 - SW개발과는 다른 분야 삼성SDS 소개 6~7년전부터 단순 SI 에서 탈피 노력 - 글로벌 솔루션 기업 지향 그러나 최근 매출 감소로 다시 SI...","categories": ["Career"],
+        "excerpt":"date: Feb 25, 2020 7:04 PM 멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다. 멘토 소개 면접관, 사내 멘토링 경험 보안 분야 / 아키텍처 개발, 인프라 운영 3년 정도 - SW개발과는 다른 분야 삼성SDS 소개 6~7년전부터 단순 SI 에서 탈피 노력 - 글로벌 솔루션 기업 지향 그러나 최근 매출 감소로 다시 SI...","categories": ["Career"],
         "tags": ["Mentoring","Samsung SDS"],
         "url": "http://localhost:4000/career/SDS_Mentoring/",
         "teaser": null
@@ -144,9 +144,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Frequent Git Error Messages",
-        "excerpt":"non-fast-forward 특별한 문제를 일으키지 않았는데도, non-fast-forward 메시지와 함께 push가 rejected되는 경우가 있다 이 에러가 발생하는 원인은 여러가지인 듯 $ git push -u origin master ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'https://github.com/gitgitWi/ezerwi' 해결방법 원인 01 GitHub에 저장한 내용 - Local에서 commit한 내용 중 겹치는...","categories": ["Git","Errors"],
+        "excerpt":"non-fast-forward 특별한 문제를 일으키지 않았는데도, non-fast-forward 메시지와 함께 push가 rejected되는 경우가 있다 이 에러가 발생하는 원인은 여러가지인 듯 $ git push -u origin master ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'https://github.com/gitgitWi/ezerwi' 해결방법 원인 01 GitHub에 저장한 내용 - Local에서 commit한 내용 중 겹치는...","categories": ["fundamentals","Git","Errors"],
         "tags": ["Git","Github","Error Messages"],
-        "url": "http://localhost:4000/git/errors/Git-Error/",
+        "url": "http://localhost:4000/fundamentals/git/errors/Git-Error/",
         "teaser": null
       },{
         "title": "CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)",

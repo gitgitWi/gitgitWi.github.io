@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T01:47:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T02:32:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -65,14 +65,14 @@
 
 &lt;h2 id=&quot;section2--aws-data-center-technician-manager-멘토-특강&quot;&gt;Section2.  AWS Data Center Technician Manager 멘토 특강&lt;/h2&gt;
 
-&lt;h4 id=&quot;amazon&quot;&gt;Amazon&lt;/h4&gt;
+&lt;h3 id=&quot;amazon&quot;&gt;Amazon&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;브랜드 가치 1위&lt;/li&gt;
   &lt;li&gt;일하고 싶은 기업 1위(미국) : 10권 내 대부분 IT, 미디어&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;amazon-web-service&quot;&gt;Amazon Web Service&lt;/h4&gt;
+&lt;h3 id=&quot;amazon-web-service&quot;&gt;Amazon Web Service&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Amazon의 매출구조
@@ -95,7 +95,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;aws-culture&quot;&gt;AWS’ Culture&lt;/h4&gt;
+&lt;h3 id=&quot;aws-culture&quot;&gt;AWS’ Culture&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Job Level : 직급체계&lt;/li&gt;
@@ -105,7 +105,7 @@
   &lt;li&gt;Loop Interview : 채용과정에서, Leadership Principles 에 맞는지 길게는 12시간까지 면접,&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;think-big&quot;&gt;Think Big&lt;/h4&gt;
+&lt;h3 id=&quot;think-big&quot;&gt;Think Big&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Focus on what you want to do&lt;/li&gt;
@@ -245,9 +245,11 @@
 6시반에 잠깐 잤다가 일어나서 샤워하고 시간 맞춰서 프로그래머스 들어간거라 정신도 없었다&lt;/p&gt;
 
 &lt;p&gt;6문제 중 홀수번 문제들만 간신히 풀어서 Test Case는 모두 통과했는데,
-실제 case들은 어떻게 될지 모르겠다&lt;/p&gt;
+실제 case들은 어떻게 될지 모르겠다
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;한 문제 정도는 쉽게 몸풀고 가라고 준거 같은데, 그거도 눈으로만 봤던거라 꽤 오래 걸렸다 ㅋㅋㅋ  &lt;em&gt;&lt;del&gt;얼마전까지 1일-1알고리즘 퀴즈하던 것도 안하다 보니 환경 세팅용으로 준 예제도 버벅거렸다..ㅋㅋㅋㅋㅋㅋ&lt;/del&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;한 문제 정도는 쉽게 몸풀고 가라고 준거 같은데, 그거도 눈으로만 봤던거라 꽤 오래 걸렸다 ㅋㅋㅋ  &lt;em&gt;&lt;del&gt;얼마전까지 1일-1알고리즘 퀴즈하던 것도 안하다 보니 환경 세팅용으로 준 예제도 버벅거렸다..ㅋㅋㅋㅋㅋㅋ&lt;/del&gt;&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;LINE 출제팀 인터뷰에서 (&lt;a href=&quot;https://engineering.linecorp.com/ko/blog/2020-line-sw-developer-recruit-coding-test/&quot;&gt;LINE Engineering &amp;gt; LINE 신입 SW 개발자 코딩 테스트, 이렇게 만들어졌습니다&lt;/a&gt;) 알고리즘 문제뿐만 아니라 구현 문제도 출제했다고 했다&lt;/p&gt;
 
@@ -256,7 +258,7 @@
 &lt;p&gt;그나마 DFS/BFS, 이진트리, 그래프 정도 수준의 문제는 없지 않았나.. 정렬, 스택 정도까지만 해도 풀려면 풀 수 있는 문제 아니었나 싶다.. 내가 파악을 못했는지 모르겠지만 ㅋㅋ&lt;/p&gt;
 
 &lt;p&gt;암튼 코딩 테스트 첫 경험을 하면서 나름의 가능성을 볼 수 있었다
-열씸히 해보는 수밖에~!!&lt;/p&gt;</content><author><name>gitgitWi</name></author><category term="LINE" /><category term="취준기" /><category term="Python" /><summary type="html">2020 상반기 LINE online coding test 후기..</summary></entry><entry><title type="html">Frequent Git Error Messages</title><link href="http://localhost:4000/git/errors/Git-Error/" rel="alternate" type="text/html" title="Frequent Git Error Messages" /><published>2020-04-05T00:00:00+09:00</published><updated>2020-04-05T00:00:00+09:00</updated><id>http://localhost:4000/git/errors/Git-Error</id><content type="html" xml:base="http://localhost:4000/git/errors/Git-Error/">&lt;h2 id=&quot;non-fast-forward&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;non-fast-forward&lt;/code&gt;&lt;/h2&gt;
+열씸히 해보는 수밖에~!!&lt;/p&gt;</content><author><name>gitgitWi</name></author><category term="LINE" /><category term="취준기" /><category term="Python" /><summary type="html">2020 상반기 LINE online coding test 후기..</summary></entry><entry><title type="html">Frequent Git Error Messages</title><link href="http://localhost:4000/fundamentals/git/errors/Git-Error/" rel="alternate" type="text/html" title="Frequent Git Error Messages" /><published>2020-04-05T00:00:00+09:00</published><updated>2020-04-05T00:00:00+09:00</updated><id>http://localhost:4000/fundamentals/git/errors/Git-Error</id><content type="html" xml:base="http://localhost:4000/fundamentals/git/errors/Git-Error/">&lt;h2 id=&quot;non-fast-forward&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;non-fast-forward&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;특별한 문제를 일으키지 않았는데도, non-fast-forward 메시지와 함께 &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt;가 rejected되는 경우가 있다&lt;/p&gt;
 
@@ -268,7 +270,7 @@
 error: failed to push some refs to &lt;span class=&quot;s1&quot;&gt;'https://github.com/gitgitWi/ezerwi'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;해결방법&quot;&gt;해결방법&lt;/h4&gt;
+&lt;h3 id=&quot;해결방법&quot;&gt;해결방법&lt;/h3&gt;
 
 &lt;dl&gt;
   &lt;dt&gt;원인 01&lt;/dt&gt;
@@ -881,7 +883,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 
 &lt;h2 id=&quot;amazon-rds를-통한-db-생성&quot;&gt;Amazon RDS를 통한 DB 생성&lt;/h2&gt;
 
-&lt;h4 id=&quot;한글-parameter-설정&quot;&gt;한글 parameter 설정&lt;/h4&gt;
+&lt;h3 id=&quot;한글-parameter-설정&quot;&gt;한글 parameter 설정&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;parameter 생성&lt;/li&gt;
@@ -894,7 +896,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;db-생성&quot;&gt;DB 생성&lt;/h4&gt;
+&lt;h3 id=&quot;db-생성&quot;&gt;DB 생성&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;MySQL 5.6&lt;/li&gt;
@@ -912,9 +914,9 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 
 &lt;p&gt;생성 완료까지는 몇분 소요될 수 있음&lt;/p&gt;
 
-&lt;h4 id=&quot;생성-이후-dashboard에서-end-point-확인--db-접속주소&quot;&gt;생성 이후 dashboard에서 end-point 확인 : DB 접속주소&lt;/h4&gt;
+&lt;h3 id=&quot;생성-이후-dashboard에서-end-point-확인--db-접속주소&quot;&gt;생성 이후 dashboard에서 end-point 확인 : DB 접속주소&lt;/h3&gt;
 
-&lt;h4 id=&quot;ec2-root-terminal에서-mysql-접속&quot;&gt;EC2 root terminal에서 MySQL 접속&lt;/h4&gt;
+&lt;h3 id=&quot;ec2-root-terminal에서-mysql-접속&quot;&gt;EC2 root terminal에서 MySQL 접속&lt;/h3&gt;
 
 &lt;p&gt;Syntax : &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql -h {end-point-value} -P {port} -u {master-user-name} -p&lt;/code&gt;&lt;/p&gt;
 
@@ -924,7 +926,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 &lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;Welcome to the MySQL monitor.  Commands end with ;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;or &lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;php-mysql-연동-테스트&quot;&gt;php-MySQL 연동 테스트&lt;/h2&gt;
-&lt;h4 id=&quot;php-파일-수정&quot;&gt;php 파일 수정&lt;/h4&gt;
+&lt;h3 id=&quot;php-파일-수정&quot;&gt;php 파일 수정&lt;/h3&gt;
 &lt;p&gt;DB 생성시 입력한 그대로&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;접속 주소&lt;/li&gt;
@@ -934,7 +936,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 
 &lt;h1 id=&quot;08-github에-docker-프로젝트-올리기&quot;&gt;08 GitHub에 Docker 프로젝트 올리기&lt;/h1&gt;
 
-&lt;h4 id=&quot;create-new-repository&quot;&gt;create new repository&lt;/h4&gt;
+&lt;h3 id=&quot;create-new-repository&quot;&gt;create new repository&lt;/h3&gt;
 
 &lt;p&gt;port 보안을 위해 private repository로 만들어야 함&lt;/p&gt;
 
@@ -972,7 +974,7 @@ Password for 'https://ezerwi@github.com':
 
 &lt;h1 id=&quot;09-dockerhub와-github-연동하기&quot;&gt;09 DockerHub와 GitHub 연동하기&lt;/h1&gt;
 
-&lt;h3 id=&quot;dockerhub-github-연동-과정&quot;&gt;DockerHub-GitHub 연동 과정&lt;/h3&gt;
+&lt;h2 id=&quot;dockerhub-github-연동-과정&quot;&gt;DockerHub-GitHub 연동 과정&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Dockerfile Source Code 수정&lt;/li&gt;
@@ -980,7 +982,7 @@ Password for 'https://ezerwi@github.com':
   &lt;li&gt;DockerHub에서 수정된 내용대로 알아서 re-build&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;new-dockerhub-repository&quot;&gt;New DockerHub Repository&lt;/h4&gt;
+&lt;h3 id=&quot;new-dockerhub-repository&quot;&gt;New DockerHub Repository&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Build Setting : Github&lt;/li&gt;
@@ -994,7 +996,7 @@ Password for 'https://ezerwi@github.com':
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push gitgitwi/git-test:tagname&lt;/code&gt;
 &lt;img src=&quot;/assets/images/dockerhub-push_2um6jm262.png&quot; alt=&quot;dockerhub-push_2um6jm262&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;readmemd-작성&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Readme.md&lt;/code&gt; 작성&lt;/h4&gt;
+&lt;h3 id=&quot;readmemd-작성&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Readme.md&lt;/code&gt; 작성&lt;/h3&gt;
 
 &lt;dl&gt;
   &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Readme.md&lt;/code&gt;&lt;/dt&gt;
