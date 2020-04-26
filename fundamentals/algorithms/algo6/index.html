@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>1강 - 알고리즘 문제해결 - gitgitWi’s gitgit pages</title>
-<meta name="description" content="1강 - 알고리즘 문제해결 (problem solving) ">
+<!-- begin _includes/seo.html --><title>6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST - gitgitWi’s gitgit pages</title>
+<meta name="description" content="6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST ">
 
 
   <meta name="author" content="gitgitWi">
@@ -19,30 +19,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="gitgitWi's gitgit pages">
-<meta property="og:title" content="1강 - 알고리즘 문제해결">
-<meta property="og:url" content="http://localhost:4000/fundamentals/algorithms/problem-solving/">
+<meta property="og:title" content="6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST">
+<meta property="og:url" content="http://localhost:4000/fundamentals/algorithms/algo6/">
 
 
-  <meta property="og:description" content="1강 - 알고리즘 문제해결 (problem solving) ">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2020-03-02T00:00:00+09:00">
+  <meta property="og:description" content="6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST ">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2020-03-03T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/fundamentals/algorithms/problem-solving/">
+
+<link rel="canonical" href="http://localhost:4000/fundamentals/algorithms/algo6/">
 
 
 
@@ -272,15 +272,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="1강 - 알고리즘 문제해결">
-    <meta itemprop="description" content="1강 - 알고리즘 문제해결 (problem solving)">
-    <meta itemprop="datePublished" content="2020-03-02T00:00:00+09:00">
+    <meta itemprop="headline" content="6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST">
+    <meta itemprop="description" content="6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST">
+    <meta itemprop="datePublished" content="2020-03-03T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">1강 - 알고리즘 문제해결
+          <h1 id="page-title" class="page__title" itemprop="headline">6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST
 </h1>
           <!-- 
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -292,7 +292,7 @@
 
 </p> -->
           
-          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated: <time datetime="2020-03-02T00:00:00+09:00">March 02, 2020</time></p>
+          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated: <time datetime="2020-03-03T00:00:00+09:00">March 03, 2020</time></p>
           
           
         </header>
@@ -302,35 +302,104 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 1강.알고리즘 문제해결</h4></header>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 5강. graph/tree/heap/BST</h4></header>
               <ul class="toc__menu">
-  <li><a href="#1강---알고리즘-문제해결-problem-solving">1강 - 알고리즘 문제해결 (problem solving)</a>
-      - {:.} <a href="#알고리즘-문제해결-problem-solving이란-무엇">알고리즘 문제해결 problem solving이란 무엇??</a>
-      - {:.} <a href="#problem-solving을-하는-이유">problem solving을 하는 이유</a></li>
+  <li><a href="#6강---자료구조와-알고리즘-iii---graphtreeheapbst">6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST</a>
+    <ul>
+      <li><a href="#graph">Graph</a></li>
+      <li><a href="#tree">Tree</a>
+      - {:.} <a href="#binary-tree">Binary Tree</a></li>
+    </ul>
+  </li>
 </ul>
 
             </nav>
           </aside>
         
-        <h1 id="1강---알고리즘-문제해결-problem-solving">1강 - 알고리즘 문제해결 (problem solving)</h1>
+        <h1 id="6강---자료구조와-알고리즘-iii---graphtreeheapbst">6강 - 자료구조와 알고리즘 III - graph/tree/heap/BST</h1>
 
 <p>ClassName: 기초 알고리즘과 파이썬 코딩
-Created: Mar 02, 2020 10:42 PM
+Created: Mar 03, 2020 4:17 PM
 제공처: Tacademy</p>
 
-<h3 id="알고리즘-문제해결-problem-solving이란-무엇">알고리즘 문제해결 problem solving이란 무엇??</h3>
+<h2 id="graph">Graph</h2>
 
-<p>프로그래밍 언어를 통해 시간제한, 메모리 제한에서 주어진 문제 해결</p>
+<ul>
+  <li>
+    <p>노드 Node와 간선 Edge로 구성</p>
+  </li>
+  <li>
+    <p>들어오는 간선 수 indegree</p>
+  </li>
+  <li>
+    <p>나가는 간선 수 outdegree</p>
+  </li>
+  <li>
+    <p>저장방법 : 인접 행렬</p>
+  </li>
+  <li>
+    <p>방향성, 가중치 추가</p>
+  </li>
+</ul>
 
-<h3 id="problem-solving을-하는-이유">problem solving을 하는 이유</h3>
+<p><img src="/assets/images/2020-03-03-algo6/Untitled.png" alt="Untitled.png" /></p>
 
-<ol>
-  <li>구현 능력 - 본인이 생각하고 있는 내용을 코드로 옮길 수 있는가? 연습을 많이 할수록 늘 수 있다</li>
-  <li>효율성 - 자주 사용하는 함수의 최적화, 효율적 코드 작성, 시간복잡도와 공간복잡도 계산 연습</li>
-  <li>절차적 사고 - 전체적인 workflow 설계능력, 자료구조와 알고리즘 학습 필요</li>
-  <li>디버깅 - 틀린 부분 발견, 예외 케이스 탐색, 에러메시지를 읽는 능력</li>
-  <li>재미 - 적은 시간으로 연습 가능, 프로젝트와 다르게 짧은 주기로 성취감, 100문제 이상 문제를 풀다보면 풀 수 있는 문제의 수가 기하급수적으로 늘어난다</li>
-</ol>
+<ul>
+  <li>다만 행렬에 0이 많은 그래프, sparse한 그래프라면 인접리스트 사용</li>
+</ul>
+
+<p><img src="/assets/images/2020-03-03-algo6/Untitled 1.png" alt="Untitled%201.png" /></p>
+
+<p><br /><br /></p>
+
+<h2 id="tree">Tree</h2>
+
+<ul>
+  <li>
+    <p>특수한 구조를 가진 그래프</p>
+  </li>
+  <li>
+    <p>Node, Edge로 구성 - 모든 Node 가 연결</p>
+  </li>
+  <li>
+    <p>상위-하위 관계를 나눌 수 있음</p>
+  </li>
+  <li>
+    <p>Cycle이 없음</p>
+  </li>
+  <li>
+    <p>구조에 대한 명칭</p>
+
+    <ul>
+      <li>Parent - Child</li>
+      <li>Ancestor - Descendant</li>
+      <li>Root - Leaf ; root는 항상 하나</li>
+    </ul>
+  </li>
+  <li>
+    <p>Tree - subtree</p>
+  </li>
+  <li>
+    <p>트리의 높이</p>
+  </li>
+  <li>
+    <p>저장방식이 자유로움</p>
+
+    <ul>
+      <li>부모만 저장 : O(N) 1차원 배열방식, 부모가 없으면 root node</li>
+      <li>자식들 저장 :  인접리스트 방식, 자식이 없으면 leaf node, 순환하기 좋음</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="binary-tree">Binary Tree</h4>
+
+<p>부모 노트가 X 이면, 왼쪽 노트가 2X, 오른쪽 노드가 2X+1</p>
+
+<ul>
+  <li>Heap : 우선순위가 가장 높은 값을 root노드로,</li>
+  <li>BST; Binary Search Tree : 입력되는 대로 첫숫자보다 크면 오른쪽 작으면 왼쪽 - set 계열 데이터 구조에서 사용</li>
+</ul>
 
         
       </section>
@@ -391,7 +460,7 @@ Created: Mar 02, 2020 10:42 PM
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-03-02T00:00:00+09:00">March 2, 2020</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-03-03T00:00:00+09:00">March 3, 2020</time></p>
         
       </footer>
 
@@ -400,22 +469,22 @@ Created: Mar 02, 2020 10:42 PM
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=1%EA%B0%95+-+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%20http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Fproblem-solving%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=6%EA%B0%95+-+%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+III+-+graph%2Ftree%2Fheap%2FBST%20http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Falgo6%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Fproblem-solving%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Falgo6%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Fproblem-solving%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ffundamentals%2Falgorithms%2Falgo6%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/fundamentals/algorithms/algo2/" class="pagination--pager" title="2강 - 알고리즘보다 코딩 I -읽기와 분석 (시간복잡도/공간복잡도 등)
+      <a href="/fundamentals/algorithms/algo5/" class="pagination--pager" title="5강 - 자료구조와 알고리즘 II - Stack/Queue/Deque
 ">Previous</a>
     
     
-      <a href="/fundamentals/algorithms/algo3/" class="pagination--pager" title="3강 - 알고리즘보다 코딩 II - 수학 (진수와진법/최대공약수/최소공배수/소인수분해, 재귀함수)
+      <a href="/fundamentals/algorithms/algo7/" class="pagination--pager" title="7강 - 자료구조와 알고리즘 IV - DFS/BFS
 ">Next</a>
     
   </nav>
@@ -574,8 +643,8 @@ Created: Mar 02, 2020 10:42 PM
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/fundamentals/algorithms/problem-solving/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/fundamentals/algorithms/problem solving"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/fundamentals/algorithms/algo6/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/fundamentals/algorithms/algo6"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
