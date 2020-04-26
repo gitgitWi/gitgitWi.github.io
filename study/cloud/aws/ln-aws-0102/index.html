@@ -1,0 +1,824 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>LN-Docker-동빈나’s Docker 활용 1강~2강 - gitgitWi’s gitgit pages</title>
+<meta name="description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속 ">
+
+
+  <meta name="author" content="gitgitWi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="gitgitWi's gitgit pages">
+<meta property="og:title" content="LN-Docker-동빈나’s Docker 활용 1강~2강">
+<meta property="og:url" content="http://localhost:4000/study/cloud/aws/ln-aws-0102/">
+
+
+  <meta property="og:description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속 ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-04-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/cloud/aws/ln-aws-0102/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "gitgitWi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="gitgitWi's gitgit pages Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          gitgitWi's gitgit pages
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Aidata/">AI+BigData</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Cloud/">Docker+Cloud</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/fundamentals/">Fundamentals</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/error/">Errors</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Career/">취준기</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Scrabs/">Scrabs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">gitgitWi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>코딩 보다 어려운 인스톨</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul/S.Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:gitgitwi@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/gitgitWi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="LN-Docker-동빈나’s Docker 활용 1강~2강">
+    <meta itemprop="description" content="01 실습용 AWS EC2 인스턴스 생성 및 접속">
+    <meta itemprop="datePublished" content="2020-04-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">LN-Docker-동빈나’s Docker 활용 1강~2강
+</h1>
+          <!-- 
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p> -->
+          
+          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated: <time datetime="2020-04-04T00:00:00+09:00">April 04, 2020</time></p>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 동빈나's Docker 활용_01~02</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#01-실습용-aws-ec2-인스턴스-생성-및-접속">01 실습용 AWS EC2 인스턴스 생성 및 접속</a>
+    <ul>
+      <li><a href="#aws-서버-인스턴스-생성">AWS 서버 인스턴스 생성</a>
+      - {:.} <a href="#서버-인스턴스">서버 인스턴스</a>
+      - {:.} <a href="#ami-선택">AMI 선택</a>
+      - {:.} <a href="#인스턴스-유형-선택">인스턴스 유형 선택</a>
+      - {:.} <a href="#key-pair">Key pair</a>
+          - {:.} <a href="#error-같은-normal-message">Error 같은 Normal Message</a></li>
+    </ul>
+  </li>
+  <li><a href="#02-jupyter-notebook-설치-https-적용-시스템-서비스-설정하기">02 Jupyter Notebook 설치, HTTPS 적용, 시스템 서비스 설정하기</a>
+    <ul>
+      <li><a href="#보다-편한-ec2-활용을-위한-jupyter-notebook-설치">보다 편한 EC2 활용을 위한 Jupyter Notebook 설치</a>
+      - {:.} <a href="#1-check-python3-version">1. check python3 version</a>
+      - {:.} <a href="#2-python3-개발환경-설치위한-pip-install">2. python3 개발환경 설치위한 pip install</a>
+      - {:.} <a href="#3-pip를-통해-notebook-install">3. pip를 통해 notebook install</a>
+      - {:.} <a href="#4-notebook에서-사용할-pw-설정">4. notebook에서 사용할 p/w 설정</a>
+      - {:.} <a href="#5-system-terminal이-아닌-webbrowser-jupyter-terminal을-사용하기-위한-설정">5. System terminal이 아닌 WebBrowser jupyter terminal을 사용하기 위한 설정</a>
+      - {:.} <a href="#6-jupyter가-background에서-실행되도록-설정">6. jupyter가 background에서 실행되도록 설정</a>
+      - {:.} <a href="#7-ssl-접속을-위한-ssl-keypair-생성">7. SSL 접속을 위한 SSL KeyPair 생성</a>
+      - {:.} <a href="#8-ssh-접속-가능하도록-jupyter_notebook_configpy-환경설정-수정">8. SSH 접속 가능하도록 jupyter_notebook_config.py 환경설정 수정</a>
+      - {:.} <a href="#9-system-기본-프로그램으로-jupyter가-실행되도록-설정">9. System 기본 프로그램으로 jupyter가 실행되도록 설정</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="01-실습용-aws-ec2-인스턴스-생성-및-접속">01 실습용 AWS EC2 인스턴스 생성 및 접속</h1>
+
+<h2 id="aws-서버-인스턴스-생성">AWS 서버 인스턴스 생성</h2>
+
+<p>Docker Machine 설치를 위한 객체 생성</p>
+
+<h4 id="서버-인스턴스">서버 인스턴스</h4>
+<dl>
+  <dt>EC2</dt>
+  <dd>강의일 현재까지 AWS에서 가장 많이 쓰이고 있는 서버</dd>
+</dl>
+
+<h4 id="ami-선택">AMI 선택</h4>
+<dl>
+  <dt>Amazon Machine Image</dt>
+  <dd>Ubuntu Server 18.04 (LTS) 선택</dd>
+  <dd><img src="/assets/images/aws/Screen Shot 2020-04-04 at 16.53.17.png" alt="Screen Shot 2020-04-04 at 16.53.17" /></dd>
+</dl>
+
+<h4 id="인스턴스-유형-선택">인스턴스 유형 선택</h4>
+<dl>
+  <dt>t2 micro</dt>
+  <dd>free-tier 에서 사용 가능한 유일한 type</dd>
+  <dd><img src="/assets/images/aws/Screen%20Shot%202020-04-04%20at%2016.55.55.png" alt="Screen Shot 2020-04-04 at 16.55.55" /></dd>
+</dl>
+
+<p>유형 선택 후 시작하기 버튼 누르면 바로 step7으로 넘어감</p>
+
+<p><img src="/assets/images/aws/ss%20ubuntu%20AMI.png" alt="ss ubuntu AMI" /></p>
+
+<p><em>처음에 잘못 눌렀는지..AMI를 AmazonLinux로 잘못 선택해서 왜 sudo가 안먹히나 또 헤맸다..</em></p>
+
+<h4 id="key-pair">Key pair</h4>
+<p>보안을 위한 key pair 생성 및 download</p>
+<ul>
+  <li>별도의 workspace 디렉토리 생성하여 관리</li>
+  <li>파일 속성을 통해 보안 설정 필수</li>
+  <li>linux/Mac <code class="highlighter-rouge">chmod 400</code>를 통해 보안 설정</li>
+</ul>
+
+<p>terminal 열어서 SSH 방식으로 연결해야 함</p>
+
+<p>ex.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-i</span> /<span class="o">{</span>path<span class="o">}</span>/<span class="o">{</span>keypair.pem<span class="o">}</span> ubuntu@<span class="o">{</span>public DNS<span class="o">}</span>
+</code></pre></div></div>
+
+<p><em>aws instance connect 눌렀을 때 나오는 안내 화면에서 <code class="highlighter-rouge">예:</code>에 있는 거 그대로 가져와서 경로만 써주면 됨</em></p>
+
+<p><img src="assets/ss%20aws%20connect%20instance.png" alt="ss aws connect instance" /></p>
+
+<h5 id="error-같은-normal-message">Error 같은 Normal Message</h5>
+<p>ssh 방식으로 연결 시도하고 나니, 아래처럼 메시지가 떴음</p>
+
+<p><code class="highlighter-rouge">can't be established</code> 라는 메시지 때문에 오류인 줄 알고 헤맸는데, 그냥 yes 하면 연결 되는 거 였음..</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The authenticity of host '###' cant be established.
+ECDSA key fingerprint is SHA256:###.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</code></pre></div></div>
+
+<p>Welcome to Ubuntu..!!</p>
+
+<p>EC2의 Ubuntu에 접속되어 linux 명령으로 작업하면 된다</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Welcome to Ubuntu 18.04.3 LTS <span class="o">(</span>GNU/Linux 4.15.0-1057-aws x86_64<span class="o">)</span>
+
+ <span class="k">*</span> Documentation:  https://help.ubuntu.com
+ <span class="k">*</span> Management:     https://landscape.canonical.com
+ <span class="k">*</span> Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Apr  4 10:10:05 UTC 2020
+
+  System load:  0.25              Processes:           91
+  Usage of /:   13.6% of 7.69GB   Users logged <span class="k">in</span>:     0
+  Memory usage: 15%               IP address <span class="k">for </span>eth0: 172.31.45.116
+  Swap usage:   0%
+
+0 packages can be updated.
+0 updates are security updates.
+
+...
+
+~<span class="nv">$ </span><span class="nb">pwd</span>
+/home/ubuntu
+</code></pre></div></div>
+
+<p><em>참고</em></p>
+<ul>
+  <li>SSH 방식 접속 방법  : <a href="https://lhh3520.tistory.com/288">lhh3520.tistory.com</a></li>
+  <li>SSH Key 만드는 법 : <a href="https://uroa.tistory.com/101">uroa.tistory.com</a></li>
+</ul>
+
+<h1 id="02-jupyter-notebook-설치-https-적용-시스템-서비스-설정하기">02 Jupyter Notebook 설치, HTTPS 적용, 시스템 서비스 설정하기</h1>
+
+<h2 id="보다-편한-ec2-활용을-위한-jupyter-notebook-설치">보다 편한 EC2 활용을 위한 <code class="highlighter-rouge">Jupyter Notebook</code> 설치</h2>
+
+<p>System terminal이 아닌 <code class="highlighter-rouge">Jupyter Notebook</code>의 terminal에서 Server 접속 위함</p>
+
+<h4 id="1-check-python3-version">1. check python3 version</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span>python3 <span class="nt">--version</span>
+Python 3.6.9
+</code></pre></div></div>
+
+<h4 id="2-python3-개발환경-설치위한-pip-install">2. python3 개발환경 설치위한 pip install</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>python3-pip
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+</code></pre></div></div>
+
+<h4 id="3-pip를-통해-notebook-install">3. pip를 통해 notebook install</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span><span class="nb">sudo </span>pip3 <span class="nb">install </span>notebook
+</code></pre></div></div>
+
+<h4 id="4-notebook에서-사용할-pw-설정">4. notebook에서 사용할 p/w 설정</h4>
+
+<ul>
+  <li><strong><em>이때 return 되는 sha 값을 반드시 잘 저장해둔다; SSH 만들기 위함!!</em></strong></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span><span class="err">$</span> <span class="n">python3</span>
+
+<span class="n">Python</span> <span class="mf">3.6.9</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span>  <span class="mi">7</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">02</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">8.3.0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<span class="n">Type</span> <span class="s">"help"</span><span class="p">,</span> <span class="s">"copyright"</span><span class="p">,</span> <span class="s">"credits"</span> <span class="ow">or</span> <span class="s">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+
+<span class="kn">from</span> <span class="nn">notebook.auth</span> <span class="kn">import</span> <span class="n">passwd</span>
+<span class="n">passwd</span><span class="p">()</span>
+<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Verify</span> <span class="n">password</span><span class="p">:</span>
+</code></pre></div></div>
+
+<h4 id="5-system-terminal이-아닌-webbrowser-jupyter-terminal을-사용하기-위한-설정">5. System terminal이 아닌 WebBrowser jupyter terminal을 사용하기 위한 설정</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span>jupyter notebook <span class="nt">--generate-config</span>
+Writing default config to: /home/ubuntu/.jupyter/jupyter_notebook_config.py
+
+~<span class="nv">$ </span><span class="nb">sudo </span>vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
+</code></pre></div></div>
+
+<p>여기서 <code class="highlighter-rouge">jupyter_notebook_config.py</code> 파일이 열림, 최하단에 아래 내용 입력</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">u'sha1:~~~~'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">'@@@.@@@.@@@.@@@'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">notebook_dir</span> <span class="o">=</span> <span class="s">'/'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="s">u'/home/ubuntu/ssl/@@@.pem'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">keyfile</span> <span class="o">=</span> <span class="s">u'/home/ubuntu/ssl/@@@.key'</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~$ sudo jupyter-notebook --allow-root
+</code></pre></div></div>
+
+<p><em>아래와 같이 ip주소가 뜨면 성공</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>I 10:21:59.278 NotebookApp] The Jupyter Notebook is running at:
+<span class="o">[</span>I 10:21:59.278 NotebookApp] http://xxx.xxx.xxx.xxx:8888/
+</code></pre></div></div>
+<p>ip주소로 접속 -&gt; jupyter pw 입력 -&gt; New Terminal</p>
+
+<h4 id="6-jupyter가-background에서-실행되도록-설정">6. jupyter가 background에서 실행되도록 설정</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span><span class="nb">bg</span>
+<span class="o">[</span>1]+ <span class="nb">sudo </span>jupyter-notebook <span class="nt">--allow-root</span> &amp;
+~<span class="nv">$ </span><span class="nb">disown</span> <span class="nt">-h</span>
+</code></pre></div></div>
+<ul>
+  <li>보안을 위해 접속ip 확인 및 ip kill</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span> 
+tcp        0      0 @@@.@@@.@@@.@@@:8888      0.0.0.0:<span class="k">*</span>               LISTEN      7410/python3        
+tcp        0      0 @@@.@@@.@@@.@@@:8888      @@@.@@@.@@@.@@@:63856   ESTABLISHED 7410/python3        
+...
+
+~<span class="nv">$ </span><span class="nb">sudo kill</span> <span class="nt">-9</span> 7410
+<span class="o">[</span>1]+  Killed                  <span class="nb">sudo </span>jupyter-notebook <span class="nt">--allow-root</span>
+</code></pre></div></div>
+
+<h4 id="7-ssl-접속을-위한-ssl-keypair-생성">7. SSL 접속을 위한 SSL KeyPair 생성</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~<span class="nv">$ </span><span class="nb">mkdir </span>ssl
+~<span class="nv">$ </span><span class="nb">cd </span>ssl
+~/ssl<span class="nv">$ </span><span class="nb">sudo </span>openssl req <span class="nt">-x509</span> <span class="nt">-nodes</span> <span class="nt">-days</span> 365 <span class="nt">-newkey</span> rsa:1024 <span class="nt">-keyout</span> <span class="s2">"{OpenKeyName}.key"</span> <span class="nt">-out</span> <span class="s2">"{PrivateKeyName}.pem"</span> <span class="nt">-batch</span>
+</code></pre></div></div>
+
+<h4 id="8-ssh-접속-가능하도록-jupyter_notebook_configpy-환경설정-수정">8. SSH 접속 가능하도록 <code class="highlighter-rouge">jupyter_notebook_config.py</code> 환경설정 수정</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/ssl<span class="nv">$ </span><span class="nb">sudo </span>vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
+</code></pre></div></div>
+
+<h4 id="9-system-기본-프로그램으로-jupyter가-실행되도록-설정">9. System 기본 프로그램으로 jupyter가 실행되도록 설정</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/ssl<span class="nv">$ </span>which jupyter-notebook
+/usr/local/bin/jupyter-notebook
+
+~/ssl<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/systemd/system/jupyter.service
+
+~/ssl<span class="nv">$ </span><span class="nb">sudo </span>systemctl <span class="nb">enable </span>jupyter
+Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → /etc/systemd/system/jupyter.service.
+
+~/ssl<span class="nv">$ </span><span class="nb">sudo </span>systemctl start jupyter
+
+<span class="c"># 실행 상태 확인</span>
+~/ssl<span class="nv">$ </span><span class="nb">sudo </span>systemctl status jupyter
+● jupyter.service - Jupyter Notebook Server
+   Loaded: loaded <span class="o">(</span>/etc/systemd/system/jupyter.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset:
+   Active: active <span class="o">(</span>running<span class="o">)</span> since Sat 2020-04-04 10:56:44 UTC<span class="p">;</span> 9s ago
+</code></pre></div></div>
+
+<p>접속 시 <code class="highlighter-rouge">신뢰할 수 없는 인증서</code> 문제가 발생하나, 무시하고 진행하면 됨</p>
+<ul>
+  <li>사설인증서 SSL을 사용하기 때문</li>
+  <li><em>희한하게 내 Mac-Chrome에서는 무시하고 진행 메뉴가 안보이고 인증서 따로 저장하는 메뉴도 없음.. 그냥 꽉~막힘 ㅠ googling해도 깔끔한 해결방법은 찾기 힘들었는데, FireFox로 여니까 된다..내 금쪽 같은 토요일 2시간 뚝딱!</em></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#aws" class="page__taxonomy-item" rel="tag">AWS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#docker" class="page__taxonomy-item" rel="tag">Docker</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#lecturenotes" class="page__taxonomy-item" rel="tag">LectureNotes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EB%8F%99%EB%B9%88%EB%82%98" class="page__taxonomy-item" rel="tag">동빈나</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#aws" class="page__taxonomy-item" rel="tag">AWS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#cloud" class="page__taxonomy-item" rel="tag">Cloud</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-04-04T00:00:00+09:00">April 4, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=LN-Docker-%EB%8F%99%EB%B9%88%EB%82%98%27s+Docker+%ED%99%9C%EC%9A%A9+1%EA%B0%95~2%EA%B0%95%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fcloud%2Faws%2Fln-aws-0102%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fcloud%2Faws%2Fln-aws-0102%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fcloud%2Faws%2Fln-aws-0102%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/cloud/docker/docker-basic-01/" class="pagination--pager" title="왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube
+">Previous</a>
+    
+    
+      <a href="/study/cloud/aws/docker/ln-aws-0304/" class="pagination--pager" title="LN-Docker-동빈나’s Docker 활용 3강~4강
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="permalink">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 24 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">date: Apr 24, 2020 6 ~ 9 PM
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/errors/Git-Error/" rel="permalink">Frequent Git Error Messages
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">non-fast-forward
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/career/python/2020_%EC%83%81%EB%B0%98%EA%B8%B0_LINE-_online_coding_test_%ED%9B%84%EA%B8%B0/" rel="permalink">2020 상반기 LINE online coding test 후기..
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">2020 상반기 LINE online coding test 후기..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/study/cloud/aws/docker/ln-aws-10~11/" rel="permalink">LN-Docker-동빈나’s Docker 활용 10강~11강
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">10 Jenkins를 이용해 Docker 프로젝트 빌드해보기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://gitgitWi.github.io" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 gitgitWi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/cloud/aws/ln-aws-0102/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/cloud/aws/ln-aws-0102"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ezerwi-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
