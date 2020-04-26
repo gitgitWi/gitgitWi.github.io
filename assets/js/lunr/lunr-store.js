@@ -1,4 +1,10 @@
 var store = [{
+        "title": "[BOJ.2439/C] lv3. 별 찍기2",
+        "excerpt":"[BOJ.2439/C] lv3. 별 찍기2 #include &lt;stdio.h&gt; int main() { int n, i, j; scanf(\"%d\", &amp;n); for(i=1; i&lt;n+1; i++) { for(j=n-i; j&gt;0; j-- ) { printf(\" \"); } for(j=1; j&lt;=i; j++) { printf(\"*\"); } printf(\"\\n\"); } return 0; } 단순해 보이는데 방향 한번 바뀌었다고 생각하는데 시간이..ㅋㅋ 숏코딩 보다가 괜찮은 코드 발견...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","BOJ","C"],
+        "url": "http://localhost:4000/fundamentals/algorithms/boj2439/",
+        "teaser": null
+      },{
         "title": "[BOJ.10871/Java&C] lv3. X보다 작은 수",
         "excerpt":"[BOJ.10871/Java&amp;C] lv3. X보다 작은 수 Java로는 바로 풀었는데 import java.io.*; public class Main { public static void main(String[] args) throws IOException { BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); String input1 = br.readLine(); String input2 = br.readLine(); String[] cons = input1.split(\" \"); String[] numbers =...","categories": ["fundamentals","algorithms"],
         "tags": ["algorithms","BOJ","Java","C"],
