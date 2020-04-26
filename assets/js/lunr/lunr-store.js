@@ -5,6 +5,24 @@ var store = [{
         "url": "http://localhost:4000/career/SDS_Mentoring/",
         "teaser": null
       },{
+        "title": "2강 - 알고리즘보다 코딩 I -읽기와 분석 (시간복잡도/공간복잡도 등)",
+        "excerpt":"2강 - 알고리즘보다 코딩 I -읽기와 분석 (시간복잡도/공간복잡도 등) ClassName: 기초 알고리즘과 파이썬 코딩 Created: Mar 02, 2020 10:56 PM 제공처: Tacademy 파인만 알고리즘 - 가장 유명한 알고리즘 알고리즘 풀이 순서 1 = Read and Analysis : 어떤 부분에 초첨을 두고, 표현을 할 건지 시간 제한과 메모리 제한 체크 시간복잡도...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","LectureNotes","SKTacademy"],
+        "url": "http://localhost:4000/fundamentals/algorithms/algo2/",
+        "teaser": null
+      },{
+        "title": "1강 - 알고리즘 문제해결",
+        "excerpt":"1강 - 알고리즘 문제해결 (problem solving) ClassName: 기초 알고리즘과 파이썬 코딩 Created: Mar 02, 2020 10:42 PM 제공처: Tacademy 알고리즘 문제해결 problem solving이란 무엇?? 프로그래밍 언어를 통해 시간제한, 메모리 제한에서 주어진 문제 해결 problem solving을 하는 이유 구현 능력 - 본인이 생각하고 있는 내용을 코드로 옮길 수 있는가? 연습을 많이...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","LectureNotes","SKTacademy"],
+        "url": "http://localhost:4000/fundamentals/algorithms/problem-solving/",
+        "teaser": null
+      },{
+        "title": "3강 - 알고리즘보다 코딩 II - 수학 (진수와진법/최대공약수/최소공배수/소인수분해, 재귀함수)",
+        "excerpt":"3강 - 알고리즘보다 코딩 II - 수학 (진수와진법/최대공약수/최소공배수/소인수분해, 재귀함수) ClassName: 기초 알고리즘과 파이썬 코딩 Created: Mar 03, 2020 2:40 PM 제공처: Tacademy 수학 포함-배제 등 중고등 수학 응용 진수와 진법 : 2진수, 10진수, N진수 숫자로 구성된 문자열을 N진법에 맞게 변환하기? 이론적인 방법 ; 각자리수 * N의 거듭제곱 합 - 거듭제곱...","categories": ["fundamentals","algorithms"],
+        "tags": ["algorithms","LectureNotes","SKTacademy"],
+        "url": "http://localhost:4000/fundamentals/algorithms/algo3/",
+        "teaser": null
+      },{
         "title": "Lecture 0401 analyze KOWEPS data using ggplot",
         "excerpt":"한국 복지패널데이터 분석 경제활동, 생활실태, 복지욕구 등 수천 개 변수 정보로 구성 foreign : 통계 파일 SPSS 로드할 수 있는 package # install.packages(\"foreign\") library(foreign) library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats': ## ## filter, lag ## The following objects are masked from 'package:base':...","categories": ["Study","R","Aidata"],
         "tags": ["R","ggplot","bigdata","LectureNotes"],

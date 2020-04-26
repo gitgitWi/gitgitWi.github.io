@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-26T19:16:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-26T19:31:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">gitgitWi’s gitgit pages</title><subtitle>서른 넘어 개발자가 된 깃깃위</subtitle><author><name>gitgitWi</name></author><entry><title type="html">CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)</title><link href="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/" rel="alternate" type="text/html" title="CPTeam X 영등포구청 외국계 취업 멘토링(MS,AWS 등)" /><published>2020-04-24T00:00:00+09:00</published><updated>2020-04-24T00:00:00+09:00</updated><id>http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD</id><content type="html" xml:base="http://localhost:4000/career/Fri_CPTeamX%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%EC%B2%AD/">&lt;p&gt;date: Apr 24, 2020 6 ~ 9 PM&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;멘토분들 성함은 개인정보라 가렸습니다. 문제시 삭제하겠습니다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -292,7 +292,550 @@ error: failed to push some refs to &lt;span class=&quot;s1&quot;&gt;'https://git
 &lt;p&gt;그나마 DFS/BFS, 이진트리, 그래프 정도 수준의 문제는 없지 않았나.. 정렬, 스택 정도까지만 해도 풀려면 풀 수 있는 문제 아니었나 싶다.. 내가 파악을 못했는지 모르겠지만 ㅋㅋ&lt;/p&gt;
 
 &lt;p&gt;암튼 코딩 테스트 첫 경험을 하면서 나름의 가능성을 볼 수 있었다
-열씸히 해보는 수밖에~!!&lt;/p&gt;</content><author><name>gitgitWi</name></author><category term="LINE" /><category term="취준기" /><category term="Python" /><summary type="html">2020 상반기 LINE online coding test 후기..</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 3강~4강</title><link href="http://localhost:4000/study/cloud/aws/docker/ln-aws-0304/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 3강~4강" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/docker/ln-aws-0304</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/ln-aws-0304/">&lt;h1 id=&quot;03-aws-ec2에-도커docker-설치-및-dockerfile로-웹-서버-구동시키기&quot;&gt;03 AWS EC2에 도커(Docker) 설치 및 Dockerfile로 웹 서버 구동시키기&lt;/h1&gt;
+열씸히 해보는 수밖에~!!&lt;/p&gt;</content><author><name>gitgitWi</name></author><category term="LINE" /><category term="취준기" /><category term="Python" /><summary type="html">2020 상반기 LINE online coding test 후기..</summary></entry><entry><title type="html">왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube</title><link href="http://localhost:4000/study/cloud/docker/docker-basic-01/" rel="alternate" type="text/html" title="왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/docker/docker-basic-01</id><content type="html" xml:base="http://localhost:4000/study/cloud/docker/docker-basic-01/">&lt;h1 id=&quot;docker-basic-by-재즐보프s-youtube&quot;&gt;Docker basic by 재즐보프’s Youtube&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/b67ed727aea4467cbc3226bb0c8e8336&quot;&gt;왕초보도 따라하는 도커 기초 강의 lecture notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;install-apps-in-docker&quot;&gt;Install Apps in Docker&lt;/h2&gt;
+
+&lt;p&gt;in Terminal&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;base&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; JnWui-MacBook-Pro:~ WnJ&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
+
+JnWui-MacBook-Pro:~ root# docker search tomcat9
+
+&lt;span class=&quot;c&quot;&gt;# 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# docker에서 8080 포트로 바로 실행&lt;/span&gt;
+
+JnWui-MacBook-Pro:~ root# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8080:8080 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tc ykaj9758/tomcat9
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; : 처음 설치시에만 run 명령어 사용, 이후부터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;start &lt;/code&gt; 명령어로 tomcat 사용 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; : background 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;127.0.0.1:8080d 에서 tomcat 9 실행 확인&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
+&lt;span class=&quot;go&quot;&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;38ca9cccee3e        ykaj9758/tomcat9    &quot;/opt/tomcat/apache-…&quot;   8 minutes ago       Up 8 minutes        0.0.0.0:8080-&amp;gt;&lt;/span&gt;8080/tcp   tc
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;현재 실행 중인 컨테이너 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker stop tc
+&lt;span class=&quot;go&quot;&gt;
+tc
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
+&lt;span class=&quot;go&quot;&gt;CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실행중인 프로그램 stop&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-registry&quot;&gt;Docker Registry&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hub.docker.com&quot;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이미지만 다운받고 싶은 경우&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+docker pull [ image name ]
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치한 이미지 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker images
+&lt;span class=&quot;go&quot;&gt;
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ykaj9758/tomcat9    latest              4fe6b09b4e59        23 months ago       1.16GB
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;docker-lifecycle&quot;&gt;Docker Lifecycle&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c&quot;&gt;# nginx 이미지 가져오기&lt;/span&gt;
+
+bash-3.2# docker pull nginx
+
+Using default tag: latest
+latest: Pulling from library/nginx
+c499e6d256d6: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;74cda408e262: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;ffadbd415ab7: Pull &lt;span class=&quot;nb&quot;&gt;complete
+&lt;/span&gt;Digest: sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
+Status: Downloaded newer image &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nginx:latest
+docker.io/library/nginx:latest
+
+&lt;span class=&quot;c&quot;&gt;# nginx를 nx라는 이름 지정하여 port 80번에 할당, 컨테이너 생성&lt;/span&gt;
+
+bash-3.2# docker create &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx nginx
+
+&lt;span class=&quot;c&quot;&gt;# 현재 실행중인 모든 컨테이너 조회&lt;/span&gt;
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+
+bash-3.2# docker start 3b46b4a158d7
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 내용은 아래 한줄로도 가능&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx2 nginx
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx2
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
+a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   About a minute ago   Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 13 seconds ago                           nx2
+3b46b4a158d7        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   6 minutes ago        Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; About a minute ago                       nx
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   57 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 47 minutes ago                         tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;3b46b4a158d7
+
+3b46b4a158d7
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
+a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   2 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 57 seconds ago                         nx2
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   58 minutes ago      Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 48 minutes ago                       tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx
+
+nx
+
+bash-3.2# docker start nx
+
+nx
+
+bash-3.2# docker restart nx
+
+nx
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker stop nx
+
+nx
+
+bash-3.2# docker rmi nx
+
+bash-3.2# docker rmi nginx
+
+Untagged: nginx:latest
+Untagged: nginx@sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
+Deleted: sha256:ed21b7a8aee9cc677df6d7f38a641fa0e3c05f65592c592c9f28c42b3dd89291
+Deleted: sha256:8a305f371a6c3c445a1dfc500c1364743868a269ab8cdaf95902692e82168352
+Deleted: sha256:d079ef06ec1f10a8050887365f9a940b39547ba6bcc46b16a463e740984f3223
+Deleted: sha256:c3a984abe8a88059915bb6c7a1d249fd1ccc16d931334ac8816540b0eb686b45
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;layers&quot;&gt;Layers&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;containers -&amp;gt; image -&amp;gt; overlay2&lt;/li&gt;
+  &lt;li&gt;overlay2 로 갈수록 용량이 급격히 커짐, 컨테이너 대부분의 정보를 overlay2가 갖고 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;useful-commands&quot;&gt;Useful Commands&lt;/h2&gt;
+
+&lt;p&gt;execute inner container terminal&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; : input &amp;amp; terminal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; tc /bin/bash
+
+&lt;span class=&quot;c&quot;&gt;# terminal이 tomcat의 hostname/containerID 로 열림&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit
+exit
+
+&lt;/span&gt;bash-3.2#
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs {container name}&lt;/code&gt; print console output log&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker logs tc
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp {path1} {path2}&lt;/code&gt; : copy a file from path1 to path2&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+bash-3.2# &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-q&lt;/code&gt; : 현재 containers id 값만 조회&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;`  `&lt;/code&gt; : ` ` 안의 명령에 대한 결과값을 return&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;
+38ca9cccee3e
+
+&lt;span class=&quot;c&quot;&gt;# containers id 값을 모두 가져와서 stop&lt;/span&gt;
+bash-3.2# docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+38ca9cccee3e
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ways to stop &amp;amp; remove all of containers &amp;amp; images&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker rmi &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker images &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;temporary-container&quot;&gt;temporary container&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;과 함께 &lt;code class=&quot;highlighter-rouge&quot;&gt;--rm&lt;/code&gt; 명령, container stop 과 함께 자동으로 삭제됨&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tctemp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8090:8090 &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; ykaj9758/tomcat9
+2a45b3053e169292aefb0a050283b0fe8589b6b275e18f326dc3f87de4ffe6f0
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                       PORTS                              NAMES
+2a45b3053e16        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   About a minute ago   Up 59 seconds                8080/tcp, 0.0.0.0:8090-&amp;gt;8090/tcp   tctemp
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago          Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 7 minutes ago                                      tc
+
+bash-3.2# docker stop tctemp
+tctemp
+
+bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
+38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago         Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 8 minutes ago                       tc
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mysql-설치--실행&quot;&gt;MySQL 설치 &amp;amp; 실행&lt;/h2&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e &lt;/code&gt; : 환경변수설정
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MYSQL_ROOT_PASSWORD=&lt;/code&gt; : 반드시 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; : 최신버전 설치
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql:5&lt;/code&gt; : mysql5 설치&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mymysql &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql
+
+&lt;span class=&quot;c&quot;&gt;# bash-3.2# docker run --name mymysql5 -e MYSQL_ROOT_PASSWORD=1234 -d mysql:5.7&lt;/span&gt;
+
+Unable to find image &lt;span class=&quot;s1&quot;&gt;'mysql:latest'&lt;/span&gt; locally
+latest: Pulling from library/mysql
+
+&lt;span class=&quot;c&quot;&gt;# ps 명령으로 설치 됐는지 확인, name / port 확인&lt;/span&gt;
+bash-3.2# docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
+7001e556ecd4        mysql               &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   3 minutes ago       Up 3 minutes        3306/tcp, 33060/tcp   mymysql
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;exectute&quot;&gt;Exectute&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mymysql mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# MySQL 접속 화면&lt;/span&gt;
+Enter password:
+
+Welcome to the MySQL monitor.  Commands end with &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; or &lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Your MySQL connection &lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &lt;span class=&quot;s1&quot;&gt;'help;'&lt;/span&gt; or &lt;span class=&quot;s1&quot;&gt;'\h'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;help. Type &lt;span class=&quot;s1&quot;&gt;'\c'&lt;/span&gt; to clear the current input statement.
+
+mysql&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;oracle-xe-11g&quot;&gt;Oracle XE 11g&lt;/h2&gt;
+
+&lt;h3 id=&quot;installation-1&quot;&gt;Installation&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 49161:1521 oracleinanutshell/oracle-xe-11g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="Oracle" /><category term="MySQL" /><summary type="html">Docker basic by 재즐보프’s Youtube</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~2강</title><link href="http://localhost:4000/study/cloud/aws/ln-aws-0102/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~2강" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/ln-aws-0102</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/ln-aws-0102/">&lt;h1 id=&quot;01-실습용-aws-ec2-인스턴스-생성-및-접속&quot;&gt;01 실습용 AWS EC2 인스턴스 생성 및 접속&lt;/h1&gt;
+
+&lt;h2 id=&quot;aws-서버-인스턴스-생성&quot;&gt;AWS 서버 인스턴스 생성&lt;/h2&gt;
+
+&lt;p&gt;Docker Machine 설치를 위한 객체 생성&lt;/p&gt;
+
+&lt;h4 id=&quot;서버-인스턴스&quot;&gt;서버 인스턴스&lt;/h4&gt;
+&lt;dl&gt;
+  &lt;dt&gt;EC2&lt;/dt&gt;
+  &lt;dd&gt;강의일 현재까지 AWS에서 가장 많이 쓰이고 있는 서버&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h4 id=&quot;ami-선택&quot;&gt;AMI 선택&lt;/h4&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Amazon Machine Image&lt;/dt&gt;
+  &lt;dd&gt;Ubuntu Server 18.04 (LTS) 선택&lt;/dd&gt;
+  &lt;dd&gt;&lt;img src=&quot;/assets/images/aws/Screen Shot 2020-04-04 at 16.53.17.png&quot; alt=&quot;Screen Shot 2020-04-04 at 16.53.17&quot; /&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h4 id=&quot;인스턴스-유형-선택&quot;&gt;인스턴스 유형 선택&lt;/h4&gt;
+&lt;dl&gt;
+  &lt;dt&gt;t2 micro&lt;/dt&gt;
+  &lt;dd&gt;free-tier 에서 사용 가능한 유일한 type&lt;/dd&gt;
+  &lt;dd&gt;&lt;img src=&quot;/assets/images/aws/Screen%20Shot%202020-04-04%20at%2016.55.55.png&quot; alt=&quot;Screen Shot 2020-04-04 at 16.55.55&quot; /&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;유형 선택 후 시작하기 버튼 누르면 바로 step7으로 넘어감&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/aws/ss%20ubuntu%20AMI.png&quot; alt=&quot;ss ubuntu AMI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;처음에 잘못 눌렀는지..AMI를 AmazonLinux로 잘못 선택해서 왜 sudo가 안먹히나 또 헤맸다..&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;key-pair&quot;&gt;Key pair&lt;/h4&gt;
+&lt;p&gt;보안을 위한 key pair 생성 및 download&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;별도의 workspace 디렉토리 생성하여 관리&lt;/li&gt;
+  &lt;li&gt;파일 속성을 통해 보안 설정 필수&lt;/li&gt;
+  &lt;li&gt;linux/Mac &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod 400&lt;/code&gt;를 통해 보안 설정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;terminal 열어서 SSH 방식으로 연결해야 함&lt;/p&gt;
+
+&lt;p&gt;ex.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;keypair.pem&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; ubuntu@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;public DNS&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;aws instance connect 눌렀을 때 나오는 안내 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;예:&lt;/code&gt;에 있는 거 그대로 가져와서 경로만 써주면 됨&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/ss%20aws%20connect%20instance.png&quot; alt=&quot;ss aws connect instance&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;error-같은-normal-message&quot;&gt;Error 같은 Normal Message&lt;/h5&gt;
+&lt;p&gt;ssh 방식으로 연결 시도하고 나니, 아래처럼 메시지가 떴음&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;can't be established&lt;/code&gt; 라는 메시지 때문에 오류인 줄 알고 헤맸는데, 그냥 yes 하면 연결 되는 거 였음..&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The authenticity of host '###' cant be established.
+ECDSA key fingerprint is SHA256:###.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Welcome to Ubuntu..!!&lt;/p&gt;
+
+&lt;p&gt;EC2의 Ubuntu에 접속되어 linux 명령으로 작업하면 된다&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Welcome to Ubuntu 18.04.3 LTS &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GNU/Linux 4.15.0-1057-aws x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Documentation:  https://help.ubuntu.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Management:     https://landscape.canonical.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Apr  4 10:10:05 UTC 2020
+
+  System load:  0.25              Processes:           91
+  Usage of /:   13.6% of 7.69GB   Users logged &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;:     0
+  Memory usage: 15%               IP address &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;eth0: 172.31.45.116
+  Swap usage:   0%
+
+0 packages can be updated.
+0 updates are security updates.
+
+...
+
+~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;참고&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SSH 방식 접속 방법  : &lt;a href=&quot;https://lhh3520.tistory.com/288&quot;&gt;lhh3520.tistory.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SSH Key 만드는 법 : &lt;a href=&quot;https://uroa.tistory.com/101&quot;&gt;uroa.tistory.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;02-jupyter-notebook-설치-https-적용-시스템-서비스-설정하기&quot;&gt;02 Jupyter Notebook 설치, HTTPS 적용, 시스템 서비스 설정하기&lt;/h1&gt;
+
+&lt;h2 id=&quot;보다-편한-ec2-활용을-위한-jupyter-notebook-설치&quot;&gt;보다 편한 EC2 활용을 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;Jupyter Notebook&lt;/code&gt; 설치&lt;/h2&gt;
+
+&lt;p&gt;System terminal이 아닌 &lt;code class=&quot;highlighter-rouge&quot;&gt;Jupyter Notebook&lt;/code&gt;의 terminal에서 Server 접속 위함&lt;/p&gt;
+
+&lt;h4 id=&quot;1-check-python3-version&quot;&gt;1. check python3 version&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+Python 3.6.9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2-python3-개발환경-설치위한-pip-install&quot;&gt;2. python3 개발환경 설치위한 pip install&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3-pip
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3-pip를-통해-notebook-install&quot;&gt;3. pip를 통해 notebook install&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;4-notebook에서-사용할-pw-설정&quot;&gt;4. notebook에서 사용할 p/w 설정&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;이때 return 되는 sha 값을 반드시 잘 저장해둔다; SSH 만들기 위함!!&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.6.9&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nov&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;02&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GCC&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;help&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;copyright&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;credits&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;notebook.auth&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;passwd&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;passwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Enter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Verify&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;5-system-terminal이-아닌-webbrowser-jupyter-terminal을-사용하기-위한-설정&quot;&gt;5. System terminal이 아닌 WebBrowser jupyter terminal을 사용하기 위한 설정&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook &lt;span class=&quot;nt&quot;&gt;--generate-config&lt;/span&gt;
+Writing default config to: /home/ubuntu/.jupyter/jupyter_notebook_config.py
+
+~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;여기서 &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter_notebook_config.py&lt;/code&gt; 파일이 열림, 최하단에 아래 내용 입력&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'sha1:~~~~'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'@@@.@@@.@@@.@@@'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notebook_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;certfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'/home/ubuntu/ssl/@@@.pem'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'/home/ubuntu/ssl/@@@.key'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~$ sudo jupyter-notebook --allow-root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;아래와 같이 ip주소가 뜨면 성공&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I 10:21:59.278 NotebookApp] The Jupyter Notebook is running at:
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I 10:21:59.278 NotebookApp] http://xxx.xxx.xxx.xxx:8888/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;ip주소로 접속 -&amp;gt; jupyter pw 입력 -&amp;gt; New Terminal&lt;/p&gt;
+
+&lt;h4 id=&quot;6-jupyter가-background에서-실행되도록-설정&quot;&gt;6. jupyter가 background에서 실행되도록 설정&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bg&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1]+ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;jupyter-notebook &lt;span class=&quot;nt&quot;&gt;--allow-root&lt;/span&gt; &amp;amp;
+~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;disown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;보안을 위해 접속ip 확인 및 ip kill&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt; 
+tcp        0      0 @@@.@@@.@@@.@@@:8888      0.0.0.0:&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;               LISTEN      7410/python3        
+tcp        0      0 @@@.@@@.@@@.@@@:8888      @@@.@@@.@@@.@@@:63856   ESTABLISHED 7410/python3        
+...
+
+~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; 7410
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1]+  Killed                  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;jupyter-notebook &lt;span class=&quot;nt&quot;&gt;--allow-root&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;7-ssl-접속을-위한-ssl-keypair-생성&quot;&gt;7. SSL 접속을 위한 SSL KeyPair 생성&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;ssl
+~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ssl
+~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-x509&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 365 &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:1024 &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{OpenKeyName}.key&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{PrivateKeyName}.pem&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-batch&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;8-ssh-접속-가능하도록-jupyter_notebook_configpy-환경설정-수정&quot;&gt;8. SSH 접속 가능하도록 &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter_notebook_config.py&lt;/code&gt; 환경설정 수정&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;9-system-기본-프로그램으로-jupyter가-실행되도록-설정&quot;&gt;9. System 기본 프로그램으로 jupyter가 실행되도록 설정&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which jupyter-notebook
+/usr/local/bin/jupyter-notebook
+
+~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/systemd/system/jupyter.service
+
+~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;jupyter
+Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → /etc/systemd/system/jupyter.service.
+
+~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start jupyter
+
+&lt;span class=&quot;c&quot;&gt;# 실행 상태 확인&lt;/span&gt;
+~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl status jupyter
+● jupyter.service - Jupyter Notebook Server
+   Loaded: loaded &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/etc/systemd/system/jupyter.service&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; enabled&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; vendor preset:
+   Active: active &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;running&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; since Sat 2020-04-04 10:56:44 UTC&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 9s ago
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;접속 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;신뢰할 수 없는 인증서&lt;/code&gt; 문제가 발생하나, 무시하고 진행하면 됨&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;사설인증서 SSL을 사용하기 때문&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;희한하게 내 Mac-Chrome에서는 무시하고 진행 메뉴가 안보이고 인증서 따로 저장하는 메뉴도 없음.. 그냥 꽉~막힘 ㅠ googling해도 깔끔한 해결방법은 찾기 힘들었는데, FireFox로 여니까 된다..내 금쪽 같은 토요일 2시간 뚝딱!&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html">01 실습용 AWS EC2 인스턴스 생성 및 접속</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 3강~4강</title><link href="http://localhost:4000/study/cloud/aws/docker/ln-aws-0304/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 3강~4강" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/docker/ln-aws-0304</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/ln-aws-0304/">&lt;h1 id=&quot;03-aws-ec2에-도커docker-설치-및-dockerfile로-웹-서버-구동시키기&quot;&gt;03 AWS EC2에 도커(Docker) 설치 및 Dockerfile로 웹 서버 구동시키기&lt;/h1&gt;
 
 &lt;h2 id=&quot;docker-설치를-위한-준비&quot;&gt;Docker 설치를 위한 준비&lt;/h2&gt;
 
@@ -943,223 +1486,7 @@ Dockerfile  index.php
 
 &lt;p&gt;현재 실행중인 Jenkins 내부 container 종료, Jenkins가 설치된 container만 남겨둔다&lt;/p&gt;
 
-&lt;h2 id=&quot;jenkins-project-build-수정&quot;&gt;Jenkins project build 수정&lt;/h2&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="동빈나" /><category term="LectureNotes" /><category term="AWS" /><category term="Jenkins" /><summary type="html">10 Jenkins를 이용해 Docker 프로젝트 빌드해보기</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~2강</title><link href="http://localhost:4000/study/cloud/aws/ln-aws-0102/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~2강" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/ln-aws-0102</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/ln-aws-0102/">&lt;h1 id=&quot;01-실습용-aws-ec2-인스턴스-생성-및-접속&quot;&gt;01 실습용 AWS EC2 인스턴스 생성 및 접속&lt;/h1&gt;
-
-&lt;h2 id=&quot;aws-서버-인스턴스-생성&quot;&gt;AWS 서버 인스턴스 생성&lt;/h2&gt;
-
-&lt;p&gt;Docker Machine 설치를 위한 객체 생성&lt;/p&gt;
-
-&lt;h4 id=&quot;서버-인스턴스&quot;&gt;서버 인스턴스&lt;/h4&gt;
-&lt;dl&gt;
-  &lt;dt&gt;EC2&lt;/dt&gt;
-  &lt;dd&gt;강의일 현재까지 AWS에서 가장 많이 쓰이고 있는 서버&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h4 id=&quot;ami-선택&quot;&gt;AMI 선택&lt;/h4&gt;
-&lt;dl&gt;
-  &lt;dt&gt;Amazon Machine Image&lt;/dt&gt;
-  &lt;dd&gt;Ubuntu Server 18.04 (LTS) 선택&lt;/dd&gt;
-  &lt;dd&gt;&lt;img src=&quot;/assets/images/aws/Screen Shot 2020-04-04 at 16.53.17.png&quot; alt=&quot;Screen Shot 2020-04-04 at 16.53.17&quot; /&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h4 id=&quot;인스턴스-유형-선택&quot;&gt;인스턴스 유형 선택&lt;/h4&gt;
-&lt;dl&gt;
-  &lt;dt&gt;t2 micro&lt;/dt&gt;
-  &lt;dd&gt;free-tier 에서 사용 가능한 유일한 type&lt;/dd&gt;
-  &lt;dd&gt;&lt;img src=&quot;/assets/images/aws/Screen%20Shot%202020-04-04%20at%2016.55.55.png&quot; alt=&quot;Screen Shot 2020-04-04 at 16.55.55&quot; /&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;유형 선택 후 시작하기 버튼 누르면 바로 step7으로 넘어감&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/aws/ss%20ubuntu%20AMI.png&quot; alt=&quot;ss ubuntu AMI&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;처음에 잘못 눌렀는지..AMI를 AmazonLinux로 잘못 선택해서 왜 sudo가 안먹히나 또 헤맸다..&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;key-pair&quot;&gt;Key pair&lt;/h4&gt;
-&lt;p&gt;보안을 위한 key pair 생성 및 download&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;별도의 workspace 디렉토리 생성하여 관리&lt;/li&gt;
-  &lt;li&gt;파일 속성을 통해 보안 설정 필수&lt;/li&gt;
-  &lt;li&gt;linux/Mac &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod 400&lt;/code&gt;를 통해 보안 설정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;terminal 열어서 SSH 방식으로 연결해야 함&lt;/p&gt;
-
-&lt;p&gt;ex.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;keypair.pem&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; ubuntu@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;public DNS&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;aws instance connect 눌렀을 때 나오는 안내 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;예:&lt;/code&gt;에 있는 거 그대로 가져와서 경로만 써주면 됨&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/ss%20aws%20connect%20instance.png&quot; alt=&quot;ss aws connect instance&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;error-같은-normal-message&quot;&gt;Error 같은 Normal Message&lt;/h5&gt;
-&lt;p&gt;ssh 방식으로 연결 시도하고 나니, 아래처럼 메시지가 떴음&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;can't be established&lt;/code&gt; 라는 메시지 때문에 오류인 줄 알고 헤맸는데, 그냥 yes 하면 연결 되는 거 였음..&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The authenticity of host '###' cant be established.
-ECDSA key fingerprint is SHA256:###.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Welcome to Ubuntu..!!&lt;/p&gt;
-
-&lt;p&gt;EC2의 Ubuntu에 접속되어 linux 명령으로 작업하면 된다&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Welcome to Ubuntu 18.04.3 LTS &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GNU/Linux 4.15.0-1057-aws x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Documentation:  https://help.ubuntu.com
- &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Management:     https://landscape.canonical.com
- &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Support:        https://ubuntu.com/advantage
-
-  System information as of Sat Apr  4 10:10:05 UTC 2020
-
-  System load:  0.25              Processes:           91
-  Usage of /:   13.6% of 7.69GB   Users logged &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;:     0
-  Memory usage: 15%               IP address &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;eth0: 172.31.45.116
-  Swap usage:   0%
-
-0 packages can be updated.
-0 updates are security updates.
-
-...
-
-~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
-/home/ubuntu
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;참고&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;SSH 방식 접속 방법  : &lt;a href=&quot;https://lhh3520.tistory.com/288&quot;&gt;lhh3520.tistory.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;SSH Key 만드는 법 : &lt;a href=&quot;https://uroa.tistory.com/101&quot;&gt;uroa.tistory.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;02-jupyter-notebook-설치-https-적용-시스템-서비스-설정하기&quot;&gt;02 Jupyter Notebook 설치, HTTPS 적용, 시스템 서비스 설정하기&lt;/h1&gt;
-
-&lt;h2 id=&quot;보다-편한-ec2-활용을-위한-jupyter-notebook-설치&quot;&gt;보다 편한 EC2 활용을 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;Jupyter Notebook&lt;/code&gt; 설치&lt;/h2&gt;
-
-&lt;p&gt;System terminal이 아닌 &lt;code class=&quot;highlighter-rouge&quot;&gt;Jupyter Notebook&lt;/code&gt;의 terminal에서 Server 접속 위함&lt;/p&gt;
-
-&lt;h4 id=&quot;1-check-python3-version&quot;&gt;1. check python3 version&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-Python 3.6.9
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;2-python3-개발환경-설치위한-pip-install&quot;&gt;2. python3 개발환경 설치위한 pip install&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3-pip
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-The following additional packages will be installed:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;3-pip를-통해-notebook-install&quot;&gt;3. pip를 통해 notebook install&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;notebook
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;4-notebook에서-사용할-pw-설정&quot;&gt;4. notebook에서 사용할 p/w 설정&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;이때 return 되는 sha 값을 반드시 잘 저장해둔다; SSH 만들기 위함!!&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.6.9&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nov&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;02&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GCC&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;help&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;copyright&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;credits&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;notebook.auth&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;passwd&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;passwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Enter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Verify&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;5-system-terminal이-아닌-webbrowser-jupyter-terminal을-사용하기-위한-설정&quot;&gt;5. System terminal이 아닌 WebBrowser jupyter terminal을 사용하기 위한 설정&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook &lt;span class=&quot;nt&quot;&gt;--generate-config&lt;/span&gt;
-Writing default config to: /home/ubuntu/.jupyter/jupyter_notebook_config.py
-
-~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기서 &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter_notebook_config.py&lt;/code&gt; 파일이 열림, 최하단에 아래 내용 입력&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'sha1:~~~~'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'@@@.@@@.@@@.@@@'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;notebook_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;certfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'/home/ubuntu/ssl/@@@.pem'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'/home/ubuntu/ssl/@@@.key'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~$ sudo jupyter-notebook --allow-root
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;아래와 같이 ip주소가 뜨면 성공&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I 10:21:59.278 NotebookApp] The Jupyter Notebook is running at:
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I 10:21:59.278 NotebookApp] http://xxx.xxx.xxx.xxx:8888/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;ip주소로 접속 -&amp;gt; jupyter pw 입력 -&amp;gt; New Terminal&lt;/p&gt;
-
-&lt;h4 id=&quot;6-jupyter가-background에서-실행되도록-설정&quot;&gt;6. jupyter가 background에서 실행되도록 설정&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bg&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1]+ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;jupyter-notebook &lt;span class=&quot;nt&quot;&gt;--allow-root&lt;/span&gt; &amp;amp;
-~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;disown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;보안을 위해 접속ip 확인 및 ip kill&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt; 
-tcp        0      0 @@@.@@@.@@@.@@@:8888      0.0.0.0:&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;               LISTEN      7410/python3        
-tcp        0      0 @@@.@@@.@@@.@@@:8888      @@@.@@@.@@@.@@@:63856   ESTABLISHED 7410/python3        
-...
-
-~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; 7410
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1]+  Killed                  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;jupyter-notebook &lt;span class=&quot;nt&quot;&gt;--allow-root&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;7-ssl-접속을-위한-ssl-keypair-생성&quot;&gt;7. SSL 접속을 위한 SSL KeyPair 생성&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;ssl
-~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ssl
-~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-x509&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 365 &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:1024 &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{OpenKeyName}.key&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{PrivateKeyName}.pem&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-batch&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;8-ssh-접속-가능하도록-jupyter_notebook_configpy-환경설정-수정&quot;&gt;8. SSH 접속 가능하도록 &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter_notebook_config.py&lt;/code&gt; 환경설정 수정&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;9-system-기본-프로그램으로-jupyter가-실행되도록-설정&quot;&gt;9. System 기본 프로그램으로 jupyter가 실행되도록 설정&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which jupyter-notebook
-/usr/local/bin/jupyter-notebook
-
-~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/systemd/system/jupyter.service
-
-~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;jupyter
-Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → /etc/systemd/system/jupyter.service.
-
-~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start jupyter
-
-&lt;span class=&quot;c&quot;&gt;# 실행 상태 확인&lt;/span&gt;
-~/ssl&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl status jupyter
-● jupyter.service - Jupyter Notebook Server
-   Loaded: loaded &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/etc/systemd/system/jupyter.service&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; enabled&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; vendor preset:
-   Active: active &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;running&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; since Sat 2020-04-04 10:56:44 UTC&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 9s ago
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;접속 시 &lt;code class=&quot;highlighter-rouge&quot;&gt;신뢰할 수 없는 인증서&lt;/code&gt; 문제가 발생하나, 무시하고 진행하면 됨&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;사설인증서 SSL을 사용하기 때문&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;희한하게 내 Mac-Chrome에서는 무시하고 진행 메뉴가 안보이고 인증서 따로 저장하는 메뉴도 없음.. 그냥 꽉~막힘 ㅠ googling해도 깔끔한 해결방법은 찾기 힘들었는데, FireFox로 여니까 된다..내 금쪽 같은 토요일 2시간 뚝딱!&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html">01 실습용 AWS EC2 인스턴스 생성 및 접속</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~</title><link href="http://localhost:4000/study/cloud/aws/docker/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/">&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 --&gt;
+&lt;h2 id=&quot;jenkins-project-build-수정&quot;&gt;Jenkins project build 수정&lt;/h2&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="동빈나" /><category term="LectureNotes" /><category term="AWS" /><category term="Jenkins" /><summary type="html">10 Jenkins를 이용해 Docker 프로젝트 빌드해보기</summary></entry><entry><title type="html">LN-Docker-동빈나’s Docker 활용 1강~</title><link href="http://localhost:4000/study/cloud/aws/docker/" rel="alternate" type="text/html" title="LN-Docker-동빈나's Docker 활용 1강~" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/aws/</id><content type="html" xml:base="http://localhost:4000/study/cloud/aws/docker/">&lt;!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 --&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [AWS 서버 인스턴스 생성](#aws-)
 		- [서버 인스턴스](#-)
@@ -1417,331 +1744,4 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jupyter.service → 
 &lt;ul&gt;
   &lt;li&gt;사설인증서 SSL을 사용하기 때문&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;희한하게 내 Mac-Chrome에서는 무시하고 진행 메뉴가 안보이고 인증서 따로 저장하는 메뉴도 없음.. 그냥 꽉~막힘 ㅠ googling해도 깔끔한 해결방법은 찾기 힘들었는데, FireFox로 여니까 된다..내 금쪽 같은 토요일 2시간 뚝딱!&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html"></summary></entry><entry><title type="html">왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube</title><link href="http://localhost:4000/study/cloud/docker/docker-basic-01/" rel="alternate" type="text/html" title="왕초보도 따라하는 도커 기초 강의 by 재즐보프 youtube" /><published>2020-04-04T00:00:00+09:00</published><updated>2020-04-04T00:00:00+09:00</updated><id>http://localhost:4000/study/cloud/docker/docker-basic-01</id><content type="html" xml:base="http://localhost:4000/study/cloud/docker/docker-basic-01/">&lt;h1 id=&quot;docker-basic-by-재즐보프s-youtube&quot;&gt;Docker basic by 재즐보프’s Youtube&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.notion.so/b67ed727aea4467cbc3226bb0c8e8336&quot;&gt;왕초보도 따라하는 도커 기초 강의 lecture notes&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;install-apps-in-docker&quot;&gt;Install Apps in Docker&lt;/h2&gt;
-
-&lt;p&gt;in Terminal&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;base&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; JnWui-MacBook-Pro:~ WnJ&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-JnWui-MacBook-Pro:~ root# docker search tomcat9
-
-&lt;span class=&quot;c&quot;&gt;# 검색 결과로 나온 tomcat9 관련 이미지 중 원하는 것을 찾아&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# docker에서 8080 포트로 바로 실행&lt;/span&gt;
-
-JnWui-MacBook-Pro:~ root# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8080:8080 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tc ykaj9758/tomcat9
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; : 처음 설치시에만 run 명령어 사용, 이후부터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;start &lt;/code&gt; 명령어로 tomcat 사용 가능&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; : background 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;127.0.0.1:8080d 에서 tomcat 9 실행 확인&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
-&lt;span class=&quot;go&quot;&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;38ca9cccee3e        ykaj9758/tomcat9    &quot;/opt/tomcat/apache-…&quot;   8 minutes ago       Up 8 minutes        0.0.0.0:8080-&amp;gt;&lt;/span&gt;8080/tcp   tc
-&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;현재 실행 중인 컨테이너 확인&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker stop tc
-&lt;span class=&quot;go&quot;&gt;
-tc
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker ps
-&lt;span class=&quot;go&quot;&gt;CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;실행중인 프로그램 stop&lt;/p&gt;
-
-&lt;h2 id=&quot;docker-registry&quot;&gt;Docker Registry&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://hub.docker.com&quot;&gt;docker hub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;이미지만 다운받고 싶은 경우&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-docker pull [ image name ]
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;설치한 이미지 확인&lt;/p&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;JnWui-MacBook-Pro:~ root#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker images
-&lt;span class=&quot;go&quot;&gt;
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-ykaj9758/tomcat9    latest              4fe6b09b4e59        23 months ago       1.16GB
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;docker-lifecycle&quot;&gt;Docker Lifecycle&lt;/h2&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c&quot;&gt;# nginx 이미지 가져오기&lt;/span&gt;
-
-bash-3.2# docker pull nginx
-
-Using default tag: latest
-latest: Pulling from library/nginx
-c499e6d256d6: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;74cda408e262: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;ffadbd415ab7: Pull &lt;span class=&quot;nb&quot;&gt;complete
-&lt;/span&gt;Digest: sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
-Status: Downloaded newer image &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nginx:latest
-docker.io/library/nginx:latest
-
-&lt;span class=&quot;c&quot;&gt;# nginx를 nx라는 이름 지정하여 port 80번에 할당, 컨테이너 생성&lt;/span&gt;
-
-bash-3.2# docker create &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx nginx
-
-&lt;span class=&quot;c&quot;&gt;# 현재 실행중인 모든 컨테이너 조회&lt;/span&gt;
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-
-bash-3.2# docker start 3b46b4a158d7
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 내용은 아래 한줄로도 가능&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nx2 nginx
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx2
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
-a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   About a minute ago   Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 13 seconds ago                           nx2
-3b46b4a158d7        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   6 minutes ago        Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; About a minute ago                       nx
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   57 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 47 minutes ago                         tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;3b46b4a158d7
-
-3b46b4a158d7
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
-a1d0718587fc        nginx               &lt;span class=&quot;s2&quot;&gt;&quot;nginx -g 'daemon of…&quot;&lt;/span&gt;   2 minutes ago       Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 57 seconds ago                         nx2
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   58 minutes ago      Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 48 minutes ago                       tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx
-
-nx
-
-bash-3.2# docker start nx
-
-nx
-
-bash-3.2# docker restart nx
-
-nx
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker stop nx
-
-nx
-
-bash-3.2# docker rmi nx
-
-bash-3.2# docker rmi nginx
-
-Untagged: nginx:latest
-Untagged: nginx@sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596
-Deleted: sha256:ed21b7a8aee9cc677df6d7f38a641fa0e3c05f65592c592c9f28c42b3dd89291
-Deleted: sha256:8a305f371a6c3c445a1dfc500c1364743868a269ab8cdaf95902692e82168352
-Deleted: sha256:d079ef06ec1f10a8050887365f9a940b39547ba6bcc46b16a463e740984f3223
-Deleted: sha256:c3a984abe8a88059915bb6c7a1d249fd1ccc16d931334ac8816540b0eb686b45
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;layers&quot;&gt;Layers&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;containers -&amp;gt; image -&amp;gt; overlay2&lt;/li&gt;
-  &lt;li&gt;overlay2 로 갈수록 용량이 급격히 커짐, 컨테이너 대부분의 정보를 overlay2가 갖고 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;useful-commands&quot;&gt;Useful Commands&lt;/h2&gt;
-
-&lt;p&gt;execute inner container terminal&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; : input &amp;amp; terminal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; tc /bin/bash
-
-&lt;span class=&quot;c&quot;&gt;# terminal이 tomcat의 hostname/containerID 로 열림&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;tomcat@38ca9cccee3e /]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit
-exit
-
-&lt;/span&gt;bash-3.2#
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;logs {container name}&lt;/code&gt; print console output log&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker logs tc
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp {path1} {path2}&lt;/code&gt; : copy a file from path1 to path2&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-bash-3.2# &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filename&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-q&lt;/code&gt; : 현재 containers id 값만 조회&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;`  `&lt;/code&gt; : ` ` 안의 명령에 대한 결과값을 return&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;
-38ca9cccee3e
-
-&lt;span class=&quot;c&quot;&gt;# containers id 값을 모두 가져와서 stop&lt;/span&gt;
-bash-3.2# docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-38ca9cccee3e
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Ways to stop &amp;amp; remove all of containers &amp;amp; images&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker stop &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker rmi &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker images &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;temporary-container&quot;&gt;temporary container&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;과 함께 &lt;code class=&quot;highlighter-rouge&quot;&gt;--rm&lt;/code&gt; 명령, container stop 과 함께 자동으로 삭제됨&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; tctemp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8090:8090 &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; ykaj9758/tomcat9
-2a45b3053e169292aefb0a050283b0fe8589b6b275e18f326dc3f87de4ffe6f0
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                       PORTS                              NAMES
-2a45b3053e16        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   About a minute ago   Up 59 seconds                8080/tcp, 0.0.0.0:8090-&amp;gt;8090/tcp   tctemp
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago          Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 7 minutes ago                                      tc
-
-bash-3.2# docker stop tctemp
-tctemp
-
-bash-3.2# docker ps &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
-38ca9cccee3e        ykaj9758/tomcat9    &lt;span class=&quot;s2&quot;&gt;&quot;/opt/tomcat/apache-…&quot;&lt;/span&gt;   2 hours ago         Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;143&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 8 minutes ago                       tc
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;mysql-설치--실행&quot;&gt;MySQL 설치 &amp;amp; 실행&lt;/h2&gt;
-
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e &lt;/code&gt; : 환경변수설정
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MYSQL_ROOT_PASSWORD=&lt;/code&gt; : 반드시 설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; : 최신버전 설치
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql:5&lt;/code&gt; : mysql5 설치&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mymysql &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql
-
-&lt;span class=&quot;c&quot;&gt;# bash-3.2# docker run --name mymysql5 -e MYSQL_ROOT_PASSWORD=1234 -d mysql:5.7&lt;/span&gt;
-
-Unable to find image &lt;span class=&quot;s1&quot;&gt;'mysql:latest'&lt;/span&gt; locally
-latest: Pulling from library/mysql
-
-&lt;span class=&quot;c&quot;&gt;# ps 명령으로 설치 됐는지 확인, name / port 확인&lt;/span&gt;
-bash-3.2# docker ps
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
-7001e556ecd4        mysql               &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   3 minutes ago       Up 3 minutes        3306/tcp, 33060/tcp   mymysql
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;exectute&quot;&gt;Exectute&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-bash-3.2# docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mymysql mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# MySQL 접속 화면&lt;/span&gt;
-Enter password:
-
-Welcome to the MySQL monitor.  Commands end with &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; or &lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Your MySQL connection &lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;is 8
-Server version: 8.0.19 MySQL Community Server - GPL
-
-Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2000, 2020, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &lt;span class=&quot;s1&quot;&gt;'help;'&lt;/span&gt; or &lt;span class=&quot;s1&quot;&gt;'\h'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;help. Type &lt;span class=&quot;s1&quot;&gt;'\c'&lt;/span&gt; to clear the current input statement.
-
-mysql&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;oracle-xe-11g&quot;&gt;Oracle XE 11g&lt;/h2&gt;
-
-&lt;h3 id=&quot;installation-1&quot;&gt;Installation&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bash-3.2# docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 49161:1521 oracleinanutshell/oracle-xe-11g
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="Oracle" /><category term="MySQL" /><summary type="html">Docker basic by 재즐보프’s Youtube</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>gitgitWi</name></author><category term="Docker" /><category term="LectureNotes" /><category term="AWS" /><category term="동빈나" /><summary type="html"></summary></entry></feed>
