@@ -441,7 +441,46 @@ var store = [
           
         "categories": ["Aidata","Python"],
         "tags": ["Python","DeepLearning","Keras"],
-        "url": "https://gitgitwi.github.io"/aidata/python/Keras0203_SKTacademy/"",
+        "url": "https://gitgitwi.github.io"/aidata/python/Keras02_03_SKTacademy/"",
+        "teaser": null
+      },
+    
+      
+      {
+        "title": "[SKTacademy/딥러닝 입문에서 활용까지] 4강. CNN; Convolutional Neural Networks",
+        "excerpt":
+          
+            "  4강. CNN; Convolutional Neural Networks   강의 :  딥러닝 입문에서 활용까지 케라스(Keras)   제공처 : SKplanet Tacademy   Youtube      4강  Link   GithubPages      4강 Link   4강  실습 Link   실습 dataset      손글씨 이미지         CNN; Convolutional Neural Networks   keras.layers.convolutionalConv2D  example)  Conv2D(             filters,              kernel_size,              strides=(1, 1),              padding='valid',              data_format=None,              dilation_rate=(1, 1),              activation=None,              use_bias=True,              kernel_initializer='glorot_uniform',              bias_initializer='zeros',              kernel_regularizer=None,              bias_regularizer=None,              activity_regularizer=None,              kernel_constraint=None,              bias_constraint=None,              **kwargs)  Conv2D(32, (5,5), padding = 'valid', input_shape=(28,28,1), activation='relu')   Argments     filers            number of convolution filters       출력 data  개수와 동일           kernel_size : (rows, cols) of convolutional kernels   *학습 데이터 수 =  filers * kernel rows * kernel cols           padding= : 경계 처리 방법               valid : 유효한 영역만 출력,  따라서 출력 이미지 사이즈는 입력  이미지 사이즈보다 작다       same : 출력 이미지 사이즈가 입력 이미지 사이즈와 동일                input_shape=: sample 수 제외한 입력 형태 정의. 첫 layer에서만 정의하면 됨             (rows, cols, channels) : 흑백영상인 경우 channel == 1, RGB인 경우 channel=3           filter         하나의 filter로 전체 input에 대해 학습   지역적인 요소;  어떤 지역에 대해 학습한 내용이 다른 지역에 영향을 미치지 않음   Dense layer를 통해서도 구현할 수 있으나,  CNN을 사용하면  훨씬 적은 가중치를 통해서 더 좋은 성능을 만들 수 있음   keras.layers.convolutional.MaxPooling2D   MaxPooling2D(         pool_size=(2, 2),          strides=None,          padding='valid',          data_format=None,          **kwargs)        각 pixel에서 가장 큰 것만 추출해 이미지 size 축소,  사소한 변화는 무시 (추상화)   학습하는 내용은 없음   Arguments      pool_size= : (rows, cols)   keras.layers.Flatten   Flatten(     data_format=None,      **kwargs)     다차원 tensor를 1차원으로 flattening   학습하는 내용은 없음   ImageDataGenerator : 데이터 부풀리기   ImageDataGenerator(         featurewise_center=False,          samplewise_center=False,          featurewise_std_normalization=False,          samplewise_std_normalization=False,          zca_whitening=False,          zca_epsilon=1e-06,          rotation_range=0,          width_shift_range=0.0,          height_shift_range=0.0,          brightness_range=None,          shear_range=0.0,          zoom_range=0.0,          channel_shift_range=0.0,          fill_mode='nearest',          cval=0.0,          horizontal_flip=False,          vertical_flip=False,          rescale=None,          preprocessing_function=None,          data_format='channels_last',          validation_split=0.0,          interpolation_order=1,          dtype='float32')  ",
+          
+        "categories": ["Aidata","Python"],
+        "tags": ["Python","DeepLearning","Keras"],
+        "url": "https://gitgitwi.github.io"/aidata/python/Keras04_CNN/"",
+        "teaser": null
+      },
+    
+      
+      {
+        "title": "[SKTacademy/딥러닝 입문에서 활용까지] 5강. RNN;  Recurrent Neural Networks",
+        "excerpt":
+          
+            "  5강. RNN;  Recurrent Neural Networks   강의 :  딥러닝 입문에서 활용까지 케라스(Keras)   제공처 : SKplanet Tacademy   Youtube      5강  Link   GithubPages      5강 Link   5강  실습 Link         keras.layers.LSTM   LSTM(         units,          activation='tanh',          recurrent_activation='sigmoid',          use_bias=True,          kernel_initializer='glorot_uniform',          recurrent_initializer='orthogonal',          bias_initializer='zeros',          unit_forget_bias=True,          kernel_regularizer=None,          recurrent_regularizer=None,          bias_regularizer=None,          activity_regularizer=None,          kernel_constraint=None,          recurrent_constraint=None,          bias_constraint=None,          dropout=0.0,          recurrent_dropout=0.0,          implementation=2,          return_sequences=False,          return_state=False,          go_backwards=False,          stateful=False,          unroll=False,          **kwargs)   Arguments      units : number of output data   input_dim=   input_length=   return_sequences=   stateful= : 상태 유지 여부   ",
+          
+        "categories": ["Aidata","Python"],
+        "tags": ["Python","DeepLearning","Keras"],
+        "url": "https://gitgitwi.github.io"/aidata/python/Keras05_RNN/"",
+        "teaser": null
+      },
+    
+      
+      {
+        "title": "[SKTacademy/딥러닝 입문에서 활용까지] 6강. GM  ~  7강. Keras vs. PyTorch",
+        "excerpt":
+          
+            "  6강. GM  ~  7강. Keras vs. PyTorch   강의 :  딥러닝 입문에서 활용까지 케라스(Keras)   제공처 : SKplanet Tacademy   Youtube      6강  Link   7강  Link   GithubPages      Link   Link2         GM; Generator Model, 생성 모델      최신 model들은 대부분 generator를 갖고 있다   단순히 분류  뿐만 아니라 만들어  냄            ex. 고양이 이미지 학습 후 고양이 이미지 생성           잠재공간;  학습 data에 없는 내용도 잠재 vector로 만들어서 아예 새로운 data 생성   GAN  Progressive GAN   연예인 사진 학습하여 deeplearning이 실제에 가까운 가상 인물 이미지 생성   Keras vs. PyTorch   deepsense.ai &gt; Keras or PyTorch as your first deep learning framework   최신 논문  &amp;  Code   https://paperswithcode.com/sota  ",
+          
+        "categories": ["Aidata","Python"],
+        "tags": ["Python","DeepLearning","Keras"],
+        "url": "https://gitgitwi.github.io"/aidata/python/Keras06_GM/"",
         "teaser": null
       }
     
