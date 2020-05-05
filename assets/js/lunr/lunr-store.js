@@ -521,6 +521,19 @@ var store = [
         "tags": ["Python","MachineLearning","DeepLearning","Tensorflow"],
         "url": "https://gitgitwi.github.io"/aidata/python/DLwithCodes/"",
         "teaser": null
+      },
+    
+      
+      {
+        "title": "구자환 교수 Big Data (R/Hadoop) Lectures[Youtube]",
+        "excerpt":
+          
+            "강의자 : 구자환 교수님 (성균관대학교)   강의노트 : https://trello.com/b/VjgDkljT/big-data-koo-lecture-notes      playlist : https://www.youtube.com/playlist?list=PLqAwhiXn3e8kpXeJzyJF1ZZVFz-8luYZI   없어서 만들었음                  1강. 빅데이터 처리 기술의 필요성       upload 2018. 4. 29.       https://www.youtube.com/watch?v=0-e4bHkwKek                       60강. Spark Streaming 응용 프로그램 실습 (종강)       upload 2018. 7. 18.       https://www.youtube.com/watch?v=5l5aXKLFQtI          ",
+          
+        "categories": ["Aidata","Hadoop"],
+        "tags": ["BigData","LectureNotes","Hadoop","R"],
+        "url": "https://gitgitwi.github.io"/aidata/hadoop/prof_Koo_BigData_Hadoop_R_lectures/"",
+        "teaser": null
       }
     
   
