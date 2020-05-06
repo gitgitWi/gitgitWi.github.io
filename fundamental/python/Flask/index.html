@@ -1,0 +1,1045 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+
+
+
+
+
+
+
+<title>[Python Web] Flask Quickstart(1) - gitgitWi’s gitgit pages</title>
+<meta name="description" content="   수업일자 : 2020-05-06   실습파일 :       1. 가상환경 구축  작업환경    docker debian linux   anaconda   python 3.7.6   reference : https://docs.python.org/ko/3.7/library/venv.html  virtualenv 설치  pip install virtualenv #또는 conda install virtualenv   가상환경 생성  flask_env 폴더에서 가상환경 work 생성   ⚡ $  mkdir flask_env  ⚡ $  cd flask_env  ⚡ $  python -m venv work  ⚡ $  source work/bin/activate (work) ⚡ $     reference : dir options (https://shaeod.tistory.com/744)  * 환경변수     사용자 : 특정 사용자에게만   System : 시스템 전체에   환경변수는 특정 수 이상 넘어가면 시스템이 무시하는 문제 발생할 수 있음    2. Flask App  routes.py  Basic  from flask import Flask  app = Flask(__name__)  @app.route(&#39;/&#39;) def hello_world():  return &#39;Hello World!&#39;  if __name__ == &#39;__main__&#39; : app.run()   (work) ⚡ $ python routes.py   * Serving Flask app &quot;routes&quot; (lazy loading)  * Environment: production    WARNING: This is a development server. Do not use it in a production deployment.    Use a production WSGI server instead.  * Debug mode: off  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)   app = Flask(__name__)  Flask 클래스 전역 객체 선언  @app.route(&#39;/&#39;)  decorator(Java의 annotation) 사용하여 hello_world()를 wrapping  웹으로 접근한 사용자가 어떤 URL에 따라 어떤 함수를 실행켜야할지 지정  &#39;/&#39; : URL pattern, base url  app.run()  run()를 사용해 Flask app. 실행  아무런 인자 넘겨주지 않을 경우, localhost (127.0.0.1)에서 적당한 port(여기서는 5000) 잡아서 실행  Args     port : ex. (port = &#39;5000&#39;)   host : ex. (host = &#39;0.0.0.0&#39;)            0.0.0.0은 모든 ip 의미하므로, 외부에서도 접속 가능           debug :   username page  @app.route(&#39;/user/&lt;username&gt;&#39;) def show_user_profile(username):       return f&#39;USER = {username}&#39;   post page  @app.route(&#39;/post/&lt;int:post_id&gt;&#39;) def show_post(post_id):       return f&#39;Post ID = {post_id}&#39;      Parameter의 data type 지정   여기서 integer로 지정했기 때문에, 다른 type이 들어오면 “404 Not Found” page   parameter 변수 규칙에는 string, int, float 등이 있으며, default는 string   특정함수 1개에 복수의 decorator 가능            ex. parameter 없으면 첫번째 url, 있으면 두번째 url             @app.route(&#39;/hello/&#39;)   @app.route(&#39;/hello/&lt;name&gt;&#39;)   def hello(name=None):       return f&quot;User {name}&quot;             template     Flask에서 html 사용하는 방법   templates directory  html 따로 보관하는 directory 만들어줘야 해당 파일들 인식 가능  Jinja     template engine   html 문서 내 직접 코드를 실행시키는 문법   jsp의 &lt;% %&gt;와 유사   types     {% CODE %} : delimeter for statements like if or for   {{ CODE }} : delimeter for expressions or variables   {# CODE #} : comments   {%- CODE %}, {%+ CODE %}, {% CODE -%} … :            공백 제거 or 유지 (trim 기능)       기본적으로 jinja engine은 template 줄 끝의 &amp;nbsp;를 제외한 나머지 공백 그대로 출력, 이러한 공백을 제외하고 싶을 경우 - 붙이고 유지하고 싶으면 + 붙임           {% raw %} ...text... { % endraw %}            escape, template 형태와 동일한 텍스트 출력시 사용       작은 문자열인 경우 {{ 와 같이 따옴표로 간단하게 escape 하는 것이 편리           # ... ## : line    for in loop in Jinja   {% for (item) in (iterable object) %}   CODES {% endfor %}   &lt;!-- ex --&gt; {% for item in navigation %}   &lt;li&gt;&lt;a href = &quot;{{ item.href }}&quot;&gt; {{item.caption}} &lt;/a&gt; &lt;/li&gt; {% endfor %}    if statements in Jinja   {% if CONDITION %}   CODES {% elif CONDITION %}   CODES {% else %}   CODES {% endif %}  {% TRUE_CODES if CONDITION else FALSE_CODES %}     for in if in Jinja  {% for ITEM in ITERABLE_OBJECT if CONDITION %}   {{ ITEM.VALUE }} {% endfor %}      사용방법  from flask.templating import render_template  @app.route(&#39;/hello/&lt;user&gt;&#39;) def hello(user):     return render_template(&#39;hello.html&#39;, name = user)     locals()     해당 함수 내 지역 변수 전체를 인자로 전송   @app.route(&quot;/user/&quot;) def user_hello():     users = [&#39;Frank&#39;,&#39;Steve&#39;,&#39;Alice&#39;,&#39;Bruce&#39;]     var = 1     return render_template(&#39;user.html&#39;, **locals())     URL 및 HTTP  redirect() &amp; url_for()     호출할 함수와 params 전달   url_for()에서 함수명만 전달할 경우 redirect()로 url 전달하는 것과 동일   @app.route(&#39;/user/&lt;name&gt;&#39;) def hello_user(name):     if name == &#39;admin&#39;:        # return redirect(url_for(&#39;hello_admin&#39;))과 동일       return redirect(&#39;/admin&#39;)     else : return redirect(url_for(&#39;hello_guest&#39;, guest = name))   Get &amp; Post  @app.route(&#39;/letsin/&#39;) def letsin ():      return render_template(&#39;login.html&#39;)  @app.route(&#39;/login&#39;, methods = [&#39;POST&#39;, &#39;GET&#39;]) def login():     if request.method == &#39;POST&#39;:          user = request.form[&#39;nm&#39;]         return redirect(url_for(&#39;success&#39;, name = user))     else:         user = request.args.get(&#39;nm&#39;)         return redirect(url_for(&#39;success&#39;, name = user))     /static  JS, CSS 등 static files    &lt;form&gt;으로 데이터 전송  @app.route(&#39;/stu/&#39;) def student(): return render_template(&#39;student.html&#39;)  @app.route(&#39;/result&#39;, methods = [&#39;POST&#39;,&#39;GET&#39;]) def result() :      if request.method == &#39;POST&#39;:          result = request.form         return render_template(&#39;result.html&#39;, result = result)  result = request.form  해당 form에 입력한 모든 데이터를 form 객체에 저장  특정 필드 값만 추출하고 싶으면 request.form[&#39;FIELD&#39;] 방식으로  &lt;h1&gt; 입력 결과 확인 &lt;/h1&gt; &lt;table&gt;  {% for key, val in result.items() %}   &lt;tr&gt;     &lt;th&gt;{{ key }}&lt;/th&gt;     &lt;td&gt;{{ val }}&lt;/td&gt;   &lt;/tr&gt;  {% endfor %}  &lt;/table&gt;   ``로 result의 내용을 출력해보면  ImmutableMultiDict([(&#39;name&#39;, &#39;이름&#39;), (&#39;physics&#39;, &#39;물리학&#39;), (&#39;chemistry&#39;, &#39;화학&#39;), (&#39;math&#39;, &#39;수학&#39;)])   ">
+
+
+  <meta name="author" content="gitgitWi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_KR">
+<meta property="og:site_name" content="gitgitWi's gitgit pages">
+<meta property="og:title" content="[Python Web] Flask Quickstart(1)">
+<meta property="og:url" content="https://gitgitwi.github.io/fundamental/python/Flask/">
+<meta property="og:image" content="https://gitgitwi.github.io/assets/images/me/me.png">
+
+
+  <meta property="og:description" content="   수업일자 : 2020-05-06   실습파일 :       1. 가상환경 구축  작업환경    docker debian linux   anaconda   python 3.7.6   reference : https://docs.python.org/ko/3.7/library/venv.html  virtualenv 설치  pip install virtualenv #또는 conda install virtualenv   가상환경 생성  flask_env 폴더에서 가상환경 work 생성   ⚡ $  mkdir flask_env  ⚡ $  cd flask_env  ⚡ $  python -m venv work  ⚡ $  source work/bin/activate (work) ⚡ $     reference : dir options (https://shaeod.tistory.com/744)  * 환경변수     사용자 : 특정 사용자에게만   System : 시스템 전체에   환경변수는 특정 수 이상 넘어가면 시스템이 무시하는 문제 발생할 수 있음    2. Flask App  routes.py  Basic  from flask import Flask  app = Flask(__name__)  @app.route(&#39;/&#39;) def hello_world():  return &#39;Hello World!&#39;  if __name__ == &#39;__main__&#39; : app.run()   (work) ⚡ $ python routes.py   * Serving Flask app &quot;routes&quot; (lazy loading)  * Environment: production    WARNING: This is a development server. Do not use it in a production deployment.    Use a production WSGI server instead.  * Debug mode: off  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)   app = Flask(__name__)  Flask 클래스 전역 객체 선언  @app.route(&#39;/&#39;)  decorator(Java의 annotation) 사용하여 hello_world()를 wrapping  웹으로 접근한 사용자가 어떤 URL에 따라 어떤 함수를 실행켜야할지 지정  &#39;/&#39; : URL pattern, base url  app.run()  run()를 사용해 Flask app. 실행  아무런 인자 넘겨주지 않을 경우, localhost (127.0.0.1)에서 적당한 port(여기서는 5000) 잡아서 실행  Args     port : ex. (port = &#39;5000&#39;)   host : ex. (host = &#39;0.0.0.0&#39;)            0.0.0.0은 모든 ip 의미하므로, 외부에서도 접속 가능           debug :   username page  @app.route(&#39;/user/&lt;username&gt;&#39;) def show_user_profile(username):       return f&#39;USER = {username}&#39;   post page  @app.route(&#39;/post/&lt;int:post_id&gt;&#39;) def show_post(post_id):       return f&#39;Post ID = {post_id}&#39;      Parameter의 data type 지정   여기서 integer로 지정했기 때문에, 다른 type이 들어오면 “404 Not Found” page   parameter 변수 규칙에는 string, int, float 등이 있으며, default는 string   특정함수 1개에 복수의 decorator 가능            ex. parameter 없으면 첫번째 url, 있으면 두번째 url             @app.route(&#39;/hello/&#39;)   @app.route(&#39;/hello/&lt;name&gt;&#39;)   def hello(name=None):       return f&quot;User {name}&quot;             template     Flask에서 html 사용하는 방법   templates directory  html 따로 보관하는 directory 만들어줘야 해당 파일들 인식 가능  Jinja     template engine   html 문서 내 직접 코드를 실행시키는 문법   jsp의 &lt;% %&gt;와 유사   types     {% CODE %} : delimeter for statements like if or for   {{ CODE }} : delimeter for expressions or variables   {# CODE #} : comments   {%- CODE %}, {%+ CODE %}, {% CODE -%} … :            공백 제거 or 유지 (trim 기능)       기본적으로 jinja engine은 template 줄 끝의 &amp;nbsp;를 제외한 나머지 공백 그대로 출력, 이러한 공백을 제외하고 싶을 경우 - 붙이고 유지하고 싶으면 + 붙임           {% raw %} ...text... { % endraw %}            escape, template 형태와 동일한 텍스트 출력시 사용       작은 문자열인 경우 {{ 와 같이 따옴표로 간단하게 escape 하는 것이 편리           # ... ## : line    for in loop in Jinja   {% for (item) in (iterable object) %}   CODES {% endfor %}   &lt;!-- ex --&gt; {% for item in navigation %}   &lt;li&gt;&lt;a href = &quot;{{ item.href }}&quot;&gt; {{item.caption}} &lt;/a&gt; &lt;/li&gt; {% endfor %}    if statements in Jinja   {% if CONDITION %}   CODES {% elif CONDITION %}   CODES {% else %}   CODES {% endif %}  {% TRUE_CODES if CONDITION else FALSE_CODES %}     for in if in Jinja  {% for ITEM in ITERABLE_OBJECT if CONDITION %}   {{ ITEM.VALUE }} {% endfor %}      사용방법  from flask.templating import render_template  @app.route(&#39;/hello/&lt;user&gt;&#39;) def hello(user):     return render_template(&#39;hello.html&#39;, name = user)     locals()     해당 함수 내 지역 변수 전체를 인자로 전송   @app.route(&quot;/user/&quot;) def user_hello():     users = [&#39;Frank&#39;,&#39;Steve&#39;,&#39;Alice&#39;,&#39;Bruce&#39;]     var = 1     return render_template(&#39;user.html&#39;, **locals())     URL 및 HTTP  redirect() &amp; url_for()     호출할 함수와 params 전달   url_for()에서 함수명만 전달할 경우 redirect()로 url 전달하는 것과 동일   @app.route(&#39;/user/&lt;name&gt;&#39;) def hello_user(name):     if name == &#39;admin&#39;:        # return redirect(url_for(&#39;hello_admin&#39;))과 동일       return redirect(&#39;/admin&#39;)     else : return redirect(url_for(&#39;hello_guest&#39;, guest = name))   Get &amp; Post  @app.route(&#39;/letsin/&#39;) def letsin ():      return render_template(&#39;login.html&#39;)  @app.route(&#39;/login&#39;, methods = [&#39;POST&#39;, &#39;GET&#39;]) def login():     if request.method == &#39;POST&#39;:          user = request.form[&#39;nm&#39;]         return redirect(url_for(&#39;success&#39;, name = user))     else:         user = request.args.get(&#39;nm&#39;)         return redirect(url_for(&#39;success&#39;, name = user))     /static  JS, CSS 등 static files    &lt;form&gt;으로 데이터 전송  @app.route(&#39;/stu/&#39;) def student(): return render_template(&#39;student.html&#39;)  @app.route(&#39;/result&#39;, methods = [&#39;POST&#39;,&#39;GET&#39;]) def result() :      if request.method == &#39;POST&#39;:          result = request.form         return render_template(&#39;result.html&#39;, result = result)  result = request.form  해당 form에 입력한 모든 데이터를 form 객체에 저장  특정 필드 값만 추출하고 싶으면 request.form[&#39;FIELD&#39;] 방식으로  &lt;h1&gt; 입력 결과 확인 &lt;/h1&gt; &lt;table&gt;  {% for key, val in result.items() %}   &lt;tr&gt;     &lt;th&gt;{{ key }}&lt;/th&gt;     &lt;td&gt;{{ val }}&lt;/td&gt;   &lt;/tr&gt;  {% endfor %}  &lt;/table&gt;   ``로 result의 내용을 출력해보면  ImmutableMultiDict([(&#39;name&#39;, &#39;이름&#39;), (&#39;physics&#39;, &#39;물리학&#39;), (&#39;chemistry&#39;, &#39;화학&#39;), (&#39;math&#39;, &#39;수학&#39;)])   ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-05-06T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/fundamental/python/Flask/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "gitgitWi",
+      "url": "https://gitgitwi.github.io/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="OiLW2mngNdN99bgruXQu7hREiSsX2Afh0mK30ResEzE" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="gitgitWi's gitgit pages Feed">
+
+
+<script data-ad-client="ca-pub-6707632410688562" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          gitgitWi
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Aidata/">AI+BigData</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Cloud/">Docker+Cloud</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/fundamentals/">Fundamentals</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Career/">취준기</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/Scrabs/">Scrabs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me/me.png" alt="gitgitWi" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">gitgitWi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>코딩 보다 어려운 인스톨</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul/S.Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://gitgitwi.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">HOME</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/gitgitWi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="mailto:gitgitwi@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Python Web] Flask Quickstart(1)">
+    <meta itemprop="description" content="  수업일자 : 2020-05-06  실습파일 : 1. 가상환경 구축작업환경  docker debian linux  anaconda  python 3.7.6reference : https://docs.python.org/ko/3.7/library/venv.htmlvirtualenv 설치pip install virtualenv#또는conda install virtualenv가상환경 생성flask_env 폴더에서 가상환경 work 생성 ⚡ $  mkdir flask_env ⚡ $  cd flask_env ⚡ $  python -m venv work ⚡ $  source work/bin/activate(work) ⚡ $  reference : dir options (https://shaeod.tistory.com/744)* 환경변수  사용자 : 특정 사용자에게만  System : 시스템 전체에환경변수는 특정 수 이상 넘어가면 시스템이 무시하는 문제 발생할 수 있음2. Flask Approutes.pyBasicfrom flask import Flaskapp = Flask(__name__)@app.route(&#39;/&#39;)def hello_world():  return &#39;Hello World!&#39;if __name__ == &#39;__main__&#39; : app.run()(work) ⚡ $ python routes.py * Serving Flask app &quot;routes&quot; (lazy loading) * Environment: production   WARNING: This is a development server. Do not use it in a production deployment.   Use a production WSGI server instead. * Debug mode: off * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)app = Flask(__name__)Flask 클래스 전역 객체 선언@app.route(&#39;/&#39;)decorator(Java의 annotation) 사용하여 hello_world()를 wrapping웹으로 접근한 사용자가 어떤 URL에 따라 어떤 함수를 실행켜야할지 지정&#39;/&#39; : URL pattern, base urlapp.run()run()를 사용해 Flask app. 실행아무런 인자 넘겨주지 않을 경우, localhost (127.0.0.1)에서 적당한 port(여기서는 5000) 잡아서 실행Args  port : ex. (port = &#39;5000&#39;)  host : ex. (host = &#39;0.0.0.0&#39;)          0.0.0.0은 모든 ip 의미하므로, 외부에서도 접속 가능        debug :username page@app.route(&#39;/user/&lt;username&gt;&#39;)def show_user_profile(username):      return f&#39;USER = {username}&#39;post page@app.route(&#39;/post/&lt;int:post_id&gt;&#39;)def show_post(post_id):      return f&#39;Post ID = {post_id}&#39;  Parameter의 data type 지정  여기서 integer로 지정했기 때문에, 다른 type이 들어오면 “404 Not Found” page  parameter 변수 규칙에는 string, int, float 등이 있으며, default는 string  특정함수 1개에 복수의 decorator 가능          ex. parameter 없으면 첫번째 url, 있으면 두번째 url          @app.route(&#39;/hello/&#39;)  @app.route(&#39;/hello/&lt;name&gt;&#39;)  def hello(name=None):      return f&quot;User {name}&quot;      template  Flask에서 html 사용하는 방법templates directoryhtml 따로 보관하는 directory 만들어줘야 해당 파일들 인식 가능Jinja  template engine  html 문서 내 직접 코드를 실행시키는 문법  jsp의 &lt;% %&gt;와 유사types  {% CODE %} : delimeter for statements like if or for  {{ CODE }} : delimeter for expressions or variables  {# CODE #} : comments  {%- CODE %}, {%+ CODE %}, {% CODE -%} … :          공백 제거 or 유지 (trim 기능)      기본적으로 jinja engine은 template 줄 끝의 &amp;nbsp;를 제외한 나머지 공백 그대로 출력, 이러한 공백을 제외하고 싶을 경우 - 붙이고 유지하고 싶으면 + 붙임        {% raw %} ...text... { % endraw %}          escape, template 형태와 동일한 텍스트 출력시 사용      작은 문자열인 경우 {{ 와 같이 따옴표로 간단하게 escape 하는 것이 편리        # ... ## : linefor in loop in Jinja{% for (item) in (iterable object) %}  CODES{% endfor %} &lt;!-- ex --&gt;{% for item in navigation %}  &lt;li&gt;&lt;a href = &quot;{{ item.href }}&quot;&gt; {{item.caption}} &lt;/a&gt; &lt;/li&gt;{% endfor %}if statements in Jinja{% if CONDITION %}  CODES{% elif CONDITION %}  CODES{% else %}  CODES{% endif %}{% TRUE_CODES if CONDITION else FALSE_CODES %}for in if in Jinja{% for ITEM in ITERABLE_OBJECT if CONDITION %}  {{ ITEM.VALUE }}{% endfor %}사용방법from flask.templating import render_template@app.route(&#39;/hello/&lt;user&gt;&#39;)def hello(user):    return render_template(&#39;hello.html&#39;, name = user)locals()  해당 함수 내 지역 변수 전체를 인자로 전송@app.route(&quot;/user/&quot;)def user_hello():    users = [&#39;Frank&#39;,&#39;Steve&#39;,&#39;Alice&#39;,&#39;Bruce&#39;]    var = 1    return render_template(&#39;user.html&#39;, **locals())URL 및 HTTPredirect() &amp; url_for()  호출할 함수와 params 전달  url_for()에서 함수명만 전달할 경우 redirect()로 url 전달하는 것과 동일@app.route(&#39;/user/&lt;name&gt;&#39;)def hello_user(name):    if name == &#39;admin&#39;:       # return redirect(url_for(&#39;hello_admin&#39;))과 동일      return redirect(&#39;/admin&#39;)    else : return redirect(url_for(&#39;hello_guest&#39;, guest = name))Get &amp; Post@app.route(&#39;/letsin/&#39;)def letsin ():     return render_template(&#39;login.html&#39;)@app.route(&#39;/login&#39;, methods = [&#39;POST&#39;, &#39;GET&#39;])def login():    if request.method == &#39;POST&#39;:         user = request.form[&#39;nm&#39;]        return redirect(url_for(&#39;success&#39;, name = user))    else:        user = request.args.get(&#39;nm&#39;)        return redirect(url_for(&#39;success&#39;, name = user))/staticJS, CSS 등 static files&lt;form&gt;으로 데이터 전송@app.route(&#39;/stu/&#39;)def student(): return render_template(&#39;student.html&#39;)@app.route(&#39;/result&#39;, methods = [&#39;POST&#39;,&#39;GET&#39;])def result() :     if request.method == &#39;POST&#39;:         result = request.form        return render_template(&#39;result.html&#39;, result = result)result = request.form해당 form에 입력한 모든 데이터를 form 객체에 저장특정 필드 값만 추출하고 싶으면 request.form[&#39;FIELD&#39;] 방식으로&lt;h1&gt; 입력 결과 확인 &lt;/h1&gt;&lt;table&gt;{% for key, val in result.items() %}  &lt;tr&gt;    &lt;th&gt;{{ key }}&lt;/th&gt;    &lt;td&gt;{{ val }}&lt;/td&gt;  &lt;/tr&gt;{% endfor %}&lt;/table&gt;``로 result의 내용을 출력해보면ImmutableMultiDict([(&#39;name&#39;, &#39;이름&#39;), (&#39;physics&#39;, &#39;물리학&#39;), (&#39;chemistry&#39;, &#39;화학&#39;), (&#39;math&#39;, &#39;수학&#39;)]) ">
+    <meta itemprop="datePublished" content="2020-05-06T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Python Web] Flask Quickstart(1)
+</h1>
+          <!-- 
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p> -->
+          
+          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated: <time datetime="2020-05-06T00:00:00+09:00">May 06, 2020</time></p>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Flask Quickstart(1)</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#1-가상환경-구축">1. 가상환경 구축</a>
+    <ul>
+      <li><a href="#virtualenv-설치">virtualenv 설치</a></li>
+      <li><a href="#가상환경-생성">가상환경 생성</a>
+        <ul>
+          <li><a href="#-환경변수">* 환경변수</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#2-flask-app">2. Flask App</a>
+    <ul>
+      <li><a href="#routespy">routes.py</a>
+        <ul>
+          <li><a href="#app--flask__name__">app = Flask(<strong>name</strong>)</a></li>
+          <li><a href="#approute">@app.route(‘/’)</a></li>
+          <li><a href="#apprun">app.run()</a>
+            <ul>
+              <li><a href="#args">Args</a></li>
+            </ul>
+          </li>
+          <li><a href="#username-page">username page</a></li>
+          <li><a href="#post-page">post page</a></li>
+        </ul>
+      </li>
+      <li><a href="#template">template</a>
+        <ul>
+          <li><a href="#templates-directory">templates directory</a>
+            <ul>
+              <li><a href="#jinja">Jinja</a>
+                <ul>
+                  <li><a href="#types">types</a></li>
+                  <li><a href="#for-in-loop-in-jinja">for in loop in Jinja</a></li>
+                  <li><a href="#if-statements-in-jinja">if statements in Jinja</a></li>
+                  <li><a href="#for-in-if-in-jinja">for in if in Jinja</a></li>
+                </ul>
+              </li>
+              <li><a href="#사용방법">사용방법</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#locals">locals()</a></li>
+      <li><a href="#url-및-http">URL 및 HTTP</a>
+        <ul>
+          <li><a href="#redirect--url_for">redirect() &amp; url_for()</a></li>
+          <li><a href="#get--post">Get &amp; Post</a></li>
+        </ul>
+      </li>
+      <li><a href="#static">/static</a></li>
+      <li><a href="#form으로-데이터-전송">&lt;form&gt;으로 데이터 전송</a>
+        <ul>
+          <li><a href="#result--requestform">result = request.form</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <ul>
+  <li>수업일자 : 2020-05-06</li>
+  <li>실습파일 : 
+<br /></li>
+</ul>
+
+<hr />
+
+<h1 id="1-가상환경-구축">1. 가상환경 구축</h1>
+
+<p>작업환경</p>
+<ul>
+  <li>docker debian linux</li>
+  <li>anaconda</li>
+  <li>python 3.7.6</li>
+</ul>
+
+<p>reference : https://docs.python.org/ko/3.7/library/venv.html</p>
+
+<h2 id="virtualenv-설치">virtualenv 설치</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>virtualenv
+<span class="c">#또는</span>
+conda <span class="nb">install </span>virtualenv
+</code></pre></div></div>
+
+<h2 id="가상환경-생성">가상환경 생성</h2>
+
+<p>flask_env 폴더에서 가상환경 <code class="highlighter-rouge">work</code> 생성</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ⚡ <span class="nv">$ </span> <span class="nb">mkdir </span>flask_env
+ ⚡ <span class="nv">$ </span> <span class="nb">cd </span>flask_env
+ ⚡ <span class="nv">$ </span> python <span class="nt">-m</span> venv work
+ ⚡ <span class="nv">$ </span> <span class="nb">source </span>work/bin/activate
+<span class="o">(</span>work<span class="o">)</span> ⚡ <span class="nv">$ </span> 
+</code></pre></div></div>
+
+<p>reference : <code class="highlighter-rouge">dir</code> options (https://shaeod.tistory.com/744)</p>
+
+<h3 id="-환경변수">* 환경변수</h3>
+
+<ul>
+  <li>사용자 : 특정 사용자에게만</li>
+  <li>System : 시스템 전체에</li>
+</ul>
+
+<p>환경변수는 특정 수 이상 넘어가면 시스템이 무시하는 문제 발생할 수 있음</p>
+
+<hr />
+
+<h1 id="2-flask-app">2. Flask App</h1>
+
+<h2 id="routespy"><code class="highlighter-rouge">routes.py</code></h2>
+
+<p>Basic</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>  <span class="k">return</span> <span class="s">'Hello World!'</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span> <span class="p">:</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>work<span class="o">)</span> ⚡ <span class="nv">$ </span>python routes.py
+
+ <span class="k">*</span> Serving Flask app <span class="s2">"routes"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ <span class="k">*</span> Environment: production
+   WARNING: This is a development server. Do not use it <span class="k">in </span>a production deployment.
+   Use a production WSGI server instead.
+ <span class="k">*</span> Debug mode: off
+ <span class="k">*</span> Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="app--flask__name__"><code class="highlighter-rouge">app = Flask(__name__)</code></h3>
+
+<p>Flask 클래스 전역 객체 선언</p>
+
+<h3 id="approute"><code class="highlighter-rouge">@app.route('/')</code></h3>
+
+<p>decorator(Java의 annotation) 사용하여 <code class="highlighter-rouge">hello_world()</code>를 wrapping</p>
+
+<p>웹으로 접근한 사용자가 어떤 URL에 따라 어떤 함수를 실행켜야할지 지정</p>
+
+<p><code class="highlighter-rouge">'/'</code> : URL pattern, base url</p>
+
+<h3 id="apprun"><code class="highlighter-rouge">app.run()</code></h3>
+
+<p><code class="highlighter-rouge">run()</code>를 사용해 Flask app. 실행</p>
+
+<p>아무런 인자 넘겨주지 않을 경우, localhost (127.0.0.1)에서 적당한 port(여기서는 5000) 잡아서 실행</p>
+
+<h4 id="args">Args</h4>
+
+<ul>
+  <li>port : ex. <code class="highlighter-rouge">(port = '5000')</code></li>
+  <li>host : ex. <code class="highlighter-rouge">(host = '0.0.0.0')</code>
+    <ul>
+      <li>0.0.0.0은 모든 ip 의미하므로, 외부에서도 접속 가능</li>
+    </ul>
+  </li>
+  <li>debug :</li>
+</ul>
+
+<h3 id="username-page">username page</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/user/&lt;username&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_user_profile</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>  
+    <span class="k">return</span> <span class="n">f</span><span class="s">'USER = {username}'</span>
+</code></pre></div></div>
+
+<h3 id="post-page">post page</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/post/&lt;int:post_id&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">):</span>  
+    <span class="k">return</span> <span class="n">f</span><span class="s">'Post ID = {post_id}'</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Parameter의 data type 지정</li>
+  <li>여기서 integer로 지정했기 때문에, 다른 type이 들어오면 “404 Not Found” page</li>
+  <li>parameter 변수 규칙에는 string, int, float 등이 있으며, default는 string</li>
+  <li>특정함수 1개에 복수의 decorator 가능
+    <ul>
+      <li>ex. parameter 없으면 첫번째 url, 있으면 두번째 url</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/hello/'</span><span class="p">)</span>
+  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/hello/&lt;name&gt;'</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">f</span><span class="s">"User {name}"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="template">template</h2>
+
+<blockquote>
+  <p>Flask에서 html 사용하는 방법</p>
+</blockquote>
+
+<h3 id="templates-directory">templates directory</h3>
+
+<p>html 따로 보관하는 directory 만들어줘야 해당 파일들 인식 가능</p>
+
+<h4 id="jinja">Jinja</h4>
+
+<ul>
+  <li>template engine</li>
+  <li>html 문서 내 직접 코드를 실행시키는 문법</li>
+  <li>jsp의 <code class="highlighter-rouge">&lt;% %&gt;</code>와 유사</li>
+</ul>
+
+<h5 id="types">types</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">{% CODE %}</code> : delimeter for statements like <code class="highlighter-rouge">if</code> or <code class="highlighter-rouge">for</code></li>
+  <li><code class="highlighter-rouge">{{ CODE }}</code> : delimeter for expressions or variables</li>
+  <li><code class="highlighter-rouge">{# CODE #}</code> : comments</li>
+  <li><code class="highlighter-rouge">{%- CODE %}</code>, <code class="highlighter-rouge">{%+ CODE %}</code>, <code class="highlighter-rouge">{% CODE -%}</code> … :
+    <ul>
+      <li>공백 제거 or 유지 (trim 기능)</li>
+      <li>기본적으로 jinja engine은 template 줄 끝의 <code class="highlighter-rouge">&amp;nbsp;</code>를 제외한 나머지 공백 그대로 출력, 이러한 공백을 제외하고 싶을 경우 <code class="highlighter-rouge">-</code> 붙이고 유지하고 싶으면 <code class="highlighter-rouge">+</code> 붙임</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">{% raw %} ...text... { % endraw %}</code>
+    <ul>
+      <li>escape, template 형태와 동일한 텍스트 출력시 사용</li>
+      <li>작은 문자열인 경우 <code class="highlighter-rouge">{{</code> 와 같이 따옴표로 간단하게 escape 하는 것이 편리</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge"># ... ##</code> : line
+<br /></li>
+</ul>
+
+<h5 id="for-in-loop-in-jinja"><code class="highlighter-rouge">for in</code> loop in Jinja</h5>
+
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span> <span class="k">for</span> <span class="p">(</span><span class="nv">item</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">iterable</span> <span class="nv">object</span><span class="p">)</span> <span class="cp">%}</span>
+  CODES
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+ <span class="c">&lt;!-- ex --&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">item</span> <span class="ow">in</span> <span class="nv">navigation</span> <span class="cp">%}</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href = </span><span class="s">"</span><span class="cp">{{</span> <span class="nv">item.href</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="cp">{{</span><span class="nv">item.caption</span><span class="cp">}}</span> <span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;/li&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<h5 id="if-statements-in-jinja"><code class="highlighter-rouge">if</code> statements in Jinja</h5>
+
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">CONDITION</span> <span class="cp">%}</span>
+  CODES
+<span class="cp">{%</span> <span class="nv">elif</span> <span class="nv">CONDITION</span> <span class="cp">%}</span>
+  CODES
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+  CODES
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="nv">TRUE_CODES</span> <span class="k">if</span> <span class="nv">CONDITION</span> <span class="k">else</span> <span class="nv">FALSE_CODES</span> <span class="cp">%}</span>
+
+
+</code></pre></div></div>
+
+<h5 id="for-in-if-in-jinja"><code class="highlighter-rouge">for in if</code> in Jinja</h5>
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">ITEM</span> <span class="ow">in</span> <span class="nv">ITERABLE_OBJECT</span> <span class="k">if</span> <span class="nv">CONDITION</span> <span class="cp">%}</span>
+  <span class="cp">{{</span> <span class="nv">ITEM.VALUE</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="사용방법">사용방법</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask.templating</span> <span class="kn">import</span> <span class="n">render_template</span>
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/hello/&lt;user&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'hello.html'</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">user</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="locals"><code class="highlighter-rouge">locals()</code></h2>
+
+<blockquote>
+  <p>해당 함수 내 지역 변수 전체를 인자로 전송</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/user/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_hello</span><span class="p">():</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Frank'</span><span class="p">,</span><span class="s">'Steve'</span><span class="p">,</span><span class="s">'Alice'</span><span class="p">,</span><span class="s">'Bruce'</span><span class="p">]</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'user.html'</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="url-및-http">URL 및 HTTP</h2>
+
+<h3 id="redirect--url_for"><code class="highlighter-rouge">redirect()</code> &amp; <code class="highlighter-rouge">url_for()</code></h3>
+
+<ul>
+  <li>호출할 함수와 params 전달</li>
+  <li><code class="highlighter-rouge">url_for()</code>에서 함수명만 전달할 경우 <code class="highlighter-rouge">redirect()</code>로 url 전달하는 것과 동일</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/user/&lt;name&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">'admin'</span><span class="p">:</span> 
+      <span class="c1"># return redirect(url_for('hello_admin'))과 동일
+</span>      <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'/admin'</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span> <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">'hello_guest'</span><span class="p">,</span> <span class="n">guest</span> <span class="o">=</span> <span class="n">name</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="get--post">Get &amp; Post</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/letsin/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">letsin</span> <span class="p">():</span> 
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'login.html'</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">,</span> <span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">'POST'</span><span class="p">,</span> <span class="s">'GET'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span> 
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">'nm'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">'success'</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">user</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'nm'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">'success'</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">user</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="static"><code class="highlighter-rouge">/static</code></h2>
+
+<p>JS, CSS 등 static files</p>
+
+<hr />
+
+<h2 id="form으로-데이터-전송"><code class="highlighter-rouge">&lt;form&gt;</code>으로 데이터 전송</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/stu/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">student</span><span class="p">():</span> <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'student.html'</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/result'</span><span class="p">,</span> <span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">'POST'</span><span class="p">,</span><span class="s">'GET'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">result</span><span class="p">()</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span> 
+        <span class="n">result</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'result.html'</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+<h3 id="result--requestform"><code class="highlighter-rouge">result = request.form</code></h3>
+
+<p>해당 form에 입력한 모든 데이터를 form 객체에 저장</p>
+
+<p>특정 필드 값만 추출하고 싶으면 <code class="highlighter-rouge">request.form['FIELD']</code> 방식으로</p>
+
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span> 입력 결과 확인 <span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;table&gt;</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">key</span><span class="p">,</span> <span class="nv">val</span> <span class="ow">in</span> <span class="nv">result.items</span><span class="p">()</span> <span class="cp">%}</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span><span class="cp">{{</span> <span class="nv">key</span> <span class="cp">}}</span><span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">val</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>``로 result의 내용을 출력해보면</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ImmutableMultiDict</span><span class="p">([(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'이름'</span><span class="p">),</span> <span class="p">(</span><span class="s">'physics'</span><span class="p">,</span> <span class="s">'물리학'</span><span class="p">),</span> <span class="p">(</span><span class="s">'chemistry'</span><span class="p">,</span> <span class="s">'화학'</span><span class="p">),</span> <span class="p">(</span><span class="s">'math'</span><span class="p">,</span> <span class="s">'수학'</span><span class="p">)])</span> 
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#flask" class="page__taxonomy-item" rel="tag">Flask</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#lecturenotes" class="page__taxonomy-item" rel="tag">LectureNotes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#fundamental" class="page__taxonomy-item" rel="tag">fundamental</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-06T00:00:00+09:00">May 6, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BPython+Web%5D+Flask+Quickstart%281%29%20https%3A%2F%2Fgitgitwi.github.io%2Ffundamental%2Fpython%2FFlask%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgitgitwi.github.io%2Ffundamental%2Fpython%2FFlask%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgitgitwi.github.io%2Ffundamental%2Fpython%2FFlask%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+    </div>
+
+    
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+        this.page.url = "https://gitgitwi.github.io/fundamental/python/Flask/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/fundamental/python/Flask"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://gitgitwi.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    
+  <nav class="pagination">
+    
+      <a href="/aidata/hadoop/prof_Koo_BigData_Hadoop_R_lectures/" class="pagination--pager" title="구자환 교수 Big Data (R/Hadoop) Lectures[Youtube]
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/aidata/hadoop/prof_Koo_BigData_Hadoop_R_lectures/" rel="permalink">구자환 교수 Big Data (R/Hadoop) Lectures[Youtube]
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">강의자 : 구자환 교수님 (성균관대학교)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/aidata/python/DLwithCodes/" rel="permalink">[SKTacademy/코드로 알아보는 딥러닝 입문] DNN/CNN/GAN/RNN/RL with Tensorflow
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 04 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/aidata/python/Keras06_GM/" rel="permalink">[SKTacademy/딥러닝 입문에서 활용까지] 6강. GM  ~  7강. Keras vs. PyTorch
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 03 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/aidata/python/Keras05_RNN/" rel="permalink">[SKTacademy/딥러닝 입문에서 활용까지] 5강. RNN;  Recurrent Neural Networks
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 03 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+  
+  
+  <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div>
+  
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://gitgitWi.github.io" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 gitgitWi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+  
+  
+      <script>
+  (function () {
+    var cx = '012188663101936892718:4lpzgsvlle4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+    
+
+
+
+
+
+    
+  
+
+
+<div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+    this.page.url = "https://gitgitwi.github.io/fundamental/python/Flask/";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = "/fundamental/python/Flask"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://gitgitwi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+  
+
+
+
+
+
+  </body>
+</html>
