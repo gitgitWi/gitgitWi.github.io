@@ -29,16 +29,11 @@ jobs:
 
       - name: Build 🔧
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /gitgitWi.github.io
       - run: npm run export
-        env:
-          NEXT_PUBLIC_BASE_PATH: /gitgitWi.github.io
       - run: touch ./out/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages # The branch the action should deploy to.
           folder: out
