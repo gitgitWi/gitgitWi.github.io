@@ -1,5 +1,34 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-LN-0402-홍대입구역-APT-시세-조회-by-using-Google-maps-API/lectrue0402-googlemap-api_files/figure-gfm/unnamed-chunk-24-1.png
-LN-0402-홍대입구역-APT-시세-조회-by-using-Google-maps-API/lectrue0402-googlemap-api_files/figure-gfm/unnamed-chunk-25-1.png
-LN-0402-홍대입구역-APT-시세-조회-by-using-Google-maps-API/lectrue0402-googlemap-api_files/figure-gfm/unnamed-chunk-27-1.png
-LN-0402-홍대입구역-APT-시세-조회-by-using-Google-maps-API/lectrue0402-googlemap-api_files/figure-gfm/unnamed-chunk-28-1.png
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+node_modules
