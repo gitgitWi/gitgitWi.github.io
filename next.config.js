@@ -1,3 +1,7 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   reactStrictMode: true,
-}
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
