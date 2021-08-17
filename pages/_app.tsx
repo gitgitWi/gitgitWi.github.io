@@ -1,13 +1,6 @@
-import { FunctionComponent } from "react";
-import "../styles/globals.css";
+import { AppProps } from "next/app";
+import "../styles/globals.scss";
 
-interface MyAppProps {
-  Component: FunctionComponent;
-  pageProps: any;
-}
-
-function MyApp({ Component, pageProps }: MyAppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
-
-export default MyApp;
