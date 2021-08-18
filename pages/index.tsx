@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { MAIN_META_DESC, MAIN_TITLE } from "../constants";
+import { TitleTexts } from "../components/molecules";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>{MAIN_TITLE}</h1>
+        <TitleTexts titleText={MAIN_TITLE} />
       </main>
     </div>
   );
