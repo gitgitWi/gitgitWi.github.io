@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 2,
+  "prettier.printWidth": 90,
+  "prettier.endOfLine": "lf"
+}
