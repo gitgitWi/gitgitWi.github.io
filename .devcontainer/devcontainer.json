@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.1/containers/docker-existing-dockerfile
+{
+  "name": "Existing Dockerfile",
+  "context": "..",
+  "dockerFile": "../Dockerfile.dev",
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "files.autoSave": "onFocusChange",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions": [
+    "shd101wyy.markdown-preview-enhanced",
+    "yzhang.markdown-all-in-one",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "visualstudioexptteam.vscodeintellicode",
+    "wakatime.vscode-wakatime",
+    "mutantdino.resourcemonitor",
+    "mhutchie.git-graph",
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
+    "ldez.ignore-files",
+    "streetsidesoftware.code-spell-checker",
+    "adpyke.codesnap",
+    "oderwat.indent-rainbow",
+    "christian-kohler.path-intellisense",
+    "fabiospampinato.vscode-highlight",
+    "wix.vscode-import-cost",
+    "helixquar.randomeverything",
+    "syler.sass-indented",
+    "codezombiech.gitignore",
+    "christian-kohler.npm-intellisense",
+    "ms-vscode.vscode-typescript-next",
+    "devonray.snippet",
+    "dbaeumer.vscode-eslint",
+    "nepaul.editorconfiggenerator",
+    "vscode-icons-team.vscode-icons",
+    "kisstkondoros.vscode-codemetrics",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "mikestead.dotenv",
+    "naumovs.color-highlight",
+    "gencer.html-slim-scss-css-class-completion",
+    "mrmlnc.vscode-scss"
+  ]
+}
