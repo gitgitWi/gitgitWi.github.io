@@ -1,0 +1,30 @@
+FROM debian:stable-slim
+
+RUN apt update
+RUN apt-get update
+
+RUN apt-get install -y \
+  locales zsh curl wget unzip sudo git \
+  dirmngr gpg gawk
+RUN apt autoremove -y
+
+RUN rm -rf /var/lib/apt/lists/* && localedef -i ko_KR -c -f UTF-8 -A /usr/share/locale/locale.alias ko_KR.UTF-8
+ENV LANG en_US.UTF-8
+ENV TZ="Asia/Seoul"
+
+RUN git config --global init.defaultBranch main
+RUN git config --global user.name "gitgitWi"
+RUN git config --global user.email "wiii@kakao.com"
+
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+RUN rm $HOME/.zshrc
+RUN wget -P $HOME/ "https://gist.githubusercontent.com/gitgitWi/93f3583109ac09076fbef6b64c76536f/raw/a88cf8320d863d119353625f0db13719cb4d2fa4/.zshrc"
+RUN chsh -s /usr/bin/zsh
+
+# After this container started, install Node.js with asdf
+# git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
+# . $HOME/.asdf/asdf.sh
+# curl -s https://gist.githubusercontent.com/gitgitWi/7d350c08a2a5283c873fc6ac8df239d5/raw/22977348d561cffafcb1ceeb488513312fd40d87/nodejs.sh | zsh
