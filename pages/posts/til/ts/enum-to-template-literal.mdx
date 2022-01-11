@@ -1,0 +1,208 @@
+# [TypeScript] `enum` -> `template literal` 갈아타기(+ `class-validator`에 적용하기)
+
+### 3줄 요약
+
+> - `enum`은 tree-shaking, memory-leak 문제가 있고, 여러 enum을 하나의 enum으로 합칠 수 없다
+> - `class-validator`에서 `IsEnum`을 쓰려면 단순 `template-literal` 타입은 안되고, 객체가 필요하다
+> - `template-literal`과 `Readonly<Record<K, V>>` 유틸 타입을 활용해 문제를 해결했다
+
+---
+
+## `enum`은 비싸고 불편하다!
+
+다른 언어들과 마찬가지로 `TypeScript`도 열거형 타입으로 [`enum`](https://www.typescriptlang.org/ko/docs/handbook/enums.html)을 제공한다
+
+함수 인자로 특정 string만 들어와야 하는 경우 등 유용하게 쓸 수 있다
+
+<br />
+
+### Tree-shaking, 메모리 문제
+
+그러나 Line 기술 블로그(['TypeScript enum을 사용하지 않는 게 좋은 이유를 Tree-shaking 관점에서 소개합니다.'](https://engineering.linecorp.com/ko/blog/typescript-enum-tree-shaking/))에서 잘 설명하는 것처럼, 순진한 enum 타입은 tree-shaking이 안되고 메모리 낭비까지 이어질 수 있다.
+
+<br />
+
+### 예상과는 다른 Type Union
+
+무엇보다 개인적으로 가장 불편하게 느껴지는 것은 다른 타입들과는 다르게, ***enum은 `union`으로 여러 enum을 하나로 합칠 수 없다는 점이다***
+
+아래 예시 코드는 실무에서 구현 중인 API 타입 일부를 조금 수정해서 가져온 것이고, 전형적인 enum을 가져왔다
+
+```typescript
+enum PeriodA {
+  DAILY = 'DAILY',
+  MONTHLY = 'MONTHLY'
+}
+
+enum PeriodCommon {
+  WEEKLY = 'WEEKLY',
+  QUARTERLY = 'QUARTERLY',
+  YEARLY = 'YEARLY'
+}
+```
+
+[Union Type](https://www.typescriptlang.org/ko/docs/handbook/2/everyday-types.html#%EC%9C%A0%EB%8B%88%EC%96%B8-%ED%83%80%EC%9E%85)을 쓰는 대부분은 아래처럼 A 타입 일수도 있고, B 타입일 수도 있을 때이다
+
+```typescript
+type StringOrNumber = string | number;
+
+const strOrNumberLogger = (what: StringOrNumber) => console.log(what);
+strOrNumberLogger('asdf');
+strOrNumberLogger(123123);
+```
+
+<br />
+
+**_그러나 이 넘의 enum은 그렇지 않다_** 
+
+`PeriodA`와 `PeriodCommon`를 합친 `Periods`라는 enum을 만들고 싶지만 그 과정은 쉽지 않다
+
+아래처럼 타입 Union을 하면 당장은 에러가 나진 않지만, 실질적으로는 사용할 수 없는 타입이 된다
+
+```typescript
+type Periods = PeriodA | PeriodCommon;
+
+const periodLogger = (period: Periods) => console.log(period);
+periodLogger('DAILY'); // error
+```
+
+<br />
+
+Intersection은 더더욱 안된다
+
+둘 사이에 공통점이 없기 때문에 **`never`** 타입이 된다
+
+```typescript
+type Periods = PeriodA & PeriodCommon; // -> never
+
+const periodLogger = (period: Periods) => console.log(period);
+periodLogger('DAILY'); // error
+```
+
+<br />
+
+타입 assertion으로는 가능하긴 하나..***아무 의미 없는 타입 선언***이 되어 버린다
+
+![](https://images.velog.io/images/johnwi/post/669de5ad-34fb-4a23-b86e-a8cb8ea5326a/image.png)
+
+<br />
+
+---
+
+## `class-validator`의 `IsEnum`을 쓰려면 객체가 필요하다!
+
+가장 속 편한건 단순히 `template-literal`'만' 쓰는 거다
+
+토스 기술 블로그 [Template Literal Types로 타입 안전하게 코딩하기](https://toss.tech/article/template-literal-types)에서 소개하는 것처럼, 
+
+TypeScript에는 문자열을 가지고 다양한 타입을 만들어 낼 수 있는 재미있는(?) 기능이 있다
+
+<br />
+
+그러나 위에서 예시로 가져온 `Periods`는 단순히 함수 인자의 타입만 추론하는데 쓰는 것이 아니라,
+
+아래와 같이 **[`class-validator`](https://github.com/typestack/class-validator)를 활용해 API 요청 유효성 검사**를 하기 위해서다
+
+```typescript
+export class GetChartDto {
+  @IsNotEmpty()
+  @IsEnum(Periods)
+  period: PeriodNames;
+}
+```
+
+<br />
+
+당연한 거지만, 아래와 같이 type을 함수 인자로 넣을 수는 없다
+
+![](https://images.velog.io/images/johnwi/post/515a911a-181d-4730-8f15-610f6dc508a3/image.png)
+
+
+<br />
+
+enum으로 union 만들 방법을 구글링(`'typescript enum union'`)하면 나에게 가장 먼저 뜨는 글은,
+
+정규현님의 [enum type 대신 union type으로 변경하기](https://ajdkfl6445.gitbook.io/study/typescript/enum-type-union-type)이다
+
+여기서 핵심은 아래와 같다
+
+```typescript
+const READONLY_객체 = 객체 as const;
+type enumLike = keyof READONLY_객체[keyof typeof READONLY_객체]
+```
+
+짧고 유용한 코드지만, 부족한 나에게는 이게 뭘 의미하는지 한번에 파악하기가 조금 어렵다고 느껴졌다
+
+다만 `Readonly` 타입을 사용한다는 점에서 힌트를 얻을 수 있었다 
+
+_(이게 꼭 필요한 건지는 아직 테스트를 안해봤다...)_
+
+<br />
+
+## _(적어도 나에게는)_ 좀더 편한 방법!
+
+결론은 아래와 같다
+
+```typescript
+// periods.ts
+type ReadonlyRecord<K extends string, V> = Readonly<Record<K, V>>;
+
+export type PeriodANames = 'DAILY' | 'MONTHLY';
+export const PeriodA: ReadonlyRecord<PeriodANames, PeriodANames> = {
+  DAILY: 'DAILY',
+  MONTHLY: 'MONTHLY',
+};
+
+type PeriodCommonNames = 'WEEKLY' | 'QUARTERLY' | 'YEARLY';
+const PeriodCommon: ReadonlyRecord<PeriodCommonNames, PeriodCommonNames> = { /** */ }
+
+export type PeriodNames = PeriodANames | PeriodCommonNames;
+export const Periods = { ...PeriodA, ...PeriodCommon };
+```
+
+<br />
+
+### 커스텀 유틸 타입 `ReadonlyRecord`
+
+이 부분은 반드시 필요한 부분은 아니고, 개인적으로 객체를 `Reaonly`로 만드는 경우가 많아 따로 선언했다
+
+실무 코드에서는 좀더 편한 코딩을 위해 끼를 부려서 아래와 같이 선언했다
+
+객체 `key`, `value`가 모두 `string`인 경우에는 기본값 덕분에 제네릭을 생략할 수 있고, 
+
+`string`은 아니지만 `key`, `value`가 동일한 타입인 경우는 하나만 적어주면 된다
+
+```typescript
+export type ReadonlyRecord<P extends string = string, Q = P> = Readonly<Record<P, Q>>;
+
+export const PeriodA: ReadonlyRecord<PeriodANames> = { /** */ }
+```
+
+<br />
+
+### `template-literal` 타입; `PeriodNames`, `_RestPeriodNames`
+
+단순한 template-literal 타입이다
+
+Union이라는 의미에 맞게, ***관심사에 따라 분리된 타입들을 하나로 묶는 것이 쉽다***
+
+<br />
+
+### Readonly 객체를 `class-validator IsEnum`에 활용
+
+```typescript
+// get-chart-dto.ts
+export class GetChartDto {
+  @IsNotEmpty()
+  @IsEnum(Periods)
+  period: PeriodNames;
+}
+```
+
+`template-literal`을 활용하여 안전한(type-safe) `Readonly` 객체를 만들고, `class-validator`에서 활용한다
+
+`class-validator`가 아니더라도, 기존 `enum` 사용하듯 `Periods.DAILY`와 같이 사용할 수도 있다
+
+물론 이렇게 객체를 생성하면 **tree-shaking 문제는 해결되지 않는다**는 단점이 있다
+
+다만 이 문제는 **`const enum`**을 쓰지 않는 한, 다른 방법들도 모두 동일할 것이다
