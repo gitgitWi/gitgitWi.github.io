@@ -1,10 +1,12 @@
-# [TypeScript] `enum` -> `template literal` 갈아타기(+ `class-validator`에 적용하기)
+# [TypeScript] `enum` -> `literal` 타입 갈아타기(+`class-validator`, `template literal` 타입 활용)
 
 ### 3줄 요약
 
 > - `enum`은 tree-shaking, memory-leak 문제가 있고, 여러 enum을 하나의 enum으로 합칠 수 없다
-> - `class-validator`에서 `IsEnum`을 쓰려면 단순 `template-literal` 타입은 안되고, 객체가 필요하다
-> - `template-literal`과 `Readonly<Record<K, V>>` 유틸 타입을 활용해 문제를 해결했다
+> - `class-validator`에서 `IsEnum`을 쓰려면, 타입이 아닌 객체가 필요하다
+> - `literal`과 `Readonly<Record<K, V>>` 유틸 타입을 활용해 문제를 해결했다
+
+[👉 hashnode에서 보기](https://wiii.hashnode.dev/enum-to-template-literal)
 
 ---
 
@@ -81,7 +83,7 @@ periodLogger('DAILY'); // error
 
 <br />
 
-타입 assertion으로는 가능하긴 하나..***아무 의미 없는 타입 선언***이 되어 버린다
+타입 assertion으로 에러를 안낼 수는 있는데..***아무 의미 없는 타입 선언***이 되어 버린다
 
 ![](https://images.velog.io/images/johnwi/post/669de5ad-34fb-4a23-b86e-a8cb8ea5326a/image.png)
 
@@ -91,7 +93,7 @@ periodLogger('DAILY'); // error
 
 ## `class-validator`의 `IsEnum`을 쓰려면 객체가 필요하다!
 
-가장 속 편한건 단순히 `template-literal`'만' 쓰는 거다
+가장 속 편한건 단순히 `literal`'만' 쓰는 거다
 
 토스 기술 블로그 [Template Literal Types로 타입 안전하게 코딩하기](https://toss.tech/article/template-literal-types)에서 소개하는 것처럼, 
 
@@ -99,9 +101,9 @@ TypeScript에는 문자열을 가지고 다양한 타입을 만들어 낼 수 �
 
 <br />
 
-그러나 위에서 예시로 가져온 `Periods`는 단순히 함수 인자의 타입만 추론하는데 쓰는 것이 아니라,
+다만 위에서 예시로 가져온 `Periods`는 단순히 함수 인자의 타입만 추론하는데 쓰는 것이 아니라,
 
-아래와 같이 **[`class-validator`](https://github.com/typestack/class-validator)를 활용해 API 요청 유효성 검사**를 하기 위해서다
+아래와 같이 **[`class-validator`](https://github.com/typestack/class-validator)를 활용해 API 요청 유효성 검사**에도 사용될 수 있어야했다
 
 ```typescript
 export class GetChartDto {
@@ -120,9 +122,11 @@ export class GetChartDto {
 
 <br />
 
-enum으로 union 만들 방법을 구글링(`'typescript enum union'`)하면 나에게 가장 먼저 뜨는 글은,
+위 라인 블로그에서 가장 추천하는 방법은 객체를 가지고 Union 타입을 만드는 것이다
 
-정규현님의 [enum type 대신 union type으로 변경하기](https://ajdkfl6445.gitbook.io/study/typescript/enum-type-union-type)이다
+enum으로 union 만들 방법을 구글링(`'typescript enum union'`)하면 나에게 가장 먼저 뜨는 글인
+
+정규현님의 [enum type 대신 union type으로 변경하기](https://ajdkfl6445.gitbook.io/study/typescript/enum-type-union-type)에서도 그 방식을 개선하여 사용한 경험을 보여주고 있다
 
 여기서 핵심은 아래와 같다
 
@@ -180,11 +184,33 @@ export const PeriodA: ReadonlyRecord<PeriodANames> = { /** */ }
 
 <br />
 
-### `template-literal` 타입; `PeriodNames`, `_RestPeriodNames`
+### `literal` 타입; `PeriodNames`, `_RestPeriodNames`
 
-단순한 template-literal 타입이다
+단순한 문자열 literal 타입이다
 
 Union이라는 의미에 맞게, ***관심사에 따라 분리된 타입들을 하나로 묶는 것이 쉽다***
+
+`keyof typeof 객체`를 대신하기 위해 타입을 하나하나 더 써야한다는 것이 단점이기는 하지만,
+
+아래 객체를 생성할 때 자동완성이 되기 때문에 크게 불편함을 느끼진 않을수 있다
+
+오히려 하나의 타입에 너무 많은 속성이 있어서 타이핑 시간이 오래 걸릴 정도라면, 타입을 충분히 분리하지 못한 게 아닐지 검토해봐야 할 것 같다
+
+또 토스 블로그에서 소개한 것처럼, **`template-literal` 타입들을 조합한 새로운 타입들을 선언하기 매우 편리해진다**
+
+```typescript
+export type MarketNames = 'domestic' | 'overseas';
+export type CategoryNames = 'index' | 'stock';
+
+export type DetailChartTypeNames = `${MarketNames}-${CategoryNames}`;
+export const DetailChartTypes: ReadonlyRecord<DetailChartTypeNames> = {
+  'domestic-index': 'domestic-index',
+  'domestic-stock': 'domestic-stock',
+  'overseas-index': 'overseas-index',
+  'overseas-stock': 'overseas-stock',
+};
+```
+
 
 <br />
 
@@ -199,10 +225,8 @@ export class GetChartDto {
 }
 ```
 
-`template-literal`을 활용하여 안전한(type-safe) `Readonly` 객체를 만들고, `class-validator`에서 활용한다
+`literal`을 활용하여 안전한(type-safe) `Readonly` 객체를 만들고, `class-validator`에서 활용한다
 
 `class-validator`가 아니더라도, 기존 `enum` 사용하듯 `Periods.DAILY`와 같이 사용할 수도 있다
 
-물론 이렇게 객체를 생성하면 **tree-shaking 문제는 해결되지 않는다**는 단점이 있다
-
-다만 이 문제는 **`const enum`**을 쓰지 않는 한, 다른 방법들도 모두 동일할 것이다
+JS로 Transpile 되었을때, 단순 객체 리터럴이기 때문에 라인 블로그대로라면 tree-shaking도 가능하다
