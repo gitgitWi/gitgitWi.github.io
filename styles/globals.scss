@@ -1,15 +1,16 @@
-@import "variables";
+@import 'variables';
 
 .reset {
   padding: 0;
   margin: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
 .center {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-content: center;
 }
 
 html,

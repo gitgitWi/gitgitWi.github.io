@@ -1,5 +1,10 @@
 {
   "editor.tabSize": 2,
   "prettier.printWidth": 90,
-  "prettier.endOfLine": "lf"
+  "prettier.endOfLine": "lf",
+  "prettier.singleQuote": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": ["gitgitWi"]
 }

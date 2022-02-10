@@ -1,1 +1,1 @@
-export const CENTER = "center";
+export const CENTER = 'center';

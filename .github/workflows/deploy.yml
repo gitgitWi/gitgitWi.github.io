@@ -22,14 +22,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
+          cache: 'yarn'
 
       - name: Install Packages
         run: yarn install --frozen-lockfile
 
       - name: Build 🔧
         run: yarn build
+
       - run: yarn run export
+
       - run: touch ./out/.nojekyll
 
       - name: Deploy

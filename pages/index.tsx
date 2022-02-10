@@ -1,6 +1,6 @@
-import Head from "next/head";
-import { MAIN_META_DESC, MAIN_TITLE } from "../constants";
-import { TitleTexts } from "../components/molecules";
+import Head from 'next/head';
+import { MAIN_META_DESC, MAIN_TITLE } from '@/constants/index';
+import { TitleTexts } from '@/components/molecules';
 
 export default function Home() {
   return (
