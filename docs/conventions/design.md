@@ -62,44 +62,44 @@ Use a warm neutral base rather than pure white.
 
 ```css
 :root {
-  --color-canvas: #F7F5EE;
-  --color-surface: #FCFBF7;
-  --color-surface-muted: #EFEEE7;
+  --color-canvas: #f7f5ee;
+  --color-surface: #fcfbf7;
+  --color-surface-muted: #efeee7;
 
-  --color-ink: #171A18;
-  --color-ink-secondary: #4D534E;
-  --color-ink-tertiary: #7A807B;
+  --color-ink: #171a18;
+  --color-ink-secondary: #4d534e;
+  --color-ink-tertiary: #7a807b;
 
-  --color-border: #DDDCD3;
-  --color-border-strong: #C9C9BF;
+  --color-border: #dddcd3;
+  --color-border-strong: #c9c9bf;
 
-  --color-accent: #16A36A;
-  --color-accent-hover: #108A59;
-  --color-accent-soft: #DDF4E9;
+  --color-accent: #16a36a;
+  --color-accent-hover: #108a59;
+  --color-accent-soft: #ddf4e9;
   --color-accent-ink: #087044;
 
-  --color-code-bg: #F1EFE6;
+  --color-code-bg: #f1efe6;
   --color-code-ink: #393a34;
-  --color-code-border: #DDDCD3;
+  --color-code-border: #dddcd3;
 }
 ```
 
 ### Color roles
 
-| Role | Token | Purpose |
-|---|---|---|
-| Canvas | `--color-canvas` | Global page background |
-| Surface | `--color-surface` | Cards, elevated content |
-| Muted surface | `--color-surface-muted` | Secondary sections |
-| Ink | `--color-ink` | Primary text |
-| Secondary ink | `--color-ink-secondary` | Supporting text |
-| Tertiary ink | `--color-ink-tertiary` | Metadata/placeholders |
-| Border | `--color-border` | Default separators |
-| Strong border | `--color-border-strong` | Active/important boundaries |
-| Accent | `--color-accent` | Mintlify-inspired primary accent |
-| Accent soft | `--color-accent-soft` | Callouts, selected states |
-| Code background | `--color-code-bg` | Prism block canvas — warm, near page background |
-| Code ink | `--color-code-ink` | Prism default text |
+| Role            | Token                   | Purpose                                         |
+| --------------- | ----------------------- | ----------------------------------------------- |
+| Canvas          | `--color-canvas`        | Global page background                          |
+| Surface         | `--color-surface`       | Cards, elevated content                         |
+| Muted surface   | `--color-surface-muted` | Secondary sections                              |
+| Ink             | `--color-ink`           | Primary text                                    |
+| Secondary ink   | `--color-ink-secondary` | Supporting text                                 |
+| Tertiary ink    | `--color-ink-tertiary`  | Metadata/placeholders                           |
+| Border          | `--color-border`        | Default separators                              |
+| Strong border   | `--color-border-strong` | Active/important boundaries                     |
+| Accent          | `--color-accent`        | Mintlify-inspired primary accent                |
+| Accent soft     | `--color-accent-soft`   | Callouts, selected states                       |
+| Code background | `--color-code-bg`       | Prism block canvas — warm, near page background |
+| Code ink        | `--color-code-ink`      | Prism default text                              |
 
 ### Rules
 
@@ -126,12 +126,7 @@ Concept mock hex vs this contract (implementation uses **this contract**):
 Preferred order:
 
 ```css
-font-family:
-  "Pretendard",
-  "Noto Sans KR",
-  "Noto Sans",
-  system-ui,
-  sans-serif;
+font-family: "Pretendard", "Noto Sans KR", "Noto Sans", system-ui, sans-serif;
 ```
 
 Use the primary sans-serif font for:
@@ -510,13 +505,25 @@ pre[class*="language-"] {
   font-family: "Geist Mono", ui-monospace, monospace;
 }
 .token.comment,
-.token.prolog { color: #a0ada0; }
-.token.keyword { color: var(--color-accent-ink); }
-.token.function { color: var(--color-accent); }
-.token.string { color: #b56959; }
+.token.prolog {
+  color: #a0ada0;
+}
+.token.keyword {
+  color: var(--color-accent-ink);
+}
+.token.function {
+  color: var(--color-accent);
+}
+.token.string {
+  color: #b56959;
+}
 .token.number,
-.token.boolean { color: #2f798a; }
-.token.punctuation { color: #7A807B; }
+.token.boolean {
+  color: #2f798a;
+}
+.token.punctuation {
+  color: #7a807b;
+}
 ```
 
 Code blocks should support:
@@ -724,7 +731,7 @@ Avoid:
 Respect:
 
 ```css
-@media (prefers-reduced-motion: reduce)
+@media (prefers-reduced-motion: reduce);
 ```
 
 Disable or substantially reduce non-essential animation.

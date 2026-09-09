@@ -41,11 +41,11 @@ Never two write-capable agents on the same checkout.
 
 ## Model pinning
 
-| Role                  | Pin                                                                         | Rationale                                                                                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| orchestrator / leader | Grok 4.6 in the parent picker                                               | long tool loops, instruction following                                                                                                                                                                                                    |
-| planner               | `inherit`                                                                   | same judgment as parent                                                                                                                                                                                                                   |
-| developer             | `composer-2.5` (`composer-2.5-fast` if the Fast variant is the picker name) | edits + terminal                                                                                                                                                                                                                          |
+| Role                  | Pin                                                                         | Rationale                                                                                   |
+| --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| orchestrator / leader | Grok 4.6 in the parent picker                                               | long tool loops, instruction following                                                      |
+| planner               | `inherit`                                                                   | same judgment as parent                                                                     |
+| developer             | `composer-2.5` (`composer-2.5-fast` if the Fast variant is the picker name) | edits + terminal                                                                            |
 | verifier              | `gpt-5.6-sol-medium`                                                        | Default review. Blocked → Opus 5. Expensive → Grok then Kimi K3. OpenAI shutoff 2026-11-12. |
 
 On **legacy request-based plans without Max Mode**, Cursor may ignore `model:` and run subagents as Composer. If that happens, run planner/verifier in the parent Grok chat instead of Task, and LOG the fallback.
