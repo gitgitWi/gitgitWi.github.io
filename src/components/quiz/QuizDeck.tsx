@@ -6,6 +6,7 @@ import { isQuizDeckId } from "../../lib/quiz/deck-meta.ts";
 import { gradeMCQ, gradeShort } from "../../lib/quiz/grade.ts";
 import { loadDeckItems } from "../../lib/quiz/load-deck.ts";
 import { readQuizProgress, recordDeckAnswer } from "../../lib/quiz/progress.ts";
+import { quizView } from "../../lib/quiz/quiz-view.ts";
 import { buildSession, isSessionMcq, type SessionItem } from "../../lib/quiz/session.ts";
 
 import { quizDeckStyles } from "./QuizDeck.stylex.ts";
@@ -73,7 +74,13 @@ export function QuizDeck({ deckIds, deckLabels, deckCounts, sessionLimit = 10 }:
 
   const current = order[idx];
   const total = order.length;
-  const finished = selectedDeckId !== undefined && idx >= total;
+  const view = quizView({
+    idx,
+    total,
+    loading,
+    hasCurrent: current !== undefined,
+  });
+  const finished = view === "finished";
   const score = useMemo(
     () => Object.values(snapshots).filter((entry) => entry.revealed && entry.correct).length,
     [snapshots],
@@ -277,18 +284,7 @@ export function QuizDeck({ deckIds, deckLabels, deckCounts, sessionLimit = 10 }:
     );
   }
 
-  if (loading || !current) {
-    return (
-      <div {...stylex.props(quizDeckStyles.root)}>
-        {deckPicker}
-        <p {...stylex.props(quizDeckStyles.deckPrompt)} aria-live="polite">
-          {loading ? `${deckLabel} 덱을 불러오는 중…` : liveMessage}
-        </p>
-      </div>
-    );
-  }
-
-  if (finished) {
+  if (view === "finished") {
     return (
       <div {...stylex.props(quizDeckStyles.root)}>
         {deckPicker}
@@ -315,6 +311,19 @@ export function QuizDeck({ deckIds, deckLabels, deckCounts, sessionLimit = 10 }:
       </div>
     );
   }
+
+  if (view === "loading" || view === "empty") {
+    return (
+      <div {...stylex.props(quizDeckStyles.root)}>
+        {deckPicker}
+        <p {...stylex.props(quizDeckStyles.deckPrompt)} aria-live="polite">
+          {view === "loading" ? `${deckLabel} 덱을 불러오는 중…` : liveMessage}
+        </p>
+      </div>
+    );
+  }
+
+  if (!current) return null;
 
   const mcq = isSessionMcq(current) ? current : undefined;
   const choices = mcq?.shuffledChoices ?? [];
