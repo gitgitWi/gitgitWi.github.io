@@ -8,6 +8,9 @@
     "dist/**",
     "out/**",
     ".next/**",
+    ".astro/**",
+    "storybook-static/**",
+    "legacy-next/**",
     "coverage/**",
     "bun.lock",
     "yarn.lock"
