@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook-astro/framework";
 
 import "../src/styles/global.css";
+import "../src/styles/prism-vitesse-light.css";
 
 const preview: Preview = {
   parameters: {
