@@ -5,6 +5,7 @@
 | 문서 | 대상 | 내용 |
 |---|---|---|
 | [`conventions/code-style.md`](conventions/code-style.md) | 사람 + 에이전트 | 코드 스타일 규칙 (공유 정본 + 본 블로그 델타 + 언어 규칙) |
+| [`conventions/commits.md`](conventions/commits.md) | 사람 + 에이전트 | 커밋: atomic · conventional · 짧은 한국어 본문 |
 | `conventions/design.md` | 사람 + 에이전트 | 디자인 토큰·타이포·컬러 원칙 (Phase 1에서 작성 예정) |
 | [`research/astro-migration.md`](research/astro-migration.md) | 사람 + 에이전트 | Astro 이주 배경·리서치·기술 판단 근거 |
 | `../.tasks/ROADMAP.md` | 에이전트 (작업) | 전체 로드맵·게이트·승인 플로우 |

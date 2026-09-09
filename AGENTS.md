@@ -10,6 +10,7 @@
 - Multi-agent: `.tasks/playbook/README.md` (roles) + one file in `.tasks/playbook/harness/`.
 - Code style: [`docs/conventions/code-style.md`](docs/conventions/code-style.md)
   (shared canonical + blog deltas). Do not edit inside the shared markers.
+- Commits: [`docs/conventions/commits.md`](docs/conventions/commits.md)
 
 ## 2. Hard constraints
 
@@ -29,7 +30,7 @@
 
 - Branch per phase: `feat/phase-N-*`, stacked (`--base` = parent phase branch). See ROADMAP.
 - Multi-agent: role contracts in `.tasks/playbook/`; spawn/models in `.tasks/playbook/harness/` (one harness per phase). Cursor default: [harness/cursor.md](.tasks/playbook/harness/cursor.md).
-- Commits: logical units, conventional commits, Korean. Body 1–2 lines, max 3.
+- Commits: [`docs/conventions/commits.md`](docs/conventions/commits.md) — logical units, conventional, Korean. Body 1–2 lines, max 3.
 - PRs/comments in Korean. Test titles in Korean (`describe` = symbol name).
 
 ## 6. Links
