@@ -17,6 +17,7 @@
     "check-schema": "node scripts/check-schema.mjs",
     "check-leak": "node scripts/check-leak.mjs",
     "check-budget": "node scripts/check-budget.mjs",
+    "check-search": "node scripts/check-search.mjs",
     "check-code-blocks": "node scripts/check-code-blocks.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
