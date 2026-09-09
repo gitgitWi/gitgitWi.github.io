@@ -2,6 +2,9 @@
   "mcpServers": {
     "astro-docs": {
       "url": "https://mcp.docs.astro.build/mcp"
+    },
+    "firecrawl": {
+      "url": "https://mcp.firecrawl.dev/v2/mcp"
     }
   }
 }
