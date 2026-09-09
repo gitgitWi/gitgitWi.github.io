@@ -41,3 +41,10 @@
   - `bun run build` — 9 pages
   - `bun run build-storybook` — green
   - Lighthouse a11y (preview `:4321`, desktop): Home **100**, `/articles/mock` **100**
+
+## 2026-09-10 re-review
+
+- Sol `gpt-5.6-sol-medium` first: `REVIEW CHANGES` — LOG 게이트 SHA가 `e09393b`인데 HEAD는 `f796e53` (LOG 전용). usage: not visible.
+- 같은 HEAD `f796e53`에서 게이트 재실행 후 Sol 재리뷰: `REVIEW APPROVE phase-1.5 58`. usage: not visible.
+- 재실행: check 80/0, oxfmt, oxlint, vitest 4 passed, lint:stylex, build 9 pages, build-storybook, Lighthouse 13.4.1 Home 100 / mock article 100 (`fetchTime` 2026-09-09T17:43:39Z / 17:43:49Z).
+- `gh pr ready 58`. 머지는 사람. Phase 1(#56) 먼저.
