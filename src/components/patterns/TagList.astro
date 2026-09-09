@@ -1,0 +1,28 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import Tag from '../ui/Tag.astro';
+
+import { tagListStyles } from './TagList.stylex.ts';
+
+type TagItem = {
+  slug: string;
+  label: string;
+};
+
+type Props = {
+  tags: ReadonlyArray<TagItem>;
+};
+
+const { tags } = Astro.props;
+---
+
+<ul {...stylex.attrs(tagListStyles.list)}>
+  {
+    tags.map((tag) => (
+      <li>
+        <Tag href={`/tags/${tag.slug}`}>{tag.label}</Tag>
+      </li>
+    ))
+  }
+</ul>

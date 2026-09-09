@@ -1,0 +1,15 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { colorwayThemes, type Colorway } from '../../styles/themes.ts';
+
+import { colorwayShellStyles } from './ColorwayShell.stylex.ts';
+
+type Props = {
+  colorway?: Colorway;
+};
+
+const { colorway = 'paper' } = Astro.props;
+---
+
+<div {...stylex.attrs(colorwayShellStyles.shell, colorwayThemes[colorway])}><slot /></div>

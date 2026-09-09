@@ -1,0 +1,19 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { clusterStyles } from './Cluster.stylex.ts';
+
+type Props = {
+  gap?: 'sm' | 'md' | 'lg';
+};
+
+const { gap = 'md' } = Astro.props;
+
+const gapStyles = {
+  sm: clusterStyles.gapSm,
+  md: clusterStyles.gapMd,
+  lg: clusterStyles.gapLg,
+} as const;
+---
+
+<div {...stylex.attrs(clusterStyles.base, gapStyles[gap])}><slot /></div>
