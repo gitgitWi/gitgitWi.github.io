@@ -24,11 +24,11 @@ export const buttonStyles = stylex.create({
   },
   primary: {
     backgroundColor: {
-      default: tokens.color.accent,
-      ":hover": tokens.color.accentHover,
+      default: tokens.color.accentInk,
+      ":hover": tokens.color.ink,
     },
-    color: tokens.color.surface,
-    borderColor: tokens.color.accent,
+    color: tokens.color.canvas,
+    borderColor: tokens.color.accentInk,
   },
   secondary: {
     backgroundColor: {
