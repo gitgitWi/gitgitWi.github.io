@@ -11,13 +11,13 @@
 
 Map **logical roles** (`../orchestrator.md` …) onto this product’s processes. Folding is allowed; dropping LOG/gates is not.
 
-| Role | This harness | Notes |
-|---|---|---|
-| orchestrator | | |
-| leader | | |
-| planner | | |
-| developer | | |
-| (optional) verifier | | |
+| Role                | This harness | Notes |
+| ------------------- | ------------ | ----- |
+| orchestrator        |              |       |
+| leader              |              |       |
+| planner             |              |       |
+| developer           |              |       |
+| (optional) verifier |              |       |
 
 ## Isolation
 
@@ -27,11 +27,11 @@ Map **logical roles** (`../orchestrator.md` …) onto this product’s processes
 
 ## Model pinning
 
-| Role | ID / invocation | Rationale | Verified |
-|---|---|---|---|
-| leader | | | |
-| planner | | | |
-| developer | | | |
+| Role      | ID / invocation | Rationale | Verified |
+| --------- | --------------- | --------- | -------- |
+| leader    |                 |           |          |
+| planner   |                 |           |          |
+| developer |                 |           |          |
 
 Fallback if a pin 404s or quota-exhausts: … (log substitution in LOG.md).
 

@@ -1,12 +1,13 @@
 # Phase 1 PLAN — Scaffold + Design System + Home/Tags + 배포
 
 ## 순서
+
 1. 스캐폴드 (별도 브랜치 `feat/phase-1-scaffold`):
    - 기존 Next 잔재는 삭제하지 않고 `legacy-next/`로 이동 보관 (Phase 2 이식 완료 후 삭제) — 이력 보존 + 빌드 충돌 방지.
    - yarn classic 잔재 제거: `.yarn/`, `.yarnrc`, `yarn.lock` 삭제 + `.gitignore` 정리.
    - `bun create astro@latest . -- --template minimal --typescript strict` 상당 수동 구성:
      `astro`, `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/rss`, `@astrojs/check` + `sharp`
-     + `oxfmt` + `oxlint` (전부 `bun add`). `bun install` → `bun.lock` 커밋.
+     - `oxfmt` + `oxlint` (전부 `bun add`). `bun install` → `bun.lock` 커밋.
    - `astro.config.mjs`: `output:'static'`, `site:'https://gitgitwi.github.io'`, `integrations:[mdx()]`,
      `vite:{plugins:[stylex.vite({useCSSLayers:true, runtimeInjection:false})]}`.
    - `package.json` scripts는 `bun run` 기준 (`dev: astro dev`, `build: astro build`, `check: astro check`).
@@ -30,6 +31,7 @@
    (`dist` 내 stylex 런타임 스크립트 부재). StyleX CSS는 `dist/assets/stylex.css` — Astro는 Vite `transformIndexHtml`을 안 타므로 `Base.astro`에서 명시 연결.
 
 ## 파일 스켈레톤
+
 `astro.config.mjs, src/{layouts,pages,components/ui,styles}, .github/workflows/deploy.yml, AGENTS.md` 업데이트.
 
 ## Phase 0 StyleX 스파이크 (2026-09-09, `/tmp/stylex-spike`, 본 repo 미오염)
@@ -44,16 +46,20 @@ CSS 샘플:
 
 ```css
 @layer priority1 {
-  :root, .xibpiy1 {
+  :root,
+  .xibpiy1 {
     --x13fv976: #fafaf8;
     --xk3gggj: #1a1a18;
   }
 }
 @layer priority3 {
-  .xdhsmyj { background-color: var(--x13fv976); }
+  .xdhsmyj {
+    background-color: var(--x13fv976);
+  }
 }
 ```
 
 ## 승인 요청
+
 - [ ] `legacy-next/` 임시보관 전략 동의?
 - [ ] light 단일테마 출발 동의? (다크는 Phase 4 이후)

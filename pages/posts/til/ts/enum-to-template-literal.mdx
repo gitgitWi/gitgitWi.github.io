@@ -26,20 +26,20 @@
 
 ### 예상과는 다른 Type Union
 
-무엇보다 개인적으로 가장 불편하게 느껴지는 것은 다른 타입들과는 다르게, ***enum은 `union`으로 여러 enum을 하나로 합칠 수 없다는 점이다***
+무엇보다 개인적으로 가장 불편하게 느껴지는 것은 다른 타입들과는 다르게, **_enum은 `union`으로 여러 enum을 하나로 합칠 수 없다는 점이다_**
 
 아래 예시 코드는 실무에서 구현 중인 API 타입 일부를 조금 수정해서 가져온 것이고, 전형적인 enum을 가져왔다
 
 ```typescript
 enum PeriodA {
-  DAILY = 'DAILY',
-  MONTHLY = 'MONTHLY'
+  DAILY = "DAILY",
+  MONTHLY = "MONTHLY",
 }
 
 enum PeriodCommon {
-  WEEKLY = 'WEEKLY',
-  QUARTERLY = 'QUARTERLY',
-  YEARLY = 'YEARLY'
+  WEEKLY = "WEEKLY",
+  QUARTERLY = "QUARTERLY",
+  YEARLY = "YEARLY",
 }
 ```
 
@@ -49,13 +49,13 @@ enum PeriodCommon {
 type StringOrNumber = string | number;
 
 const strOrNumberLogger = (what: StringOrNumber) => console.log(what);
-strOrNumberLogger('asdf');
+strOrNumberLogger("asdf");
 strOrNumberLogger(123123);
 ```
 
 <br />
 
-**_그러나 이 넘의 enum은 그렇지 않다_** 
+**_그러나 이 넘의 enum은 그렇지 않다_**
 
 `PeriodA`와 `PeriodCommon`를 합친 `Periods`라는 enum을 만들고 싶지만 그 과정은 쉽지 않다
 
@@ -65,7 +65,7 @@ strOrNumberLogger(123123);
 type Periods = PeriodA | PeriodCommon;
 
 const periodLogger = (period: Periods) => console.log(period);
-periodLogger('DAILY'); // error
+periodLogger("DAILY"); // error
 ```
 
 <br />
@@ -78,7 +78,7 @@ Intersection은 더더욱 안된다
 type Periods = PeriodA & PeriodCommon; // -> never
 
 const periodLogger = (period: Periods) => console.log(period);
-periodLogger('DAILY'); // error
+periodLogger("DAILY"); // error
 ```
 
 <br />
@@ -95,7 +95,7 @@ periodLogger('DAILY'); // error
 
 가장 속 편한건 단순히 `literal`'만' 쓰는 거다
 
-토스 기술 블로그 [Template Literal Types로 타입 안전하게 코딩하기](https://toss.tech/article/template-literal-types)에서 소개하는 것처럼, 
+토스 기술 블로그 [Template Literal Types로 타입 안전하게 코딩하기](https://toss.tech/article/template-literal-types)에서 소개하는 것처럼,
 
 TypeScript에는 문자열을 가지고 다양한 타입을 만들어 낼 수 있는 재미있는(?) 기능이 있다
 
@@ -119,7 +119,6 @@ export class GetChartDto {
 
 ![](https://images.velog.io/images/johnwi/post/515a911a-181d-4730-8f15-610f6dc508a3/image.png)
 
-
 <br />
 
 위 라인 블로그에서 가장 추천하는 방법은 객체를 가지고 Union 타입을 만드는 것이다
@@ -132,12 +131,12 @@ enum으로 union 만들 방법을 구글링(`'typescript enum union'`)하면 나
 
 ```typescript
 const READONLY_객체 = 객체 as const;
-type enumLike = keyof READONLY_객체[keyof typeof READONLY_객체]
+type enumLike = keyof READONLY_객체[keyof typeof READONLY_객체];
 ```
 
 짧고 유용한 코드지만, 부족한 나에게는 이게 뭘 의미하는지 한번에 파악하기가 조금 어렵다고 느껴졌다
 
-다만 `Readonly` 타입을 사용한다는 점에서 힌트를 얻을 수 있었다 
+다만 `Readonly` 타입을 사용한다는 점에서 힌트를 얻을 수 있었다
 
 _(이게 꼭 필요한 건지는 아직 테스트를 안해봤다...)_
 
@@ -151,14 +150,14 @@ _(이게 꼭 필요한 건지는 아직 테스트를 안해봤다...)_
 // periods.ts
 type ReadonlyRecord<K extends string, V> = Readonly<Record<K, V>>;
 
-export type PeriodANames = 'DAILY' | 'MONTHLY';
+export type PeriodANames = "DAILY" | "MONTHLY";
 export const PeriodA: ReadonlyRecord<PeriodANames, PeriodANames> = {
-  DAILY: 'DAILY',
-  MONTHLY: 'MONTHLY',
+  DAILY: "DAILY",
+  MONTHLY: "MONTHLY",
 };
 
-type PeriodCommonNames = 'WEEKLY' | 'QUARTERLY' | 'YEARLY';
-const PeriodCommon: ReadonlyRecord<PeriodCommonNames, PeriodCommonNames> = { /** */ }
+type PeriodCommonNames = "WEEKLY" | "QUARTERLY" | "YEARLY";
+const PeriodCommon: ReadonlyRecord<PeriodCommonNames, PeriodCommonNames> = {/** */};
 
 export type PeriodNames = PeriodANames | PeriodCommonNames;
 export const Periods = { ...PeriodA, ...PeriodCommon };
@@ -172,14 +171,14 @@ export const Periods = { ...PeriodA, ...PeriodCommon };
 
 실무 코드에서는 좀더 편한 코딩을 위해 끼를 부려서 아래와 같이 선언했다
 
-객체 `key`, `value`가 모두 `string`인 경우에는 기본값 덕분에 제네릭을 생략할 수 있고, 
+객체 `key`, `value`가 모두 `string`인 경우에는 기본값 덕분에 제네릭을 생략할 수 있고,
 
 `string`은 아니지만 `key`, `value`가 동일한 타입인 경우는 하나만 적어주면 된다
 
 ```typescript
 export type ReadonlyRecord<P extends string = string, Q = P> = Readonly<Record<P, Q>>;
 
-export const PeriodA: ReadonlyRecord<PeriodANames> = { /** */ }
+export const PeriodA: ReadonlyRecord<PeriodANames> = {/** */};
 ```
 
 <br />
@@ -188,7 +187,7 @@ export const PeriodA: ReadonlyRecord<PeriodANames> = { /** */ }
 
 단순한 문자열 literal 타입이다
 
-Union이라는 의미에 맞게, ***관심사에 따라 분리된 타입들을 하나로 묶는 것이 쉽다***
+Union이라는 의미에 맞게, **_관심사에 따라 분리된 타입들을 하나로 묶는 것이 쉽다_**
 
 `keyof typeof 객체`를 대신하기 위해 타입을 하나하나 더 써야한다는 것이 단점이기는 하지만,
 
@@ -199,18 +198,17 @@ Union이라는 의미에 맞게, ***관심사에 따라 분리된 타입들을 �
 또 토스 블로그에서 소개한 것처럼, **`template-literal` 타입들을 조합한 새로운 타입들을 선언하기 매우 편리해진다**
 
 ```typescript
-export type MarketNames = 'domestic' | 'overseas';
-export type CategoryNames = 'index' | 'stock';
+export type MarketNames = "domestic" | "overseas";
+export type CategoryNames = "index" | "stock";
 
 export type DetailChartTypeNames = `${MarketNames}-${CategoryNames}`;
 export const DetailChartTypes: ReadonlyRecord<DetailChartTypeNames> = {
-  'domestic-index': 'domestic-index',
-  'domestic-stock': 'domestic-stock',
-  'overseas-index': 'overseas-index',
-  'overseas-stock': 'overseas-stock',
+  "domestic-index": "domestic-index",
+  "domestic-stock": "domestic-stock",
+  "overseas-index": "overseas-index",
+  "overseas-stock": "overseas-stock",
 };
 ```
-
 
 <br />
 

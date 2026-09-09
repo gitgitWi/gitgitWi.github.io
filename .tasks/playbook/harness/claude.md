@@ -10,12 +10,12 @@
 
 ## Known mapping (not yet verified)
 
-| Role | Likely process | Notes |
-|---|---|---|
-| orchestrator | parent Claude Code session | |
-| leader | folded into parent **or** a named subagent | pick one when promoting |
-| planner | `.claude/agents/planner.md` | keep `readonly` if the product supports it |
-| developer | `.claude/agents/implementer.md` | isolate via git worktree |
+| Role         | Likely process                             | Notes                                      |
+| ------------ | ------------------------------------------ | ------------------------------------------ |
+| orchestrator | parent Claude Code session                 |                                            |
+| leader       | folded into parent **or** a named subagent | pick one when promoting                    |
+| planner      | `.claude/agents/planner.md`                | keep `readonly` if the product supports it |
+| developer    | `.claude/agents/implementer.md`            | isolate via git worktree                   |
 
 MCP: `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` (Phase 0 PLAN). Re-verify the flag names when promoting.
 

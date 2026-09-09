@@ -11,12 +11,12 @@ Each file in this folder is **one spawn protocol**. Role contracts stay in `../`
 
 ## Live vs stub
 
-| File | Status | Promote when |
-|---|---|---|
-| [cline-herdr.md](cline-herdr.md) | live | already verified |
-| [cursor.md](cursor.md) | live | already the default in this repo’s Cursor sessions |
-| [claude.md](claude.md) | stub | first Claude Code phase |
-| [codex.md](codex.md) | stub | first Codex phase |
+| File                             | Status | Promote when                                       |
+| -------------------------------- | ------ | -------------------------------------------------- |
+| [cline-herdr.md](cline-herdr.md) | live   | already verified                                   |
+| [cursor.md](cursor.md)           | live   | already the default in this repo’s Cursor sessions |
+| [claude.md](claude.md)           | stub   | first Claude Code phase                            |
+| [codex.md](codex.md)             | stub   | first Codex phase                                  |
 
 ## Adding a harness
 

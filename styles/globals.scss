@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .reset {
   padding: 0;
@@ -22,8 +22,18 @@ body {
   max-width: 900px;
   background-color: $Black-Inkwell;
   color: rgb(250, 250, 250);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
 }
 
 a {

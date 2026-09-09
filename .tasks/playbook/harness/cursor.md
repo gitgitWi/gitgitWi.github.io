@@ -13,13 +13,13 @@ Do not recreate three Herdr panes. Cursor has no wait/prompt protocol between na
 
 ## Topology mapping
 
-| Role | This harness | Notes |
-|---|---|---|
-| orchestrator | parent Agent chat (Grok 4.6) | only human-facing session |
-| leader | **folded into the parent** | same duties + LOG as `../leader.md` |
-| planner | subagent `.cursor/agents/planner.md` | `model: inherit` (Grok). PLAN.md/LOG.md only — not `readonly` because Part A writes PLAN.md |
-| developer | subagent `.cursor/agents/implementer.md` | `model: composer-2.5` · **own worktree** |
-| verifier | subagent `.cursor/agents/verifier.md` | `readonly: true`, `model: gpt-5.6-sol-medium` — run after `PR-DRAFT`. Covers planner Part B. Do not also spawn planner review unless verifier asks. |
+| Role         | This harness                             | Notes                                                                                                                                               |
+| ------------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| orchestrator | parent Agent chat (Grok 4.6)             | only human-facing session                                                                                                                           |
+| leader       | **folded into the parent**               | same duties + LOG as `../leader.md`                                                                                                                 |
+| planner      | subagent `.cursor/agents/planner.md`     | `model: inherit` (Grok). PLAN.md/LOG.md only — not `readonly` because Part A writes PLAN.md                                                         |
+| developer    | subagent `.cursor/agents/implementer.md` | `model: composer-2.5` · **own worktree**                                                                                                            |
+| verifier     | subagent `.cursor/agents/verifier.md`    | `readonly: true`, `model: gpt-5.6-sol-medium` — run after `PR-DRAFT`. Covers planner Part B. Do not also spawn planner review unless verifier asks. |
 
 Small phases may skip spawning planner and refine PLAN.md in the parent. Still write `PLAN-READY` into LOG.md.
 
@@ -29,24 +29,24 @@ Agents Window: Chat A = Grok (plan/ask), Chat B = Composer + `/worktree`. The **
 
 ## Isolation
 
-| Mode | Use |
-|---|---|
-| Shared parent checkout | verifier (readonly); planner may share because it only writes PLAN.md/LOG.md |
-| Git worktree | implementer on product code (`/worktree`, Agents Window, or `agent --worktree`) |
-| `/in-cloud` | long implementer runs; own VM + branch. Cloud MCP ≠ local `.cursor/mcp.json` |
-| `/best-of-n` | competing implementations, **not** a role team |
-| `/multitask` | only when file sets do not overlap |
+| Mode                   | Use                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------- |
+| Shared parent checkout | verifier (readonly); planner may share because it only writes PLAN.md/LOG.md    |
+| Git worktree           | implementer on product code (`/worktree`, Agents Window, or `agent --worktree`) |
+| `/in-cloud`            | long implementer runs; own VM + branch. Cloud MCP ≠ local `.cursor/mcp.json`    |
+| `/best-of-n`           | competing implementations, **not** a role team                                  |
+| `/multitask`           | only when file sets do not overlap                                              |
 
 Never two write-capable agents on the same checkout.
 
 ## Model pinning
 
-| Role | Pin | Rationale |
-|---|---|---|
-| orchestrator / leader | Grok 4.6 in the parent picker | long tool loops, instruction following |
-| planner | `inherit` | same judgment as parent |
-| developer | `composer-2.5` (`composer-2.5-fast` if the Fast variant is the picker name) | edits + terminal |
-| verifier | `gpt-5.6-sol-medium` | draft review (SPEC + gates). OpenAI models in Cursor: proposed shutoff **2026-11-12** ([OpenAI](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)). After that, fallback `inherit` (Grok) and LOG it. |
+| Role                  | Pin                                                                         | Rationale                                                                                                                                                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| orchestrator / leader | Grok 4.6 in the parent picker                                               | long tool loops, instruction following                                                                                                                                                                                                    |
+| planner               | `inherit`                                                                   | same judgment as parent                                                                                                                                                                                                                   |
+| developer             | `composer-2.5` (`composer-2.5-fast` if the Fast variant is the picker name) | edits + terminal                                                                                                                                                                                                                          |
+| verifier              | `gpt-5.6-sol-medium`                                                        | draft review (SPEC + gates). OpenAI models in Cursor: proposed shutoff **2026-11-12** ([OpenAI](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)). After that, fallback `inherit` (Grok) and LOG it. |
 
 On **legacy request-based plans without Max Mode**, Cursor may ignore `model:` and run subagents as Composer. If that happens, run planner/verifier in the parent Grok chat instead of Task, and LOG the fallback.
 

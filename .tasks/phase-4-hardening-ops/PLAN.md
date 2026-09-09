@@ -1,6 +1,7 @@
 # Phase 4 PLAN — Hardening + 운영
 
 ## 순서 (CI는 Phase 0 승인 즉시 선행 — stacked PR 전제조건)
+
 0. CI 선행 구축 (`feat/ci-gates` → `main` 직행, 타 Phase보다 먼저):
    `.github/workflows/ci.yml` — `oven-sh/setup-bun@v2` + `bun install` 후 매트릭스 없이 순차 실행:
    `check` → `format` → `lint` → `test --passWithNoTests` → `links/schema/leak` (스크립트 부재 시 해당 잡은
@@ -18,8 +19,10 @@
 6. 성능: `astro:assets` 이미지 변환, 폰트 서브셋, 예산 체크 (`scripts/check-budget.mjs`: JS≤50KB/페이지).
 
 ## 검증
+
 - CI 4가드 그린 캡처, RSS/sitemap/404/검색 Top-3 수동 체크, 구 배포경로 제거 확인 (`git branch -r`).
 
 ## 승인 요청
+
 - [ ] Pagefind 동의? (Algolia 불필요 확인)
 - [ ] OG 자동생성 vs 수동 — 선호?

@@ -12,12 +12,12 @@
 
 ## Topology mapping
 
-| Role | Process | Notes |
-|---|---|---|
-| orchestrator | current Herdr pane (this session) | does not edit product code |
-| leader | Herdr agent `pN-leader`, kind `cline` | named long-lived worker |
-| planner | `pN-planner` | act mode (must edit PLAN.md) |
-| developer | `pN-developer` | act mode |
+| Role         | Process                               | Notes                        |
+| ------------ | ------------------------------------- | ---------------------------- |
+| orchestrator | current Herdr pane (this session)     | does not edit product code   |
+| leader       | Herdr agent `pN-leader`, kind `cline` | named long-lived worker      |
+| planner      | `pN-planner`                          | act mode (must edit PLAN.md) |
+| developer    | `pN-developer`                        | act mode                     |
 
 Agent names: `[a-z0-9_-]{1,32}`. Workspace per phase: `phase-N-<slug>` (create on kickoff, close on merge).
 
@@ -27,11 +27,11 @@ Herdr workspace + pane cwd = repo root (or a worktree if the orchestrator create
 
 ## Model pinning (verified 2026-09-10)
 
-| Role | Invocation | Rationale |
-|---|---|---|
-| leader | `-m cline-free/muse-spark-1.3-contributor --thinking xhigh` | continuity + judgment |
-| planner | `-m cline-free/muse-spark-1.3-contributor --thinking xhigh` | spec reasoning + review |
-| developer | `-m z-ai/glm-5.3-flash` | fast implementation |
+| Role      | Invocation                                                  | Rationale               |
+| --------- | ----------------------------------------------------------- | ----------------------- |
+| leader    | `-m cline-free/muse-spark-1.3-contributor --thinking xhigh` | continuity + judgment   |
+| planner   | `-m cline-free/muse-spark-1.3-contributor --thinking xhigh` | spec reasoning + review |
+| developer | `-m z-ai/glm-5.3-flash`                                     | fast implementation     |
 
 Provider is always Cline (default `-P cline`).
 
