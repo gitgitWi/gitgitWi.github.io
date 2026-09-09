@@ -1,7 +1,7 @@
-import Divider from './Divider.astro';
+import Divider from "./Divider.astro";
 
 export default {
-  title: 'ui/Divider',
+  title: "ui/Divider",
   component: Divider,
 };
 

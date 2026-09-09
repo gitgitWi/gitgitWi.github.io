@@ -10,18 +10,18 @@
 
 ## SPEC 매핑
 
-| SPEC 목표 | PLAN 단계 |
-| --------- | --------- |
-| Astro v7 static 스캐폴드 (`site`, TS strict, `base` 없음) | 2 |
-| StyleX unplugin + 토큰/프리미티브/패턴 + variant 계약 | 3 |
-| Storybook 동반 납품 + `build-storybook` 그린 (배포 없음) | **4** (신규 번호) |
-| `/` · `/tags` · `/tags/[tag]` 껍데기+목업 | 5 |
-| `Base.astro`에서 StyleX CSS 연결 (스파이크 구멍) | 2 + 5 |
-| Pages Actions 배포 (`withastro/action` + `deploy-pages`) | 6 |
-| yarn classic 잔재 제거 | 1 |
-| Next 잔재 `legacy-next/` 보관 | 1 |
-| 종료 게이트 (check/format/lint/test, Lighthouse, 런타임 주입 0) | 7 |
-| draft PR (`--base main`, assignee, labels) | 8 |
+| SPEC 목표                                                       | PLAN 단계         |
+| --------------------------------------------------------------- | ----------------- |
+| Astro v7 static 스캐폴드 (`site`, TS strict, `base` 없음)       | 2                 |
+| StyleX unplugin + 토큰/프리미티브/패턴 + variant 계약           | 3                 |
+| Storybook 동반 납품 + `build-storybook` 그린 (배포 없음)        | **4** (신규 번호) |
+| `/` · `/tags` · `/tags/[tag]` 껍데기+목업                       | 5                 |
+| `Base.astro`에서 StyleX CSS 연결 (스파이크 구멍)                | 2 + 5             |
+| Pages Actions 배포 (`withastro/action` + `deploy-pages`)        | 6                 |
+| yarn classic 잔재 제거                                          | 1                 |
+| Next 잔재 `legacy-next/` 보관                                   | 1                 |
+| 종료 게이트 (check/format/lint/test, Lighthouse, 런타임 주입 0) | 7                 |
+| draft PR (`--base main`, assignee, labels)                      | 8                 |
 
 0단계는 이 브랜치에서 **이미 완료** — 다시 하지 않는다.
 
@@ -97,11 +97,11 @@ bun add -d @astrojs/check typescript @stylexjs/unplugin@0.19.0 \
 
 - `astro.config.mjs` — `defineConfig`. `output` 기본이 static이면 명시해도 됨. **`site: 'https://gitgitwi.github.io'`**. **`base` 키 없음** (유저 사이트 루트).
   ```js
-  import { defineConfig } from 'astro/config';
-  import stylex from '@stylexjs/unplugin';
+  import { defineConfig } from "astro/config";
+  import stylex from "@stylexjs/unplugin";
 
   export default defineConfig({
-    site: 'https://gitgitwi.github.io',
+    site: "https://gitgitwi.github.io",
     vite: {
       plugins: [
         stylex.vite({
@@ -145,17 +145,17 @@ test ! -f src/content/config.ts
 ```ts
 export const tokens = stylex.defineVars({
   color: {
-    paper: '#FAFAF8',
-    ink: '#1A1A18',
-    muted: '#6B6964',
-    hairline: '#E8E6E1',
-    accent: '#3F6B5A',
-    accentInk: '#FAFAF8',
+    paper: "#FAFAF8",
+    ink: "#1A1A18",
+    muted: "#6B6964",
+    hairline: "#E8E6E1",
+    accent: "#3F6B5A",
+    accentInk: "#FAFAF8",
   },
-  space: { xs: '0.25rem', sm: '0.5rem', md: '1rem', lg: '1.5rem', xl: '2.5rem' },
-  fontSize: { sm: '0.875rem', md: '1rem', lg: '1.25rem', xl: '1.75rem', '2xl': '2.25rem' },
-  radius: { sm: '4px', md: '8px' },
-  lineHeight: { tight: '1.25', body: '1.6' },
+  space: { xs: "0.25rem", sm: "0.5rem", md: "1rem", lg: "1.5rem", xl: "2.5rem" },
+  fontSize: { sm: "0.875rem", md: "1rem", lg: "1.25rem", xl: "1.75rem", "2xl": "2.25rem" },
+  radius: { sm: "4px", md: "8px" },
+  lineHeight: { tight: "1.25", body: "1.6" },
 } as const);
 ```
 
@@ -163,25 +163,25 @@ export const tokens = stylex.defineVars({
 
 **프리미티브** (`src/components/ui/<Name>.astro` + `<Name>.stylex.ts` + `<Name>.stories.ts` + barrel `src/components/ui/index.ts`):
 
-| 심볼 | variant 계약 (이 외 스타일 prop 없음) |
-| ---- | -------------------------------------- |
-| `Text` | `variant: 'body' \| 'muted' \| 'caption'` |
-| `Heading` | `level: 1 \| 2 \| 3 \| 4` |
-| `Stack` | `gap: 'sm' \| 'md' \| 'lg'` |
-| `Cluster` | `gap: 'sm' \| 'md' \| 'lg'` |
-| `Card` | `padding: 'sm' \| 'md'` |
-| `Tag` | `href?: string` (없으면 `<span>`) |
-| `Divider` | 없음 |
-| `Prose` | 없음 (본문 래퍼) |
-| `Container` | `width: 'default' \| 'narrow'` |
+| 심볼        | variant 계약 (이 외 스타일 prop 없음)     |
+| ----------- | ----------------------------------------- |
+| `Text`      | `variant: 'body' \| 'muted' \| 'caption'` |
+| `Heading`   | `level: 1 \| 2 \| 3 \| 4`                 |
+| `Stack`     | `gap: 'sm' \| 'md' \| 'lg'`               |
+| `Cluster`   | `gap: 'sm' \| 'md' \| 'lg'`               |
+| `Card`      | `padding: 'sm' \| 'md'`                   |
+| `Tag`       | `href?: string` (없으면 `<span>`)         |
+| `Divider`   | 없음                                      |
+| `Prose`     | 없음 (본문 래퍼)                          |
+| `Container` | `width: 'default' \| 'narrow'`            |
 
 **패턴** (`src/components/patterns/` + barrel):
 
-| 심볼 | 계약 |
-| ---- | ---- |
-| `SiteHeader` | 사이트명 + Home/Tags `<a>` (next/link 금지) |
-| `SiteFooter` | 카피라이트 |
-| `TagList` | `tags: ReadonlyArray<{ slug: string; label: string }>` |
+| 심볼            | 계약                                                                       |
+| --------------- | -------------------------------------------------------------------------- |
+| `SiteHeader`    | 사이트명 + Home/Tags `<a>` (next/link 금지)                                |
+| `SiteFooter`    | 카피라이트                                                                 |
+| `TagList`       | `tags: ReadonlyArray<{ slug: string; label: string }>`                     |
 | `ColorwayShell` | `colorway: 'paper' \| 'sage' \| 'clay' \| 'ink'` (`createTheme` className) |
 
 각 stories: CSF3, `title: 'ui/Text'` 또는 `'patterns/SiteHeader'`, `Default` + variant 1개 이상. 슬롯이 있으면 `args`로 문자열.

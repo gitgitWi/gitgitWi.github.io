@@ -1,6 +1,6 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from './tokens.stylex.ts';
+import { tokens } from "./tokens.stylex.ts";
 
 /** Phase 2에서 실값을 채운다. */
 export const paperTheme = stylex.unstable_createThemeNested(tokens, {});

@@ -1,13 +1,13 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from '../../styles/tokens.stylex.ts';
+import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const tagListStyles = stylex.create({
   list: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
     gap: tokens.space.sm,
-    listStyle: 'none',
+    listStyle: "none",
     margin: 0,
     padding: 0,
   },

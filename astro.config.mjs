@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config';
-import stylex from '@stylexjs/unplugin';
+import { defineConfig } from "astro/config";
+import stylex from "@stylexjs/unplugin";
 
 export default defineConfig({
-  site: 'https://gitgitwi.github.io',
+  site: "https://gitgitwi.github.io",
   vite: {
     build: {
       assetsInlineLimit: 0,

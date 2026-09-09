@@ -1,10 +1,10 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from '../../styles/tokens.stylex.ts';
+import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const tagStyles = stylex.create({
   base: {
-    display: 'inline-block',
+    display: "inline-block",
     fontSize: tokens.fontSize.sm,
     lineHeight: tokens.lineHeight.tight,
     paddingBlock: tokens.space.xs,
@@ -12,16 +12,16 @@ export const tagStyles = stylex.create({
     borderRadius: tokens.radius.sm,
     backgroundColor: tokens.color.hairline,
     color: tokens.color.ink,
-    textDecoration: 'none',
+    textDecoration: "none",
   },
   interactive: {
     backgroundColor: {
       default: null,
-      ':hover': tokens.color.accent,
+      ":hover": tokens.color.accent,
     },
     color: {
       default: null,
-      ':hover': tokens.color.accentInk,
+      ":hover": tokens.color.accentInk,
     },
   },
 });

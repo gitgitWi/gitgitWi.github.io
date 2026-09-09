@@ -1,7 +1,7 @@
-import SiteHeader from './SiteHeader.astro';
+import SiteHeader from "./SiteHeader.astro";
 
 export default {
-  title: 'patterns/SiteHeader',
+  title: "patterns/SiteHeader",
   component: SiteHeader,
 };
 

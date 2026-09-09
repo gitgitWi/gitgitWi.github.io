@@ -1,7 +1,7 @@
-import SiteFooter from './SiteFooter.astro';
+import SiteFooter from "./SiteFooter.astro";
 
 export default {
-  title: 'patterns/SiteFooter',
+  title: "patterns/SiteFooter",
   component: SiteFooter,
 };
 

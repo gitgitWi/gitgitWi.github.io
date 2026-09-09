@@ -1,12 +1,12 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from '../../styles/tokens.stylex.ts';
+import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const clusterStyles = stylex.create({
   base: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
   },
   gapSm: {
     gap: tokens.space.sm,

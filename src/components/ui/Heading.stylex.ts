@@ -1,6 +1,6 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from '../../styles/tokens.stylex.ts';
+import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const headingStyles = stylex.create({
   base: {
@@ -10,7 +10,7 @@ export const headingStyles = stylex.create({
     fontWeight: 600,
   },
   level1: {
-    fontSize: tokens.fontSize['2xl'],
+    fontSize: tokens.fontSize["2xl"],
   },
   level2: {
     fontSize: tokens.fontSize.xl,

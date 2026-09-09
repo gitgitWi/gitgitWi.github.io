@@ -1,15 +1,15 @@
-import Tag from './Tag.astro';
+import Tag from "./Tag.astro";
 
 export default {
-  title: 'ui/Tag',
+  title: "ui/Tag",
   component: Tag,
 };
 
 export const Default = {
   args: {
-    href: '/tags/astro',
+    href: "/tags/astro",
     slots: {
-      default: 'Astro',
+      default: "Astro",
     },
   },
 };
@@ -17,7 +17,7 @@ export const Default = {
 export const Static = {
   args: {
     slots: {
-      default: '비활성 태그',
+      default: "비활성 태그",
     },
   },
 };

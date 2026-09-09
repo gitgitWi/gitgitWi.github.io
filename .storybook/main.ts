@@ -1,10 +1,10 @@
-import type { StorybookConfig } from '@storybook-astro/framework';
-import stylex from '@stylexjs/unplugin';
+import type { StorybookConfig } from "@storybook-astro/framework";
+import stylex from "@stylexjs/unplugin";
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(ts|tsx)'],
+  stories: ["../src/**/*.stories.@(ts|tsx)"],
   framework: {
-    name: '@storybook-astro/framework',
+    name: "@storybook-astro/framework",
     options: {},
   },
   async viteFinal(config) {

@@ -1,18 +1,18 @@
-import Stack from './Stack.astro';
-import Text from './Text.astro';
+import Stack from "./Stack.astro";
+import Text from "./Text.astro";
 
 export default {
-  title: 'ui/Stack',
+  title: "ui/Stack",
   component: Stack,
 };
 
 export const Default = {
   args: {
-    gap: 'md',
+    gap: "md",
     slots: {
       default: [
-        { component: Text, props: { variant: 'body' }, slots: { default: '첫 번째' } },
-        { component: Text, props: { variant: 'body' }, slots: { default: '두 번째' } },
+        { component: Text, props: { variant: "body" }, slots: { default: "첫 번째" } },
+        { component: Text, props: { variant: "body" }, slots: { default: "두 번째" } },
       ],
     },
   },
@@ -20,11 +20,11 @@ export const Default = {
 
 export const LargeGap = {
   args: {
-    gap: 'lg',
+    gap: "lg",
     slots: {
       default: [
-        { component: Text, props: { variant: 'body' }, slots: { default: '위' } },
-        { component: Text, props: { variant: 'muted' }, slots: { default: '아래' } },
+        { component: Text, props: { variant: "body" }, slots: { default: "위" } },
+        { component: Text, props: { variant: "muted" }, slots: { default: "아래" } },
       ],
     },
   },

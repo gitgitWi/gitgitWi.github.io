@@ -1,22 +1,22 @@
-import TagList from './TagList.astro';
+import TagList from "./TagList.astro";
 
 export default {
-  title: 'patterns/TagList',
+  title: "patterns/TagList",
   component: TagList,
 };
 
 export const Default = {
   args: {
     tags: [
-      { slug: 'astro', label: 'Astro' },
-      { slug: 'stylex', label: 'StyleX' },
-      { slug: 'web', label: 'Web' },
+      { slug: "astro", label: "Astro" },
+      { slug: "stylex", label: "StyleX" },
+      { slug: "web", label: "Web" },
     ],
   },
 };
 
 export const SingleTag = {
   args: {
-    tags: [{ slug: 'til', label: 'TIL' }],
+    tags: [{ slug: "til", label: "TIL" }],
   },
 };

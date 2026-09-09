@@ -1,11 +1,11 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
-import { tokens } from '../../styles/tokens.stylex.ts';
+import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const stackStyles = stylex.create({
   base: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   gapSm: {
     gap: tokens.space.sm,

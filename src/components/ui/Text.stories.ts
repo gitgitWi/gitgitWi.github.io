@@ -1,24 +1,24 @@
-import Text from './Text.astro';
+import Text from "./Text.astro";
 
 export default {
-  title: 'ui/Text',
+  title: "ui/Text",
   component: Text,
 };
 
 export const Default = {
   args: {
-    variant: 'body',
+    variant: "body",
     slots: {
-      default: '본문 텍스트입니다.',
+      default: "본문 텍스트입니다.",
     },
   },
 };
 
 export const Muted = {
   args: {
-    variant: 'muted',
+    variant: "muted",
     slots: {
-      default: '보조 설명 텍스트입니다.',
+      default: "보조 설명 텍스트입니다.",
     },
   },
 };
