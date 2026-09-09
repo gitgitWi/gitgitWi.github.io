@@ -1,7 +1,12 @@
-import { deckLabels } from "../../lib/quiz/decks.ts";
+import type { QuizDeckId } from "../../content/quiz.ts";
 import { items as tsBasicsItems } from "../../content/quiz/ts-basics.ts";
+import { deckLabels, getDeckItems, quizDeckIds } from "../../lib/quiz/decks.ts";
 
 import { QuizDeck } from "./QuizDeck.tsx";
+
+const allDecks = Object.fromEntries(
+  quizDeckIds.map((deckId) => [deckId, getDeckItems(deckId)]),
+) as Record<QuizDeckId, ReturnType<typeof getDeckItems>>;
 
 export default {
   title: "quiz/QuizDeck",
@@ -18,22 +23,22 @@ export default {
 
 export const TsBasics = {
   render: () => (
-    <QuizDeck
-      deckId="ts-basics"
-      deckLabel={deckLabels["ts-basics"]}
-      items={tsBasicsItems}
-      sessionLimit={5}
-    />
+    <QuizDeck deckIds={quizDeckIds} deckLabels={deckLabels} decks={allDecks} sessionLimit={5} />
   ),
 };
 
-export const ShortSession = {
+export const DeckPickerOnly = {
   render: () => (
     <QuizDeck
-      deckId="ts-basics"
-      deckLabel={deckLabels["ts-basics"]}
-      items={tsBasicsItems.slice(0, 3)}
-      sessionLimit={3}
+      deckIds={quizDeckIds}
+      deckLabels={deckLabels}
+      decks={{
+        "ts-basics": tsBasicsItems,
+        tdd: [],
+        refactoring: [],
+        "design-system": [],
+      }}
+      sessionLimit={5}
     />
   ),
 };

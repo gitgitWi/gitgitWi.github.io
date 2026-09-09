@@ -2,6 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import type { QuizDeckId, QuizItem } from "../../content/quiz.ts";
+import { isQuizDeckId } from "../../lib/quiz/decks.ts";
 import { gradeMCQ, gradeShort } from "../../lib/quiz/grade.ts";
 import { readQuizProgress, recordDeckAnswer } from "../../lib/quiz/progress.ts";
 import { buildSession, isSessionMcq, type SessionItem } from "../../lib/quiz/session.ts";
@@ -10,16 +11,33 @@ import { quizDeckStyles } from "./QuizDeck.stylex.ts";
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
-type HistoryEntry = {
-  id: string;
-  correct: boolean;
+type CardSnapshot = {
+  flipped: boolean;
+  picked?: number;
+  shortValue: string;
+  revealed: boolean;
+  correct?: boolean;
 };
 
+type DeckCatalog = Record<QuizDeckId, QuizItem[]>;
+
 type QuizDeckProps = {
-  deckId: QuizDeckId;
-  deckLabel: string;
-  items: QuizItem[];
+  deckIds: readonly QuizDeckId[];
+  deckLabels: Record<QuizDeckId, string>;
+  decks: DeckCatalog;
   sessionLimit?: number;
+};
+
+const emptySnapshot = (): CardSnapshot => ({
+  flipped: false,
+  shortValue: "",
+  revealed: false,
+});
+
+const readDeckFromUrl = (): QuizDeckId | undefined => {
+  if (typeof window === "undefined") return undefined;
+  const param = new URLSearchParams(window.location.search).get("deck") ?? "";
+  return isQuizDeckId(param) ? param : undefined;
 };
 
 const useReducedMotion = () => {
@@ -36,41 +54,76 @@ const useReducedMotion = () => {
   return reduced;
 };
 
-export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDeckProps) {
+export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: QuizDeckProps) {
   const reducedMotion = useReducedMotion();
   const inputRef = useRef<HTMLInputElement>(null);
+  const initialDeckId = readDeckFromUrl();
+  const [selectedDeckId, setSelectedDeckId] = useState<QuizDeckId | undefined>(initialDeckId);
   const [order, setOrder] = useState<SessionItem[]>(() =>
-    buildSession({ items, limit: sessionLimit }),
+    initialDeckId
+      ? buildSession({
+          items: decks[initialDeckId],
+          limit: Math.min(sessionLimit, decks[initialDeckId].length),
+        })
+      : [],
   );
   const [idx, setIdx] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [picked, setPicked] = useState<number | undefined>(undefined);
-  const [shortValue, setShortValue] = useState("");
-  const [revealed, setRevealed] = useState(false);
-  const [score, setScore] = useState(0);
-  const [, setHistory] = useState<HistoryEntry[]>([]);
+  const [snapshots, setSnapshots] = useState<Record<number, CardSnapshot>>({});
   const [liveMessage, setLiveMessage] = useState("");
-  const [storedProgress, setStoredProgress] = useState(() => readQuizProgress()[deckId]);
+  const [storedProgress, setStoredProgress] = useState(
+    () => readQuizProgress()[selectedDeckId ?? "ts-basics"],
+  );
+
+  const deckLabel = selectedDeckId ? deckLabels[selectedDeckId] : "";
+  const snap = snapshots[idx] ?? emptySnapshot();
+  const { flipped, picked, shortValue, revealed } = snap;
 
   const current = order[idx];
   const total = order.length;
-  const finished = idx >= total;
+  const finished = selectedDeckId !== undefined && idx >= total;
+  const score = useMemo(
+    () => Object.values(snapshots).filter((entry) => entry.revealed && entry.correct).length,
+    [snapshots],
+  );
 
-  const resetCard = useCallback(() => {
-    setFlipped(false);
-    setPicked(undefined);
-    setShortValue("");
-    setRevealed(false);
-  }, []);
+  const patchSnap = useCallback(
+    (patch: Partial<CardSnapshot>) => {
+      setSnapshots((prev) => ({
+        ...prev,
+        [idx]: { ...emptySnapshot(), ...prev[idx], ...patch },
+      }));
+    },
+    [idx],
+  );
+
+  const startDeckSession = useCallback(
+    (deckId: QuizDeckId) => {
+      const items = decks[deckId];
+      const nextLimit = Math.min(sessionLimit, items.length);
+      setOrder(buildSession({ items, limit: nextLimit }));
+      setIdx(0);
+      setSnapshots({});
+      setStoredProgress(readQuizProgress()[deckId]);
+      setLiveMessage(`${deckLabels[deckId]} 덱을 시작합니다.`);
+    },
+    [deckLabels, decks, sessionLimit],
+  );
+
+  const selectDeck = useCallback(
+    (deckId: QuizDeckId) => {
+      const url = new URL(window.location.href);
+      url.searchParams.set("deck", deckId);
+      history.replaceState({}, "", url);
+      setSelectedDeckId(deckId);
+      startDeckSession(deckId);
+    },
+    [startDeckSession],
+  );
 
   const restartSession = useCallback(() => {
-    setOrder(buildSession({ items, limit: sessionLimit }));
-    setIdx(0);
-    setScore(0);
-    setHistory([]);
-    resetCard();
-    setLiveMessage("새 세션을 시작했습니다.");
-  }, [items, resetCard, sessionLimit]);
+    if (!selectedDeckId) return;
+    startDeckSession(selectedDeckId);
+  }, [selectedDeckId, startDeckSession]);
 
   const goNext = useCallback(() => {
     if (idx >= total - 1) {
@@ -79,29 +132,17 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
       return;
     }
     setIdx((value) => value + 1);
-    resetCard();
     setLiveMessage(`다음 문제 ${idx + 2} / ${total}`);
-  }, [idx, resetCard, score, total]);
+  }, [idx, score, total]);
 
   const goPrev = useCallback(() => {
     if (idx <= 0) return;
     setIdx((value) => value - 1);
-    resetCard();
     setLiveMessage(`이전 문제 ${idx} / ${total}`);
-  }, [idx, resetCard, total]);
+  }, [idx, total]);
 
   const evaluate = useCallback(() => {
-    if (!current || revealed) return;
-
-    const correct =
-      current.type === "mcq" && isSessionMcq(current)
-        ? gradeMCQ({
-            pickedIndex: picked ?? -1,
-            answerIndex: current.shuffledAnswerIndex,
-          })
-        : current.type === "short"
-          ? gradeShort({ given: shortValue, answer: current.answer })
-          : false;
+    if (!current || !selectedDeckId || snapshots[idx]?.revealed) return;
 
     if (current.type === "mcq" && picked === undefined) {
       setLiveMessage("보기를 선택한 뒤 제출하세요.");
@@ -113,25 +154,41 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
       return;
     }
 
-    setRevealed(true);
-    setFlipped(true);
-    setHistory((entries) => [...entries, { id: current.id, correct }]);
-    if (correct) setScore((value) => value + 1);
+    const correct =
+      current.type === "mcq" && isSessionMcq(current)
+        ? gradeMCQ({
+            pickedIndex: picked ?? -1,
+            answerIndex: current.shuffledAnswerIndex,
+          })
+        : current.type === "short"
+          ? gradeShort({ given: shortValue, answer: current.answer })
+          : false;
 
-    const progress = recordDeckAnswer({ deckId, correct });
+    setSnapshots((prev) => ({
+      ...prev,
+      [idx]: {
+        flipped: true,
+        picked,
+        shortValue,
+        revealed: true,
+        correct,
+      },
+    }));
+
+    const progress = recordDeckAnswer({ deckId: selectedDeckId, correct });
     setStoredProgress(progress);
     setLiveMessage(correct ? "정답입니다." : "오답입니다.");
-  }, [current, deckId, picked, revealed, shortValue]);
+  }, [current, idx, picked, selectedDeckId, shortValue, snapshots]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (finished) return;
+      if (!selectedDeckId || finished) return;
       const target = event.target as HTMLElement | null;
       const typing = target?.tagName === "INPUT" || target?.tagName === "TEXTAREA";
 
       if (!flipped && event.key === "Enter" && !typing) {
         event.preventDefault();
-        setFlipped(true);
+        patchSnap({ flipped: true });
         setLiveMessage("문제를 확인했습니다. 답을 입력하세요.");
         return;
       }
@@ -152,7 +209,7 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
         const choice = Number(event.key);
         if (choice >= 1 && choice <= 4) {
           event.preventDefault();
-          setPicked(choice - 1);
+          patchSnap({ picked: choice - 1 });
           setLiveMessage(`${choice}번 보기를 선택했습니다.`);
         }
       }
@@ -174,22 +231,56 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [current, evaluate, finished, flipped, goNext, goPrev, revealed]);
+  }, [current, evaluate, finished, flipped, goNext, goPrev, patchSnap, revealed, selectedDeckId]);
 
   useEffect(() => {
-    if (flipped && current?.type === "short") {
+    if (flipped && current?.type === "short" && !revealed) {
       inputRef.current?.focus();
     }
-  }, [current?.type, flipped]);
+  }, [current?.type, flipped, revealed]);
 
   const progressPercent = useMemo(
     () => (total === 0 ? 0 : Math.round(((idx + (revealed ? 1 : 0)) / total) * 100)),
     [idx, revealed, total],
   );
 
+  const deckPicker = (
+    <nav aria-label="덱 선택">
+      <ul {...stylex.props(quizDeckStyles.deckNav)}>
+        {deckIds.map((deckId) => (
+          <li key={deckId}>
+            <button
+              type="button"
+              {...stylex.props(
+                quizDeckStyles.deckButton,
+                selectedDeckId === deckId && quizDeckStyles.deckButtonActive,
+              )}
+              aria-current={selectedDeckId === deckId ? "true" : undefined}
+              onClick={() => selectDeck(deckId)}
+            >
+              {deckLabels[deckId]} ({decks[deckId].length})
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+
+  if (!selectedDeckId) {
+    return (
+      <div {...stylex.props(quizDeckStyles.root)}>
+        {deckPicker}
+        <p {...stylex.props(quizDeckStyles.deckPrompt)} aria-live="polite">
+          덱을 선택하면 flash card 세션이 시작됩니다.
+        </p>
+      </div>
+    );
+  }
+
   if (finished) {
     return (
       <div {...stylex.props(quizDeckStyles.root)}>
+        {deckPicker}
         <div {...stylex.props(quizDeckStyles.header)}>
           <h2 {...stylex.props(quizDeckStyles.prompt)}>{deckLabel} 완료</h2>
         </div>
@@ -228,7 +319,7 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
           type="button"
           {...stylex.props(quizDeckStyles.primaryButton)}
           onClick={() => {
-            setFlipped(true);
+            patchSnap({ flipped: true });
             setLiveMessage("문제를 확인했습니다. 답을 입력하세요.");
           }}
         >
@@ -261,7 +352,7 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
                     showResult && selected && !isCorrect && quizDeckStyles.choiceWrong,
                   )}
                   onClick={() => {
-                    setPicked(choiceIndex);
+                    patchSnap({ picked: choiceIndex });
                     setLiveMessage(`${choiceIndex + 1}번 보기를 선택했습니다.`);
                   }}
                 >
@@ -282,7 +373,7 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
           disabled={revealed}
           aria-label="주관식 답"
           {...stylex.props(quizDeckStyles.shortInput)}
-          onInput={(event) => setShortValue((event.target as HTMLInputElement).value)}
+          onInput={(event) => patchSnap({ shortValue: (event.target as HTMLInputElement).value })}
         />
       )}
 
@@ -315,6 +406,7 @@ export function QuizDeck({ deckId, deckLabel, items, sessionLimit = 10 }: QuizDe
 
   return (
     <div {...stylex.props(quizDeckStyles.root)}>
+      {deckPicker}
       <div {...stylex.props(quizDeckStyles.header)}>
         <h2 {...stylex.props(quizDeckStyles.prompt)}>{deckLabel}</h2>
         <div {...stylex.props(quizDeckStyles.stats)}>
