@@ -12,7 +12,7 @@ Harness: <cline-herdr | cursor | claude | codex> — isolation rules in .tasks/p
 2. Implement PLAN steps in order on your branch (create via `git checkout -b <branch> <parent>` unless the harness already isolated a worktree on that branch).
 3. Per step: run its acceptance check; on failure, fix or send PLAN-CHANGE (see below).
 4. Co-deliver *.stories.ts for UI components (Phase 1+); keep commits Korean messages.
-5. Open a **draft** stacked PR immediately: `gh pr create --draft --base <parent> --body-file` following `docs/conventions/prs.md` (Korean, real gate outputs).
+5. Open a **draft** stacked PR immediately: `gh pr create --draft --base <parent> --assignee @me --label … --body-file` following `docs/conventions/prs.md` (Korean, real gate outputs).
 6. Reply `PR-DRAFT <phase> <branch> <PR#>`. Do not mark the PR ready yet.
 7. After planner (and verifier, if the harness has one) `REVIEW APPROVE`: `gh pr ready <PR#>` then `PR-READY <phase> <branch> <PR#>`.
 Rules: product code + stories + PR body only. No SPEC/PLAN edits — propose via PLAN-CHANGE.
@@ -37,7 +37,7 @@ Canonical: [`docs/conventions/prs.md`](../../docs/conventions/prs.md). Read it b
 
 - Why / effect / design change / scope — not a file list. Mermaid carries the body; no tables.
 - Real gate outputs from this HEAD: `bun run check`, `bunx oxfmt --check .`, `bunx oxlint .`, `bunx vitest run`.
-- Stacked base correct; `--body-file`; always `--draft` on create. Ready is a post-review step.
+- Stacked base correct; `--assignee @me`; labels from the closed set in `prs.md`; `--body-file`; always `--draft` on create. Ready is a post-review step.
 
 ## Done
 

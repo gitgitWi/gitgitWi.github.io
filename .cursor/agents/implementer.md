@@ -15,7 +15,7 @@ When invoked:
 2. Read SPEC + refined PLAN + `AGENTS.md` + code-style + `docs/conventions/prs.md`. Implement PLAN steps in order.
 3. Per step: run the acceptance check. On a broken SPEC assumption, send `PLAN-CHANGE <file> <reason> <proposal>` — do not edit PLAN.md.
 4. Co-deliver `*.stories.ts` for UI (Phase 1+). Commits: follow `docs/conventions/commits.md`.
-5. Read `docs/conventions/prs.md`, then open a **draft** stacked PR: `gh pr create --draft --base <parent> --body-file`. Never open as ready.
+5. Read `docs/conventions/prs.md`, then open a **draft** stacked PR: `gh pr create --draft --base <parent> --assignee @me --label … --body-file`. Never open as ready.
 6. Reply `PR-DRAFT <phase> <branch> <PR#>` and append LOG.md. Stay draft until review.
 7. After planner + verifier `REVIEW APPROVE`: `gh pr ready <PR#>`, then `PR-READY <phase> <branch> <PR#>`.
 

@@ -159,12 +159,68 @@ GitHub에서 파싱 실패하면 본문이 빈 상자가 된다.
 - 저장/대기: `[("…")]`. 분기: `{"…"}`.
 - 게시 전 렌더(프리뷰 또는 mermaid parse). 깨진 채로 올리지 않는다.
 
+## Assignee와 라벨
+
+PR은 본문만으로 검색하지 않는다. 생성 시 **assignee와 라벨을 같이** 붙인다. 빠진 채로 올리지 않는다.
+
+```mermaid
+flowchart TD
+  C["gh pr create --draft"] --> ME["--assignee @me"]
+  C --> PH{"브랜치"}
+  PH -->|"feat/phase-N-*"| PN["label phase-N"]
+  PH -->|"feat/ci-gates"| CG["label ci-gates"]
+  C --> AR["area 1개 이상"]
+```
+
+- Assignee: GitHub UI는 `gitgitWi`. `gh`는 `--assignee @me`. 다른 사람·봇을 넣지 않는다.
+- 라벨은 아래 **닫힌 집합**만. 없으면 `gh label create` 후 붙인다. 한 번 쓰는 임의 이름은 만들지 않는다.
+- 페이즈 작업이면 `phase-N` 또는 `ci-gates`를 **반드시** 하나. area는 해당되는 것만.
+
+```mermaid
+flowchart LR
+  subgraph PHASE["phase — 검색 키"]
+    P0["phase-0"]
+    P1["phase-1"]
+    P2["phase-2"]
+    P3["phase-3"]
+    P4["phase-4"]
+    CI["ci-gates"]
+  end
+  subgraph AREA["area — 해당될 때만"]
+    PB["playbook"]
+    CV["conventions"]
+    AS["astro"]
+    G["ci"]
+    CT["content"]
+  end
+```
+
+의미 (slug 그대로 `gh pr list --label <slug> --state all`):
+
+- `phase-0` — Foundation: `main`, bun, 스킬, StyleX 스파이크
+- `phase-1` — Scaffold: Astro, StyleX DS, Pages
+- `phase-2` — Content: collections, MDX, wiki
+- `phase-3` — Wiki quiz
+- `phase-4` — Hardening: Pagefind, SEO, leak-guard
+- `ci-gates` — bun check/format/lint/test 워크플로 스택
+- `playbook` — 역할, 하니스, 스폰
+- `conventions` — 커밋·PR·코드 스타일
+- `astro` — Astro, StyleX, Pages
+- `ci` — Actions, 게이트, lockfile
+- `content` — articles, til, MDX, visibility
+
+이미 있는 GitHub 라벨(`documentation`, `bug`, `Posts` …)은 맞을 때만 추가한다. 위 slug를 대체하지 않는다.
+
 ## 생성·갱신
 
 ```bash
-gh pr create --draft --base <parent> --title "<제목>" --body-file /tmp/pr-body.md
+gh pr create --draft --base <parent> --assignee @me \
+  --label phase-N --label <area> \
+  --title "<제목>" --body-file /tmp/pr-body.md
 # 리뷰 중 커밋이 본문을 낡게 만들면
 gh pr edit <N> --body-file /tmp/pr-body.md
+# 라벨이 없으면 먼저 생성 (description은 이 문서의 의미 한 줄)
+gh label create <slug> --description "<의미>" --color "1d76db"
 # REVIEW APPROVE 뒤에만
 gh pr ready <N>
 ```

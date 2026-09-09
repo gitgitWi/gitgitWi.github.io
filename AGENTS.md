@@ -26,14 +26,14 @@
 
 ## 4. Done gates (every change)
 
-`check` + `format` + `lint` + `test` green → **draft** PR (`gh pr create --draft`). Reviewer/verifier on the draft; after `REVIEW APPROVE`, `gh pr ready`. CI (`.github/workflows/ci.yml`) enforces the same gates.
+`check` + `format` + `lint` + `test` green → **draft** PR (`gh pr create --draft --assignee @me` + labels from [`prs.md`](docs/conventions/prs.md)). Reviewer/verifier on the draft; after `REVIEW APPROVE`, `gh pr ready`. CI (`.github/workflows/ci.yml`) enforces the same gates.
 
 ## 5. Workflow
 
 - Branch per phase: `feat/phase-N-*`, stacked (`--base` = parent phase branch). Draft PR at phase complete; ready only after review. See ROADMAP.
 - Multi-agent: role contracts in `.tasks/playbook/`; spawn/models in `.tasks/playbook/harness/` (one harness per phase). Cursor default: [harness/cursor.md](.tasks/playbook/harness/cursor.md).
 - Commits: [`docs/conventions/commits.md`](docs/conventions/commits.md) — logical units, conventional, Korean. Body 1–2 lines, max 3.
-- PRs: [`docs/conventions/prs.md`](docs/conventions/prs.md) — why / effect / design diagrams / scope. Comments in Korean.
+- PRs: [`docs/conventions/prs.md`](docs/conventions/prs.md) — why / effect / design diagrams / scope. Assignee `@me`. Labels from that doc. Comments in Korean.
 - Test titles in Korean (`describe` = symbol name).
 
 ## 6. Links
