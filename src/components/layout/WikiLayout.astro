@@ -1,0 +1,120 @@
+---
+import Tag from '../ui/Tag.astro';
+import Heading from '../ui/Heading.astro';
+import Prose from '../ui/Prose.astro';
+import Stack from '../ui/Stack.astro';
+import Text from '../ui/Text.astro';
+import * as stylex from '@stylexjs/stylex';
+
+import TableOfContents, { type TocEntry } from './TableOfContents.astro';
+import { wikiLayoutStyles } from './WikiLayout.stylex.ts';
+import { formatDisplayDate } from '../../lib/content.ts';
+
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+type Props = {
+  title: string;
+  summary: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  domains?: string[];
+  quizRefs?: string[];
+  headings?: TocEntry[];
+  prev?: NavLink;
+  next?: NavLink;
+};
+
+const {
+  title,
+  summary,
+  pubDate,
+  updatedDate,
+  tags = [],
+  domains = [],
+  quizRefs = [],
+  headings = [],
+  prev,
+  next,
+} = Astro.props;
+---
+
+<div {...stylex.attrs(wikiLayoutStyles.grid, wikiLayoutStyles.gridWithSidebar)}>
+  {
+    headings.length > 0 && (
+      <aside {...stylex.attrs(wikiLayoutStyles.sidebar)}>
+        <TableOfContents entries={headings} />
+      </aside>
+    )
+  }
+
+  <article {...stylex.attrs(wikiLayoutStyles.main)}>
+    <Stack gap="md">
+      <Heading level={1} variant="display">{title}</Heading>
+      <Text variant="muted">{summary}</Text>
+
+      <div {...stylex.attrs(wikiLayoutStyles.meta)}>
+        <time datetime={pubDate.toISOString()}>{formatDisplayDate(pubDate)}</time>
+        {
+          updatedDate && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>updated {formatDisplayDate(updatedDate)}</span>
+            </>
+          )
+        }
+        {
+          domains.length > 0 && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>{domains.join(', ')}</span>
+            </>
+          )
+        }
+      </div>
+
+      {
+        tags.length > 0 && (
+          <div {...stylex.attrs(wikiLayoutStyles.tagRow)}>
+            {tags.map((tag) => (
+              <Tag href={`/tags/${tag}`}>{tag}</Tag>
+            ))}
+          </div>
+        )
+      }
+
+      <Prose>
+        <slot />
+      </Prose>
+
+      {
+        quizRefs.length > 0 && (
+          <section {...stylex.attrs(wikiLayoutStyles.quizRefs)}>
+            <Heading level={2}>Quiz refs</Heading>
+            <ul>
+              {
+                quizRefs.map((ref) => (
+                  <li>
+                    <a href={ref}>{ref}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        (prev || next) && (
+          <nav {...stylex.attrs(wikiLayoutStyles.pager)} aria-label="위키 탐색">
+            {prev ? <a href={prev.href}>← {prev.label}</a> : <span />}
+            {next ? <a href={next.href}>{next.label} →</a> : <span />}
+          </nav>
+        )
+      }
+    </Stack>
+  </article>
+</div>
