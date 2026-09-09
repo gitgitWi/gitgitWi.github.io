@@ -5,6 +5,7 @@
 > 사람과 에이전트 모두 보는 문서. 작업 전용 문서(phase SPEC/PLAN, playbook)는 `.tasks/` 참조.
 
 <!-- shared-convention:start -->
+
 ## Shared Code Style
 
 These rules apply to all `alan-*` React repositories (web, mobile, core, b2b-template). They are generated from a single source — **do not edit inside the markers**; repo-specific rules go outside them. Platform differences are recorded in the delta table at the end, not resolved by overriding these rules.
@@ -105,17 +106,19 @@ return { ok: true } as const;
 
 These differ **on purpose**. Each repo follows its own column; the difference comes from the runtime or the consumption boundary, so unifying them would give some repos a wrong rule.
 
-| Topic | alan-frontend (web) | alan-mobile (RN / Expo) | alan-frontend-core | alan-b2b-template |
-|---|---|---|---|---|
-| Timers | `window.setTimeout` / `window.clearTimeout` — returns `number` | bare `setTimeout` — returns a `Timeout` object; type it as `ReturnType<typeof setTimeout>` | n/a (cross-platform slices avoid timers) | follows web |
-| `RefObject` nullability | n/a | React's `useRef<T>(null)` forces `T \| null` — do not fight it | n/a | follows web |
-| Barrel exports | **used** — `index.ts` re-exports per feature | **not used** — direct file imports only | **forbidden** — deep-path exports only; the `exports` map in `package.json` is the public API | follows core |
+| Topic                   | alan-frontend (web)                                            | alan-mobile (RN / Expo)                                                                    | alan-frontend-core                                                                            | alan-b2b-template |
+| ----------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ----------------- |
+| Timers                  | `window.setTimeout` / `window.clearTimeout` — returns `number` | bare `setTimeout` — returns a `Timeout` object; type it as `ReturnType<typeof setTimeout>` | n/a (cross-platform slices avoid timers)                                                      | follows web       |
+| `RefObject` nullability | n/a                                                            | React's `useRef<T>(null)` forces `T \| null` — do not fight it                             | n/a                                                                                           | follows web       |
+| Barrel exports          | **used** — `index.ts` re-exports per feature                   | **not used** — direct file imports only                                                    | **forbidden** — deep-path exports only; the `exports` map in `package.json` is the public API | follows core      |
+
 ### Language
 
 - LLM-facing documents (this file, `CLAUDE.md`, `AGENTS.md`, convention docs): **English**.
 - Commit messages, PR titles and bodies, GitHub issues, code comments: **Korean**.
 - Test titles (`it` / `test`): **Korean** across all repos — test code is read by developers, so write it in Korean; identifiers and platform keywords stay as-is. `describe` blocks name the symbol under test.
 - These are orthogonal — an English convention document does not make commit messages or test titles English.
+
 <!-- shared-convention:end -->
 
 ## 본 블로그 델타 (마커 밖 — 여기만 수정 가능)

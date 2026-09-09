@@ -7,13 +7,13 @@
 
 ## Phase 개요
 
-| Phase | 이름 | 목표 | 종료 게이트(지표) | 문서 |
-|---|---|---|---|---|
-| 0 | Foundation: 브랜치·툴체인·지식기반 | `main` 전환, Node 22 + **bun** 고정 (yarn classic 잔재 제거), Astro Docs MCP + Astro 스킬 1개 + StyleX ESLint 룰 확정, StyleX 스파이크(o) | `main`이 default, `bun run dev`+StyleX 샘플 빌드 그린, 스킬 목록 `SPEC`에 핀 | [SPEC](phase-0-foundation/SPEC.md) · [PLAN](phase-0-foundation/PLAN.md) |
-| 1 | Scaffold + Design System + Home/Tags 껍데기 + 배포 | Astro v7 스캐폴드(static), StyleX 토큰/프리미티브, Home·Tags 라우트, GH Pages Actions 배포 | `main` 푸시→Pages 자동배포, Lighthouse perf≥90·a11y≥95, 스타일런타임 주입 0 | [SPEC](phase-1-scaffold-design-system/SPEC.md) · [PLAN](phase-1-scaffold-design-system/PLAN.md) |
-| 2 | Content Routes + MDX 마이그레이션 | `articles`(가변 테마) + `til`(통일) + `tags/[tag]`, Content Collections(Zod), 기존 6개 + `llm-wiki-template/wiki` 선별 이식 | 기존글 100% 렌더(깨진 링크 0), 스키마 위반 0, articles≥2 colorway 데모 | [SPEC](phase-2-content-routes/SPEC.md) · [PLAN](phase-2-content-routes/PLAN.md) |
-| 3 | Wiki Quiz (flash cards) | 랜덤 객관식/주관식, 덱·세션·채점·localStorage 진척, island로 SSG 무해화 | 퀴즈 20문항 시드, 키보드 조작·채점 단위테스트 그린 | [SPEC](phase-3-wiki-quiz/SPEC.md) · [PLAN](phase-3-wiki-quiz/PLAN.md) |
-| 4 | Hardening + 운영 | Pagefind 검색, SEO/RSS/OG/sitemap, 404, CI 가드(lint·link·schema·공개안전), 구 `gh-pages` 정리 | 검색 Top-3 적중 수동체크, CI 그린, 구배포 경로 제거 | [SPEC](phase-4-hardening-ops/SPEC.md) · [PLAN](phase-4-hardening-ops/PLAN.md) |
+| Phase | 이름                                               | 목표                                                                                                                                      | 종료 게이트(지표)                                                            | 문서                                                                                            |
+| ----- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 0     | Foundation: 브랜치·툴체인·지식기반                 | `main` 전환, Node 22 + **bun** 고정 (yarn classic 잔재 제거), Astro Docs MCP + Astro 스킬 1개 + StyleX ESLint 룰 확정, StyleX 스파이크(o) | `main`이 default, `bun run dev`+StyleX 샘플 빌드 그린, 스킬 목록 `SPEC`에 핀 | [SPEC](phase-0-foundation/SPEC.md) · [PLAN](phase-0-foundation/PLAN.md)                         |
+| 1     | Scaffold + Design System + Home/Tags 껍데기 + 배포 | Astro v7 스캐폴드(static), StyleX 토큰/프리미티브, Home·Tags 라우트, GH Pages Actions 배포                                                | `main` 푸시→Pages 자동배포, Lighthouse perf≥90·a11y≥95, 스타일런타임 주입 0  | [SPEC](phase-1-scaffold-design-system/SPEC.md) · [PLAN](phase-1-scaffold-design-system/PLAN.md) |
+| 2     | Content Routes + MDX 마이그레이션                  | `articles`(가변 테마) + `til`(통일) + `tags/[tag]`, Content Collections(Zod), 기존 6개 + `llm-wiki-template/wiki` 선별 이식               | 기존글 100% 렌더(깨진 링크 0), 스키마 위반 0, articles≥2 colorway 데모       | [SPEC](phase-2-content-routes/SPEC.md) · [PLAN](phase-2-content-routes/PLAN.md)                 |
+| 3     | Wiki Quiz (flash cards)                            | 랜덤 객관식/주관식, 덱·세션·채점·localStorage 진척, island로 SSG 무해화                                                                   | 퀴즈 20문항 시드, 키보드 조작·채점 단위테스트 그린                           | [SPEC](phase-3-wiki-quiz/SPEC.md) · [PLAN](phase-3-wiki-quiz/PLAN.md)                           |
+| 4     | Hardening + 운영                                   | Pagefind 검색, SEO/RSS/OG/sitemap, 404, CI 가드(lint·link·schema·공개안전), 구 `gh-pages` 정리                                            | 검색 Top-3 적중 수동체크, CI 그린, 구배포 경로 제거                          | [SPEC](phase-4-hardening-ops/SPEC.md) · [PLAN](phase-4-hardening-ops/PLAN.md)                   |
 
 의존성: 0 → 1 → 2 → 3 → 4 순차. 3·4는 2 승인 후 병렬 검토 가능.
 
@@ -46,8 +46,8 @@
   - Cursor (Cline 한도 소진 시 기본): [harness/cursor.md](playbook/harness/cursor.md) — 부모 Grok 4.6 (orchestrator+leader), planner·verifier 서브에이전트, Composer 2.5 implementer는 worktree. 정의: `.cursor/agents/`.
   - Cline + Herdr: [harness/cline-herdr.md](playbook/harness/cline-herdr.md) — pane 3개, muse-spark / glm-5.3-flash (2026-09-10 실측).
   - Claude Code / Codex: 스텁. 첫 실사용 때 `_template.md`로 승격.
-  흐름: leader 추적 → planner가 PLAN 정제 → developer 구현 + **draft** PR → planner/verifier 리뷰 → ready 전환 → 사람 머지.
-  **미사용:** Paseo, opencode-go 모델.
+    흐름: leader 추적 → planner가 PLAN 정제 → developer 구현 + **draft** PR → verifier 리뷰 (Cursor: GPT 5.6 Sol medium) → ready 전환 → **사람 머지**.
+    **미사용:** Paseo, opencode-go 모델.
 
 ## 승인 플로우
 

@@ -1,0 +1,22 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { headingStyles } from './Heading.stylex.ts';
+
+type Props = {
+  level?: 1 | 2 | 3 | 4;
+};
+
+const { level = 1 } = Astro.props;
+
+const levelStyles = {
+  1: headingStyles.level1,
+  2: headingStyles.level2,
+  3: headingStyles.level3,
+  4: headingStyles.level4,
+} as const;
+
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4';
+---
+
+<Tag {...stylex.attrs(headingStyles.base, levelStyles[level])}><slot /></Tag>

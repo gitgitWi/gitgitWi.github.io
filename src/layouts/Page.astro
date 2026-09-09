@@ -1,0 +1,23 @@
+---
+import SiteFooter from '../components/patterns/SiteFooter.astro';
+import SiteHeader from '../components/patterns/SiteHeader.astro';
+import Container from '../components/ui/Container.astro';
+
+import Base from './Base.astro';
+
+type Props = {
+  title?: string;
+};
+
+const { title } = Astro.props;
+---
+
+<Base title={title}>
+  <SiteHeader />
+  <main>
+    <Container>
+      <slot />
+    </Container>
+  </main>
+  <SiteFooter />
+</Base>

@@ -1,41 +1,30 @@
-# refs. https://github.com/bmvantunes/youtube-2020-august-github-pages-github-actions
-name: Node.js CI
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v7
+      - uses: withastro/action@v6
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          node-version: 22
 
-      - name: Install Packages
-        run: yarn install --frozen-lockfile
-
-      - name: Build 🔧
-        run: yarn build
-
-      - run: yarn run export
-
-      - run: touch ./out/.nojekyll
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: out
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

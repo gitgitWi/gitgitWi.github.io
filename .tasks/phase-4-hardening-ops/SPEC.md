@@ -3,9 +3,11 @@
 > 상태: SPEC+PLAN 작성됨 / 승인 대기.
 
 ## 1. 배경
+
 출시 전 검색·SEO·가드레일을 잠근다.
 
 ## 2. 목표
+
 1. 검색: Pagefind (빌드 후 인덱싱, 한국어 형태소 한계 명시 — 제목/태그 가중 프리셋).
 2. SEO: `@astrojs/sitemap`, RSS (`@astrojs/rss` — articles+til), OG 이미지 (동적 생성은 빌드 스크립트, 수동 폴백),
    canonical, JSON-LD (BlogPosting/TechArticle).
@@ -20,6 +22,7 @@
    - 공통 완료 게이트와 1:1 대응 (Phase 1 SPEC §5). CI 그린 없이 PR 머지 금지 (branch protection).
 
 ## 3. 종료 게이트
+
 - [ ] CI 7잡 그린 (check / format / lint / test / links / schema / leak-guard + storybook build).
 - [ ] RSS·sitemap·404 수동 검증.
 - [ ] 검색 Top-3 적중 수동 체크리스트 통과.

@@ -1,0 +1,19 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { stackStyles } from './Stack.stylex.ts';
+
+type Props = {
+  gap?: 'sm' | 'md' | 'lg';
+};
+
+const { gap = 'md' } = Astro.props;
+
+const gapStyles = {
+  sm: stackStyles.gapSm,
+  md: stackStyles.gapMd,
+  lg: stackStyles.gapLg,
+} as const;
+---
+
+<div {...stylex.attrs(stackStyles.base, gapStyles[gap])}><slot /></div>

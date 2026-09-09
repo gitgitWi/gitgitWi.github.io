@@ -10,12 +10,12 @@
 
 ## Known mapping (not yet verified)
 
-| Role | Likely process | Notes |
-|---|---|---|
-| orchestrator | parent Codex session | |
-| leader | folded into parent **or** a named agent | pick one when promoting |
-| planner | `.codex/agents/planner.md` | |
-| developer | `.codex/agents/implementer.md` | worktree if Codex parallel agents share a checkout |
+| Role         | Likely process                          | Notes                                              |
+| ------------ | --------------------------------------- | -------------------------------------------------- |
+| orchestrator | parent Codex session                    |                                                    |
+| leader       | folded into parent **or** a named agent | pick one when promoting                            |
+| planner      | `.codex/agents/planner.md`              |                                                    |
+| developer    | `.codex/agents/implementer.md`          | worktree if Codex parallel agents share a checkout |
 
 MCP: register `https://mcp.docs.astro.build/mcp` with whatever Codex MCP config is current when promoting.
 

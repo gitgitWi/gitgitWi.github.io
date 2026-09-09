@@ -1,0 +1,16 @@
+---
+import TagList from '../../components/patterns/TagList.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import { mockTags } from '../../data/mock.ts';
+import Page from '../../layouts/Page.astro';
+---
+
+<Page title="Tags — gitgitWi">
+  <Stack gap="lg">
+    <Heading level={1}>Tags</Heading>
+    <Text variant="muted">Phase 1 mock 태그 목록입니다.</Text>
+    <TagList tags={mockTags} />
+  </Stack>
+</Page>
