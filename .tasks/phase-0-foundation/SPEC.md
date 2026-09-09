@@ -29,7 +29,7 @@ Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch
 - 스파이크 리포트 (빌드 로그 + 생성 CSS 샘플) → Phase 1 PLAN 입력.
 
 ## 5. 종료 게이트
-- [ ] `git symbolic-ref refs/remotes/origin/HEAD` → `origin/main`.
+- [x] `git symbolic-ref refs/remotes/origin/HEAD` → `origin/main`. (`master` 원격은 열린 PR 때문에 유지)
 - [x] `bun --version` 1.4.x + `packageManager: bun@1.4.2` 핀 + `bun.lock` 커밋 (Node 22.x 병행 유지).
 - [x] 스킬 1개 핀 (repo+commit hash 기록).
 - [x] StyleX 스파이크 `bun run build` 그린.

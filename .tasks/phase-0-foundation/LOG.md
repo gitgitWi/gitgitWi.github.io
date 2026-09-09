@@ -6,7 +6,7 @@
 
 ## Checklist (PLAN)
 
-- [ ] 1. master → main + GitHub default (master 삭제는 열린 PR 때문에 보류)
+- [x] 1. GitHub default=`main`, `origin/HEAD`→`origin/main`. `master`는 열린 PR 때문에 삭제하지 않음.
 - [x] 2. bun@1.4.2 pin + `bun.lock` (`bun --version` 1.4.2, yarn.lock는 Phase 1까지 유지)
 - [x] 3a. Astro Docs MCP (Cursor `.cursor/mcp.json`)
 - [x] 3b. Astro skill pin — `.agents/skills/astro-publish/` @ `5889789e`
