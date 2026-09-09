@@ -1,0 +1,23 @@
+---
+import SearchPanel from '../components/search/SearchPanel.astro';
+import Heading from '../components/ui/Heading.astro';
+import Stack from '../components/ui/Stack.astro';
+import Text from '../components/ui/Text.astro';
+import Page from '../layouts/Page.astro';
+---
+
+<Page
+  title="검색 — gitgitWi"
+  description="gitgitWi 블로그·위키 정적 검색"
+  canonicalPath="/search"
+  pagefindTitle="검색"
+  pagefindIgnore={true}
+>
+  <Stack gap="lg">
+    <header>
+      <Heading level={1} variant="display">검색</Heading>
+      <Text variant="muted">articles·til·태그에서 Pagefind로 검색합니다.</Text>
+    </header>
+    <SearchPanel />
+  </Stack>
+</Page>
