@@ -1,6 +1,6 @@
 # Phase 0 — Foundation: 브랜치·툴체인·지식기반
 
-> 상태: SPEC+PLAN 작성됨 / 승인 대기. **승인 전까지 구현 명령 실행 금지.**
+> 상태: 진행 중 (2026-09-09 승인). 브랜치 `feat/phase-0-foundation`.
 
 ## 1. 배경
 Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch(`master`), Node 14 워크플로우,
@@ -30,9 +30,9 @@ Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch
 
 ## 5. 종료 게이트
 - [ ] `git symbolic-ref refs/remotes/origin/HEAD` → `origin/main`.
-- [ ] `bun --version` 1.4.x + `packageManager: bun@1.4.2` 핀 + `bun.lock` 커밋 (Node 22.x 병행 유지).
-- [ ] 스킬 1개 핀 (repo+commit hash 기록).
-- [ ] StyleX 스파이크 `bun run build` 그린.
+- [x] `bun --version` 1.4.x + `packageManager: bun@1.4.2` 핀 + `bun.lock` 커밋 (Node 22.x 병행 유지).
+- [x] 스킬 1개 핀 (repo+commit hash 기록).
+- [x] StyleX 스파이크 `bun run build` 그린.
 
 ## 6. 리스크
 - Pages 소스가 `gh-pages` 브랜치에 묶여 있어 default 전환 직후 배포 공백 → Phase 1까지 읽기전용 기간으로 공지(README 배너).

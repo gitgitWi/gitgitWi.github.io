@@ -26,11 +26,33 @@
    (트리거 `main`, `oven-sh/setup-bun@v2`로 bun 설치 → `bun install` → `bun run build` → `dist` 업로드 → deploy).
    Settings → Pages Source=GitHub Actions로 변경.
    기존 `JamesIves/...@4.1.4` + Node14 매트릭스 삭제.
-5. 검증: `bun run check && bun run build`, Lighthouse (Home/Tags), ESLint, 런타임 CSS 주입 0 확인
-   (`dist` 내 `stylex` 런타임 스크립트 부재 + `<style data-stylex>` 정적 존재).
+5. 검증: `bun run check && bun run build`, Lighthouse (Home/Tags), oxlint, 런타임 CSS 주입 0 확인
+   (`dist` 내 stylex 런타임 스크립트 부재). StyleX CSS는 `dist/assets/stylex.css` — Astro는 Vite `transformIndexHtml`을 안 타므로 `Base.astro`에서 명시 연결.
 
 ## 파일 스켈레톤
 `astro.config.mjs, src/{layouts,pages,components/ui,styles}, .github/workflows/deploy.yml, AGENTS.md` 업데이트.
+
+## Phase 0 StyleX 스파이크 (2026-09-09, `/tmp/stylex-spike`, 본 repo 미오염)
+
+- Astro **7.3.2** (create-astro minimal) + `@stylexjs/{stylex,unplugin,eslint-plugin}@0.19.0`
+- `stylex.vite({ useCSSLayers: true, runtimeInjection: false })` → `bun run build` 그린
+- 산출: `dist/assets/stylex.css` (`@layer priority1..3`, atomic class `xdhsmyj` …). HTML 버튼 class는 추출됨, **런타임 스크립트 0**
+- 구멍: 정적 HTML에 stylesheet link가 없음. Phase 1 `Base.astro`에서 CSS 연결 필수
+- `bun add sharp@0.35.4` 후 재빌드 그린 (이미지 변환은 미사용, 설치·빌드만 실증)
+
+CSS 샘플:
+
+```css
+@layer priority1 {
+  :root, .xibpiy1 {
+    --x13fv976: #fafaf8;
+    --xk3gggj: #1a1a18;
+  }
+}
+@layer priority3 {
+  .xdhsmyj { background-color: var(--x13fv976); }
+}
+```
 
 ## 승인 요청
 - [ ] `legacy-next/` 임시보관 전략 동의?
