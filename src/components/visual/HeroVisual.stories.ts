@@ -7,7 +7,7 @@ export default {
     docs: {
       description: {
         component:
-          "WebGL은 prefers-reduced-motion·768px 이하에서 생략됩니다. Storybook에서는 SVG 폴백만 표시됩니다.",
+          "SVG/CSS 폴백. Home은 이 컴포넌트 안에 HeroCanvas를 client:visible로 얹습니다. Storybook·reduced-motion·768px 이하는 WebGL을 올리지 않습니다.",
       },
     },
   },
