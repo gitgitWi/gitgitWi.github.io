@@ -1,9 +1,10 @@
 import * as stylex from "@stylexjs/stylex";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
 
-import type { QuizDeckId, QuizItem } from "../../content/quiz.ts";
-import { isQuizDeckId } from "../../lib/quiz/decks.ts";
+import type { QuizDeckId } from "../../content/quiz.ts";
+import { isQuizDeckId } from "../../lib/quiz/deck-meta.ts";
 import { gradeMCQ, gradeShort } from "../../lib/quiz/grade.ts";
+import { loadDeckItems } from "../../lib/quiz/load-deck.ts";
 import { readQuizProgress, recordDeckAnswer } from "../../lib/quiz/progress.ts";
 import { buildSession, isSessionMcq, type SessionItem } from "../../lib/quiz/session.ts";
 
@@ -19,12 +20,10 @@ type CardSnapshot = {
   correct?: boolean;
 };
 
-type DeckCatalog = Record<QuizDeckId, QuizItem[]>;
-
 type QuizDeckProps = {
   deckIds: readonly QuizDeckId[];
   deckLabels: Record<QuizDeckId, string>;
-  decks: DeckCatalog;
+  deckCounts: Record<QuizDeckId, number>;
   sessionLimit?: number;
 };
 
@@ -54,19 +53,13 @@ const useReducedMotion = () => {
   return reduced;
 };
 
-export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: QuizDeckProps) {
+export function QuizDeck({ deckIds, deckLabels, deckCounts, sessionLimit = 10 }: QuizDeckProps) {
   const reducedMotion = useReducedMotion();
   const inputRef = useRef<HTMLInputElement>(null);
   const initialDeckId = readDeckFromUrl();
   const [selectedDeckId, setSelectedDeckId] = useState<QuizDeckId | undefined>(initialDeckId);
-  const [order, setOrder] = useState<SessionItem[]>(() =>
-    initialDeckId
-      ? buildSession({
-          items: decks[initialDeckId],
-          limit: Math.min(sessionLimit, decks[initialDeckId].length),
-        })
-      : [],
-  );
+  const [loading, setLoading] = useState(!!initialDeckId);
+  const [order, setOrder] = useState<SessionItem[]>([]);
   const [idx, setIdx] = useState(0);
   const [snapshots, setSnapshots] = useState<Record<number, CardSnapshot>>({});
   const [liveMessage, setLiveMessage] = useState("");
@@ -96,18 +89,25 @@ export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: Quiz
     [idx],
   );
 
-  const startDeckSession = useCallback(
-    (deckId: QuizDeckId) => {
-      const items = decks[deckId];
+  const loadAndStartDeck = useCallback(
+    async (deckId: QuizDeckId) => {
+      setLoading(true);
+      const items = await loadDeckItems(deckId);
       const nextLimit = Math.min(sessionLimit, items.length);
       setOrder(buildSession({ items, limit: nextLimit }));
       setIdx(0);
       setSnapshots({});
       setStoredProgress(readQuizProgress()[deckId]);
       setLiveMessage(`${deckLabels[deckId]} 덱을 시작합니다.`);
+      setLoading(false);
     },
-    [deckLabels, decks, sessionLimit],
+    [deckLabels, sessionLimit],
   );
+
+  useEffect(() => {
+    if (!initialDeckId) return;
+    void loadAndStartDeck(initialDeckId);
+  }, [initialDeckId, loadAndStartDeck]);
 
   const selectDeck = useCallback(
     (deckId: QuizDeckId) => {
@@ -115,15 +115,15 @@ export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: Quiz
       url.searchParams.set("deck", deckId);
       history.replaceState({}, "", url);
       setSelectedDeckId(deckId);
-      startDeckSession(deckId);
+      void loadAndStartDeck(deckId);
     },
-    [startDeckSession],
+    [loadAndStartDeck],
   );
 
   const restartSession = useCallback(() => {
     if (!selectedDeckId) return;
-    startDeckSession(selectedDeckId);
-  }, [selectedDeckId, startDeckSession]);
+    void loadAndStartDeck(selectedDeckId);
+  }, [loadAndStartDeck, selectedDeckId]);
 
   const goNext = useCallback(() => {
     if (idx >= total - 1) {
@@ -258,7 +258,7 @@ export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: Quiz
               aria-current={selectedDeckId === deckId ? "true" : undefined}
               onClick={() => selectDeck(deckId)}
             >
-              {deckLabels[deckId]} ({decks[deckId].length})
+              {deckLabels[deckId]} ({deckCounts[deckId]})
             </button>
           </li>
         ))}
@@ -272,6 +272,17 @@ export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: Quiz
         {deckPicker}
         <p {...stylex.props(quizDeckStyles.deckPrompt)} aria-live="polite">
           덱을 선택하면 flash card 세션이 시작됩니다.
+        </p>
+      </div>
+    );
+  }
+
+  if (loading || !current) {
+    return (
+      <div {...stylex.props(quizDeckStyles.root)}>
+        {deckPicker}
+        <p {...stylex.props(quizDeckStyles.deckPrompt)} aria-live="polite">
+          {loading ? `${deckLabel} 덱을 불러오는 중…` : liveMessage}
         </p>
       </div>
     );
@@ -304,8 +315,6 @@ export function QuizDeck({ deckIds, deckLabels, decks, sessionLimit = 10 }: Quiz
       </div>
     );
   }
-
-  if (!current) return null;
 
   const mcq = isSessionMcq(current) ? current : undefined;
   const choices = mcq?.shuffledChoices ?? [];
