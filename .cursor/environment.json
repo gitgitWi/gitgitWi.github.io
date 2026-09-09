@@ -1,0 +1,17 @@
+{
+  "name": "gh-blog (Astro)",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "astro-dev",
+      "command": "export PATH=\"$HOME/.bun/bin:$PATH\" && bun run dev --host",
+      "description": "Astro dev server on http://localhost:4321"
+    }
+  ],
+  "ports": [
+    {
+      "name": "astro-dev",
+      "port": 4321
+    }
+  ]
+}
