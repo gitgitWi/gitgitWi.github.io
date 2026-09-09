@@ -2,7 +2,7 @@
 
 - Harness: cursor
 - Started: 2026-09-10
-- Status: PR-DRAFT #60 (`feat/phase-3-quiz` → `feat/phase-2-content`). base #59 먼저 머지.
+- Status: PR-READY #60
 
 ## Notes
 
@@ -35,3 +35,9 @@
 
 - `quizView()` — `finished` → `loading` → `empty` → `card` 순서. `idx === total`일 때 완료 UI·다시 풀기 표시.
 - vitest `quizView` 5건 (총 28 passed). QuizDeck entry gzip **4,610 bytes**. dist: `astro-island` 유지.
+
+## 2026-09-10 review
+
+- Sol `gpt-5.6-sol-medium`: island 누락 → scoring freeze → finished 화면 순서. 최종 `REVIEW APPROVE phase-3 60`. usage: not visible.
+- Leader 재실행 HEAD `ea043cf`: check 127/0, oxfmt, oxlint, vitest 28, lint:stylex, build 34 pages, quiz HTML `astro-island`+QuizDeck chunk.
+- `gh pr ready 60`. 머지는 사람. 스택: #56 → #58 → #59 → #60.
