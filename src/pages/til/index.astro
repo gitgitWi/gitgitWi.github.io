@@ -1,0 +1,37 @@
+---
+import PostCard from '../../components/content/PostCard.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import { formatDisplayDate, getPublishedTil, toTilListItem } from '../../lib/content.ts';
+import Page from '../../layouts/Page.astro';
+
+const entries = await getPublishedTil();
+const items = entries.map(toTilListItem);
+---
+
+<Page title="TIL / Wiki — gitgitWi">
+  <Stack gap="lg">
+    <Heading level={1}>TIL / Wiki</Heading>
+    <Text variant="muted">Today I Learned 노트와 위키형 정리 글입니다.</Text>
+    {
+      items.length === 0 ? (
+        <Text variant="body">아직 공개된 글이 없습니다.</Text>
+      ) : (
+        <div>
+          {
+            items.map((post) => (
+              <PostCard
+                title={post.title}
+                date={formatDisplayDate(post.pubDate)}
+                summary={post.summary}
+                tags={post.tags}
+                href={post.href}
+              />
+            ))
+          }
+        </div>
+      )
+    }
+  </Stack>
+</Page>

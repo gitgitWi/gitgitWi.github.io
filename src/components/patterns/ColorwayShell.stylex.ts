@@ -8,4 +8,15 @@ export const colorwayShellStyles = stylex.create({
     backgroundColor: tokens.color.canvas,
     color: tokens.color.ink,
   },
+  canvas: {},
+  mint: {
+    backgroundColor: tokens.color.mintCanvas,
+  },
+  clay: {
+    backgroundColor: tokens.color.clayCanvas,
+  },
+  ink: {
+    backgroundColor: tokens.color.inkCanvas,
+    color: tokens.color.inkPrimary,
+  },
 });

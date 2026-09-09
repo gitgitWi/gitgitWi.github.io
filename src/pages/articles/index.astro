@@ -1,0 +1,37 @@
+---
+import PostCard from '../../components/content/PostCard.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import { formatDisplayDate, getPublishedArticles, toArticleListItem } from '../../lib/content.ts';
+import Page from '../../layouts/Page.astro';
+
+const articles = await getPublishedArticles();
+const items = articles.map(toArticleListItem);
+---
+
+<Page title="Articles — gitgitWi">
+  <Stack gap="lg">
+    <Heading level={1}>Articles</Heading>
+    <Text variant="muted">에세이·튜토리얼·회고 글 모음입니다.</Text>
+    {
+      items.length === 0 ? (
+        <Text variant="body">아직 공개된 글이 없습니다.</Text>
+      ) : (
+        <div>
+          {
+            items.map((post) => (
+              <PostCard
+                title={post.title}
+                date={formatDisplayDate(post.pubDate)}
+                summary={post.summary}
+                tags={post.tags}
+                href={post.href}
+              />
+            ))
+          }
+        </div>
+      )
+    }
+  </Stack>
+</Page>
