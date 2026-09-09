@@ -14,6 +14,7 @@
     "lint:stylex": "eslint -c eslint.stylex.config.js src",
     "test": "vitest run --passWithNoTests",
     "check-links": "node scripts/check-links.mjs",
+    "check-code-blocks": "node scripts/check-code-blocks.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
