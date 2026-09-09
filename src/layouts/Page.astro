@@ -4,20 +4,56 @@ import SiteHeader from '../components/patterns/SiteHeader.astro';
 import Container from '../components/ui/Container.astro';
 
 import Base from './Base.astro';
+import type { JsonLd } from '../lib/seo.ts';
 
 type Props = {
   title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogImagePath?: string;
+  ogType?: 'website' | 'article';
+  jsonLd?: JsonLd | JsonLd[];
+  noindex?: boolean;
+  pagefindTitle?: string;
+  pagefindIgnore?: boolean;
 };
 
-const { title } = Astro.props;
+const {
+  title,
+  description,
+  canonicalPath,
+  ogImagePath,
+  ogType,
+  jsonLd,
+  noindex,
+  pagefindTitle,
+  pagefindIgnore = false,
+} = Astro.props;
 ---
 
-<Base title={title}>
-  <SiteHeader />
-  <main>
+<Base
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogImagePath={ogImagePath}
+  ogType={ogType}
+  jsonLd={jsonLd}
+  noindex={noindex}
+>
+  <div data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
+    <SiteHeader />
+  </div>
+  <main data-pagefind-body={pagefindIgnore ? undefined : true}>
+    {
+      pagefindTitle && !pagefindIgnore && (
+        <span data-pagefind-meta="title" hidden>{pagefindTitle}</span>
+      )
+    }
     <Container>
       <slot />
     </Container>
   </main>
-  <SiteFooter />
+  <div data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
+    <SiteFooter />
+  </div>
 </Base>

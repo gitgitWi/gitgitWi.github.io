@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../components/layout/ArticleLayout.astro';
 import { mdxComponents } from '../../lib/mdx-components.ts';
+import { buildBlogPostingJsonLd, ogPathForContent } from '../../lib/seo.ts';
 import Page from '../../layouts/Page.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -17,9 +18,26 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content, headings } = await render(article);
 const { theme, title, description, pubDate, updatedDate, tags, cover } = article.data;
+const canonicalPath = `/articles/${article.id}`;
+const ogImagePath = ogPathForContent('article', article.id);
 ---
 
-<Page title={`${title} — gitgitWi`}>
+<Page
+  title={`${title} — gitgitWi`}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogImagePath={ogImagePath}
+  ogType="article"
+  pagefindTitle={title}
+  jsonLd={buildBlogPostingJsonLd({
+    title,
+    description,
+    pathname: canonicalPath,
+    pubDate,
+    updatedDate,
+    ogImage: ogImagePath,
+  })}
+>
   <ArticleLayout
     title={title}
     description={description}
