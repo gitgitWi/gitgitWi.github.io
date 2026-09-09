@@ -24,3 +24,9 @@
 - **Scoring:** `snapshots[idx]` per card — 재방문 시 picked/revealed freeze, `recordDeckAnswer`/`score` 중복 없음.
 - **oxfmt:** `bunx oxfmt .` — PLAN 2건 포함 green.
 - **번들 회귀:** 전 덱 props 인라인으로 QuizDeck chunk gzip **31,247 bytes** (목표 30KB 초과 → lazy deck import 후속).
+
+## 2026-09-10 lazy deck @ `8b194ac`
+
+- `loadDeckItems()` — `import()` per deck module; island props = `deckIds` + `deckLabels` + `deckCounts` only.
+- **QuizDeck entry gzip:** **4,511 bytes** (`dist/_astro/QuizDeck.*.js`). 덱 청크는 별도 lazy (예: ts-basics ~1,167 gzip).
+- vitest `loadDeckItems` 2건 추가 (총 23 passed). dist HTML: `astro-island` + `component-url` 유지.
