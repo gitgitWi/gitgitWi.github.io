@@ -30,3 +30,9 @@
 
 - [x] 구경로 shim 방식 동의? (vs 404 안내) — 2026-09-10 스택 진행 지시. PLAN 기본안(shim + canonical) 채택.
 - [x] llm-wiki 선별 기준(공개안전) 동의? — 동. 회사정보·개인정보·저작권 불통과분은 이식하지 않는다. `raw/notes` 금지.
+
+## 승인된 편차 (2026-09-10)
+
+- StyleX 0.19 `unstable_createThemeNested`에 비어 있지 않은 오버라이드를 넣으면 babel-plugin이 크래시한다 (`undefined.slice`). colorway 시각 차등은 `ColorwayShell`/`ArticleLayout` variant + 팔레트 토큰으로 낸다. `themes.ts`의 createTheme 껍데기는 `{}`로 둔다.
+- `llm-wiki-template` 이식은 6편 게이트와 분리. wiki 21개 확인했으나 공개안전 큐레이션은 후속.
+
