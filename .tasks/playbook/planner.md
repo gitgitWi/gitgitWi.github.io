@@ -19,7 +19,9 @@ Input: `.tasks/phase-N-*/SPEC.md` + `PLAN.md` (+ leader context).
 
 Rules: analysis + PLAN.md edits only. No product code. No SPEC edits (propose via leader).
 
-## Part B — Code review (after developer PR)
+## Part B — Code review (after `PR-DRAFT`, while the PR is still draft)
+
+Review the **draft** PR. Do not ask the developer to mark it ready first.
 
 Review bar (all must pass for APPROVE):
 
@@ -27,7 +29,9 @@ Review bar (all must pass for APPROVE):
 2. **Style**: shared-code-style §1–7 (guard-first, ≤2 nesting, arrows, object params, `undefined`, array methods, `as const`); Korean test titles; English LLM docs.
 3. **Contracts**: StyleX variant-prop discipline (no external reopen), Astro patterns (no `getStaticProps`/`next/*`), Storybook stories co-delivered.
 4. **Gates**: `bun run check`, `oxfmt --check`, `oxlint`, `vitest` evidence in PR body (real output, not copied).
-5. **Safety**: leak-guard issues (visibility, secrets, private paths) — flag as BLOCKING.
+5. **PR body**: follows [`docs/conventions/prs.md`](../../docs/conventions/prs.md) — why, effect, Mermaid AS-IS/TO-BE, scope/follow-up. File lists and empty tables are CHANGES.
+6. **Safety**: leak-guard issues (visibility, secrets, private paths) — flag as BLOCKING.
 
 Verdict format to leader: `REVIEW <APPROVE|CHANGES> <phase> <PR#>` + findings list (file:line + reason + suggested fix).
-Max 2 review rounds; 3rd round escalates to leader → orchestrator (human decides: accept, re-scope, or swap approach).
+Max 2 review rounds on the draft; 3rd round escalates to leader → orchestrator (human decides: accept, re-scope, or swap approach).
+On `APPROVE`, the developer (PR author) marks the PR ready. Reviewers do not flip draft themselves.
