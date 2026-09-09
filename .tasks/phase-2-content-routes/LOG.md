@@ -2,7 +2,7 @@
 
 - Harness: cursor
 - Started: 2026-09-10
-- Status: PR-DRAFT (see below)
+- Status: PR-DRAFT #59
 - Base: `feat/phase-1.5-visual` (#58)
 
 ## Notes
