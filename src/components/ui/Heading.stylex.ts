@@ -8,6 +8,7 @@ export const headingStyles = stylex.create({
     color: tokens.color.ink,
     lineHeight: tokens.lineHeight.tight,
     fontWeight: 600,
+    fontFamily: tokens.fontFamily.sans,
   },
   level1: {
     fontSize: tokens.fontSize["2xl"],
@@ -20,5 +21,11 @@ export const headingStyles = stylex.create({
   },
   level4: {
     fontSize: tokens.fontSize.md,
+  },
+  display: {
+    fontFamily: tokens.fontFamily.display,
+    fontWeight: 400,
+    fontSize: tokens.fontSize.display,
+    lineHeight: tokens.lineHeight.display,
   },
 });

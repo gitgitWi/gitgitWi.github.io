@@ -6,18 +6,19 @@ export const tagStyles = stylex.create({
   base: {
     display: "inline-block",
     fontSize: tokens.fontSize.sm,
+    fontFamily: tokens.fontFamily.mono,
     lineHeight: tokens.lineHeight.tight,
-    paddingBlock: tokens.space.xs,
-    paddingInline: tokens.space.sm,
-    borderRadius: tokens.radius.sm,
-    backgroundColor: tokens.color.hairline,
+    paddingBlock: tokens.space[1],
+    paddingInline: tokens.space[2],
+    borderRadius: tokens.radius.pill,
+    backgroundColor: tokens.color.surfaceMuted,
     color: tokens.color.ink,
     textDecoration: "none",
   },
   interactive: {
     backgroundColor: {
       default: null,
-      ":hover": tokens.color.accent,
+      ":hover": tokens.color.accentSoft,
     },
     color: {
       default: null,

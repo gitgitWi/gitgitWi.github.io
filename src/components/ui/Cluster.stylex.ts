@@ -9,12 +9,12 @@ export const clusterStyles = stylex.create({
     alignItems: "center",
   },
   gapSm: {
-    gap: tokens.space.sm,
+    gap: tokens.space[2],
   },
   gapMd: {
-    gap: tokens.space.md,
+    gap: tokens.space[4],
   },
   gapLg: {
-    gap: tokens.space.lg,
+    gap: tokens.space[6],
   },
 });

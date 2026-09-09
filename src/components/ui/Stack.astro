@@ -4,7 +4,7 @@ import * as stylex from '@stylexjs/stylex';
 import { stackStyles } from './Stack.stylex.ts';
 
 type Props = {
-  gap?: 'sm' | 'md' | 'lg';
+  gap?: 'sm' | 'md' | 'lg' | 'xl';
 };
 
 const { gap = 'md' } = Astro.props;
@@ -13,6 +13,7 @@ const gapStyles = {
   sm: stackStyles.gapSm,
   md: stackStyles.gapMd,
   lg: stackStyles.gapLg,
+  xl: stackStyles.gapXl,
 } as const;
 ---
 
