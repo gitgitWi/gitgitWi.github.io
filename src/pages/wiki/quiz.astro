@@ -7,17 +7,16 @@ import {
   deckLabels,
   getAllQuizItems,
   getDeckItems,
-  isQuizDeckId,
   quizDeckIds,
   type QuizDeckId,
 } from '../../lib/quiz/decks.ts';
 import Page from '../../layouts/Page.astro';
 
-const deckParam = Astro.url.searchParams.get('deck') ?? '';
-const selectedDeck: QuizDeckId | undefined = isQuizDeckId(deckParam) ? deckParam : undefined;
-const deckItems = selectedDeck ? getDeckItems(selectedDeck) : [];
+const decks = Object.fromEntries(
+  quizDeckIds.map((deckId) => [deckId, getDeckItems(deckId)]),
+) as Record<QuizDeckId, ReturnType<typeof getDeckItems>>;
+
 const allItems = getAllQuizItems();
-const sessionLimit = Math.min(10, deckItems.length);
 ---
 
 <Page title="Wiki Quiz — gitgitWi">
@@ -30,45 +29,28 @@ const sessionLimit = Math.min(10, deckItems.length);
       </Text>
     </header>
 
-    <nav aria-label="덱 선택">
-      <Stack gap="sm">
-        <Heading level={2}>덱 선택</Heading>
-        <ul>
-          {
-            quizDeckIds.map((deckId) => (
-              <li>
-                <a
-                  href={`/wiki/quiz?deck=${deckId}`}
-                  aria-current={selectedDeck === deckId ? 'page' : undefined}
-                >
-                  {deckLabels[deckId]} ({getDeckItems(deckId).length}문항)
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </Stack>
-    </nav>
-
-    {
-      selectedDeck && deckItems.length > 0 && (
-        <section aria-label={`${deckLabels[selectedDeck]} 퀴즈`}>
-          <QuizDeck
-            client:visible
-            deckId={selectedDeck}
-            deckLabel={deckLabels[selectedDeck]}
-            items={deckItems}
-            sessionLimit={sessionLimit}
-          />
-        </section>
-      )
-    }
+    <section aria-label="Wiki Quiz">
+      <QuizDeck client:visible deckIds={quizDeckIds} deckLabels={deckLabels} decks={decks} />
+    </section>
 
     <noscript>
       <section aria-label="정적 문제 목록">
         <Heading level={2}>문제 목록 (JavaScript 없음)</Heading>
+        <nav aria-label="덱 선택">
+          <ul>
+            {
+              quizDeckIds.map((deckId) => (
+                <li>
+                  <a href={`/wiki/quiz?deck=${deckId}`}>
+                    {deckLabels[deckId]} ({getDeckItems(deckId).length}문항)
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
         {
-          (selectedDeck ? deckItems : allItems).map((item) => (
+          allItems.map((item) => (
             <article id={item.id}>
               <h3>{item.prompt}</h3>
               {
