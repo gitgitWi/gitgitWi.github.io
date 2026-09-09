@@ -19,4 +19,4 @@
 - 페이지: Home 컨셉 01, `/articles/mock`, `/til/mock`.
 - 게이트: check·oxfmt·oxlint·vitest·lint:stylex·build·build-storybook green.
 - BLOCKED: Lighthouse a11y ≥95 — cloud 환경 CHROME_INTERSTITIAL_ERROR.
-- Draft PR: (아래 PR# 채움)
+- Draft PR: #58
