@@ -1,0 +1,38 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { wikiSidebarStyles } from './WikiSidebar.stylex.ts';
+
+export type WikiNavItem = {
+  label: string;
+  href: string;
+  active?: boolean;
+};
+
+type Props = {
+  items: WikiNavItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<aside {...stylex.attrs(wikiSidebarStyles.aside)}>
+  <p {...stylex.attrs(wikiSidebarStyles.title)}>Wiki</p>
+  <ul {...stylex.attrs(wikiSidebarStyles.list)}>
+    {
+      items.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            {...stylex.attrs(
+              wikiSidebarStyles.link,
+              item.active ? wikiSidebarStyles.linkActive : null,
+            )}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>

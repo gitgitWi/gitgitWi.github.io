@@ -1,43 +1,51 @@
 ---
-import TagList from '../components/patterns/TagList.astro';
-import Card from '../components/ui/Card.astro';
+import PostCard from '../components/content/PostCard.astro';
+import HeroSection from '../components/layout/HeroSection.astro';
+import Button from '../components/ui/Button.astro';
+import Cluster from '../components/ui/Cluster.astro';
 import Heading from '../components/ui/Heading.astro';
 import Stack from '../components/ui/Stack.astro';
 import Text from '../components/ui/Text.astro';
-import { mockPosts, mockTags } from '../data/mock.ts';
+import HeroVisual from '../components/visual/HeroVisual.astro';
+import { mockPosts } from '../data/mock.ts';
 import Page from '../layouts/Page.astro';
 
 const recentPosts = mockPosts.slice(0, 3);
 ---
 
 <Page title="gitgitWi — Home">
-  <Stack gap="lg">
-    <section>
-      <Heading level={1}>gitgitWi</Heading>
-      <Text variant="muted">정리하는 개발 블로그. Astro + StyleX로 다시 짓는 중입니다.</Text>
-    </section>
+  <HeroSection>
+    <Stack gap="sm" slot="content">
+      <Text variant="label">Technical blog · gitgitWi</Text>
+      <Heading level={1} variant="display">코드를 정리하며<br />생각을 남깁니다.</Heading>
+      <Text variant="muted">
+        Astro, TypeScript, 디자인 시스템에 관한 글과 위키를 모아두는 개인 블로그입니다. 따뜻한
+        캔버스 위에서 긴 글을 읽기 좋게, 코드는 정확하게.
+      </Text>
+      <Cluster gap="sm">
+        <Button href="/tags" variant="primary">Browse posts</Button>
+        <Button href="/til/mock" variant="secondary">Wiki</Button>
+      </Cluster>
+    </Stack>
+    <HeroVisual slot="visual" />
+  </HeroSection>
 
-    <section>
+  <section>
+    <Stack gap="lg">
       <Heading level={2}>최근 글</Heading>
-      <Stack gap="md">
+      <div>
         {
           recentPosts.map((post) => (
-            <Card padding="md">
-              <Stack gap="sm">
-                <Heading level={3}>{post.title}</Heading>
-                <Text variant="caption">{post.date}</Text>
-                <Text variant="body">{post.summary}</Text>
-                <Text variant="muted">본문은 Phase 2에서 연결됩니다.</Text>
-              </Stack>
-            </Card>
+            <PostCard
+              title={post.title}
+              date={post.date}
+              summary={post.summary}
+              tags={post.tags}
+              readingTime="5 min read"
+            />
           ))
         }
-      </Stack>
-    </section>
-
-    <section>
-      <Heading level={2}>태그</Heading>
-      <TagList tags={mockTags} />
-    </section>
-  </Stack>
+      </div>
+    </Stack>
+  </section>
 </Page>

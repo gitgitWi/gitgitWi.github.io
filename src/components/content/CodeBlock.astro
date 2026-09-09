@@ -1,0 +1,65 @@
+---
+import { Prism } from '@astrojs/prism';
+import * as stylex from '@stylexjs/stylex';
+
+import { codeBlockStyles } from './CodeBlock.stylex.ts';
+
+type Props = {
+  lang: string;
+  code: string;
+  showCopy?: boolean;
+};
+
+const { lang, code, showCopy = true } = Astro.props;
+const blockId = `code-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div {...stylex.attrs(codeBlockStyles.wrapper)} data-code-block={blockId}>
+  <div {...stylex.attrs(codeBlockStyles.header)}>
+    <span {...stylex.attrs(codeBlockStyles.lang)}>{lang}</span>
+    {
+      showCopy && (
+        <button
+          type="button"
+          {...stylex.attrs(codeBlockStyles.copyButton)}
+          data-copy-target={blockId}
+          aria-label="코드 복사"
+        >
+          Copy
+        </button>
+      )
+    }
+  </div>
+  <div {...stylex.attrs(codeBlockStyles.pre)}>
+    <Prism lang={lang} code={code} />
+  </div>
+</div>
+
+<script>
+  const initCopyButtons = () => {
+    document.querySelectorAll('[data-copy-target]').forEach((el) => {
+      if (!(el instanceof HTMLButtonElement)) return;
+      if (el.dataset.copyInit) return;
+      el.dataset.copyInit = 'true';
+
+      el.addEventListener('click', async () => {
+        const blockId = el.getAttribute('data-copy-target');
+        if (!blockId) return;
+
+        const block = document.querySelector(`[data-code-block="${blockId}"]`);
+        const codeEl = block?.querySelector('code');
+        if (!codeEl) return;
+
+        await navigator.clipboard.writeText(codeEl.textContent ?? '');
+        const original = el.textContent;
+        el.textContent = 'Copied!';
+        setTimeout(() => {
+          el.textContent = original;
+        }, 1500);
+      });
+    });
+  };
+
+  initCopyButtons();
+  document.addEventListener('astro:page-load', initCopyButtons);
+</script>

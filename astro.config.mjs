@@ -3,6 +3,9 @@ import stylex from "@stylexjs/unplugin";
 
 export default defineConfig({
   site: "https://gitgitwi.github.io",
+  markdown: {
+    syntaxHighlight: "prism",
+  },
   vite: {
     build: {
       assetsInlineLimit: 0,

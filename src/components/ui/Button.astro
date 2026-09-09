@@ -1,0 +1,31 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { buttonStyles } from './Button.stylex.ts';
+
+type Props = {
+  variant?: 'primary' | 'secondary';
+  href?: string;
+};
+
+const { variant = 'primary', href } = Astro.props;
+
+const variantStyles = {
+  primary: buttonStyles.primary,
+  secondary: buttonStyles.secondary,
+} as const;
+
+const attrs = stylex.attrs(buttonStyles.base, variantStyles[variant]);
+---
+
+{
+  href ? (
+    <a href={href} {...attrs}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" {...attrs}>
+      <slot />
+    </button>
+  )
+}
