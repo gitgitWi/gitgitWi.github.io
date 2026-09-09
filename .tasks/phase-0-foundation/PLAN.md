@@ -5,11 +5,14 @@
    로컬 `git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main`, `master` 삭제.
    - Pages 설정이 `gh-pages` 브랜치를 바라보므로 전환 중 배포 영향 없음. README에 "개편 중" 배너는 선택.
 2. bun 고정 (로컬 1.4.2 확인됨 ✓):
-   - `package.json`에 `"packageManager": "bun@1.4.2"` 추가. 이후 첫 `bun install`이 `bun.lockb` 생성.
+   - `package.json`에 `"packageManager": "bun@1.4.2"` 추가. 이후 첫 `bun install`이 텍스트 `bun.lock` 생성 (bun 1.2+ 기본. `bun.lockb`는 레거시).
    - yarn classic 잔재는 Phase 1 스캐폴드 시 제거 (`.yarn/`, `.yarnrc`, `yarn.lock`) — Phase 0에서는 손대지 않음.
    - Node 22.23.2 병행 유지 (Astro 요구 ≥22.12). `bun run dev` 기본 동작=Node로 Astro 실행.
 3. 지식기반:
-   a. `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` (+ Cline MCP 설정에 동일 URL 등록).
+   a. Astro Docs MCP — same URL `https://mcp.docs.astro.build/mcp`, **per harness**:
+      Cursor: `.cursor/mcp.json` (already in repo). Cline: Cline MCP HTTP config.
+      Claude: `claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp` (re-verify when promoting that stub).
+      Do not copy one product’s JSON into another.
    b. 스킬 평가: `spillwavesolutions/publishing-astro-websites-agentic-skill` clone → SKILL.md 품질 체크
       (Collections/MDX/SSG 커버 여부) → 통과 시 `.agents/skills/astro-publish/` 미러 + 커밋해시 기록, 탈락 시 `incluud/astro-agent-skills`로 교체.
    c. `AGENTS.md` 작성 (영어, 최소 유지 — 상세는 링크):

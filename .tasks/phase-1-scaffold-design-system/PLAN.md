@@ -6,7 +6,7 @@
    - yarn classic 잔재 제거: `.yarn/`, `.yarnrc`, `yarn.lock` 삭제 + `.gitignore` 정리.
    - `bun create astro@latest . -- --template minimal --typescript strict` 상당 수동 구성:
      `astro`, `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/rss`, `@astrojs/check` + `sharp`
-     (전부 `bun add`). `bun install` → `bun.lockb` 커밋.
+     (전부 `bun add`). `bun install` → `bun.lock` 커밋.
    - `astro.config.mjs`: `output:'static'`, `site:'https://gitgitwi.github.io'`, `integrations:[mdx()]`,
      `vite:{plugins:[stylex.vite({useCSSLayers:true, runtimeInjection:false})]}`.
    - `package.json` scripts는 `bun run` 기준 (`dev: astro dev`, `build: astro build`, `check: astro check`).
@@ -22,7 +22,7 @@
 3. 페이지: `src/pages/index.astro` (Hero+최근글+태그클라우드 — Phase 2 데이터 연동 전 목업),
    `src/pages/tags/index.astro`, `src/pages/tags/[tag].astro` (껍데기).
    `src/layouts/Base.astro` (head/meta/폰트) + `Page.astro`.
-4. 배포 교체: `.github/workflows/deploy.yml`를 `withastro/action@v4` + `actions/deploy-pages@v4`로 교체
+4. 배포 교체: `.github/workflows/deploy.yml`를 `withastro/action@v6` + `actions/deploy-pages@v4`로 교체
    (트리거 `main`, `oven-sh/setup-bun@v2`로 bun 설치 → `bun install` → `bun run build` → `dist` 업로드 → deploy).
    Settings → Pages Source=GitHub Actions로 변경.
    기존 `JamesIves/...@4.1.4` + Node14 매트릭스 삭제.

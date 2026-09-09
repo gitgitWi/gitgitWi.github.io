@@ -16,7 +16,7 @@
 
 | 후보 | 내용 | 판정 |
 |---|---|---|
-| **Astro Docs MCP** (`https://mcp.docs.astro.build/mcp`, Streamable HTTP) | 최신 Astro 문서 실시간 조회. `claude mcp add --transport http astro-docs …` / Codex·Cursor·VSCode 모두 지원. 에이전트의 구버전 API 환각 방지 | **채택 (Phase 0)** — Cline/MCP 설정 + `AGENTS.md`에 강제 참조 규칙 |
+| **Astro Docs MCP** (`https://mcp.docs.astro.build/mcp`, Streamable HTTP) | 최신 Astro 문서 실시간 조회. 하니스마다 등록 방식이 다름 (Cursor `.cursor/mcp.json`, Cline MCP, `claude mcp add --transport http …`). 에이전트의 구버전 API 환각 방지 | **채택 (Phase 0)** — 하니스별 설정 + `AGENTS.md`에 강제 참조 규칙 |
 | `spillwavesolutions/publishing-astro-websites-agentic-skill` | SSG·Content Collections·MDX·배포 커버 종합 스킬 | **채택 검토 1순위** — Phase 0에서 평가 후 `.agents/skills/` 미러 또는 서브모듈 |
 | `incluud/astro-agent-skills` | Astro 패턴·워크플로우 모음, Codex/Cursor/Claude 호환 | **차순위** — 위 스킬과 중복 비교 후 하나만 |
 | Sungho Park `astro-agent-skill` (자blog 실전) | "에이전트가 Astro 코드를 반복적으로 틀리게 짠다" 문제의식에서 만든 스킬 | 참고 — 프로젝트 룰(`AGENTS.md`)에 anti-pattern 섹션으로 흡수 |
@@ -35,7 +35,8 @@
   Node 22 병행 유지 (Astro 요구 ≥22.12). ⚠️ sharp/Bun 이슈 가능성은 Phase 1 스파이크에서 실증.
 - **Storybook = community `@storybook-astro/framework`** (공식 미지원). 로컬 확인용, 배포 없음.
   블로그 내 `/components` 공개는 전 Phase 완료 후 별도 이슈. 근거: Phase 1 SPEC §4.
-- **Subagents = Cline CLI + Herdr (Paseo 미사용)**. 모델·spawn 커맨드는 실측 검증됨
-  (`.tasks/playbook/orchestrator.md`): leader/planner = `cline-free/muse-spark-1.3-contributor --thinking xhigh`,
-  developer = `z-ai/glm-5.3-flash`.
+- **Subagents = harness-agnostic roles + per-harness spawn** (Paseo 미사용).
+  역할: `.tasks/playbook/{orchestrator,leader,planner,developer}.md`.
+  스폰: `.tasks/playbook/harness/` (Cursor 기본 = Grok 부모 + Composer implementer;
+  Cline+Herdr는 기존 실측 핀 유지). 상세 [playbook/README.md](../../.tasks/playbook/README.md).
 - **CI 선행 + stacked PR**: `feat/ci-gates`를 스택 최하단으로 먼저 머지 후 Phase별 PR에 CI 자동 실행.

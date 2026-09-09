@@ -7,7 +7,7 @@
 Astro Content Collections로 정규화하고, articles(자유)와 til(통일)을 서로 다른 렌더 계약으로 제공한다.
 
 ## 2. 목표
-1. Collections (`src/content/config.ts`, Zod):
+1. Collections (`src/content.config.ts`, Zod + `glob` loader):
    - `articles`: `title, description, pubDate, updatedDate?, tags[], draft?, theme{colorway, layout, density}, cover?`
    - `til` (=wiki): `title, summary, pubDate, updatedDate?, tags[], domains[]?, visibility='public', quizRefs?`
    - 공통 remark: `remark-gfm`, `remark-smartypants`; rehype: `rehype-slug`, `rehype-autolink-headings`, `rehype-external-links`.

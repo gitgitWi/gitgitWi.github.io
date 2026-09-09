@@ -1,6 +1,7 @@
-# Planner Playbook (per-phase `pN-planner`)
+# Planner Playbook (per-phase)
 
-> Model: `cline-free/muse-spark-1.3-contributor` (`cline -m … --thinking xhigh`, act mode). Dual role: refine PLAN.md, then review developer output.
+> Role contract (harness-agnostic). Model + spawn: [`harness/`](harness/).
+> Dual role: refine PLAN.md, then review developer output.
 
 ## Part A — Plan refinement (before implementation)
 

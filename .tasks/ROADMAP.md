@@ -39,12 +39,15 @@
   - 생성: `gh pr create --base <parent-branch>` 로 스택. CI는 PR마다 자동 실행 (CI 선행 머지 후).
   - 머지는 아래부터 순서대로 (GitHub "Merge" + base 자동전환 확인). `gh` 2.100.0 설치 확인됨.
   - 본 로드맵 문서 작업(`.tasks/`, `AGENTS.md`)은 스택 밖 — 별도 `docs/tasks-setup` PR 또는 Phase 0에 포함 (승인 시 결정).
-- Subagents (Cline CLI + Herdr, **no Paseo**, **no opencode-go models**): orchestrator = current session.
-  leader/planner: `cline --auto-approve true -m cline-free/muse-spark-1.3-contributor --thinking xhigh` ·
-  developer: `cline --auto-approve true -m z-ai/glm-5.3-flash` (both verified live 2026-09-10).
-  Roles/protocols: `.tasks/playbook/{orchestrator,leader,planner,developer}.md`.
-  Flow: leader tracks → planner refines PLAN + reviews → developer implements + stacked PR → human merges.
-  Herdr workspaces per phase; `pane run cline …` then `herdr agent start/prompt/wait` (skill: `herdr`).
+- 멀티에이전트 (역할은 하니스 무관, 스폰은 하니스별):
+  역할: `.tasks/playbook/{orchestrator,leader,planner,developer}.md`.
+  인덱스: [playbook/README.md](playbook/README.md).
+  스폰/모델: `.tasks/playbook/harness/` — **페이즈당 하나** (혼합 금지).
+  - Cursor (Cline 한도 소진 시 기본): [harness/cursor.md](playbook/harness/cursor.md) — 부모 Grok 4.6 (orchestrator+leader), planner·verifier 서브에이전트, Composer 2.5 implementer는 worktree. 정의: `.cursor/agents/`.
+  - Cline + Herdr: [harness/cline-herdr.md](playbook/harness/cline-herdr.md) — pane 3개, muse-spark / glm-5.3-flash (2026-09-10 실측).
+  - Claude Code / Codex: 스텁. 첫 실사용 때 `_template.md`로 승격.
+  흐름: leader 추적 → planner가 PLAN 정제·리뷰 → developer 구현 + stacked PR → 사람 머지.
+  **미사용:** Paseo, opencode-go 모델.
 
 ## 승인 플로우
 

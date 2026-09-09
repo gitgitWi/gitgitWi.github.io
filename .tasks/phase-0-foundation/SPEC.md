@@ -9,7 +9,7 @@ Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch
 
 ## 2. 목표
 1. `master` → `main` rename + GitHub default 전환 (+ 로컬 HEAD 동기화).
-2. 런타임·패키지매니저: **bun 1.4.2** 고정 (로컬 설치 확인됨). `packageManager: bun@1.4.2` 핀 + `bun.lockb` 커밋.
+2. 런타임·패키지매니저: **bun 1.4.2** 고정 (로컬 설치 확인됨). `packageManager: bun@1.4.2` 핀 + `bun.lock` 커밋.
    - yarn classic 잔재 제거: `.yarn/releases/yarn-1.22.17.cjs`, `.yarnrc`(yarn-path), `yarn.lock` (Phase 1 스캐폴드 시).
    - Node 22.23.2는 Astro 빌드 요구조건으로 병행 유지 (Astro는 Node ≥22.12 요구. `bunx --bun astro dev`는 선택, 기본 `bun run dev`는 Node로 Astro 실행).
 3. 지식기반 고정: **Astro Docs MCP** (`https://mcp.docs.astro.build/mcp`) + Astro 스킬 1개
@@ -30,7 +30,7 @@ Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch
 
 ## 5. 종료 게이트
 - [ ] `git symbolic-ref refs/remotes/origin/HEAD` → `origin/main`.
-- [ ] `bun --version` 1.4.x + `packageManager: bun@1.4.2` 핀 + `bun.lockb` 커밋 (Node 22.x 병행 유지).
+- [ ] `bun --version` 1.4.x + `packageManager: bun@1.4.2` 핀 + `bun.lock` 커밋 (Node 22.x 병행 유지).
 - [ ] 스킬 1개 핀 (repo+commit hash 기록).
 - [ ] StyleX 스파이크 `bun run build` 그린.
 

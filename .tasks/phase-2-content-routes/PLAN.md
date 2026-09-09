@@ -1,7 +1,7 @@
 # Phase 2 PLAN — Content Routes + MDX 마이그레이션
 
 ## 순서
-1. `src/content/config.ts` (Astro v7 Content Collections, Zod):
+1. `src/content.config.ts` (Astro v6+ Content Layer, Zod + `glob` loader):
    `articles` / `til` 콜렉션 정의 (SPEC §2.1 필드). `astro sync` 그린 확인.
 2. 라우트: `articles/index, articles/[...slug], til/index, til/[...slug], tags/[tag]` 실데이터 연결
    (`getCollection` + pubDate desc 정렬 + draft 필터 + 태그 역인덱스).
