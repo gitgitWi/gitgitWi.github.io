@@ -181,6 +181,7 @@ flowchart LR
   subgraph PHASE["phase — 검색 키"]
     P0["phase-0"]
     P1["phase-1"]
+    P15["phase-1.5"]
     P2["phase-2"]
     P3["phase-3"]
     P4["phase-4"]
@@ -199,6 +200,7 @@ flowchart LR
 
 - `phase-0` — Foundation: `main`, bun, 스킬, StyleX 스파이크
 - `phase-1` — Scaffold: Astro, StyleX DS, Pages
+- `phase-1.5` — Visual: design.md, Prism Vitesse Light, Home/목업 레이아웃
 - `phase-2` — Content: collections, MDX, wiki
 - `phase-3` — Wiki quiz
 - `phase-4` — Hardening: Pagefind, SEO, leak-guard
