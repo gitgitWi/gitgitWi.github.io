@@ -16,3 +16,11 @@
 - UI `QuizDeck` Preact + `/wiki/quiz` (덱 picker, noscript 정적 목록, 키보드 1–4·Enter·←→, aria-live, reduced-motion 페이드).
 - **Quiz island gzip** (`dist/_astro/` quiz 페이지 로드 청크 합): **13,608 bytes** (QuizDeck 3,702 + Preact shared). 목표 30KB 이내.
 - PR: #60 draft. 게이트: check·oxlint·vitest·lint:stylex·build·build-storybook green. oxfmt는 base부터 `.tasks/**/PLAN.md` 2건 drift(phase-3 src 무관).
+
+## 2026-09-10 review fix @ `61bfae5`
+
+- **Island always ship:** `quiz.astro`가 SSG `searchParams`로 island 분기하던 문제 수정 → `<QuizDeck client:visible />` 항상 + 전 덱 props. 덱 선택은 island 내부(`history.replaceState`).
+- **dist 증명:** `rg dist/wiki/quiz/index.html` → `astro-island` + `component-url="/_astro/QuizDeck.*.js"`.
+- **Scoring:** `snapshots[idx]` per card — 재방문 시 picked/revealed freeze, `recordDeckAnswer`/`score` 중복 없음.
+- **oxfmt:** `bunx oxfmt .` — PLAN 2건 포함 green.
+- **번들 회귀:** 전 덱 props 인라인으로 QuizDeck chunk gzip **31,247 bytes** (목표 30KB 초과 → lazy deck import 후속).
