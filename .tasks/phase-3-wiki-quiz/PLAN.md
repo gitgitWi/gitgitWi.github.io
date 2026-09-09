@@ -23,4 +23,3 @@
 
 - [x] island = Preact 동의? — 2026-09-10 스택 진행. Phase 1.5에서 `@astrojs/preact` 이미 설치.
 - [x] 주관식 정규화 수준 동의? — PLAN 기본안 (NFKC + trim + lower + 공백/마침표 제거).
-
