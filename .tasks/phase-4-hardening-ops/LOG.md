@@ -2,7 +2,7 @@
 
 - Harness: cursor
 - Started: 2026-09-10
-- Status: PR-DRAFT (Pagefind · OG 빌드 생성). base `feat/phase-3-quiz` (#60 ready, 미머지).
+- Status: PR-READY #61
 
 ## Notes
 
@@ -36,3 +36,10 @@
 | 3 | `literal` | `/til/ts/enum-to-template-literal/` | TIL — enum → literal 타입 |
 
 한국어 stemming 없음(Pagefind 한계). WASM 점수 순위 그대로 검증한다.
+
+## 2026-09-10 review
+
+- Sol `gpt-5.6-sol-medium`: leak 범위 → search substring → WASM Top-3. 최종 `REVIEW APPROVE phase-4 61`. usage: not visible.
+- `gh pr ready 61`. 머지는 사람. 스택: #56 → #58 → #59 → #60 → #61.
+- 사람 후속: Pages Source=Actions 확인 후 `gh-pages` 삭제, branch protection에 CI.
+
