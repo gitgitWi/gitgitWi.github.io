@@ -1,0 +1,37 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import Tag from '../ui/Tag.astro';
+
+import { postCardStyles } from './PostCard.stylex.ts';
+
+type Props = {
+  title: string;
+  date: string;
+  summary: string;
+  tags: readonly string[];
+  href?: string;
+  readingTime?: string;
+};
+
+const { title, date, summary, tags, href = '#', readingTime } = Astro.props;
+---
+
+<article {...stylex.attrs(postCardStyles.article)}>
+  <div {...stylex.attrs(postCardStyles.meta)}>
+    <time datetime={date}>{date}</time>
+    {readingTime && (
+      <>
+        <span aria-hidden="true">·</span>
+        <span>{readingTime}</span>
+      </>
+    )}
+  </div>
+  <a href={href} {...stylex.attrs(postCardStyles.title)}>{title}</a>
+  <p {...stylex.attrs(postCardStyles.summary)}>{summary}</p>
+  <div {...stylex.attrs(postCardStyles.tags)}>
+    {tags.map((tag) => (
+      <Tag href={`/tags/${tag}`}>{tag}</Tag>
+    ))}
+  </div>
+</article>

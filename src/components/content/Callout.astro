@@ -1,0 +1,29 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { calloutStyles } from './Callout.stylex.ts';
+
+type Props = {
+  variant?: 'note' | 'tip' | 'warning';
+  title?: string;
+};
+
+const { variant = 'note', title } = Astro.props;
+
+const variantStyles = {
+  note: calloutStyles.note,
+  tip: calloutStyles.tip,
+  warning: calloutStyles.warning,
+} as const;
+
+const defaultTitles = {
+  note: 'Note',
+  tip: 'Tip',
+  warning: 'Warning',
+} as const;
+---
+
+<aside {...stylex.attrs(calloutStyles.base, variantStyles[variant])} role="note">
+  <p {...stylex.attrs(calloutStyles.title)}>{title ?? defaultTitles[variant]}</p>
+  <div {...stylex.attrs(calloutStyles.body)}><slot /></div>
+</aside>

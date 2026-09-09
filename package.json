@@ -17,9 +17,15 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@astrojs/prism": "^4.0.2",
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/geist-mono": "^5.3.0",
+    "@fontsource/pretendard": "^5.3.0",
     "@stylexjs/stylex": "0.19.0",
     "astro": "7.3.2",
-    "sharp": "0.35.4"
+    "prismjs": "^1.30.0",
+    "sharp": "0.35.4",
+    "three": "^0.186.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
@@ -27,6 +33,7 @@
     "@storybook/builder-vite": "^10.6.0",
     "@stylexjs/eslint-plugin": "0.19.0",
     "@stylexjs/unplugin": "0.19.0",
+    "@types/three": "^0.185.4",
     "@typescript-eslint/parser": "^8.70.0",
     "eslint": "^10.10.0",
     "oxfmt": "^0.67.0",
