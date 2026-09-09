@@ -2,7 +2,7 @@
 
 - Harness: cursor (Grok parent, this session)
 - Started: 2026-09-09
-- Status: complete (2026-09-10). SPEC 종료 게이트 충족. `PR-DRAFT` pending.
+- Status: complete (2026-09-10). SPEC 종료 게이트 충족. `PR-DRAFT phase-0 feat/phase-0-foundation #55`
 
 ## Checklist (PLAN)
 
