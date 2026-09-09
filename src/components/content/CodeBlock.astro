@@ -19,12 +19,7 @@ const blockId = `code-${Math.random().toString(36).slice(2, 9)}`;
     <span {...stylex.attrs(codeBlockStyles.lang)}>{lang}</span>
     {
       showCopy && (
-        <button
-          type="button"
-          {...stylex.attrs(codeBlockStyles.copyButton)}
-          data-copy-target={blockId}
-          aria-label="코드 복사"
-        >
+        <button type="button" {...stylex.attrs(codeBlockStyles.copyButton)} data-copy-target={blockId}>
           Copy
         </button>
       )

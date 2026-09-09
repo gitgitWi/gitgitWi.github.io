@@ -68,7 +68,7 @@ Use a warm neutral base rather than pure white.
 
   --color-ink: #171a18;
   --color-ink-secondary: #4d534e;
-  --color-ink-tertiary: #7a807b;
+  --color-ink-tertiary: #555b56;
 
   --color-border: #dddcd3;
   --color-border-strong: #c9c9bf;
@@ -116,6 +116,7 @@ Concept mock hex vs this contract (implementation uses **this contract**):
 - Accent `#10B981` (Tailwind emerald on the mock) → `#16A36A` here (less saturated mint).
 - Surface `#FFFFFF` (mock cards) → `#FCFBF7` here (not pure white).
 - Code blocks: mock is charcoal. **Do not ship that.** Prism + Vitesse Light–like on `--color-code-bg`.
+- Tertiary `#7A807B` failed AA on canvas (3.7:1). Implementation uses `#555B56`.
 
 ---
 
@@ -491,7 +492,7 @@ Theme: **Vitesse Light–like**, retinted to canvas + accent — not a dark term
 ```text
 canvas #F7F5EE
   → code bg #F1EFE6 (one step quieter)
-  → keyword / function #16A36A (accent)
+  → keyword / function #087044 (accent-ink; accent #16A36A fails AA on code bg)
   → ink #393a34 (Vitesse Light foreground)
 ```
 
@@ -506,23 +507,23 @@ pre[class*="language-"] {
 }
 .token.comment,
 .token.prolog {
-  color: #a0ada0;
+  color: #546054;
 }
 .token.keyword {
   color: var(--color-accent-ink);
 }
 .token.function {
-  color: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 .token.string {
-  color: #b56959;
+  color: #8a4a3e;
 }
 .token.number,
 .token.boolean {
-  color: #2f798a;
+  color: #21687a;
 }
 .token.punctuation {
-  color: #7a807b;
+  color: var(--color-ink-tertiary);
 }
 ```
 

@@ -7,7 +7,7 @@ export const tokens = stylex.unstable_defineVarsNested({
     surfaceMuted: "#EFEEE7",
     ink: "#171A18",
     inkSecondary: "#4D534E",
-    inkTertiary: "#7A807B",
+    inkTertiary: "#555B56",
     border: "#DDDCD3",
     borderStrong: "#C9C9BF",
     accent: "#16A36A",
