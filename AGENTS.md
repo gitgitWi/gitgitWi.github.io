@@ -34,7 +34,7 @@
 - Multi-agent: role contracts in `.tasks/playbook/`; spawn/models in `.tasks/playbook/harness/` (one harness per phase). Cursor default: [harness/cursor.md](.tasks/playbook/harness/cursor.md).
 - Commits: [`docs/conventions/commits.md`](docs/conventions/commits.md) — logical units, conventional, Korean. Body 1–2 lines, max 3.
 - PRs: [`docs/conventions/prs.md`](docs/conventions/prs.md) — why / effect / design diagrams / scope. Assignee `@me`. Labels from that doc. Comments in Korean.
-- Cursor review: GPT 5.6 Sol medium until OpenAI Cursor shutoff (**2026-11-12**). Then Grok. Human merges from Phase 1.
+- Cursor review: GPT 5.6 Sol medium. If Sol is blocked → Opus 5. If a review is expensive → Grok then Kimi K3. OpenAI Cursor shutoff **2026-11-12**. Human merges from Phase 1.
 - Test titles in Korean (`describe` = symbol name).
 
 ## 6. Links

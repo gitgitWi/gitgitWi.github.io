@@ -6,6 +6,7 @@ export const textStyles = stylex.create({
   base: {
     margin: 0,
     lineHeight: tokens.lineHeight.body,
+    fontFamily: tokens.fontFamily.sans,
   },
   body: {
     fontSize: tokens.fontSize.md,
@@ -13,10 +14,18 @@ export const textStyles = stylex.create({
   },
   muted: {
     fontSize: tokens.fontSize.md,
-    color: tokens.color.muted,
+    color: tokens.color.inkSecondary,
   },
   caption: {
     fontSize: tokens.fontSize.sm,
-    color: tokens.color.muted,
+    color: tokens.color.inkTertiary,
+    fontFamily: tokens.fontFamily.mono,
+  },
+  label: {
+    fontSize: tokens.fontSize.sm,
+    color: tokens.color.inkTertiary,
+    fontFamily: tokens.fontFamily.mono,
+    textTransform: "uppercase",
+    letterSpacing: "0.05em",
   },
 });

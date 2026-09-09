@@ -6,7 +6,7 @@ export const tagListStyles = stylex.create({
   list: {
     display: "flex",
     flexWrap: "wrap",
-    gap: tokens.space.sm,
+    gap: tokens.space[2],
     listStyle: "none",
     margin: 0,
     padding: 0,

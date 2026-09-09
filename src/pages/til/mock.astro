@@ -1,0 +1,64 @@
+---
+import CodeBlock from '../../components/content/CodeBlock.astro';
+import WikiSidebar from '../../components/wiki/WikiSidebar.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Prose from '../../components/ui/Prose.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import Page from '../../layouts/Page.astro';
+import * as stylex from '@stylexjs/stylex';
+
+import { wikiLayoutStyles } from '../../components/layout/WikiLayout.stylex.ts';
+
+const wikiNav = [
+  { label: 'Getting Started', href: '/til/mock', active: true },
+  { label: 'TypeScript', href: '/til/mock#typescript' },
+  { label: 'React', href: '/til/mock#react' },
+  { label: 'Architecture', href: '/til/mock#architecture' },
+];
+
+const snippet = `# Astro wiki mock
+bun run dev
+bun run build`;
+---
+
+<Page title="Wiki Mock — gitgitWi">
+  <div {...stylex.attrs(wikiLayoutStyles.grid, wikiLayoutStyles.gridWithSidebar)}>
+    <div {...stylex.attrs(wikiLayoutStyles.sidebar)}>
+      <WikiSidebar items={wikiNav} />
+    </div>
+
+    <article {...stylex.attrs(wikiLayoutStyles.main)}>
+      <Stack gap="md">
+        <Heading level={1} variant="display">Getting Started</Heading>
+        <Text variant="muted">
+          위키는 블로그보다 구조적이지만 같은 캔버스·타이포·코드 스타일을 공유합니다.
+        </Text>
+
+        <Prose>
+          <h2 id="intro">Intro</h2>
+          <p>
+            Phase 1.5 목업 위키 페이지입니다. 데스크탑에서는 좌측 사이드바로 섹션을 탐색하고,
+            모바일에서는 본문이 먼저 보입니다.
+          </p>
+
+          <h2 id="typescript">TypeScript</h2>
+          <p>코드 블록은 기사와 동일한 Prism Vitesse Light 테마를 사용합니다.</p>
+
+          <CodeBlock lang="bash" code={snippet} />
+
+          <h2 id="react">React</h2>
+          <p>
+            Phase 1에서는 React를 쓰지 않습니다. Phase 2 이후 인터랙티브 위키 컴포넌트가 필요할
+            때 island를 추가합니다.
+          </p>
+
+          <h2 id="architecture">Architecture</h2>
+          <p>
+            Astro static + StyleX + bun. Collections와 Pagefind는 Phase 2·4에서 연결합니다.
+          </p>
+        </Prose>
+      </Stack>
+    </article>
+  </div>
+</Page>

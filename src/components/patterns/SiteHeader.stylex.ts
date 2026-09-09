@@ -7,27 +7,29 @@ export const siteHeaderStyles = stylex.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingBlock: tokens.space.md,
+    paddingBlock: tokens.space[4],
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
-    borderBottomColor: tokens.color.hairline,
+    borderBottomColor: tokens.color.border,
   },
   brand: {
     fontSize: tokens.fontSize.lg,
     fontWeight: 600,
+    fontFamily: tokens.fontFamily.sans,
     color: tokens.color.ink,
     textDecoration: "none",
   },
   nav: {
     display: "flex",
-    gap: tokens.space.md,
+    gap: tokens.space[6],
   },
   navLink: {
     color: {
-      default: tokens.color.muted,
+      default: tokens.color.inkSecondary,
       ":hover": tokens.color.accent,
     },
     textDecoration: "none",
     fontSize: tokens.fontSize.sm,
+    fontFamily: tokens.fontFamily.sans,
   },
 });

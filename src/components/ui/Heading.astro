@@ -5,9 +5,10 @@ import { headingStyles } from './Heading.stylex.ts';
 
 type Props = {
   level?: 1 | 2 | 3 | 4;
+  variant?: 'default' | 'display';
 };
 
-const { level = 1 } = Astro.props;
+const { level = 1, variant = 'default' } = Astro.props;
 
 const levelStyles = {
   1: headingStyles.level1,
@@ -17,6 +18,7 @@ const levelStyles = {
 } as const;
 
 const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4';
+const variantStyle = variant === 'display' ? headingStyles.display : levelStyles[level];
 ---
 
-<Tag {...stylex.attrs(headingStyles.base, levelStyles[level])}><slot /></Tag>
+<Tag {...stylex.attrs(headingStyles.base, variantStyle)}><slot /></Tag>

@@ -1,0 +1,16 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { heroSectionStyles } from './HeroSection.stylex.ts';
+---
+
+<section {...stylex.attrs(heroSectionStyles.section)}>
+  <div {...stylex.attrs(heroSectionStyles.grid)}>
+    <div {...stylex.attrs(heroSectionStyles.textBlock)}>
+      <slot name="content" />
+    </div>
+    <div {...stylex.attrs(heroSectionStyles.visual)}>
+      <slot name="visual" />
+    </div>
+  </div>
+</section>
