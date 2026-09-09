@@ -1,79 +1,75 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-import { gunzipSync } from "node:zlib";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const pagefindDir = join(rootDir, "dist/pagefind");
-const fragmentDir = join(pagefindDir, "fragment");
-const FRAGMENT_PREFIX = "pagefind_dcd";
+const pagefindModulePath = join(pagefindDir, "pagefind.js");
+const TOP_N = 3;
 
-/** Top-3 manual checklist — see .tasks/phase-4-hardening-ops/LOG.md */
+/**
+ * Top-3 ranked search checklist — see .tasks/phase-4-hardening-ops/LOG.md
+ * Uses Pagefind WASM ranking via dist/pagefind/pagefind.js (same as browser UI).
+ */
 const SEARCH_CASES = [
   {
     query: "리팩토링",
     expectPath: "/til/refactoring-javascript/01",
-    note: "TIL 위키 — 리팩토링 시리즈 1편",
+    note: "TIL — 리팩토링 시리즈 1편 (title 가중)",
   },
   {
-    query: "Storybook",
+    query: "Personal Design System",
     expectPath: "/articles/design-system/01",
-    note: "articles — Design System 환경 설정 글",
+    note: "articles — Design System 환경 설정 (distinctive title phrase)",
   },
   {
     query: "literal",
     expectPath: "/til/ts/enum-to-template-literal",
-    note: "TIL — enum → literal 타입 글",
+    note: "TIL — enum → literal 타입",
   },
 ];
 
-const loadFragments = async () => {
-  let names;
-  try {
-    names = await readdir(fragmentDir);
-  } catch {
-    console.error("check-search: dist/pagefind/fragment not found — run `bun run build` first.");
-    process.exit(1);
-  }
-
-  const docs = [];
-  for (const name of names) {
-    if (!name.endsWith(".pf_fragment")) continue;
-    const compressed = await readFile(join(fragmentDir, name));
-    const text = gunzipSync(compressed).toString("utf8");
-    if (!text.startsWith(FRAGMENT_PREFIX)) {
-      console.error(`check-search: unexpected fragment prefix in ${name}`);
-      process.exit(1);
+const installFileFetchShim = () => {
+  const nativeFetch = globalThis.fetch.bind(globalThis);
+  globalThis.fetch = async (input, init) => {
+    const url = String(input);
+    if (url.startsWith("file://")) {
+      const filePath = fileURLToPath(url.split("?")[0]);
+      const body = await readFile(filePath);
+      return new Response(body);
     }
-    docs.push(JSON.parse(text.slice(FRAGMENT_PREFIX.length)));
-  }
-
-  if (docs.length === 0) {
-    console.error("check-search: no Pagefind fragments found");
-    process.exit(1);
-  }
-
-  return docs;
-};
-
-const matchesQuery = (doc, query) => {
-  const q = query.toLowerCase();
-  const haystacks = [doc.content ?? "", doc.meta?.title ?? "", doc.meta?.tags ?? ""].map((value) =>
-    String(value).toLowerCase(),
-  );
-  return haystacks.some((text) => text.includes(q));
+    return nativeFetch(input, init);
+  };
+  return () => {
+    globalThis.fetch = nativeFetch;
+  };
 };
 
 const normalizePath = (url) => {
   if (!url) return "";
-  const pathOnly = url.split("#")[0].split("?")[0];
-  return pathOnly.endsWith("/") ? pathOnly : `${pathOnly}/`;
+  const pathOnly = url
+    .replace(/^\/file:[^/]*/, "")
+    .split("#")[0]
+    .split("?")[0];
+  const withLeading = pathOnly.startsWith("/") ? pathOnly : `/${pathOnly}`;
+  return withLeading.endsWith("/") ? withLeading : `${withLeading}/`;
 };
 
-const run = async () => {
-  const entryPath = join(pagefindDir, "pagefind-entry.json");
+const rankedSearch = async (pagefind, query) => {
+  const response = await pagefind.search(query);
+  const ranked = response.results ?? [];
+  const top = ranked.slice(0, TOP_N);
+  const resolved = await Promise.all(top.map((result) => result.data()));
+  return resolved.map((doc) => ({
+    url: normalizePath(doc.raw_url ?? doc.url),
+    title: doc.meta?.title ?? "",
+    score: ranked.find((entry) => entry.id === doc.id)?.score,
+  }));
+};
+
+const assertIndexPresent = async () => {
   try {
-    const entry = JSON.parse(await readFile(entryPath, "utf8"));
+    const entry = JSON.parse(await readFile(join(pagefindDir, "pagefind-entry.json"), "utf8"));
     const pageCount = entry.languages?.ko?.page_count ?? 0;
     if (pageCount < 10) {
       console.error(`check-search: suspicious page_count=${pageCount} in pagefind-entry.json`);
@@ -86,31 +82,53 @@ const run = async () => {
     process.exit(1);
   }
 
-  const fragments = await loadFragments();
-  const errors = [];
-
-  for (const { query, expectPath, note } of SEARCH_CASES) {
-    const hits = fragments.filter((doc) => matchesQuery(doc, query));
-    const urls = hits.map((doc) => normalizePath(doc.url));
-    const expected = normalizePath(expectPath);
-    const matched = urls.includes(expected);
-
-    if (!matched) {
-      errors.push(
-        `"${query}" (${note}): expected ${expected} in index hits, got [${urls.slice(0, 5).join(", ")}]`,
-      );
-    }
-  }
-
-  if (errors.length > 0) {
-    console.error(`check-search: ${errors.length} issue(s)`);
-    for (const message of errors) console.error(`  - ${message}`);
+  try {
+    await readFile(pagefindModulePath);
+  } catch {
+    console.error("check-search: dist/pagefind/pagefind.js not found — run `bun run build` first.");
     process.exit(1);
   }
+};
 
-  console.log(
-    `check-search: OK (${SEARCH_CASES.length} queries, ${fragments.length} fragments, ko index)`,
-  );
+const run = async () => {
+  await assertIndexPresent();
+
+  const restoreFetch = installFileFetchShim();
+  const pagefind = await import(pathToFileURL(pagefindModulePath).href);
+
+  try {
+    await pagefind.init();
+    const errors = [];
+
+    for (const { query, expectPath, note } of SEARCH_CASES) {
+      const topResults = await rankedSearch(pagefind, query);
+      const expected = normalizePath(expectPath);
+      const urls = topResults.map((hit) => hit.url);
+      const rank = urls.indexOf(expected);
+
+      if (rank === -1) {
+        const summary = topResults
+          .map((hit, index) => `${index + 1}:${hit.url} (${hit.title.slice(0, 40)})`)
+          .join(", ");
+        errors.push(`"${query}" (${note}): expected ${expected} in top ${TOP_N}, got [${summary}]`);
+      }
+    }
+
+    if (errors.length > 0) {
+      console.error(`check-search: ${errors.length} issue(s)`);
+      for (const message of errors) console.error(`  - ${message}`);
+      process.exit(1);
+    }
+
+    console.log(
+      `check-search: OK (${SEARCH_CASES.length} queries ranked top-${TOP_N} via Pagefind WASM)`,
+    );
+  } finally {
+    if (typeof pagefind.destroy === "function") {
+      await pagefind.destroy();
+    }
+    restoreFetch();
+  }
 };
 
 await run();
