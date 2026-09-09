@@ -46,7 +46,7 @@
   - Cursor (Cline 한도 소진 시 기본): [harness/cursor.md](playbook/harness/cursor.md) — 부모 Grok 4.6 (orchestrator+leader), planner·verifier 서브에이전트, Composer 2.5 implementer는 worktree. 정의: `.cursor/agents/`.
   - Cline + Herdr: [harness/cline-herdr.md](playbook/harness/cline-herdr.md) — pane 3개, muse-spark / glm-5.3-flash (2026-09-10 실측).
   - Claude Code / Codex: 스텁. 첫 실사용 때 `_template.md`로 승격.
-  흐름: leader 추적 → planner가 PLAN 정제 → developer 구현 + **draft** PR → planner/verifier 리뷰 → ready 전환 → 사람 머지.
+  흐름: leader 추적 → planner가 PLAN 정제 → developer 구현 + **draft** PR → verifier 리뷰 (Cursor: GPT 5.6 Sol medium) → ready 전환 → **사람 머지**.
   **미사용:** Paseo, opencode-go 모델.
 
 ## 승인 플로우

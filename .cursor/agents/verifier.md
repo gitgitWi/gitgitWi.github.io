@@ -4,7 +4,7 @@ description: >-
   Skeptical gate checker. Use after implementer claims PR-DRAFT (while the
   PR is still draft). Confirm commands actually ran, SPEC goals exist in the
   diff, and nothing was marked done without evidence. Do not mark the PR ready.
-model: inherit
+model: gpt-5.6-sol-medium
 readonly: true
 ---
 

@@ -21,7 +21,7 @@
 
 Message verbs (`DONE`, `BLOCKED`, `PLAN-CHANGE`, `PLAN-READY`, `PR-DRAFT`, `PR-READY`, `REVIEW`) are identical across harnesses. Append every report to `.tasks/phase-N-*/LOG.md`.
 
-PR lifecycle: developer opens `--draft` immediately at phase complete (`PR-DRAFT`) → planner/verifier review the draft → on `REVIEW APPROVE`, developer (or leader) `gh pr ready` (`PR-READY`) → human merges.
+PR lifecycle: developer opens `--draft` immediately at phase complete (`PR-DRAFT`) → verifier review (Cursor: GPT 5.6 Sol medium) → on `REVIEW APPROVE`, `gh pr ready` (`PR-READY`) → **human merges**.
 
 A harness **may fold** orchestrator + leader into one parent session (Cursor default). That is a mapping, not a license to drop LOG or gates.
 
@@ -30,7 +30,7 @@ A harness **may fold** orchestrator + leader into one parent session (Cursor def
 | Harness | Status | Isolation | Default models (pinned in that file) |
 |---|---|---|---|
 | [Cline + Herdr](harness/cline-herdr.md) | live (verified 2026-09-10) | Herdr workspace + panes | leader/planner: muse-spark-1.3 · developer: glm-5.3-flash |
-| [Cursor](harness/cursor.md) | live | worktree or `/in-cloud` (opt-in) | parent+planner: Grok 4.6 · developer: Composer 2.5 |
+| [Cursor](harness/cursor.md) | live | worktree or `/in-cloud` (opt-in) | parent+planner: Grok 4.6 · developer: Composer 2.5 · review: GPT 5.6 Sol medium |
 | [Claude Code](harness/claude.md) | stub | TBD | fill when first used |
 | [Codex](harness/codex.md) | stub | TBD | fill when first used |
 
