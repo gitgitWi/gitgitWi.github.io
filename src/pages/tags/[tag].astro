@@ -3,21 +3,30 @@ import Card from '../../components/ui/Card.astro';
 import Heading from '../../components/ui/Heading.astro';
 import Stack from '../../components/ui/Stack.astro';
 import Text from '../../components/ui/Text.astro';
-import { filterPostsByTag, mockTags, type MockPost, type MockTag } from '../../data/mock.ts';
+import {
+  buildTagIndex,
+  filterByTag,
+  formatDisplayDate,
+  getAllTaggedItems,
+  type ContentListItem,
+} from '../../lib/content.ts';
 import Page from '../../layouts/Page.astro';
 
-export const getStaticPaths = () =>
-  mockTags.map((tag) => ({
+export async function getStaticPaths() {
+  const items = await getAllTaggedItems();
+  const tags = buildTagIndex(items);
+  return tags.map((tag) => ({
     params: { tag: tag.slug },
     props: {
       tag,
-      posts: filterPostsByTag({ tagSlug: tag.slug }),
+      posts: filterByTag(items, tag.slug),
     },
   }));
+}
 
 type Props = {
-  tag: MockTag;
-  posts: ReadonlyArray<MockPost>;
+  tag: { slug: string; label: string; count: number };
+  posts: ContentListItem[];
 };
 
 const { tag, posts } = Astro.props;
@@ -26,7 +35,9 @@ const { tag, posts } = Astro.props;
 <Page title={`${tag.label} — Tags — gitgitWi`}>
   <Stack gap="lg">
     <Heading level={1}>{tag.label}</Heading>
-    <Text variant="muted">태그 "{tag.label}"에 해당하는 mock 글 목록입니다.</Text>
+    <Text variant="muted">
+      태그 "{tag.label}"에 해당하는 글 {posts.length}개입니다.
+    </Text>
 
     {
       posts.length === 0 ? (
@@ -37,8 +48,10 @@ const { tag, posts } = Astro.props;
             posts.map((post) => (
               <Card padding="md">
                 <Stack gap="sm">
-                  <Heading level={3}>{post.title}</Heading>
-                  <Text variant="caption">{post.date}</Text>
+                  <Heading level={3}>
+                    <a href={post.href}>{post.title}</a>
+                  </Heading>
+                  <Text variant="caption">{formatDisplayDate(post.pubDate)}</Text>
                   <Text variant="body">{post.summary}</Text>
                 </Stack>
               </Card>

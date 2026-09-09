@@ -6,12 +6,14 @@ import { codeBlockStyles } from './CodeBlock.stylex.ts';
 
 type Props = {
   lang: string;
-  code: string;
+  code?: string;
+  preClass?: string;
   showCopy?: boolean;
 };
 
-const { lang, code, showCopy = true } = Astro.props;
+const { lang, code, preClass, showCopy = true } = Astro.props;
 const blockId = `code-${Math.random().toString(36).slice(2, 9)}`;
+const useSlot = Astro.slots.has('default');
 ---
 
 <div {...stylex.attrs(codeBlockStyles.wrapper)} data-code-block={blockId}>
@@ -26,7 +28,15 @@ const blockId = `code-${Math.random().toString(36).slice(2, 9)}`;
     }
   </div>
   <div {...stylex.attrs(codeBlockStyles.pre)}>
-    <Prism lang={lang} code={code} />
+    {
+      useSlot ? (
+        <pre class={preClass}>
+          <slot />
+        </pre>
+      ) : (
+        <Prism lang={lang} code={code ?? ''} />
+      )
+    }
   </div>
 </div>
 

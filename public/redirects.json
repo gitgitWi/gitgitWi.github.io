@@ -1,0 +1,11 @@
+{
+  "posts": {
+    "design-system/01": "/articles/design-system/01",
+    "from-jekyll-to-nextjs-mdx/00": "/articles/from-jekyll-to-nextjs/00",
+    "til/tdd/fullstack-tdd-by-newbie": "/til/tdd/fullstack-tdd-by-newbie",
+    "til/ts/enum-to-template-literal": "/til/ts/enum-to-template-literal"
+  },
+  "study": {
+    "refactoring-javascript/01": "/til/refactoring-javascript/01"
+  }
+}

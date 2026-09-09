@@ -1,0 +1,26 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { tableCardStyles } from './TableCard.stylex.ts';
+---
+
+<div data-table-card {...stylex.attrs(tableCardStyles.wrapper)}>
+  <table {...stylex.attrs(tableCardStyles.table)}>
+    <slot />
+  </table>
+</div>
+
+<style is:global>
+  [data-table-card] th {
+    font-family: var(--font-mono, monospace);
+    background: var(--color-surface-muted, #efeee7);
+  }
+
+  [data-table-card] th,
+  [data-table-card] td {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-border, #dddcd3);
+    text-align: left;
+    vertical-align: top;
+  }
+</style>

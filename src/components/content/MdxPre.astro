@@ -1,0 +1,14 @@
+---
+import CodeBlock from './CodeBlock.astro';
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props as Props;
+const lang = className?.match(/language-(\S+)/)?.[1] ?? 'text';
+---
+
+<CodeBlock lang={lang} preClass={className}>
+  <slot />
+</CodeBlock>

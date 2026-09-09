@@ -1,0 +1,157 @@
+---
+import ColorwayShell from '../patterns/ColorwayShell.astro';
+import Tag from '../ui/Tag.astro';
+import Heading from '../ui/Heading.astro';
+import Prose from '../ui/Prose.astro';
+import Stack from '../ui/Stack.astro';
+import Text from '../ui/Text.astro';
+import * as stylex from '@stylexjs/stylex';
+
+import TableOfContents, { type TocEntry } from './TableOfContents.astro';
+import { articleLayoutStyles } from './ArticleLayout.stylex.ts';
+import { formatDisplayDate } from '../../lib/content.ts';
+import type { Colorway } from '../../styles/themes.ts';
+
+type ArticleLayoutVariant = 'essay' | 'gallery' | 'docs';
+type ArticleDensity = 'compact' | 'comfortable' | 'spacious';
+
+type Props = {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  colorway?: Colorway;
+  layout?: ArticleLayoutVariant;
+  density?: ArticleDensity;
+  cover?: string;
+  headings?: TocEntry[];
+};
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  tags = [],
+  colorway = 'canvas',
+  layout = 'essay',
+  density = 'comfortable',
+  cover,
+  headings = [],
+} = Astro.props;
+
+const densityStyle =
+  density === 'compact'
+    ? articleLayoutStyles.densityCompact
+    : density === 'spacious'
+      ? articleLayoutStyles.densitySpacious
+      : null;
+
+const gridStyle =
+  layout === 'docs'
+    ? articleLayoutStyles.gridDocs
+    : layout === 'essay' || layout === 'gallery'
+      ? articleLayoutStyles.gridWithToc
+      : articleLayoutStyles.gridWithToc;
+
+const tocStyle = layout === 'docs' ? articleLayoutStyles.tocLeft : articleLayoutStyles.toc;
+const mainStyle =
+  layout === 'essay' ? articleLayoutStyles.essayMain : articleLayoutStyles.main;
+const showToc = headings.length > 0 && (layout === 'docs' || layout === 'essay');
+
+const accentBarStyles = {
+  canvas: articleLayoutStyles.accentBarCanvas,
+  mint: articleLayoutStyles.accentBarMint,
+  clay: articleLayoutStyles.accentBarClay,
+  ink: articleLayoutStyles.accentBarInk,
+} as const;
+---
+
+<ColorwayShell colorway={colorway}>
+  <div
+    {...stylex.attrs(
+      articleLayoutStyles.grid,
+      gridStyle,
+      densityStyle,
+      accentBarStyles[colorway],
+    )}
+  >
+    {
+      showToc && layout === 'docs' && (
+        <aside {...stylex.attrs(tocStyle)}>
+          <TableOfContents entries={headings} />
+        </aside>
+      )
+    }
+
+    <article {...stylex.attrs(mainStyle)}>
+      <Stack gap="md">
+        {
+          layout === 'gallery' && cover && (
+            <div {...stylex.attrs(articleLayoutStyles.coverGrid)}>
+              <img src={cover} alt="" {...stylex.attrs(articleLayoutStyles.coverImage)} />
+              <div>
+                <div {...stylex.attrs(articleLayoutStyles.meta)}>
+                  <time datetime={pubDate.toISOString()}>{formatDisplayDate(pubDate)}</time>
+                  {updatedDate && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span>updated {formatDisplayDate(updatedDate)}</span>
+                    </>
+                  )}
+                </div>
+                <div {...stylex.attrs(articleLayoutStyles.title)}>
+                  <Heading level={1} variant="display">{title}</Heading>
+                </div>
+                <Text variant="muted">{description}</Text>
+              </div>
+            </div>
+          )
+        }
+
+        {
+          layout !== 'gallery' && (
+            <>
+              <div {...stylex.attrs(articleLayoutStyles.meta)}>
+                <time datetime={pubDate.toISOString()}>{formatDisplayDate(pubDate)}</time>
+                {updatedDate && (
+                  <>
+                    <span aria-hidden="true">·</span>
+                    <span>updated {formatDisplayDate(updatedDate)}</span>
+                  </>
+                )}
+              </div>
+              <div {...stylex.attrs(articleLayoutStyles.title)}>
+                <Heading level={1} variant="display">{title}</Heading>
+              </div>
+              <Text variant="muted">{description}</Text>
+            </>
+          )
+        }
+
+        {
+          tags.length > 0 && (
+            <div {...stylex.attrs(articleLayoutStyles.tagRow)}>
+              {tags.map((tag) => (
+                <Tag href={`/tags/${tag}`}>{tag}</Tag>
+              ))}
+            </div>
+          )
+        }
+
+        <Prose>
+          <slot />
+        </Prose>
+      </Stack>
+    </article>
+
+    {
+      showToc && layout !== 'docs' && (
+        <aside {...stylex.attrs(tocStyle)}>
+          <TableOfContents entries={headings} />
+        </aside>
+      )
+    }
+  </div>
+</ColorwayShell>
