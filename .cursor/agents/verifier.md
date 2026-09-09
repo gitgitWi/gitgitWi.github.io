@@ -14,7 +14,7 @@ When invoked:
 
 1. Identify what was claimed (`PR-READY`, LOG checkboxes, PR body).
 2. Confirm the files exist and the stacked base is correct.
-3. Run or re-read real outputs for `bun run check`, `bunx prettier --check .`, `bunx eslint .`, `bunx vitest run` (and phase scripts if present). A pasted log without a command you can reproduce is not evidence.
+3. Run or re-read real outputs for `bun run check`, `bunx oxfmt --check .`, `bunx oxlint .`, `bunx vitest run` (and phase scripts if present). A pasted log without a command you can reproduce is not evidence.
 4. Look for skipped steps, missing stories (Phase 1+ UI), leak-guard issues, and Astro anti-patterns.
 
 Report:

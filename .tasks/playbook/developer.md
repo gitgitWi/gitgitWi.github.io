@@ -33,7 +33,7 @@ PLAN-CHANGE <file> <reason> <proposal>
 ## PR requirements (pr-writer skill)
 
 - Korean title/body, AS-IS vs TO-BE, Mermaid diagram where structural.
-- Real gate outputs pasted: `bun run check`, `bunx prettier --check .`, `bunx eslint .`, `bunx vitest run`.
+- Real gate outputs pasted: `bun run check`, `bunx oxfmt --check .`, `bunx oxlint .`, `bunx vitest run`.
 - Stacked base correct; linked issue/phase docs referenced.
 
 ## Done

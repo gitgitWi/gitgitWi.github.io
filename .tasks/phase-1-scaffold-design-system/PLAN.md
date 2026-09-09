@@ -6,11 +6,11 @@
    - yarn classic 잔재 제거: `.yarn/`, `.yarnrc`, `yarn.lock` 삭제 + `.gitignore` 정리.
    - `bun create astro@latest . -- --template minimal --typescript strict` 상당 수동 구성:
      `astro`, `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/rss`, `@astrojs/check` + `sharp`
-     (전부 `bun add`). `bun install` → `bun.lock` 커밋.
+     + `oxfmt` + `oxlint` (전부 `bun add`). `bun install` → `bun.lock` 커밋.
    - `astro.config.mjs`: `output:'static'`, `site:'https://gitgitwi.github.io'`, `integrations:[mdx()]`,
      `vite:{plugins:[stylex.vite({useCSSLayers:true, runtimeInjection:false})]}`.
    - `package.json` scripts는 `bun run` 기준 (`dev: astro dev`, `build: astro build`, `check: astro check`).
-     husky pre-commit의 `npx` → `bunx` 교체.
+     husky pre-commit의 `npx` → `bunx oxfmt --check .` + `bunx oxlint .`.
 2. StyleX 디자인시스템 (공유 코드 스타일 §1–7 준수 — guard 우선, 중첩 ≤2, arrow 기본, 3+인자 object, `undefined` 우선):
    - `src/styles/tokens.stylex.ts`: `defineVars({color:{paper,ink,muted,hairline,accent,accentInk}, space, fontSize, radius, lineHeight})`.
    - `src/styles/themes.ts`: `createTheme` 자리만 (paper/sage/clay/ink — 실값은 Phase 2).
@@ -18,7 +18,7 @@
      variant prop 계약, `styled()`식 외부 재오픈 금지 — Linear 교훈). **각 컴포넌트마다 `*.stories.ts` 동반 작성**
      (SPEC §4 Storybook — `bun run storybook` :6006 로컬 확인이 완료 게이트).
    - patterns: `SiteHeader, SiteFooter, TagList, ColorwayShell`.
-   - `@stylexjs/eslint-plugin` 설정 (`valid-styles:error`, `no-unused:error`).
+   - `@stylexjs/eslint-plugin` 설정 (`valid-styles:error`, `no-unused:error`) — oxlint와 별도 StyleX 패스.
 3. 페이지: `src/pages/index.astro` (Hero+최근글+태그클라우드 — Phase 2 데이터 연동 전 목업),
    `src/pages/tags/index.astro`, `src/pages/tags/[tag].astro` (껍데기).
    `src/layouts/Base.astro` (head/meta/폰트) + `Page.astro`.

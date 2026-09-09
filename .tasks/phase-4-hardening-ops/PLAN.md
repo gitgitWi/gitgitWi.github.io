@@ -11,7 +11,7 @@
 2. SEO: `@astrojs/sitemap` + `@astrojs/rss` (`/rss.xml`: articles+til, pubDate desc 30개) +
    `src/lib/og.ts` (1200×630 SVG→PNG 빌드 생성, 폴백 기본 이미지) + canonical/JSON-LD in `Base.astro`.
 3. 404: `src/pages/404.astro` (인기글·태그·검색 링크). shim 매핑 누락분은 404에서 안내.
-4. CI `.github/workflows/ci.yml` (PR+main): `astro check` · `eslint` (StyleX 포함) · `scripts/check-links.mjs` ·
+4. CI `.github/workflows/ci.yml` (PR+main): `astro check` · `oxfmt --check` · `oxlint` · `scripts/check-links.mjs` ·
    `scripts/check-schema.mjs` (`astro sync` + Zod 파싱) · `scripts/check-leak.mjs`
    (frontmatter `visibility!=public`·`raw/`·사내도메인·주민번호 패턴 차단 — llm-wiki `/publish` 게이트 이식).
 5. 정리: `legacy-next/` 삭제, `gh-pages` 브랜치 삭제 (Pages Source=Actions 확인 후), 구 워크플로우 잔재 제거.

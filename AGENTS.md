@@ -20,7 +20,7 @@
 
 ## 3. Commands
 
-`bun install` · `bun run dev|build|preview|check` · `bunx prettier --check .` · `bunx eslint .` · `bunx vitest run`
+`bun install` · `bun run dev|build|preview|check` · `bunx oxfmt --check .` · `bunx oxlint .` · `bunx vitest run`
 
 ## 4. Done gates (every change)
 

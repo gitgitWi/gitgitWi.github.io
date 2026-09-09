@@ -33,8 +33,8 @@ Phase 0에서 툴체인이 고정되면, Next.js 잔재를 걷어내고 Astro st
 
 ## 5. 종료 게이트 (공통 완료 게이트 — 전 Phase 동일 적용)
 - [ ] `bun run check` (tsc + `astro check`) 그린.
-- [ ] `bunx prettier --check .` 그린 (formatter).
-- [ ] `bunx eslint .` 그린 (StyleX 룰 포함, linter).
+- [ ] `bunx oxfmt --check .` 그린 (formatter).
+- [ ] `bunx oxlint .` 그린 (linter). StyleX `valid-styles`는 `@stylexjs/eslint-plugin`을 별도 패스로 유지 (oxlint JS plugin은 alpha).
 - [ ] `bunx vitest run` 그린 (해당 Phase 테스트; 테스트 없을 시 `--passWithNoTests`, 단 Phase 3는 필수).
 - [ ] `main` 푸시 → Pages 자동배포 그린 (수동 `gh-pages` 푸시 없음).
 - [ ] Lighthouse perf ≥ 90, a11y ≥ 95 (Home/Tags).
