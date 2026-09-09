@@ -6,16 +6,13 @@ import Text from '../../components/ui/Text.astro';
 import {
   deckLabels,
   getAllQuizItems,
+  getDeckItemCounts,
   getDeckItems,
   quizDeckIds,
-  type QuizDeckId,
 } from '../../lib/quiz/decks.ts';
 import Page from '../../layouts/Page.astro';
 
-const decks = Object.fromEntries(
-  quizDeckIds.map((deckId) => [deckId, getDeckItems(deckId)]),
-) as Record<QuizDeckId, ReturnType<typeof getDeckItems>>;
-
+const deckCounts = getDeckItemCounts();
 const allItems = getAllQuizItems();
 ---
 
@@ -30,7 +27,12 @@ const allItems = getAllQuizItems();
     </header>
 
     <section aria-label="Wiki Quiz">
-      <QuizDeck client:visible deckIds={quizDeckIds} deckLabels={deckLabels} decks={decks} />
+      <QuizDeck
+        client:visible
+        deckIds={quizDeckIds}
+        deckLabels={deckLabels}
+        deckCounts={deckCounts}
+      />
     </section>
 
     <noscript>

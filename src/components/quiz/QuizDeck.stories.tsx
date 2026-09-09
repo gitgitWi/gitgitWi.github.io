@@ -1,12 +1,8 @@
-import type { QuizDeckId } from "../../content/quiz.ts";
-import { items as tsBasicsItems } from "../../content/quiz/ts-basics.ts";
-import { deckLabels, getDeckItems, quizDeckIds } from "../../lib/quiz/decks.ts";
+import { deckLabels, getDeckItemCounts, quizDeckIds } from "../../lib/quiz/decks.ts";
 
 import { QuizDeck } from "./QuizDeck.tsx";
 
-const allDecks = Object.fromEntries(
-  quizDeckIds.map((deckId) => [deckId, getDeckItems(deckId)]),
-) as Record<QuizDeckId, ReturnType<typeof getDeckItems>>;
+const deckCounts = getDeckItemCounts();
 
 export default {
   title: "quiz/QuizDeck",
@@ -15,30 +11,23 @@ export default {
     docs: {
       description: {
         component:
-          "Wiki flash card island. 키보드 1–4·Enter·화살표, aria-live 피드백, prefers-reduced-motion 시 페이드.",
+          "Wiki flash card island. 덱 데이터는 loadDeckItems로 동적 import. 키보드 1–4·Enter·화살표, aria-live.",
       },
     },
   },
 };
 
-export const TsBasics = {
-  render: () => (
-    <QuizDeck deckIds={quizDeckIds} deckLabels={deckLabels} decks={allDecks} sessionLimit={5} />
-  ),
+export const DeckPicker = {
+  render: () => <QuizDeck deckIds={quizDeckIds} deckLabels={deckLabels} deckCounts={deckCounts} />,
 };
 
-export const DeckPickerOnly = {
+export const ShortSession = {
   render: () => (
     <QuizDeck
       deckIds={quizDeckIds}
       deckLabels={deckLabels}
-      decks={{
-        "ts-basics": tsBasicsItems,
-        tdd: [],
-        refactoring: [],
-        "design-system": [],
-      }}
-      sessionLimit={5}
+      deckCounts={deckCounts}
+      sessionLimit={3}
     />
   ),
 };
