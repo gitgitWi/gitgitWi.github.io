@@ -53,10 +53,7 @@ const isInternal = (url) =>
   (!url.includes("://") && !url.startsWith("mailto:") && !url.startsWith("tel:"));
 
 const isIgnored = (url) =>
-  url.startsWith("#") ||
-  url.startsWith("javascript:") ||
-  url.startsWith("data:") ||
-  url.endsWith(".pdf");
+  url.startsWith("javascript:") || url.startsWith("data:") || url.endsWith(".pdf");
 
 const errors = [];
 
@@ -90,7 +87,18 @@ const run = async () => {
     const { hrefs, srcs, ids } = collectFromHtml(html);
 
     for (const href of hrefs) {
-      if (!isInternal(href) || isIgnored(href)) continue;
+      if (isIgnored(href)) continue;
+
+      if (href.startsWith("#")) {
+        const anchor = href.slice(1);
+        if (anchor && !ids.has(anchor)) {
+          errors.push(`${relFile}: missing same-page anchor #${anchor}`);
+        }
+        continue;
+      }
+
+      if (!isInternal(href)) continue;
+
       const mapped = hrefToDistPath(href);
       if (!mapped) continue;
       const found = await assertPathExists(mapped);
@@ -98,7 +106,7 @@ const run = async () => {
         errors.push(`${relFile}: broken internal link ${href}`);
         continue;
       }
-      if (mapped.anchor && !ids.has(mapped.anchor)) {
+      if (mapped.anchor) {
         const targetHtml = await readFile(found, "utf8");
         const targetIds = collectFromHtml(targetHtml).ids;
         if (!targetIds.has(mapped.anchor)) {

@@ -3,24 +3,12 @@ import CodeBlock from './CodeBlock.astro';
 
 type Props = {
   class?: string;
-  children?: unknown;
 };
 
-const { class: className, children } = Astro.props as Props;
+const { class: className } = Astro.props as Props;
 const lang = className?.match(/language-(\S+)/)?.[1] ?? 'text';
-
-const extractCode = (node: unknown): string => {
-  if (typeof node === 'string') return node;
-  if (!node || typeof node !== 'object') return '';
-  const record = node as Record<string, unknown>;
-  if (typeof record.value === 'string') return record.value;
-  if (Array.isArray(record.children)) {
-    return record.children.map(extractCode).join('');
-  }
-  return '';
-};
-
-const code = extractCode(children).replace(/\n$/, '');
 ---
 
-<CodeBlock lang={lang} code={code} />
+<CodeBlock lang={lang} preClass={className}>
+  <slot />
+</CodeBlock>
