@@ -1,6 +1,6 @@
 # Phase 1.5 — Visual design 적용
 
-> 상태: SPEC+PLAN 작성됨 / 승인 대기. 브랜치 `feat/phase-1.5-visual`, base `feat/phase-1-scaffold`.
+> 상태: 진행 중 (2026-09-10 승인). 브랜치 `feat/phase-1.5-visual`, base `feat/phase-1-scaffold`.
 
 ## 1. 배경
 
@@ -18,7 +18,8 @@ Phase 1은 스캐폴드·토큰 자리·Home/Tags 껍데기까지다. 토큰은 
 
 1. StyleX 시맨틱 토큰을 `docs/conventions/design.md` §3·§6·§7에 맞춘다. Phase 1 자리 토큰을 덮어쓴다.
 2. 타이포: Pretendard/Noto Sans KR 본문, Geist Mono 코드·메타, 디스플레이 손글씨(히어로·기사 제목만).
-3. Home을 컨셉 01에 가깝게: 손글씨 히어로, CTA, 최신글은 빽빽한 그리드가 아니라 에디토리얼 리스트. WebGL은 island + 정적 폴백 + `prefers-reduced-motion`.
+3. Home을 컨셉 01에 가깝게: 손글씨 히어로, CTA, 최신글은 에디토리얼 리스트.
+   **`three`를 이 Phase에서 설치**한다. Home 히어로만 `client:visible` island. 정적 SVG/CSS 폴백 필수. `prefers-reduced-motion`·좁은 뷰포트에서는 WebGL을 올리지 않는다. 기사·위키 페이지에는 Three를 넣지 않는다.
 4. 목업 기사(`/articles/mock`)와 위키(`/til/mock` 또는 `/wiki/mock`): 우측 TOC / 좌측 사이드바, Callout, **Prism 코드 블록**. 실 Collections는 Phase 2.
 5. 코드: `markdown.syntaxHighlight: 'prism'`, `@astrojs/prism`, `src/styles/prism-vitesse-light.css`를 `Base.astro`에서 로드. 다크 Prism 테마 금지.
 6. 해당 UI `*.stories.ts` 갱신.
@@ -27,11 +28,12 @@ Phase 1은 스캐폴드·토큰 자리·Home/Tags 껍데기까지다. 토큰은 
 
 - MDX 6편 이식, Collections, `colorway` 다중 테마 (Phase 2).
 - Quiz, Pagefind, 다크모드.
-- 컨셉의 “Was this helpful?” / Three.js를 전 페이지에 깔기.
+- Three.js를 전 페이지·기사 본문 뒤에 깔기. Home 히어로 외 씬은 Phase 2+ 기사 단위.
 
 ## 4. 산출물
 
 - 갱신된 `src/styles/tokens.stylex.ts`, `prism-vitesse-light.css`, `CodeBlock` (+ copy).
+- `three` + Home `HeroVisual` island (폴백 포함).
 - Home / mock article / mock wiki가 컨셉 레이아웃을 따른다.
 - Storybook 스토리 갱신.
 
