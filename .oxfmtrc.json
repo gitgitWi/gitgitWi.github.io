@@ -10,7 +10,7 @@
     ".next/**",
     ".astro/**",
     "storybook-static/**",
-    "legacy-next/**",
+    ".tasks/**",
     "coverage/**",
     "bun.lock",
     "yarn.lock"

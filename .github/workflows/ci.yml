@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Astro check
+        run: bun run check
+
+      - name: Format
+        run: bunx oxfmt --check .
+
+      - name: Oxlint
+        run: bunx oxlint .
+
+      - name: Vitest
+        run: bunx vitest run --passWithNoTests
+
+      - name: StyleX ESLint
+        run: bun run lint:stylex
+
+      - name: Content schema
+        run: node scripts/check-schema.mjs
+
+      - name: Leak guard
+        run: node scripts/check-leak.mjs
+
+      - name: Build
+        run: bun run build
+
+      - name: Link check
+        run: bun run check-links
+
+      - name: JS budget
+        run: node scripts/check-budget.mjs
+
+      - name: Storybook build
+        run: bun run build-storybook
