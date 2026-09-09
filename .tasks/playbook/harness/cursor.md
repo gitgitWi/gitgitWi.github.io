@@ -19,7 +19,7 @@ Do not recreate three Herdr panes. Cursor has no wait/prompt protocol between na
 | leader | **folded into the parent** | same duties + LOG as `../leader.md` |
 | planner | subagent `.cursor/agents/planner.md` | `model: inherit` (Grok). PLAN.md/LOG.md only — not `readonly` because Part A writes PLAN.md |
 | developer | subagent `.cursor/agents/implementer.md` | `model: composer-2.5` · **own worktree** |
-| verifier | subagent `.cursor/agents/verifier.md` | `readonly: true`, `model: inherit` — run after `PR-READY` |
+| verifier | subagent `.cursor/agents/verifier.md` | `readonly: true`, `model: inherit` — run after `PR-DRAFT` (while still draft) |
 
 Small phases may skip spawning planner and refine PLAN.md in the parent. Still write `PLAN-READY` into LOG.md.
 
@@ -56,18 +56,19 @@ If Grok quota is exhausted: keep this harness, switch the **parent** picker to w
 
 1. Parent (Grok) reads SPEC + PLAN + this file. Creates or updates `.tasks/phase-N-*/LOG.md` (leader duties).
 2. `Use the planner subagent` (or `/planner`) with the Part A brief. Wait for `PLAN-READY`. Human may still be asked to approve PLAN deltas. Planner is **not** `readonly` (it writes PLAN.md); treat product-code edits as a bug.
-3. After PLAN-READY: `Run the implementer subagent on Composer in its own worktree` with the developer brief (`../developer.md`). Isolation phrase is mandatory.
-4. On `PR-READY`: `Use the planner subagent` for Part B, or `/verifier` for gate evidence. Prefer planner for SPEC/style; verifier for “did they actually run the commands”.
-5. Parent records `REVIEW` + CI, then `DONE` / `BLOCKED` to the human. Human merges.
+3. After PLAN-READY: `Run the implementer subagent on Composer in its own worktree` with the developer brief (`../developer.md`). Isolation phrase is mandatory. Implementer must open `--draft` and stop at `PR-DRAFT`.
+4. On `PR-DRAFT`: run planner Part B **and** `/verifier` on the draft. Prefer planner for SPEC/style; verifier for “did they actually run the commands”. Do not mark the PR ready yet.
+5. On `REVIEW APPROVE` from both: implementer (or parent if that session ended) runs `gh pr ready`, then `PR-READY`.
+6. Parent records ready + CI, then `DONE` / `BLOCKED` to the human. Human merges.
 
 Parent prompt (copy):
 
 ```text
 Harness: cursor. Fold leader into this chat.
-Use the planner subagent first (readonly). After PLAN-READY and human ack,
+Use the planner subagent first (PLAN.md only). After PLAN-READY and human ack,
 run the implementer subagent on Composer in its own worktree.
-Then run verifier (and planner review if the diff is non-trivial).
-Do not implement product code in this chat.
+Implementer opens a draft PR (PR-DRAFT). Then run verifier and planner Part B on the draft.
+After REVIEW APPROVE, gh pr ready. Do not implement product code in this chat.
 ```
 
 Invoke explicitly with `/planner`, `/implementer`, `/verifier` when automatic delegation picks the wrong child.

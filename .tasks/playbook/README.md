@@ -16,10 +16,12 @@
 |---|---|---|---|
 | orchestrator | [orchestrator.md](orchestrator.md) | spawn, routing, gates, ask human to merge | product code |
 | leader | [leader.md](leader.md) | phase LOG, sequence, PLAN-CHANGE triage | product code (except LOG/PLAN) |
-| planner | [planner.md](planner.md) | refine PLAN.md, review PR | product code, SPEC edits |
-| developer | [developer.md](developer.md) | implement PLAN, stacked PR | SPEC/PLAN edits |
+| planner | [planner.md](planner.md) | refine PLAN.md, review draft PR | product code, SPEC edits |
+| developer | [developer.md](developer.md) | implement PLAN, draft PR → ready after review | SPEC/PLAN edits |
 
-Message verbs (`DONE`, `BLOCKED`, `PLAN-CHANGE`, `PLAN-READY`, `PR-READY`, `REVIEW`) are identical across harnesses. Append every report to `.tasks/phase-N-*/LOG.md`.
+Message verbs (`DONE`, `BLOCKED`, `PLAN-CHANGE`, `PLAN-READY`, `PR-DRAFT`, `PR-READY`, `REVIEW`) are identical across harnesses. Append every report to `.tasks/phase-N-*/LOG.md`.
+
+PR lifecycle: developer opens `--draft` immediately at phase complete (`PR-DRAFT`) → planner/verifier review the draft → on `REVIEW APPROVE`, developer (or leader) `gh pr ready` (`PR-READY`) → human merges.
 
 A harness **may fold** orchestrator + leader into one parent session (Cursor default). That is a mapping, not a license to drop LOG or gates.
 

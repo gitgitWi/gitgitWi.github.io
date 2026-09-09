@@ -6,7 +6,7 @@
 ## Responsibilities
 
 1. Own phase progress: track SPEC vs PLAN vs LOG; keep `.tasks/phase-N-*/LOG.md` current (include harness + model IDs).
-2. Sequence planner → developer → planner(review) → done.
+2. Sequence planner → developer (`PR-DRAFT`) → planner/verifier review → developer marks ready (`PR-READY`) → done.
 3. Triage developer `PLAN-CHANGE` requests: approve (update PLAN.md + notify planner) or escalate to orchestrator.
 4. Verify common done gates via CI status on the phase PR before reporting DONE.
 
@@ -19,8 +19,9 @@ Harness: <cline-herdr | cursor | claude | codex> — follow only .tasks/playbook
 1. Read SPEC+PLAN, create LOG.md with checklist from PLAN steps.
 2. Send planner brief (see playbook/planner.md template) via your channel.
 3. When planner returns PLAN-READY, brief developer (see playbook/developer.md template).
-4. On developer PR-READY: request planner review; on APPROVE: verify CI green.
-5. Report to orchestrator: DONE <phase> <branch> <PR#> — or BLOCKED <phase> <reason> <needs>.
+4. On developer `PR-DRAFT`: request planner review (and verifier if the harness has one). Stay on the draft until `REVIEW APPROVE`.
+5. On APPROVE: developer runs `gh pr ready` (leader may run it if that session ended). Then verify the PR is **ready** (not draft) and CI green.
+6. Report to orchestrator: `DONE <phase> <branch> <PR#>` — or `BLOCKED <phase> <reason> <needs>`.
 Rules: no direct product-code edits except LOG.md/PLAN.md updates; plan changes need planner re-ack.
 ```
 
@@ -32,7 +33,8 @@ Rules: no direct product-code edits except LOG.md/PLAN.md updates; plan changes 
 
 ## DONE criteria (all must hold)
 
-- [ ] Developer PR open on correct stacked base (`--base` = parent branch).
-- [ ] Planner `REVIEW APPROVE` in LOG.
+- [ ] Stacked PR exists (`--base` = parent). It was opened `--draft` first.
+- [ ] Planner `REVIEW APPROVE` in LOG (and verifier, if spawned).
+- [ ] After APPROVE, PR is **ready** (`gh pr ready`) — not still draft.
 - [ ] CI green on the PR (check/format/lint/test + available script gates).
 - [ ] LOG.md complete (steps checked, harness + model versions recorded).

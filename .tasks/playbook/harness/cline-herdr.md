@@ -66,6 +66,7 @@ Notes:
 - `herdr agent start` only names an interactive agent already running — step 2 before step 3.
 - `--auto-approve true` = act mode. Do **not** pass `-p` (plan mode forbids PLAN.md edits).
 - Skill for the multiplexer: `herdr`.
+- Developer opens `--draft` at phase complete (`PR-DRAFT`). Planner reviews the draft; on APPROVE the developer `gh pr ready` (`PR-READY`). This harness has no separate verifier process — planner Part B is the review.
 
 ## MCP / skills
 
