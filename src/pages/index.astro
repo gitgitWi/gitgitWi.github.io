@@ -6,6 +6,7 @@ import Cluster from '../components/ui/Cluster.astro';
 import Heading from '../components/ui/Heading.astro';
 import Stack from '../components/ui/Stack.astro';
 import Text from '../components/ui/Text.astro';
+import HeroCanvas from '../components/visual/HeroCanvas.tsx';
 import HeroVisual from '../components/visual/HeroVisual.astro';
 import { mockPosts } from '../data/mock.ts';
 import Page from '../layouts/Page.astro';
@@ -27,7 +28,9 @@ const recentPosts = mockPosts.slice(0, 3);
         <Button href="/til/mock" variant="secondary">Wiki</Button>
       </Cluster>
     </Stack>
-    <HeroVisual slot="visual" />
+    <HeroVisual slot="visual">
+      <HeroCanvas client:visible={{ rootMargin: '100px' }} />
+    </HeroVisual>
   </HeroSection>
 
   <section>
