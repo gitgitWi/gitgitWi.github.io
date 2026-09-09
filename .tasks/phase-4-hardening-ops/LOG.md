@@ -23,14 +23,16 @@
 ## Review fixes (2026-09-10, PR #61)
 
 - `check-leak`: `src/components`, `src/layouts`, `src/lib` 포함 (stories/test 제외). secret 패턴(`sk-`, `ghp_`, `AKIA`, PEM 등) 추가.
-- `check-search`: Pagefind fragment(gzip JSON) Top-3 게이트 — CI `build` 후 실행.
+- `check-search`: Pagefind WASM `search()` Top-3 게이트 — CI `build` 후 실행 (fragment substring 아님).
 
 ### Search Top-3 checklist (`scripts/check-search.mjs`)
 
-| # | Query | Expected path | Source |
-|---|-------|---------------|--------|
-| 1 | `리팩토링` | `/til/refactoring-javascript/01` | TIL — 리팩토링 시리즈 1편 |
-| 2 | `Storybook` | `/articles/design-system/01` | articles — Design System 환경 설정 |
-| 3 | `literal` | `/til/ts/enum-to-template-literal` | TIL — enum → literal 타입 |
+`dist/pagefind/pagefind.js`를 Node에서 로드(file:// fetch shim) → `init()` → `search(query)` → `results.slice(0,3)`의 `data().raw_url`에 expected path 포함 여부.
 
-한국어 stemming 없음(Pagefind 한계). 제목·태그·본문 substring 매칭으로 fragment URL을 검증한다.
+| # | Query | Expected path (rank ≤3) | Source |
+|---|-------|-------------------------|--------|
+| 1 | `리팩토링` | `/til/refactoring-javascript/01/` | TIL — 리팩토링 시리즈 1편 |
+| 2 | `Personal Design System` | `/articles/design-system/01/` | articles — Design System (Storybook은 tag 페이지가 1위) |
+| 3 | `literal` | `/til/ts/enum-to-template-literal/` | TIL — enum → literal 타입 |
+
+한국어 stemming 없음(Pagefind 한계). WASM 점수 순위 그대로 검증한다.
