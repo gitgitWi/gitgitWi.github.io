@@ -14,7 +14,7 @@
 - [x] 5. Home/Tags 목업 (`getStaticPaths` string params) + 빌드 CSS link/`@layer`
 - [x] 6. `deploy.yml` → `withastro/action@v6` + `deploy-pages@v5` (node 22, bun.lock 감지)
 - [x] 7. 게이트 + Lighthouse (local preview) + 런타임 주입 0
-- [ ] 8. draft PR (`--base main`, `--assignee @me`, labels `phase-1` `astro`)
+- [x] 8. draft PR (`--base main`, `--assignee @me`, labels `phase-1` `astro`) — #56
 
 ## Notes
 
