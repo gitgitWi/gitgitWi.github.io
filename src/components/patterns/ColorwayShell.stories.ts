@@ -8,25 +8,25 @@ export default {
 
 export const Default = {
   args: {
-    colorway: "paper",
+    colorway: "canvas",
     slots: {
       default: {
         component: Text,
         props: { variant: "body" },
-        slots: { default: "Paper 컬러웨이" },
+        slots: { default: "Canvas 컬러웨이 (#F7F5EE)" },
       },
     },
   },
 };
 
-export const Sage = {
+export const Mint = {
   args: {
-    colorway: "sage",
+    colorway: "mint",
     slots: {
       default: {
         component: Text,
         props: { variant: "body" },
-        slots: { default: "Sage 컬러웨이 (스텁)" },
+        slots: { default: "Mint 컬러웨이 (스텁)" },
       },
     },
   },
