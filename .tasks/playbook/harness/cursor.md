@@ -46,7 +46,7 @@ Never two write-capable agents on the same checkout.
 | orchestrator / leader | Grok 4.6 in the parent picker                                               | long tool loops, instruction following                                                                                                                                                                                                    |
 | planner               | `inherit`                                                                   | same judgment as parent                                                                                                                                                                                                                   |
 | developer             | `composer-2.5` (`composer-2.5-fast` if the Fast variant is the picker name) | edits + terminal                                                                                                                                                                                                                          |
-| verifier              | `gpt-5.6-sol-medium`                                                        | draft review (SPEC + gates). OpenAI models in Cursor: proposed shutoff **2026-11-12** ([OpenAI](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)). After that, fallback `inherit` (Grok) and LOG it. |
+| verifier              | `gpt-5.6-sol-medium`                                                        | Default review. Blocked → Opus 5. Expensive → Grok then Kimi K3. OpenAI shutoff 2026-11-12. |
 
 On **legacy request-based plans without Max Mode**, Cursor may ignore `model:` and run subagents as Composer. If that happens, run planner/verifier in the parent Grok chat instead of Task, and LOG the fallback.
 
@@ -54,20 +54,30 @@ If Grok quota is exhausted: keep this harness, switch the **parent** picker to w
 
 ## OpenAI / GPT window and usage
 
-- Official proposed shutoff of OpenAI models in Cursor: **2026-11-12**. Do not start a Sol review on or after that date; switch verifier to Grok (`inherit`) first.
-- After **every** Sol review, append to `.tasks/phase-N-*/LOG.md`:
-  - `model: gpt-5.6-sol-medium`
-  - start/end timestamps
-  - Cursor usage if the UI shows it (request cost on the review turn, or Settings → Usage delta). There is no billing API in this harness — if the number is not visible, write `usage: not visible` and still record the model + time.
-  - verdict (`REVIEW APPROVE|CHANGES`)
-- If one review looks expensive relative to a Grok/Composer pass, **stop** and ask the human before the next Sol review. Candidate fallbacks: Grok (`inherit`), then Composer.
+- Default review model: `gpt-5.6-sol-medium`. Proposed OpenAI Cursor shutoff **2026-11-12** ([OpenAI](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)).
+- After **every** review spawn, append to `.tasks/phase-N-*/LOG.md`: model slug, start/end, `usage` (UI cost or `not visible`), verdict.
+- Fallback (do not ask the human first — this is the pin):
+
+```mermaid
+flowchart TD
+  S["verifier spawn"] --> Sol["gpt-5.6-sol-medium"]
+  Sol -->|"blocked: resource_exhausted / 404 / after 2026-11-12"| Opus["claude-opus-5-thinking-high"]
+  Sol -->|"completed but expensive"| Cheap{"cheaper reviewer"}
+  Opus -->|"expensive or blocked"| Cheap
+  Cheap --> Grok["inherit Grok / cursor-grok-4.6-high"]
+  Cheap --> Kimi["kimi-k3-max"]
+```
+
+- **Blocked** = spawn error, quota, or shutoff. Next try is Opus 5.
+- **Expensive** = the human or a huge usage delta vs a Grok pass. Next try is Grok, then Kimi K3. LOG the substitution.
+- `.cursor/agents/verifier.md` `model:` stays Sol. Parent Task overrides `model` on fallback.
 
 ## Spawn sequence (per phase)
 
 1. Parent (Grok) reads SPEC + PLAN + this file. Creates or updates `.tasks/phase-N-*/LOG.md` (leader duties).
 2. `Use the planner subagent` (or `/planner`) with the Part A brief. Wait for `PLAN-READY`. Human may still be asked to approve PLAN deltas. Planner is **not** `readonly` (it writes PLAN.md); treat product-code edits as a bug.
 3. After PLAN-READY: `Run the implementer subagent on Composer in its own worktree` with the developer brief (`../developer.md`). Isolation phrase is mandatory. Implementer must open `--draft` and stop at `PR-DRAFT`.
-4. On `PR-DRAFT`: `/verifier` on **GPT 5.6 Sol medium** (covers planner Part B). Do not spawn a second reviewer. Record usage in LOG. Do not mark the PR ready yet.
+4. On `PR-DRAFT`: `/verifier` on **GPT 5.6 Sol medium**. If spawn is blocked, retry Opus 5 (`claude-opus-5-thinking-high`). If a review is expensive, next ones use Grok then Kimi K3. Record usage in LOG. Do not mark the PR ready yet.
 5. On `REVIEW APPROVE`: implementer (or parent) runs `gh pr ready`, then `PR-READY`.
 6. Parent records ready + asks the **human to merge**. Do not `gh pr merge` unless the human explicitly asked for that phase (Phase 0 was that exception).
 
@@ -77,7 +87,8 @@ Parent prompt (copy):
 Harness: cursor. Fold leader into this chat.
 Use the planner subagent first (PLAN.md only). After PLAN-READY and human ack,
 run the implementer subagent on Composer in its own worktree.
-Implementer opens a draft PR (PR-DRAFT). Then run verifier on GPT 5.6 Sol medium.
+Implementer opens a draft PR (PR-DRAFT). Then run verifier on GPT 5.6 Sol medium
+(Opus 5 if Sol is blocked; Grok then Kimi K3 if a review is expensive).
 After REVIEW APPROVE, gh pr ready. Do not merge. Do not implement product code in this chat.
 ```
 
