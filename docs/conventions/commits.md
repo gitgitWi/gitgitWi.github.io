@@ -38,3 +38,5 @@ docs: update AGENTS.md and playbook and ROADMAP
 ```
 
 `fix:` when behavior was wrong or missing. `feat:` only for a capability that did not exist. Docs/tooling pins are `docs:` or `chore:`.
+
+PR titles and bodies: [`prs.md`](prs.md).

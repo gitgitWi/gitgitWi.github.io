@@ -39,6 +39,7 @@ Fallback if a pin 404s or quota-exhausts: … (log substitution in LOG.md).
 
 ```text
 # numbered steps the orchestrator actually runs
+# must include: developer opens --draft (PR-DRAFT) → review → gh pr ready (PR-READY)
 ```
 
 ## MCP / skills this harness must load

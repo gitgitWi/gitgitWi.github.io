@@ -36,7 +36,7 @@
 - Phase별 스택 (base 체인, 아래→위 순서로 머지):
   `main` ← `feat/ci-gates` ← `feat/phase-0-foundation` ← `feat/phase-1-scaffold` ← `feat/phase-2-content` ←
   `feat/phase-3-quiz` ← `feat/phase-4-hardening`
-  - 생성: `gh pr create --base <parent-branch>` 로 스택. CI는 PR마다 자동 실행 (CI 선행 머지 후).
+  - 생성: 페이즈 완료 즉시 `gh pr create --draft --base <parent-branch>` (draft). planner/verifier 리뷰 통과 후 `gh pr ready`. CI는 PR마다 자동 실행 (CI 선행 머지 후).
   - 머지는 아래부터 순서대로 (GitHub "Merge" + base 자동전환 확인). `gh` 2.100.0 설치 확인됨.
   - 본 로드맵 문서 작업(`.tasks/`, `AGENTS.md`)은 스택 밖 — 별도 `docs/tasks-setup` PR 또는 Phase 0에 포함 (승인 시 결정).
 - 멀티에이전트 (역할은 하니스 무관, 스폰은 하니스별):
@@ -46,7 +46,7 @@
   - Cursor (Cline 한도 소진 시 기본): [harness/cursor.md](playbook/harness/cursor.md) — 부모 Grok 4.6 (orchestrator+leader), planner·verifier 서브에이전트, Composer 2.5 implementer는 worktree. 정의: `.cursor/agents/`.
   - Cline + Herdr: [harness/cline-herdr.md](playbook/harness/cline-herdr.md) — pane 3개, muse-spark / glm-5.3-flash (2026-09-10 실측).
   - Claude Code / Codex: 스텁. 첫 실사용 때 `_template.md`로 승격.
-  흐름: leader 추적 → planner가 PLAN 정제·리뷰 → developer 구현 + stacked PR → 사람 머지.
+  흐름: leader 추적 → planner가 PLAN 정제 → developer 구현 + **draft** PR → planner/verifier 리뷰 → ready 전환 → 사람 머지.
   **미사용:** Paseo, opencode-go 모델.
 
 ## 승인 플로우

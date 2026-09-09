@@ -1,6 +1,6 @@
 # Phase 0 — Foundation: 브랜치·툴체인·지식기반
 
-> 상태: 진행 중 (2026-09-09 승인). 브랜치 `feat/phase-0-foundation`.
+> 상태: 완료 (2026-09-10). 브랜치 `feat/phase-0-foundation`. `feat/ci-gates`·`master` 삭제는 후속.
 
 ## 1. 배경
 Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch(`master`), Node 14 워크플로우,

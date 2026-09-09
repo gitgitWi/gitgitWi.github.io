@@ -125,3 +125,4 @@ These differ **on purpose**. Each repo follows its own column; the difference co
 - Astro 컴포넌트: `---` fence 안 로직도 §1–7 동일 적용 (guard 우선, helper 추출).
 - 본 `.tasks/*.md` 협업 문서는 한국어 유지 + 코드 식별자 원문.
 - 커밋: [`commits.md`](commits.md).
+- PR 본문: [`prs.md`](prs.md) — 한국어, 사람 대상. 표 없이 Mermaid.
