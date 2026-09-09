@@ -1,6 +1,6 @@
 # Phase 1 — Scaffold + Design System + Home/Tags + 배포
 
-> 상태: SPEC+PLAN 작성됨 / 승인 대기.
+> 상태: 진행 중 (2026-09-10 승인). 브랜치 `feat/phase-1-scaffold`.
 
 ## 1. 배경
 
