@@ -30,3 +30,8 @@
 - `loadDeckItems()` — `import()` per deck module; island props = `deckIds` + `deckLabels` + `deckCounts` only.
 - **QuizDeck entry gzip:** **4,511 bytes** (`dist/_astro/QuizDeck.*.js`). 덱 청크는 별도 lazy (예: ts-basics ~1,167 gzip).
 - vitest `loadDeckItems` 2건 추가 (총 23 passed). dist HTML: `astro-island` + `component-url` 유지.
+
+## 2026-09-10 finished view @ `e20f48a`
+
+- `quizView()` — `finished` → `loading` → `empty` → `card` 순서. `idx === total`일 때 완료 UI·다시 풀기 표시.
+- vitest `quizView` 5건 (총 28 passed). QuizDeck entry gzip **4,610 bytes**. dist: `astro-island` 유지.
