@@ -2,11 +2,31 @@
 import '../styles/global.css';
 import '../styles/prism-vitesse-light.css';
 
+import { buildCanonicalUrl, resolveOgImageUrl, type JsonLd } from '../lib/seo.ts';
+
 type Props = {
   title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogImagePath?: string;
+  ogType?: 'website' | 'article';
+  jsonLd?: JsonLd | JsonLd[];
+  noindex?: boolean;
 };
 
-const { title = 'gitgitWi' } = Astro.props;
+const {
+  title = 'gitgitWi',
+  description = 'Astro, TypeScript, 디자인 시스템에 관한 글과 위키를 모아두는 개인 블로그입니다.',
+  canonicalPath = Astro.url.pathname,
+  ogImagePath,
+  ogType = 'website',
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = buildCanonicalUrl(canonicalPath);
+const ogImageUrl = resolveOgImageUrl(ogImagePath);
+const jsonLdEntries = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -15,6 +35,27 @@ const { title = 'gitgitWi' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:site_name" content="gitgitWi" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="alternate" type="application/rss+xml" title="gitgitWi RSS" href="/rss.xml" />
+    {
+      jsonLdEntries.map((entry) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(entry)} />
+      ))
+    }
   </head>
   <body>
     <slot />

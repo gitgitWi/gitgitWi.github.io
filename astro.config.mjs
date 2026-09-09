@@ -8,6 +8,8 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkSmartypants from "remark-smartypants";
 
+import sitemap from "@astrojs/sitemap";
+
 const markdownPlugins = {
   remarkPlugins: [remarkGfm, remarkSmartypants],
   rehypePlugins: [
@@ -37,5 +39,11 @@ export default defineConfig({
     ],
   },
 
-  integrations: [preact(), mdx(markdownPlugins)],
+  integrations: [
+    preact(),
+    mdx(markdownPlugins),
+    sitemap({
+      filter: (page) => !page.includes("/wiki/quiz"),
+    }),
+  ],
 });

@@ -1,0 +1,23 @@
+---
+import NotFoundGuide from '../components/patterns/NotFoundGuide.astro';
+import {
+  buildTagIndex,
+  getAllTaggedItems,
+  getRecentPosts,
+} from '../lib/content.ts';
+import Page from '../layouts/Page.astro';
+
+const popularPosts = await getRecentPosts(5);
+const tags = buildTagIndex(await getAllTaggedItems()).slice(0, 12);
+const requestedPath = Astro.url.pathname;
+---
+
+<Page
+  title="404 — gitgitWi"
+  description="요청한 페이지를 찾을 수 없습니다."
+  canonicalPath="/404"
+  noindex={true}
+  pagefindIgnore={true}
+>
+  <NotFoundGuide popularPosts={popularPosts} tags={tags} requestedPath={requestedPath} />
+</Page>
