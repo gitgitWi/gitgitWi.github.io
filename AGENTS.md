@@ -17,6 +17,7 @@
 - No work on unapproved phases (see ROADMAP approval flow).
 - pm = bun (`bun install/add/run`), Node 22 kept for Astro runtime. Never reintroduce yarn/npm lockfiles.
 - Astro Docs MCP first (`https://mcp.docs.astro.build/mcp`) — verify APIs there before coding.
+- Astro skill: `.agents/skills/astro-publish/` (pinned in `PIN.md`). Prefer `bun astro add`. No `getStaticProps` / `next/link`.
 
 ## 3. Commands
 
@@ -36,4 +37,5 @@
 ## 6. Links
 
 - Astro: https://docs.astro.build · StyleX: https://stylexjs.com · Storybook (Phase 1+): local `bun run storybook`
+- Astro skill: `.agents/skills/astro-publish/` (`PIN.md`)
 - `llm-wiki-template`: https://github.com/gitgitWi/llm-wiki-template (wiki content source, `visibility` gate applies)
