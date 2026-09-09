@@ -1,0 +1,81 @@
+---
+import QuizDeck from '../../components/quiz/QuizDeck.tsx';
+import Heading from '../../components/ui/Heading.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import {
+  deckLabels,
+  getAllQuizItems,
+  getDeckItemCounts,
+  getDeckItems,
+  quizDeckIds,
+} from '../../lib/quiz/decks.ts';
+import Page from '../../layouts/Page.astro';
+
+const deckCounts = getDeckItemCounts();
+const allItems = getAllQuizItems();
+---
+
+<Page title="Wiki Quiz — gitgitWi">
+  <Stack gap="lg">
+    <header>
+      <Heading level={1} variant="display">Wiki Quiz</Heading>
+      <Text variant="muted">
+        TIL·기사 내용을 flash card로 복습합니다. JavaScript 없이도 아래 noscript 목록에서 문제를 볼 수
+        있습니다.
+      </Text>
+    </header>
+
+    <section aria-label="Wiki Quiz">
+      <QuizDeck
+        client:visible
+        deckIds={quizDeckIds}
+        deckLabels={deckLabels}
+        deckCounts={deckCounts}
+      />
+    </section>
+
+    <noscript>
+      <section aria-label="정적 문제 목록">
+        <Heading level={2}>문제 목록 (JavaScript 없음)</Heading>
+        <nav aria-label="덱 선택">
+          <ul>
+            {
+              quizDeckIds.map((deckId) => (
+                <li>
+                  <a href={`/wiki/quiz?deck=${deckId}`}>
+                    {deckLabels[deckId]} ({getDeckItems(deckId).length}문항)
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        {
+          allItems.map((item) => (
+            <article id={item.id}>
+              <h3>{item.prompt}</h3>
+              {
+                item.type === 'mcq' ? (
+                  <ol>
+                    {item.choices.map((choice) => (
+                      <li>{choice}</li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p>
+                    <strong>주관식</strong> — 답은 위키에서 확인하세요.
+                  </p>
+                )
+              }
+              <p>{item.explanation}</p>
+              <p>
+                <a href={item.source}>출처: {item.source}</a>
+              </p>
+            </article>
+          ))
+        }
+      </section>
+    </noscript>
+  </Stack>
+</Page>
