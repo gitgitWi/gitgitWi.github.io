@@ -35,4 +35,3 @@
 
 - StyleX 0.19 `unstable_createThemeNested`에 비어 있지 않은 오버라이드를 넣으면 babel-plugin이 크래시한다 (`undefined.slice`). colorway 시각 차등은 `ColorwayShell`/`ArticleLayout` variant + 팔레트 토큰으로 낸다. `themes.ts`의 createTheme 껍데기는 `{}`로 둔다.
 - `llm-wiki-template` 이식은 6편 게이트와 분리. wiki 21개 확인했으나 공개안전 큐레이션은 후속.
-
