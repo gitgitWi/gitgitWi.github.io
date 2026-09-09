@@ -52,6 +52,9 @@ jobs:
       - name: Link check
         run: bun run check-links
 
+      - name: Search index Top-3
+        run: bun run check-search
+
       - name: JS budget
         run: node scripts/check-budget.mjs
 

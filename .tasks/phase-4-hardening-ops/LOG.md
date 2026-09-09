@@ -19,3 +19,18 @@
 - 404: `NotFoundGuide` — 인기글·태그·검색·구경로 안내.
 - Guards: `check-schema`, `check-leak`, `check-budget`, `check-links` (canonical skip).
 - Removed `legacy-next/`.
+
+## Review fixes (2026-09-10, PR #61)
+
+- `check-leak`: `src/components`, `src/layouts`, `src/lib` 포함 (stories/test 제외). secret 패턴(`sk-`, `ghp_`, `AKIA`, PEM 등) 추가.
+- `check-search`: Pagefind fragment(gzip JSON) Top-3 게이트 — CI `build` 후 실행.
+
+### Search Top-3 checklist (`scripts/check-search.mjs`)
+
+| # | Query | Expected path | Source |
+|---|-------|---------------|--------|
+| 1 | `리팩토링` | `/til/refactoring-javascript/01` | TIL — 리팩토링 시리즈 1편 |
+| 2 | `Storybook` | `/articles/design-system/01` | articles — Design System 환경 설정 |
+| 3 | `literal` | `/til/ts/enum-to-template-literal` | TIL — enum → literal 타입 |
+
+한국어 stemming 없음(Pagefind 한계). 제목·태그·본문 substring 매칭으로 fragment URL을 검증한다.
