@@ -40,7 +40,7 @@
 
 ## 코드 스타일 (전 Phase 공통)
 
-출처: `~/Codes/works@est/est-work/wiki/conventions/shared-code-style.md` (정본, 7건).
+출처: `docs/conventions/code-style.md` (공유 정본 verbatim + 블로그 델타, 사람·에이전트 공용).
 `AGENTS.md`에 아래 마커 블록을 verbatim 삽입하고, 제품 레포 규칙은 마커 밖에 둔다:
 
 - **마커 안 (공통, 수정 금지)**: early return/guard 우선 · 중첩 최대 2레벨 초과 시 named helper 추출 ·

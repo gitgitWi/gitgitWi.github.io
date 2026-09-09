@@ -14,8 +14,7 @@
       (Collections/MDX/SSG 커버 여부) → 통과 시 `.agents/skills/astro-publish/` 미러 + 커밋해시 기록, 탈락 시 `incluud/astro-agent-skills`로 교체.
    c. `AGENTS.md` 작성 (영어, 최소 유지 — 상세는 링크):
       MCP 우선조회·`bun astro add` 사용·`getStaticProps/next/link` 금지·StyleX ESLint 준수 +
-      `shared-code-style.md`의 `<!-- shared-convention:start -->`…`<!-- :end -->` 블록 verbatim 삽입 (마커 안 수정 금지) +
-      마커 밖 델타 (timers=web, barrel exports=사용, Astro fence 동일 적용, 언어 규칙).
+      코드 스타일 링크 (`docs/conventions/code-style.md` — 사람·에이전트 공용).
       `CLAUDE.md`는 symlink (`ln -s AGENTS.md CLAUDE.md`).
    d. CI 선행 구축은 Phase 4 PLAN §0 참조 (`feat/ci-gates` → `main` 직행이 스택 최하단).
 4. StyleX 스파이크 (임시 디렉토리, 본 repo 미오염):

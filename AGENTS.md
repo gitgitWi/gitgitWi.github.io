@@ -7,8 +7,8 @@
 
 - `.tasks/ROADMAP.md` — roadmap, gates, approval flow (Korean).
 - Current phase `.tasks/phase-N-*/SPEC.md` + `PLAN.md` — scope and steps.
-- Code style canonical: `~/Codes/works@est/est-work/wiki/conventions/shared-code-style.md`
-  (7 rules: guard-first, max 2 nesting, arrows, object params, `undefined`, array methods, `as const`).
+- Code style: [`docs/conventions/code-style.md`](docs/conventions/code-style.md)
+  (shared canonical + blog deltas). Do not edit inside the shared markers.
 
 ## 2. Hard constraints
 

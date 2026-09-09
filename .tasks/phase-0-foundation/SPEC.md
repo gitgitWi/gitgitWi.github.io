@@ -52,6 +52,5 @@ Next.js 12 잔재 위에서 Astro 이주를 시작할 수 없다. default branch
 
 ## 8. 코드 스타일 적용 (본 Phase 산출물)
 
-`AGENTS.md` 작성 시 `shared-code-style.md`의 `<!-- shared-convention:start -->`…`<!-- :end -->` 블록을
-verbatim 삽입 (마커 안 수정 금지). 마커 밖 델타: timers=web 규칙, barrel exports=사용, Astro fence 동일 적용.
+`AGENTS.md`는 코드 스타일 링크 (`docs/conventions/code-style.md` — 사람·에이전트 공용).
 언어: LLM 문서 영어 / 커밋·PR·주석·테스트 타이틀 한국어 (`describe`=심볼명).
