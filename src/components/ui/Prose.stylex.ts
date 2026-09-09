@@ -7,6 +7,7 @@ export const proseStyles = stylex.create({
     color: tokens.color.ink,
     fontSize: tokens.fontSize.md,
     lineHeight: tokens.lineHeight.body,
-    maxWidth: "65ch",
+    fontFamily: tokens.fontFamily.sans,
+    maxWidth: tokens.layout.readingMax,
   },
 });

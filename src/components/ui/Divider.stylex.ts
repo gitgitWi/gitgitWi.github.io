@@ -7,7 +7,7 @@ export const dividerStyles = stylex.create({
     borderWidth: 0,
     borderTopWidth: "1px",
     borderTopStyle: "solid",
-    borderTopColor: tokens.color.hairline,
-    marginBlock: tokens.space.md,
+    borderTopColor: tokens.color.border,
+    marginBlock: tokens.space[4],
   },
 });

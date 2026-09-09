@@ -6,12 +6,15 @@ export const containerStyles = stylex.create({
   base: {
     width: "100%",
     marginInline: "auto",
-    paddingInline: tokens.space.md,
+    paddingInline: tokens.space[5],
   },
   widthDefault: {
-    maxWidth: "72rem",
+    maxWidth: tokens.layout.max,
   },
   widthNarrow: {
-    maxWidth: "42rem",
+    maxWidth: tokens.layout.readingMax,
+  },
+  widthWide: {
+    maxWidth: tokens.layout.wideReadingMax,
   },
 });

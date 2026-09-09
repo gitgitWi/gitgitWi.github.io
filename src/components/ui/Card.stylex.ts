@@ -4,16 +4,16 @@ import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const cardStyles = stylex.create({
   base: {
-    backgroundColor: tokens.color.paper,
+    backgroundColor: tokens.color.surface,
     borderWidth: "1px",
     borderStyle: "solid",
-    borderColor: tokens.color.hairline,
+    borderColor: tokens.color.border,
     borderRadius: tokens.radius.md,
   },
   paddingSm: {
-    padding: tokens.space.sm,
+    padding: tokens.space[3],
   },
   paddingMd: {
-    padding: tokens.space.md,
+    padding: tokens.space[4],
   },
 });

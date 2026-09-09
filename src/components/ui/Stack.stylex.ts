@@ -8,12 +8,15 @@ export const stackStyles = stylex.create({
     flexDirection: "column",
   },
   gapSm: {
-    gap: tokens.space.sm,
+    gap: tokens.space[2],
   },
   gapMd: {
-    gap: tokens.space.md,
+    gap: tokens.space[4],
   },
   gapLg: {
-    gap: tokens.space.lg,
+    gap: tokens.space[6],
+  },
+  gapXl: {
+    gap: tokens.space[10],
   },
 });

@@ -4,7 +4,7 @@ import * as stylex from '@stylexjs/stylex';
 import { textStyles } from './Text.stylex.ts';
 
 type Props = {
-  variant?: 'body' | 'muted' | 'caption';
+  variant?: 'body' | 'muted' | 'caption' | 'label';
 };
 
 const { variant = 'body' } = Astro.props;
@@ -13,6 +13,7 @@ const variantStyles = {
   body: textStyles.body,
   muted: textStyles.muted,
   caption: textStyles.caption,
+  label: textStyles.label,
 } as const;
 ---
 
