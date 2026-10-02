@@ -1,0 +1,32 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { tocStyles } from './TableOfContents.stylex.ts';
+
+export type TocEntry = {
+  depth: number;
+  slug: string;
+  text: string;
+};
+
+type Props = {
+  entries: TocEntry[];
+};
+
+const { entries } = Astro.props;
+---
+
+<nav {...stylex.attrs(tocStyles.nav)} aria-label="목차">
+  <p {...stylex.attrs(tocStyles.title)}>On this page</p>
+  <ul {...stylex.attrs(tocStyles.list)}>
+    {
+      entries.map((entry) => (
+        <li {...stylex.attrs(entry.depth === 3 ? tocStyles.depth2 : null)}>
+          <a href={`#${entry.slug}`} {...stylex.attrs(tocStyles.link)}>
+            {entry.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

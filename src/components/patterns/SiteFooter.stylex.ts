@@ -4,13 +4,14 @@ import { tokens } from "../../styles/tokens.stylex.ts";
 
 export const siteFooterStyles = stylex.create({
   footer: {
-    marginTop: tokens.space.xl,
-    paddingBlock: tokens.space.lg,
+    marginTop: tokens.space[16],
+    paddingBlock: tokens.space[8],
     borderTopWidth: "1px",
     borderTopStyle: "solid",
-    borderTopColor: tokens.color.hairline,
-    color: tokens.color.muted,
+    borderTopColor: tokens.color.border,
+    color: tokens.color.inkTertiary,
     fontSize: tokens.fontSize.sm,
+    fontFamily: tokens.fontFamily.sans,
     textAlign: "center",
   },
 });

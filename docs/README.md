@@ -7,7 +7,7 @@
 | [`conventions/code-style.md`](conventions/code-style.md)     | 사람 + 에이전트   | 코드 스타일 규칙 (공유 정본 + 본 블로그 델타 + 언어 규칙) |
 | [`conventions/commits.md`](conventions/commits.md)           | 사람 + 에이전트   | 커밋: atomic · conventional · 짧은 한국어 본문            |
 | [`conventions/prs.md`](conventions/prs.md)                   | 사람 + 에이전트   | PR: 왜·효과·설계 다이어그램·범위. 표 없이 Mermaid         |
-| `conventions/design.md`                                      | 사람 + 에이전트   | 디자인 토큰·타이포·컬러 원칙 (Phase 1에서 작성 예정)      |
+| [`conventions/design.md`](conventions/design.md)             | 사람 + 에이전트   | 비주얼 계약. 컨셉 PNG + Prism Vitesse Light. Phase 1.5    |
 | [`research/astro-migration.md`](research/astro-migration.md) | 사람 + 에이전트   | Astro 이주 배경·리서치·기술 판단 근거                     |
 | `../.tasks/ROADMAP.md`                                       | 에이전트 (작업)   | 전체 로드맵·게이트·승인 플로우                            |
 | `../.tasks/playbook/`                                        | 에이전트 (작업)   | subagent 역할·모델·프로토콜                               |

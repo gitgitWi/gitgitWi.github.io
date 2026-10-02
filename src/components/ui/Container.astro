@@ -4,7 +4,7 @@ import * as stylex from '@stylexjs/stylex';
 import { containerStyles } from './Container.stylex.ts';
 
 type Props = {
-  width?: 'default' | 'narrow';
+  width?: 'default' | 'narrow' | 'wide';
 };
 
 const { width = 'default' } = Astro.props;
@@ -12,6 +12,7 @@ const { width = 'default' } = Astro.props;
 const widthStyles = {
   default: containerStyles.widthDefault,
   narrow: containerStyles.widthNarrow,
+  wide: containerStyles.widthWide,
 } as const;
 ---
 

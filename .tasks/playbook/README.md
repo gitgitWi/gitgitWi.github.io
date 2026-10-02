@@ -21,7 +21,7 @@
 
 Message verbs (`DONE`, `BLOCKED`, `PLAN-CHANGE`, `PLAN-READY`, `PR-DRAFT`, `PR-READY`, `REVIEW`) are identical across harnesses. Append every report to `.tasks/phase-N-*/LOG.md`.
 
-PR lifecycle: developer opens `--draft` immediately at phase complete (`PR-DRAFT`) → verifier review (Cursor: GPT 5.6 Sol medium) → on `REVIEW APPROVE`, `gh pr ready` (`PR-READY`) → **human merges**.
+PR lifecycle: developer opens `--draft` immediately at phase complete (`PR-DRAFT`) → verifier review (Cursor: Sol → Opus 5 if blocked → Grok·Kimi if expensive) → on `REVIEW APPROVE`, `gh pr ready` (`PR-READY`) → **human merges**.
 
 A harness **may fold** orchestrator + leader into one parent session (Cursor default). That is a mapping, not a license to drop LOG or gates.
 

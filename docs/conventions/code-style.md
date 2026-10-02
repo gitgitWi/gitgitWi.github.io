@@ -129,3 +129,4 @@ These differ **on purpose**. Each repo follows its own column; the difference co
 - 본 `.tasks/*.md` 협업 문서는 한국어 유지 + 코드 식별자 원문.
 - 커밋: [`commits.md`](commits.md).
 - PR 본문: [`prs.md`](prs.md) — 한국어, 사람 대상. 표 없이 Mermaid.
+- 비주얼: [`design.md`](design.md).

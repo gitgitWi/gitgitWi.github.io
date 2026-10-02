@@ -1,0 +1,90 @@
+---
+import Callout from '../../components/content/Callout.astro';
+import CodeBlock from '../../components/content/CodeBlock.astro';
+import TableOfContents from '../../components/layout/TableOfContents.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Prose from '../../components/ui/Prose.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import Page from '../../layouts/Page.astro';
+import * as stylex from '@stylexjs/stylex';
+
+import { articleLayoutStyles } from '../../components/layout/ArticleLayout.stylex.ts';
+
+const tocEntries = [
+  { depth: 2, slug: 'intro', text: '소개' },
+  { depth: 2, slug: 'setup', text: '설정' },
+  { depth: 3, slug: 'tokens', text: '토큰 구조' },
+  { depth: 2, slug: 'next', text: '다음 단계' },
+];
+
+const sampleCode = `import { tokens } from '@/styles/tokens.stylex';
+
+export const accent = tokens.color.accent;
+// #16A36A — mint accent from design.md
+
+function greet(name: string) {
+  return \`Hello, \${name}!\`;
+}`;
+---
+
+<Page title="Mock Article — gitgitWi">
+  <div {...stylex.attrs(articleLayoutStyles.grid, articleLayoutStyles.gridWithToc)}>
+    <article {...stylex.attrs(articleLayoutStyles.main)}>
+      <Stack gap="md">
+        <div {...stylex.attrs(articleLayoutStyles.meta)}>
+          <time datetime="2026-09-10">2026.09.10</time>
+          <span aria-hidden="true">·</span>
+          <span>8 min read</span>
+          <span aria-hidden="true">·</span>
+          <span>TYPESCRIPT</span>
+        </div>
+
+        <div {...stylex.attrs(articleLayoutStyles.title)}>
+          <Heading level={1} variant="display">Visual design을 코드로 고정하기</Heading>
+        </div>
+
+        <Text variant="muted">
+          Phase 1.5에서 design.md 계약을 StyleX 토큰·Prism·레이아웃으로 옮기는 목업 기사입니다.
+        </Text>
+
+        <Prose>
+          <h2 id="intro">소개</h2>
+          <p>
+            이 페이지는 Phase 2 Collections 이전에 기사 레이아웃을 검증하기 위한 정적 목업입니다.
+            본문 폭은 <code>--reading-max</code>(720px)에 맞추고, 코드 블록은 Prism Vitesse
+            Light 계열로 렌더합니다.
+          </p>
+
+          <Callout variant="tip">
+            Tip callout은 accent soft 배경으로 강조합니다. 본문 흐름을 끊지 않도록 여백을
+            넉넉히 둡니다.
+          </Callout>
+
+          <h2 id="setup">설정</h2>
+          <p>
+            Astro 설정에서 <code>markdown.syntaxHighlight: 'prism'</code>을 사용하고, 커스텀 CSS로
+            캔버스 톤에 맞춥니다.
+          </p>
+
+          <CodeBlock lang="typescript" code={sampleCode} />
+
+          <h3 id="tokens">토큰 구조</h3>
+          <p>
+            시맨틱 토큰(canvas, surface, ink, accent)을 StyleX vars로 정의하고, 컴포넌트는 raw hex
+            대신 토큰만 참조합니다.
+          </p>
+
+          <h2 id="next">다음 단계</h2>
+          <p>
+            Phase 2에서 MDX 콘텐츠를 Collections로 이식하면 이 레이아웃 위에 실제 글이 올라갑니다.
+          </p>
+        </Prose>
+      </Stack>
+    </article>
+
+    <aside {...stylex.attrs(articleLayoutStyles.toc)}>
+      <TableOfContents entries={tocEntries} />
+    </aside>
+  </div>
+</Page>

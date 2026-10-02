@@ -9,7 +9,7 @@ type Props = {
   colorway?: Colorway;
 };
 
-const { colorway = 'paper' } = Astro.props;
+const { colorway = 'canvas' } = Astro.props;
 ---
 
 <div {...stylex.attrs(colorwayShellStyles.shell, colorwayThemes[colorway])}><slot /></div>
