@@ -2,6 +2,7 @@
 import WikiLayout from '../../components/layout/WikiLayout.astro';
 import { findAdjacentTil, getPublishedTil } from '../../lib/content.ts';
 import { mdxComponents } from '../../lib/mdx-components.ts';
+import { buildTechArticleJsonLd, ogPathForContent } from '../../lib/seo.ts';
 import Page from '../../layouts/Page.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -20,9 +21,26 @@ const allTil = await getPublishedTil();
 const { prev, next } = findAdjacentTil(allTil, entry.id);
 const { Content, headings } = await render(entry);
 const { title, summary, pubDate, updatedDate, tags, domains, quizRefs } = entry.data;
+const canonicalPath = `/til/${entry.id}`;
+const ogImagePath = ogPathForContent('til', entry.id);
 ---
 
-<Page title={`${title} — Wiki — gitgitWi`}>
+<Page
+  title={`${title} — Wiki — gitgitWi`}
+  description={summary}
+  canonicalPath={canonicalPath}
+  ogImagePath={ogImagePath}
+  ogType="article"
+  pagefindTitle={title}
+  jsonLd={buildTechArticleJsonLd({
+    title,
+    description: summary,
+    pathname: canonicalPath,
+    pubDate,
+    updatedDate,
+    ogImage: ogImagePath,
+  })}
+>
   <WikiLayout
     title={title}
     summary={summary}

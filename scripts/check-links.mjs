@@ -35,6 +35,10 @@ const hrefToDistPath = (href) => {
     const home = join(distDir, "index.html");
     return { direct: home, asIndex: home, anchor: null, pathOnly: normalized };
   }
+  if (normalized === "/404") {
+    const notFound = join(distDir, "404.html");
+    return { direct: notFound, asIndex: notFound, anchor: null, pathOnly: normalized };
+  }
   const direct = join(distDir, normalized.slice(1));
   const asIndex = join(direct, "index.html");
   return { direct, asIndex, anchor: href.includes("#") ? href.split("#")[1] : null, pathOnly };
@@ -42,9 +46,13 @@ const hrefToDistPath = (href) => {
 
 const collectFromHtml = (html) => {
   const hrefs = [...html.matchAll(/\shref="([^"]+)"/g)].map((match) => match[1]);
+  const canonicalHrefs = new Set(
+    [...html.matchAll(/<link[^>]*rel="canonical"[^>]*href="([^"]+)"/g)].map((match) => match[1]),
+  );
+  const navigableHrefs = hrefs.filter((href) => !canonicalHrefs.has(href));
   const srcs = [...html.matchAll(/\ssrc="([^"]+)"/g)].map((match) => match[1]);
   const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
-  return { hrefs, srcs, ids };
+  return { hrefs: navigableHrefs, srcs, ids };
 };
 
 const isInternal = (url) =>

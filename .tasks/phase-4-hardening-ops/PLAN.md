@@ -24,5 +24,6 @@
 
 ## 승인 요청
 
-- [ ] Pagefind 동의? (Algolia 불필요 확인)
-- [ ] OG 자동생성 vs 수동 — 선호?
+- [x] Pagefind 동의? (Algolia 불필요 확인) — 2026-09-10 스택 진행. Pagefind.
+- [x] OG 자동생성 vs 수동 — 빌드 스크립트 자동 + 폴백 이미지 (PLAN 기본안).
+

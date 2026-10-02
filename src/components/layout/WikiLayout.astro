@@ -53,7 +53,9 @@ const {
 
   <article {...stylex.attrs(wikiLayoutStyles.main)}>
     <Stack gap="md">
-      <Heading level={1} variant="display">{title}</Heading>
+      <div data-pagefind-weight="10">
+        <Heading level={1} variant="display">{title}</Heading>
+      </div>
       <Text variant="muted">{summary}</Text>
 
       <div {...stylex.attrs(wikiLayoutStyles.meta)}>
@@ -78,7 +80,7 @@ const {
 
       {
         tags.length > 0 && (
-          <div {...stylex.attrs(wikiLayoutStyles.tagRow)}>
+          <div {...stylex.attrs(wikiLayoutStyles.tagRow)} data-pagefind-meta="tags">
             {tags.map((tag) => (
               <Tag href={`/tags/${tag}`}>{tag}</Tag>
             ))}

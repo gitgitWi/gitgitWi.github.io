@@ -101,7 +101,7 @@ const accentBarStyles = {
                     </>
                   )}
                 </div>
-                <div {...stylex.attrs(articleLayoutStyles.title)}>
+                <div {...stylex.attrs(articleLayoutStyles.title)} data-pagefind-weight="10">
                   <Heading level={1} variant="display">{title}</Heading>
                 </div>
                 <Text variant="muted">{description}</Text>
@@ -122,7 +122,7 @@ const accentBarStyles = {
                   </>
                 )}
               </div>
-              <div {...stylex.attrs(articleLayoutStyles.title)}>
+              <div {...stylex.attrs(articleLayoutStyles.title)} data-pagefind-weight="10">
                 <Heading level={1} variant="display">{title}</Heading>
               </div>
               <Text variant="muted">{description}</Text>
@@ -132,7 +132,7 @@ const accentBarStyles = {
 
         {
           tags.length > 0 && (
-            <div {...stylex.attrs(articleLayoutStyles.tagRow)}>
+            <div {...stylex.attrs(articleLayoutStyles.tagRow)} data-pagefind-meta="tags">
               {tags.map((tag) => (
                 <Tag href={`/tags/${tag}`}>{tag}</Tag>
               ))}

@@ -1,0 +1,26 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { searchPanelStyles } from './SearchPanel.stylex.ts';
+---
+
+<div {...stylex.attrs(searchPanelStyles.root)}>
+  <p {...stylex.attrs(searchPanelStyles.note)}>
+    Pagefind 정적 검색입니다. 한국어 형태소 분석은 제한적이므로 제목·태그 매칭에 가중치가
+    있습니다.
+  </p>
+  <div id="pagefind-search" {...stylex.attrs(searchPanelStyles.mount)}></div>
+</div>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof PagefindUI === 'undefined') return;
+    new PagefindUI({
+      element: '#pagefind-search',
+      showSubResults: true,
+      resetStyles: false,
+    });
+  });
+</script>
