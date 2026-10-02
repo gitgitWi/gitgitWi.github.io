@@ -1,0 +1,30 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { smartLinkStyles } from './SmartLink.stylex.ts';
+
+type Props = {
+  href?: string;
+  rel?: string;
+  target?: string;
+  class?: string;
+};
+
+const { href = '#', rel, target, class: className } = Astro.props;
+const isExternal =
+  href.startsWith('http://') ||
+  href.startsWith('https://') ||
+  href.startsWith('//');
+const resolvedRel = isExternal ? (rel ?? 'noopener noreferrer') : rel;
+const resolvedTarget = isExternal ? (target ?? '_blank') : target;
+---
+
+<a
+  href={href}
+  rel={resolvedRel}
+  target={resolvedTarget}
+  class={className}
+  {...stylex.attrs(smartLinkStyles.link, isExternal ? smartLinkStyles.external : null)}
+>
+  <slot />
+</a>

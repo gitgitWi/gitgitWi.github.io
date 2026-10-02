@@ -8,10 +8,10 @@ import Stack from '../components/ui/Stack.astro';
 import Text from '../components/ui/Text.astro';
 import HeroCanvas from '../components/visual/HeroCanvas.tsx';
 import HeroVisual from '../components/visual/HeroVisual.astro';
-import { mockPosts } from '../data/mock.ts';
+import { formatDisplayDate, getRecentPosts } from '../lib/content.ts';
 import Page from '../layouts/Page.astro';
 
-const recentPosts = mockPosts.slice(0, 3);
+const recentPosts = await getRecentPosts(6);
 ---
 
 <Page title="gitgitWi — Home">
@@ -24,8 +24,8 @@ const recentPosts = mockPosts.slice(0, 3);
         캔버스 위에서 긴 글을 읽기 좋게, 코드는 정확하게.
       </Text>
       <Cluster gap="sm">
-        <Button href="/tags" variant="primary">Browse posts</Button>
-        <Button href="/til/mock" variant="secondary">Wiki</Button>
+        <Button href="/articles" variant="primary">Browse posts</Button>
+        <Button href="/til" variant="secondary">Wiki</Button>
       </Cluster>
     </Stack>
     <HeroVisual slot="visual">
@@ -38,15 +38,19 @@ const recentPosts = mockPosts.slice(0, 3);
       <Heading level={2}>최근 글</Heading>
       <div>
         {
-          recentPosts.map((post) => (
-            <PostCard
-              title={post.title}
-              date={post.date}
-              summary={post.summary}
-              tags={post.tags}
-              readingTime="5 min read"
-            />
-          ))
+          recentPosts.length === 0 ? (
+            <Text variant="body">아직 공개된 글이 없습니다.</Text>
+          ) : (
+            recentPosts.map((post) => (
+              <PostCard
+                title={post.title}
+                date={formatDisplayDate(post.pubDate)}
+                summary={post.summary}
+                tags={post.tags}
+                href={post.href}
+              />
+            ))
+          )
         }
       </div>
     </Stack>

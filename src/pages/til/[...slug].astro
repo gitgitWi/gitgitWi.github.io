@@ -1,0 +1,40 @@
+---
+import WikiLayout from '../../components/layout/WikiLayout.astro';
+import { findAdjacentTil, getPublishedTil } from '../../lib/content.ts';
+import { mdxComponents } from '../../lib/mdx-components.ts';
+import Page from '../../layouts/Page.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('til', ({ data }) =>
+    !import.meta.env.PROD || data.visibility === 'public',
+  );
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const allTil = await getPublishedTil();
+const { prev, next } = findAdjacentTil(allTil, entry.id);
+const { Content, headings } = await render(entry);
+const { title, summary, pubDate, updatedDate, tags, domains, quizRefs } = entry.data;
+---
+
+<Page title={`${title} — Wiki — gitgitWi`}>
+  <WikiLayout
+    title={title}
+    summary={summary}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    tags={tags}
+    domains={domains}
+    quizRefs={quizRefs}
+    headings={headings}
+    prev={prev ? { href: `/til/${prev.id}`, label: prev.data.title } : undefined}
+    next={next ? { href: `/til/${next.id}`, label: next.data.title } : undefined}
+  >
+    <Content components={mdxComponents} />
+  </WikiLayout>
+</Page>

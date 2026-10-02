@@ -1,0 +1,37 @@
+---
+import ArticleLayout from '../../components/layout/ArticleLayout.astro';
+import { mdxComponents } from '../../lib/mdx-components.ts';
+import Page from '../../layouts/Page.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) =>
+    !import.meta.env.PROD || !data.draft,
+  );
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content, headings } = await render(article);
+const { theme, title, description, pubDate, updatedDate, tags, cover } = article.data;
+---
+
+<Page title={`${title} — gitgitWi`}>
+  <ArticleLayout
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    tags={tags}
+    colorway={theme.colorway}
+    layout={theme.layout}
+    density={theme.density}
+    cover={cover}
+    headings={headings}
+  >
+    <Content components={mdxComponents} />
+  </ArticleLayout>
+</Page>

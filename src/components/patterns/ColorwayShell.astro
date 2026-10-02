@@ -12,4 +12,12 @@ type Props = {
 const { colorway = 'canvas' } = Astro.props;
 ---
 
-<div {...stylex.attrs(colorwayShellStyles.shell, colorwayThemes[colorway])}><slot /></div>
+<div
+  {...stylex.attrs(
+    colorwayShellStyles.shell,
+    colorwayThemes[colorway],
+    colorwayShellStyles[colorway],
+  )}
+>
+  <slot />
+</div>

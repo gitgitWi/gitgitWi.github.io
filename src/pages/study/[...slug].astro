@@ -1,0 +1,29 @@
+---
+import redirects from '../../../public/redirects.json';
+
+export function getStaticPaths() {
+  return Object.keys(redirects.study).map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const slug = Astro.params.slug ?? '';
+const target = redirects.study[slug as keyof typeof redirects.study];
+const canonical = new URL(target, Astro.site);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href={canonical.href} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <p>
+      이 페이지는 <a href={target}>{target}</a>(으)로 이동했습니다.
+    </p>
+  </body>
+</html>
