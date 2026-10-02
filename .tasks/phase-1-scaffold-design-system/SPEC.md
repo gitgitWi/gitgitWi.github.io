@@ -1,12 +1,14 @@
 # Phase 1 — Scaffold + Design System + Home/Tags + 배포
 
-> 상태: SPEC+PLAN 작성됨 / 승인 대기.
+> 상태: 진행 중 (2026-09-10 승인). 브랜치 `feat/phase-1-scaffold`.
 
 ## 1. 배경
+
 Phase 0에서 툴체인이 고정되면, Next.js 잔재를 걷어내고 Astro static 스캐폴드 + StyleX 디자인시스템 +
 1차 경로(Home, Tags) + GH Pages 배포를 한 번에 세운다.
 
 ## 2. 목표
+
 1. Astro v7 (MCP 기준 최신) 스캐폴드: `output: 'static'`, `site: https://gitgitwi.github.io`, TS strict.
    - `base` 불필요 (유저 사이트 `*.github.io` 루트). CNAME 사용 시에도 루트 유지.
 2. StyleX: `@stylexjs/unplugin` → `astro.config.mjs > vite.plugins`, `useCSSLayers: true`,
@@ -21,9 +23,11 @@ Phase 0에서 툴체인이 고정되면, Next.js 잔재를 걷어내고 Astro st
    다크모드 Phase 4 이후 (토큰은 `createTheme` 확장 가능하게).
 
 ## 3. 비목표
+
 - articles/til 본문 렌더 (Phase 2). quiz (Phase 3). 검색 (Phase 4).
 
 ## 4. 산출물
+
 - `astro.config.mjs`, `src/{pages,layouts,components/ui,styles}`, 새 `deploy.yml`.
 - Storybook (`storybook` + `@storybook/builder-vite` + `@storybook-astro/framework`, community):
   UI 컴포넌트마다 `*.stories.ts` 동반. 로컬 확인용 (`bun run storybook`, `:6006`).
@@ -32,6 +36,7 @@ Phase 0에서 툴체인이 고정되면, Next.js 잔재를 걷어내고 Astro st
   - React/Preact island 컴포넌트(quiz 등)는 각 프레임워크 renderer로 동일 Storybook에서 프리뷰.
 
 ## 5. 종료 게이트 (공통 완료 게이트 — 전 Phase 동일 적용)
+
 - [ ] `bun run check` (tsc + `astro check`) 그린.
 - [ ] `bunx oxfmt --check .` 그린 (formatter).
 - [ ] `bunx oxlint .` 그린 (linter). StyleX `valid-styles`는 `@stylexjs/eslint-plugin`을 별도 패스로 유지 (oxlint JS plugin은 alpha).

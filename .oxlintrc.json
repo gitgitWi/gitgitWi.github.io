@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error"
+  },
+  "ignorePatterns": [
+    ".yarn/**",
+    ".agents/skills/**",
+    "node_modules/**",
+    "dist/**",
+    "out/**",
+    ".next/**",
+    ".astro/**",
+    "storybook-static/**",
+    "legacy-next/**",
+    "coverage/**"
+  ]
+}

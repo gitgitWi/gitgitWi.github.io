@@ -1,0 +1,55 @@
+---
+import Card from '../../components/ui/Card.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Stack from '../../components/ui/Stack.astro';
+import Text from '../../components/ui/Text.astro';
+import { filterPostsByTag, mockTags, type MockPost, type MockTag } from '../../data/mock.ts';
+import Page from '../../layouts/Page.astro';
+
+export const getStaticPaths = () =>
+  mockTags.map((tag) => ({
+    params: { tag: tag.slug },
+    props: {
+      tag,
+      posts: filterPostsByTag({ tagSlug: tag.slug }),
+    },
+  }));
+
+type Props = {
+  tag: MockTag;
+  posts: ReadonlyArray<MockPost>;
+};
+
+const { tag, posts } = Astro.props;
+---
+
+<Page title={`${tag.label} — Tags — gitgitWi`}>
+  <Stack gap="lg">
+    <Heading level={1}>{tag.label}</Heading>
+    <Text variant="muted">태그 "{tag.label}"에 해당하는 mock 글 목록입니다.</Text>
+
+    {
+      posts.length === 0 ? (
+        <Text variant="body">아직 글이 없습니다.</Text>
+      ) : (
+        <Stack gap="md">
+          {
+            posts.map((post) => (
+              <Card padding="md">
+                <Stack gap="sm">
+                  <Heading level={3}>{post.title}</Heading>
+                  <Text variant="caption">{post.date}</Text>
+                  <Text variant="body">{post.summary}</Text>
+                </Stack>
+              </Card>
+            ))
+          }
+        </Stack>
+      )
+    }
+
+    <Text variant="muted">
+      <a href="/tags">← 전체 태그</a>
+    </Text>
+  </Stack>
+</Page>

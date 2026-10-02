@@ -1,6 +1,7 @@
 # Phase 2 PLAN — Content Routes + MDX 마이그레이션
 
 ## 순서
+
 1. `src/content.config.ts` (Astro v6+ Content Layer, Zod + `glob` loader):
    `articles` / `til` 콜렉션 정의 (SPEC §2.1 필드). `astro sync` 그린 확인.
 2. 라우트: `articles/index, articles/[...slug], til/index, til/[...slug], tags/[tag]` 실데이터 연결
@@ -26,5 +27,6 @@
    colorway×layout 데모 4페이지 캡처, draft 제외 확인 (`grep draft dist`).
 
 ## 승인 요청
+
 - [ ] 구경로 shim 방식 동의? (vs 404 안내)
 - [ ] llm-wiki 선별 기준(공개안전) 동의?

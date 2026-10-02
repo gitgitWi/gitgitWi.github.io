@@ -1,6 +1,7 @@
 # Phase 3 PLAN — Wiki Quiz
 
 ## 순서
+
 1. 스키마: `src/content/quiz.ts` (Zod) + `src/content/quiz/*.ts` 덱 4개
    (`ts-basics`, `tdd`, `refactoring`, `design-system`) × 5문항 = 20 시드.
    필드: `{id, deck, type:'mcq'|'short', prompt, choices?, answerIndex?, answer?, explanation, source}`.
@@ -19,5 +20,6 @@
    키보드/스크린리더 수동 체크리스트.
 
 ## 승인 요청
+
 - [ ] island = Preact 동의? (React 유지 희망 시 코멘트)
 - [ ] 주관식 정규화 수준 동의?

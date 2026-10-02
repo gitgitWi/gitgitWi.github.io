@@ -1,0 +1,43 @@
+---
+import TagList from '../components/patterns/TagList.astro';
+import Card from '../components/ui/Card.astro';
+import Heading from '../components/ui/Heading.astro';
+import Stack from '../components/ui/Stack.astro';
+import Text from '../components/ui/Text.astro';
+import { mockPosts, mockTags } from '../data/mock.ts';
+import Page from '../layouts/Page.astro';
+
+const recentPosts = mockPosts.slice(0, 3);
+---
+
+<Page title="gitgitWi — Home">
+  <Stack gap="lg">
+    <section>
+      <Heading level={1}>gitgitWi</Heading>
+      <Text variant="muted">정리하는 개발 블로그. Astro + StyleX로 다시 짓는 중입니다.</Text>
+    </section>
+
+    <section>
+      <Heading level={2}>최근 글</Heading>
+      <Stack gap="md">
+        {
+          recentPosts.map((post) => (
+            <Card padding="md">
+              <Stack gap="sm">
+                <Heading level={3}>{post.title}</Heading>
+                <Text variant="caption">{post.date}</Text>
+                <Text variant="body">{post.summary}</Text>
+                <Text variant="muted">본문은 Phase 2에서 연결됩니다.</Text>
+              </Stack>
+            </Card>
+          ))
+        }
+      </Stack>
+    </section>
+
+    <section>
+      <Heading level={2}>태그</Heading>
+      <TagList tags={mockTags} />
+    </section>
+  </Stack>
+</Page>

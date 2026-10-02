@@ -1,0 +1,19 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { textStyles } from './Text.stylex.ts';
+
+type Props = {
+  variant?: 'body' | 'muted' | 'caption';
+};
+
+const { variant = 'body' } = Astro.props;
+
+const variantStyles = {
+  body: textStyles.body,
+  muted: textStyles.muted,
+  caption: textStyles.caption,
+} as const;
+---
+
+<p {...stylex.attrs(textStyles.base, variantStyles[variant])}><slot /></p>

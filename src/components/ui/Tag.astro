@@ -1,0 +1,24 @@
+---
+import * as stylex from '@stylexjs/stylex';
+
+import { tagStyles } from './Tag.stylex.ts';
+
+type Props = {
+  href?: string;
+};
+
+const { href } = Astro.props;
+const tagAttrs = stylex.attrs(tagStyles.base, href ? tagStyles.interactive : undefined);
+---
+
+{
+  href ? (
+    <a {...tagAttrs} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <span {...tagAttrs}>
+      <slot />
+    </span>
+  )
+}

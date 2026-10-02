@@ -3,10 +3,12 @@
 > 상태: SPEC+PLAN 작성됨 / 승인 대기.
 
 ## 1. 배경
+
 껍데기가 서면 진짜 콘텐츠를 얹는다. 기존 6개 MD/MDX + `llm-wiki-template/wiki` 선별분을
 Astro Content Collections로 정규화하고, articles(자유)와 til(통일)을 서로 다른 렌더 계약으로 제공한다.
 
 ## 2. 목표
+
 1. Collections (`src/content.config.ts`, Zod + `glob` loader):
    - `articles`: `title, description, pubDate, updatedDate?, tags[], draft?, theme{colorway, layout, density}, cover?`
    - `til` (=wiki): `title, summary, pubDate, updatedDate?, tags[], domains[]?, visibility='public', quizRefs?`
@@ -25,9 +27,11 @@ Astro Content Collections로 정규화하고, articles(자유)와 til(통일)을
    구 경로별 `src/pages/posts/...` shim 또는 404 안내 중 택1 (PLAN에서 결정).
 
 ## 3. 비목표
+
 - quiz UI (Phase 3). 검색 인덱스 (Phase 4).
 
 ## 4. 종료 게이트
+
 - [ ] 기존글 6개 100% 렌더, 깨진 링크/이미지 0 (`astro check` + 링크 스크립트).
 - [ ] 콜렉션 스키마 위반 0 (`astro sync` 그린).
 - [ ] articles colorway ≥ 2 + layout ≥ 2 실제 데모 페이지 존재.

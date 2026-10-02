@@ -6,7 +6,7 @@
 ## Topology (logical)
 
 - One active phase per orchestrator session (Phase 3 and 4 may run in parallel only after Phase 2 is approved, and only if their files do not overlap).
-- Sequence: leader tracks → planner refines PLAN → developer implements + **draft** stacked PR (`PR-DRAFT`) → planner/verifier review → developer marks ready (`PR-READY`) → human merges.
+- Sequence: leader tracks → planner refines PLAN → developer implements + **draft** stacked PR (`PR-DRAFT`) → verifier review → developer marks ready (`PR-READY`) → **human merges**. Orchestrator does not merge unless the human asked for that phase.
 - Orchestrator never edits phase **product** code. It spawns, routes reports, enforces gates, and asks the human to merge.
 
 Harness mapping (who is a process vs a fold) is **not** defined here. Cursor folds orchestrator+leader into the parent Grok chat; Cline+Herdr uses three named panes. See the harness file.
